@@ -1,4 +1,4 @@
-package com.murex.tbw.domain;
+package com.murex.tbw.domain.country;
 
 public enum Currency {
     US_DOLLAR,

@@ -1,17 +1,23 @@
-package com.murex.tbw.domain;
+package com.murex.tbw.domain.book;
 
-public class LanguageBook implements Book {
+import com.murex.tbw.domain.country.Language;
+
+import java.util.List;
+
+public class Novel implements Book {
 
     private final String name;
     private final double price;
     private final Author author;
     private final Language language;
+    private final List<Genre> genres;
 
-    public LanguageBook(String name, double price, Author author, Language language) {
+    public Novel(String name, double price, Author author, Language language, List<Genre> genres) {
         this.name = name;
         this.price = price;
         this.author = author;
         this.language = language;
+        this.genres = genres;
     }
 
     @Override
@@ -29,7 +35,16 @@ public class LanguageBook implements Book {
         return author;
     }
 
+    @Override
     public Language getLanguage() {
         return language;
+    }
+
+    public List<Genre> getGenres() {
+        return genres;
+    }
+
+    public void addGenre(Genre genre) {
+        genres.add(genre);
     }
 }

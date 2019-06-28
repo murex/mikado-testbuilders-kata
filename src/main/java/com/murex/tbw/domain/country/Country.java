@@ -1,4 +1,4 @@
-package com.murex.tbw.domain;
+package com.murex.tbw.domain.country;
 
 public final class Country {
     private final String name;
@@ -9,5 +9,17 @@ public final class Country {
         this.name = name;
         this.currency = officialCurrency;
         this.officialLanguage = officialLanguage;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public Language getOfficialLanguage() {
+        return officialLanguage;
+    }
+
+    public Currency getCurrency() {
+        return currency;
     }
 }

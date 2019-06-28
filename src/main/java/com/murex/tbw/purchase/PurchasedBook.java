@@ -1,14 +1,13 @@
-package com.murex.tbw.report;
+package com.murex.tbw.purchase;
 
-import com.murex.tbw.domain.Book;
-import com.murex.tbw.domain.Country;
-import com.murex.tbw.domain.Currency;
+import com.murex.tbw.domain.book.Book;
+import com.murex.tbw.domain.country.Country;
 
 public final class PurchasedBook {
     private final Book book;
     private final Country country;
 
-    public PurchasedBook(Book book, Currency currency, Country country) {
+    public PurchasedBook(Book book, Country country) {
         this.book = book;
         this.country = country;
     }
