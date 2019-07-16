@@ -4,7 +4,7 @@ import com.murex.tbw.domain.country.Language;
 
 import java.util.List;
 
-public class Novel implements Book {
+public final class Novel implements Book {
 
     private final String name;
     private final double price;

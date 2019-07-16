@@ -2,7 +2,7 @@ package com.murex.tbw.domain.book;
 
 import com.murex.tbw.domain.country.Language;
 
-public class EducationalBook implements Book {
+public final class EducationalBook implements Book {
 
     private final String name;
     private final double price;
