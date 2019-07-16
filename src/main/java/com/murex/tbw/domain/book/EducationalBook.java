@@ -2,6 +2,8 @@ package com.murex.tbw.domain.book;
 
 import com.murex.tbw.domain.country.Language;
 
+import java.util.Objects;
+
 public final class EducationalBook implements Book {
 
     private final String name;
@@ -40,5 +42,33 @@ public final class EducationalBook implements Book {
 
     public Category getCategory() {
         return category;
+    }
+
+    @Override
+    public String toString() {
+        return "EducationalBook{" +
+                "name='" + name + '\'' +
+                ", price=" + price +
+                ", author=" + author +
+                ", language=" + language +
+                ", category=" + category +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        EducationalBook that = (EducationalBook) o;
+        return Double.compare(that.price, price) == 0 &&
+                Objects.equals(name, that.name) &&
+                Objects.equals(author, that.author) &&
+                language == that.language &&
+                category == that.category;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, price, author, language, category);
     }
 }

@@ -3,6 +3,7 @@ package com.murex.tbw.domain.book;
 import com.murex.tbw.domain.country.Language;
 
 import java.util.List;
+import java.util.Objects;
 
 public final class Novel implements Book {
 
@@ -46,5 +47,33 @@ public final class Novel implements Book {
 
     public void addGenre(Genre genre) {
         genres.add(genre);
+    }
+
+    @Override
+    public String toString() {
+        return "Novel{" +
+                "name='" + name + '\'' +
+                ", price=" + price +
+                ", author=" + author +
+                ", language=" + language +
+                ", genres=" + genres +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Novel novel = (Novel) o;
+        return Double.compare(novel.price, price) == 0 &&
+                Objects.equals(name, novel.name) &&
+                Objects.equals(author, novel.author) &&
+                language == novel.language &&
+                Objects.equals(genres, novel.genres);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, price, author, language, genres);
     }
 }
