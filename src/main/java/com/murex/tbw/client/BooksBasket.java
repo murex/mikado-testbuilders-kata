@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public final class BooksBasket implements Basket {
-    protected final Map<Book, Integer> booksInBasket;
+    private final Map<Book, Integer> booksInBasket;
 
     public BooksBasket() {
         booksInBasket = new HashMap<>();

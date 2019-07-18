@@ -1,5 +1,7 @@
 package com.murex.tbw.purchase;
 
+import com.murex.tbw.IdGenerator;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,7 +10,7 @@ public final class Invoice {
     private final List<PurchasedBook> purchasedBooks;
 
     public Invoice() {
-        this.id = 1;
+        this.id = IdGenerator.nextId();
         this.purchasedBooks = new ArrayList<>();
     }
 
