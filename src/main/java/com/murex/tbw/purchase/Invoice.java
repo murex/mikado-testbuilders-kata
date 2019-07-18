@@ -7,15 +7,21 @@ import java.util.List;
 
 public final class Invoice {
     private final int id;
+    private final String clientName;
     private final List<PurchasedBook> purchasedBooks;
 
-    public Invoice() {
+    public Invoice(String clientName) {
         this.id = IdGenerator.nextId();
+        this.clientName = clientName;
         this.purchasedBooks = new ArrayList<>();
     }
 
     public int getId() {
         return id;
+    }
+
+    public String getClientName() {
+        return clientName;
     }
 
     public void addPurchasedBook(PurchasedBook book) {

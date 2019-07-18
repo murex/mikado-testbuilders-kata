@@ -9,8 +9,10 @@ import java.util.Map;
 
 public final class BooksBasket implements Basket {
     private final Map<Book, Integer> booksInBasket;
+    private final Client client;
 
-    public BooksBasket() {
+    public BooksBasket(Client client) {
+        this.client = client;
         booksInBasket = new HashMap<>();
     }
 
@@ -22,7 +24,7 @@ public final class BooksBasket implements Basket {
 
     @Override
     public Invoice checkOut() {
-        Invoice invoice = new Invoice();
+        Invoice invoice = new Invoice(client.getName());
         booksInBasket.forEach((book, quantity) -> invoice.addPurchasedBook(new PurchasedBook(book, quantity)));
         return invoice;
     }

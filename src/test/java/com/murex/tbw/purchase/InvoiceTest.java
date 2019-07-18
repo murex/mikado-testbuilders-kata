@@ -1,22 +1,13 @@
 package com.murex.tbw.purchase;
 
-import com.murex.tbw.domain.country.Country;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import static com.murex.tbw.domain.book.builders.EducationalBookBuilder.newEducationalBookBuilder;
 import static com.murex.tbw.domain.book.builders.NovelBuilder.newNovelBuilder;
-import static com.murex.tbw.domain.country.CountryBuilder.newCountryBuilder;
-import static com.murex.tbw.domain.country.Currency.EURO;
 import static com.murex.tbw.purchase.PurchasedBookBuilder.newPurchasedBookBuilder;
 
 public class InvoiceTest {
-
-    private static final Country FRANCE =
-            newCountryBuilder()
-                    .setCountryName("France")
-                    .setCurrency(EURO)
-                    .createCountry();
 
     private static final PurchasedBook ENGLISH_FOR_BEGINNERS =
             newPurchasedBookBuilder().setBook(
@@ -39,7 +30,7 @@ public class InvoiceTest {
     @Test
     public void
     WhenComputingTotalPrice_ItShouldReturnThePriceSumOfAllItemsInTheInvoice() {
-        Invoice invoice = new Invoice();
+        Invoice invoice = new Invoice("User_A");
 
         invoice.addPurchasedBook(NOVEL_A);
         invoice.addPurchasedBook(ENGLISH_FOR_BEGINNERS);

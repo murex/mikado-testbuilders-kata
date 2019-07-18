@@ -12,16 +12,18 @@ import static java.util.Arrays.asList;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertIterableEquals;
 
-public class BasketTest {
+public class BooksBasketTest {
 
     private Basket booksBasket;
     private Book novelA;
     private Book englishBook;
+    private Client clientA;
 
     @BeforeEach
     public void
     setUp() {
-        booksBasket = new BooksBasket();
+        clientA = new Client("User_A");
+        booksBasket = new BooksBasket(clientA);
         novelA = newNovelBuilder()
                 .setName("NovelA")
                 .setPrice(10.0)
