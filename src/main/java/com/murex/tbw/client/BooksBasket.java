@@ -1,5 +1,6 @@
 package com.murex.tbw.client;
 
+import com.murex.tbw.MainRepository;
 import com.murex.tbw.domain.book.Book;
 import com.murex.tbw.purchase.Invoice;
 import com.murex.tbw.purchase.PurchasedBook;
@@ -26,6 +27,7 @@ public final class BooksBasket implements Basket {
     public Invoice checkOut() {
         Invoice invoice = new Invoice(client.getName());
         booksInBasket.forEach((book, quantity) -> invoice.addPurchasedBook(new PurchasedBook(book, quantity)));
+        MainRepository.configuredRepository().addInvoice(invoice);
         return invoice;
     }
 
