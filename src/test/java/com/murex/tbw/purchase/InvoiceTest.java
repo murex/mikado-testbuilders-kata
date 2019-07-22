@@ -35,6 +35,6 @@ public class InvoiceTest {
         invoice.addPurchasedBook(NOVEL_A);
         invoice.addPurchasedBook(ENGLISH_FOR_BEGINNERS);
 
-        Assertions.assertEquals(70, invoice.computerTotalPrice());
+        Assertions.assertEquals(70, invoice.computeTotalPrice());
     }
 }

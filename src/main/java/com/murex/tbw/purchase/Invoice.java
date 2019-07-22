@@ -28,7 +28,7 @@ public final class Invoice {
         this.purchasedBooks.add(book);
     }
 
-    public double computerTotalPrice() {
+    public double computeTotalPrice() {
         return purchasedBooks.stream().mapToDouble(PurchasedBook::getTotalPrice).sum();
     }
 
