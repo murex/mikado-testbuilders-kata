@@ -9,8 +9,11 @@ public class IdGeneratorTest {
     @Test
     public void
     CallingNextId_ShouldIncrementTheValues() {
-        assertEquals(new Integer(1), IdGenerator.nextId());
-        assertEquals(new Integer(2), IdGenerator.nextId());
+        Integer currentId = IdGenerator.getCurrentId();
+        Integer firstExpected = currentId + 1;
+        assertEquals(firstExpected, IdGenerator.nextId());
+        Integer secondExpected = currentId + 2;
+        assertEquals(secondExpected, IdGenerator.nextId());
     }
 
 }

@@ -1,5 +1,6 @@
 package com.murex.tbw.purchase;
 
+import com.murex.tbw.domain.country.CountryBuilder;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -30,7 +31,7 @@ public class InvoiceTest {
     @Test
     public void
     WhenComputingTotalPrice_ItShouldReturnThePriceSumOfAllItemsInTheInvoice() {
-        Invoice invoice = new Invoice("User_A");
+        Invoice invoice = new Invoice("User_A", CountryBuilder.newCountryBuilder().createCountry());
 
         invoice.addPurchasedBook(NOVEL_A);
         invoice.addPurchasedBook(ENGLISH_FOR_BEGINNERS);

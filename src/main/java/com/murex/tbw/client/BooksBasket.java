@@ -25,7 +25,7 @@ public final class BooksBasket implements Basket {
 
     @Override
     public Invoice checkOut() {
-        Invoice invoice = new Invoice(client.getName());
+        Invoice invoice = new Invoice(client.getName(), client.getCountry());
         booksInBasket.forEach((book, quantity) -> invoice.addPurchasedBook(new PurchasedBook(book, quantity)));
         MainRepository.configuredRepository().addInvoice(invoice);
         return invoice;

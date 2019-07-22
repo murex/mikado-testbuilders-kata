@@ -1,12 +1,16 @@
 package com.murex.tbw.client;
 
 import com.murex.tbw.domain.book.Book;
+import com.murex.tbw.domain.country.Country;
+import com.murex.tbw.domain.country.CountryBuilder;
 import com.murex.tbw.purchase.Invoice;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static com.murex.tbw.domain.book.builders.EducationalBookBuilder.newEducationalBookBuilder;
 import static com.murex.tbw.domain.book.builders.NovelBuilder.newNovelBuilder;
+import static com.murex.tbw.domain.country.Currency.EURO;
+import static com.murex.tbw.domain.country.Language.FRENCH;
 import static com.murex.tbw.purchase.PurchasedBookBuilder.newPurchasedBookBuilder;
 import static java.util.Arrays.asList;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -18,11 +22,17 @@ public class BooksBasketTest {
     private Book novelA;
     private Book englishBook;
     private Client clientA;
+    private Country france;
 
     @BeforeEach
     public void
     setUp() {
-        clientA = new Client("User_A");
+        france = CountryBuilder.newCountryBuilder()
+                .setCountryName("France")
+                .setLanguage(FRENCH)
+                .setCurrency(EURO)
+                .createCountry();
+        clientA = new Client("User_A", france);
         booksBasket = new BooksBasket(clientA);
         novelA = newNovelBuilder()
                 .setName("NovelA")

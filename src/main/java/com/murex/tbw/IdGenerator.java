@@ -7,13 +7,17 @@ public final class IdGenerator {
     private AtomicInteger currentId;
 
     private IdGenerator() {
-        currentId = new AtomicInteger(1);
+        currentId = new AtomicInteger(0);
     }
 
     public static Integer nextId() {
         if (idGenerator == null) {
             idGenerator = new IdGenerator();
         }
-        return idGenerator.currentId.getAndIncrement();
+        return idGenerator.currentId.incrementAndGet();
+    }
+
+    protected static Integer getCurrentId() {
+        return idGenerator == null ? 0 : idGenerator.currentId.get();
     }
 }
