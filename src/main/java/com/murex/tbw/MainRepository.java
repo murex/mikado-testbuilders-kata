@@ -6,7 +6,7 @@ import com.murex.tbw.storage.Repository;
 public final class MainRepository {
 
     private static MainRepository runningRepository = null;
-    private final InMemoryRepository repository;
+    private final Repository repository;
 
     private MainRepository() {
         repository = new InMemoryRepository();
