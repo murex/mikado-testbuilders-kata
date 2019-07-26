@@ -5,7 +5,7 @@ public enum Language {
     FRENCH,
     SPANISH,
     JAPANESE,
-    CHINESE,
+    MANDARIN,
     ARABIC,
     GERMAN
 }

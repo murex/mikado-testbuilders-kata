@@ -16,4 +16,11 @@ public class InMemoryRepository implements Repository {
     public void addInvoice(Invoice invoice) {
         invoiceMap.put(invoice.getId(), invoice);
     }
+
+    @Override
+    public Map<Integer, Invoice> getInvoiceMap() {
+        return invoiceMap;
+    }
+
+
 }

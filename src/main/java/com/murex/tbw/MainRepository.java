@@ -19,4 +19,7 @@ public final class MainRepository {
         return runningRepository.repository;
     }
 
+    public Repository getRepository() {
+        return repository;
+    }
 }
