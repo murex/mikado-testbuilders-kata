@@ -1,12 +1,9 @@
 package com.murex.tbw.finance;
 
-import com.murex.tbw.domain.book.*;
+import com.murex.tbw.domain.book.Book;
 import com.murex.tbw.domain.country.Country;
-import com.murex.tbw.domain.country.Currency;
 import com.murex.tbw.domain.country.Language;
 import org.junit.jupiter.api.Test;
-
-import java.util.Arrays;
 
 import static com.murex.tbw.domain.book.builders.AuthorBuilder.newAuthorBuilder;
 import static com.murex.tbw.domain.book.builders.EducationalBookBuilder.newEducationalBookBuilder;
@@ -80,38 +77,48 @@ public class TaxRuleTest {
 
     @Test
     public void
-    InGermanyThePriceWrittenByGermanAuthors_ShouldHaveFivePercentageTaxes() {
-        Country germany = new Country("Germany", Currency.EURO, Language.GERMAN);
-        Author franzKafka = new Author("Franz Kafka", germany);
-        Book theTrial = new Novel("The Trial", 15d, franzKafka, Language.ENGLISH, Arrays.asList(Genre.MYSTERY));
-
-        Country invoiceCountry = new Country("Germany", Currency.EURO, Language.GERMAN);
-
-        assertAppliedTax(theTrial, invoiceCountry, 1.05);
+    In_Germany_Books_Written_By_German_Authors_Should_Only_Have_Five_Percentage_Taxes() {
+        assertAppliedTax(
+                newNovelBuilder().setAuthor(
+                        newAuthorBuilder().setNationality(
+                                newCountryBuilder().setCountryName("Germany").createCountry()
+                        ).createAuthor()
+                ).createNovel(),
+                newCountryBuilder().setCountryName("Germany").createCountry(),
+                1.05
+        );
     }
 
     @Test
     public void
-    TaxesShouldBeExcludedOnLanguageBooks_IfTheCountryIsChina() {
-        Country usa = new Country("USA", Currency.US_DOLLAR, Language.ENGLISH);
-        Author authorA = new Author("Author_A", usa);
-        Book englishBook = new EducationalBook("English for Beginners", 35.5, authorA, Language.ENGLISH, Category.LANGUAGE);
-
-        Country invoiceCountry = new Country("China", Currency.RENMINBI, Language.MANDARIN);
-
-        assertAppliedTax(englishBook, invoiceCountry, 1);
+    In_China_Taxes_Should_Be_Excluded_On_Language_Books() {
+        assertAppliedTax(
+                newEducationalBookBuilder()
+                        .setLanguage(Language.ENGLISH)
+                        .setAuthor(
+                                newAuthorBuilder().setNationality(
+                                        newCountryBuilder().setCountryName("Germany").createCountry()
+                                ).createAuthor()
+                        ).createEducationalBook(),
+                newCountryBuilder().setCountryName("China").createCountry(),
+                1
+        );
     }
 
     @Test
     public void
-    TaxesShouldBeExcludedOnLanguageBooks_IfTheCountryIsSpain() {
-        Country usa = new Country("USA", Currency.US_DOLLAR, Language.ENGLISH);
-        Author authorA = new Author("Author_A", usa);
-        Book englishBook = new EducationalBook("English for Beginners", 30.5, authorA, Language.ENGLISH, Category.LANGUAGE);
-
-        Country invoiceCountry = new Country("Spain", Currency.EURO, Language.SPANISH);
-
-        assertAppliedTax(englishBook, invoiceCountry, 1);
+    In_Spain_Taxes_Should_Be_Excluded_On_Language_Books() {
+        assertAppliedTax(
+                newEducationalBookBuilder()
+                        .setLanguage(Language.ENGLISH)
+                        .setAuthor(
+                                newAuthorBuilder().setNationality(
+                                        newCountryBuilder().setCountryName("Germany").createCountry()
+                                ).createAuthor()
+                        ).createEducationalBook(),
+                newCountryBuilder().setCountryName("Spain").createCountry(),
+                1
+        );
     }
 
     private void assertAppliedTax(Book computerBook, Country invoiceCountry, double expectedTax) {
