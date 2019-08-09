@@ -32,6 +32,14 @@ public final class Invoice {
         return clientName;
     }
 
+    public Country getCountry() {
+        return country;
+    }
+
+    public void addPurchasedBooks(List<PurchasedBook> books) {
+        purchasedBooks.addAll(books);
+    }
+
     public void addPurchasedBook(PurchasedBook book) {
         this.purchasedBooks.add(book);
     }
