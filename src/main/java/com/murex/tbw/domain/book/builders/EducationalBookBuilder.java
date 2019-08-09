@@ -13,7 +13,6 @@ public final class EducationalBookBuilder {
     private Category category;
 
     private EducationalBookBuilder() {
-
     }
 
     public static EducationalBookBuilder newEducationalBookBuilder() {

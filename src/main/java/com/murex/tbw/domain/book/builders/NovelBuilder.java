@@ -43,11 +43,6 @@ public final class NovelBuilder {
         return this;
     }
 
-    public NovelBuilder setGenres(List<Genre> genres) {
-        this.genres = genres;
-        return this;
-    }
-
     public NovelBuilder addGenre(Genre genre) {
         this.genres.add(genre);
         return this;

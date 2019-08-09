@@ -6,11 +6,9 @@ import com.murex.tbw.domain.country.Country;
 public final class AuthorBuilder {
 
     private String name;
-    private String emailAddress;
     private Country nationality;
 
     private AuthorBuilder() {
-
     }
 
     public static AuthorBuilder newAuthorBuilder() {
@@ -19,11 +17,6 @@ public final class AuthorBuilder {
 
     public AuthorBuilder setName(String name) {
         this.name = name;
-        return this;
-    }
-
-    public AuthorBuilder setEmail(String emailAddress) {
-        this.emailAddress = emailAddress;
         return this;
     }
 

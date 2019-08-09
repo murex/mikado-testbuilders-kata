@@ -1,4 +1,4 @@
-package com.murex.tbw.report;
+package com.murex.tbw.finance;
 
 import com.google.common.collect.ImmutableMap;
 import com.murex.tbw.domain.country.Currency;

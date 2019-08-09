@@ -3,8 +3,8 @@ package com.murex.tbw.report;
 import com.murex.tbw.domain.country.Currency;
 import org.junit.jupiter.api.Test;
 
-import static com.murex.tbw.report.CurrencyConverter.fromUSD;
-import static com.murex.tbw.report.CurrencyConverter.toUSD;
+import static com.murex.tbw.finance.CurrencyConverter.fromUSD;
+import static com.murex.tbw.finance.CurrencyConverter.toUSD;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class CurrencyConverterTest {
