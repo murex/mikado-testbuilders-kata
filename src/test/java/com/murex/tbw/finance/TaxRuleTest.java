@@ -4,50 +4,78 @@ import com.murex.tbw.domain.book.*;
 import com.murex.tbw.domain.country.Country;
 import com.murex.tbw.domain.country.Currency;
 import com.murex.tbw.domain.country.Language;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
+
+import static com.murex.tbw.domain.book.builders.AuthorBuilder.newAuthorBuilder;
+import static com.murex.tbw.domain.book.builders.EducationalBookBuilder.newEducationalBookBuilder;
+import static com.murex.tbw.domain.book.builders.NovelBuilder.newNovelBuilder;
+import static com.murex.tbw.domain.country.CountryBuilder.newCountryBuilder;
+import static com.murex.tbw.finance.TaxRule.getApplicableTax;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class TaxRuleTest {
 
     @Test
     public void
-    WhenNoTaxRulesApply_ThePriceShouldBeMultiplyPriceByTheTax() {
-        Country usa = new Country("USA", Currency.US_DOLLAR, Language.ENGLISH);
-        Author authorA = new Author("Author_A", usa);
-        Book computerBook = new EducationalBook("Computer for Beginners", 35.5, authorA, Language.ENGLISH, Category.COMPUTER);
-
-        Country invoiceCountry = new Country("France", Currency.EURO, Language.FRENCH);
-
-        TaxRule taxRule = new TaxRule();
-        Assertions.assertEquals(44.375, taxRule.computePriceAfterTax(invoiceCountry, computerBook));
+    When_No_Tax_Rules_Apply_The_Tax_To_Be_Applied_Should_Be_The_Default() {
+        assertAppliedTax(
+                newEducationalBookBuilder().createEducationalBook(),
+                newCountryBuilder().setCountryName("France").createCountry(),
+                1.25);
     }
 
     @Test
     public void
-    InTheUS_TheTotalCostOfNovelsIsReducedBy2Percent() {
-        Country germany = new Country("Germany", Currency.EURO, Language.GERMAN);
-        Author franzKafka = new Author("Franz Kafka", germany);
-        Book theTrial = new Novel("The Trial", 15d, franzKafka, Language.ENGLISH, Arrays.asList(Genre.MYSTERY));
-
-        Country invoiceCountry = new Country("USA", Currency.US_DOLLAR, Language.ENGLISH);
-
-        TaxRule taxRule = new TaxRule();
-        Assertions.assertEquals(16.905, taxRule.computePriceAfterTax(invoiceCountry, theTrial));
+    In_The_UK_The_Cost_Of_Novel_Is_Reduced_By_Additional_7_Percent_Over_Initial_Tax() {
+        assertAppliedTax(
+                newNovelBuilder().setAuthor(
+                        newAuthorBuilder().setNationality(
+                                newCountryBuilder().setCountryName("Germany").createCountry()
+                        ).createAuthor()
+                ).createNovel(),
+                newCountryBuilder().setCountryName("UK").createCountry(),
+                1.116);
     }
 
     @Test
     public void
-    InTheUK_TheTotalCostOfNovelsIsReducedBy7Percent() {
-        Country germany = new Country("Germany", Currency.EURO, Language.GERMAN);
-        Author franzKafka = new Author("Franz Kafka", germany);
-        Book theTrial = new Novel("The Trial", 20d, franzKafka, Language.ENGLISH, Arrays.asList(Genre.MYSTERY));
+    In_The_UK_Tax_Is_Not_Modified_For_Non_Novel_Books() {
+        assertAppliedTax(
+                newEducationalBookBuilder().setAuthor(
+                        newAuthorBuilder().setNationality(
+                                newCountryBuilder().setCountryName("Germany").createCountry()
+                        ).createAuthor()
+                ).createEducationalBook(),
+                newCountryBuilder().setCountryName("UK").createCountry(),
+                1.2);
+    }
 
-        Country invoiceCountry = new Country("UK", Currency.POUND_STERLING, Language.ENGLISH);
+    @Test
+    public void
+    In_The_US_The_Cost_Of_Novel_Is_Reduced_By_Additional_2_Percent_Over_Initial_Tax() {
+        assertAppliedTax(
+                newNovelBuilder().setAuthor(
+                        newAuthorBuilder().setNationality(
+                                newCountryBuilder().setCountryName("Germany").createCountry()
+                        ).createAuthor()
+                ).createNovel(),
+                newCountryBuilder().setCountryName("USA").createCountry(),
+                1.127);
+    }
 
-        TaxRule taxRule = new TaxRule();
-        Assertions.assertEquals(22.32, taxRule.computePriceAfterTax(invoiceCountry, theTrial));
+    @Test
+    public void
+    In_The_US_Tax_Is_Not_Modified_For_Non_Novel_Books() {
+        assertAppliedTax(
+                newEducationalBookBuilder().setAuthor(
+                        newAuthorBuilder().setNationality(
+                                newCountryBuilder().setCountryName("Germany").createCountry()
+                        ).createAuthor()
+                ).createEducationalBook(),
+                newCountryBuilder().setCountryName("USA").createCountry(),
+                1.15);
     }
 
     @Test
@@ -59,8 +87,7 @@ public class TaxRuleTest {
 
         Country invoiceCountry = new Country("Germany", Currency.EURO, Language.GERMAN);
 
-        TaxRule taxRule = new TaxRule();
-        Assertions.assertEquals(15.75, taxRule.computePriceAfterTax(invoiceCountry, theTrial));
+        assertAppliedTax(theTrial, invoiceCountry, 1.05);
     }
 
     @Test
@@ -72,8 +99,7 @@ public class TaxRuleTest {
 
         Country invoiceCountry = new Country("China", Currency.RENMINBI, Language.MANDARIN);
 
-        TaxRule taxRule = new TaxRule();
-        Assertions.assertEquals(35.5, taxRule.computePriceAfterTax(invoiceCountry, englishBook));
+        assertAppliedTax(englishBook, invoiceCountry, 1);
     }
 
     @Test
@@ -85,8 +111,10 @@ public class TaxRuleTest {
 
         Country invoiceCountry = new Country("Spain", Currency.EURO, Language.SPANISH);
 
-        TaxRule taxRule = new TaxRule();
-        Assertions.assertEquals(30.5, taxRule.computePriceAfterTax(invoiceCountry, englishBook));
+        assertAppliedTax(englishBook, invoiceCountry, 1);
     }
 
+    private void assertAppliedTax(Book computerBook, Country invoiceCountry, double expectedTax) {
+        assertEquals(expectedTax, getApplicableTax(invoiceCountry, computerBook));
+    }
 }
