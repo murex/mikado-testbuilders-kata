@@ -33,6 +33,6 @@ public final class AuthorBuilder {
     }
 
     public Author createAuthor() {
-        return new Author(name, emailAddress, nationality);
+        return new Author(name, nationality);
     }
 }

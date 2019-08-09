@@ -3,7 +3,7 @@ package com.murex.tbw.client;
 import com.murex.tbw.domain.book.Book;
 import com.murex.tbw.purchase.Invoice;
 
-public interface Basket {
+public interface Order {
     void addBook(Book book, int quantity);
 
     Invoice checkOut();

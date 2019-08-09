@@ -6,5 +6,6 @@ public enum Genre {
     DARK_FANTASY,
     MYSTERY,
     ADVENTURE_FICTION,
-    NON_FICTION
+    NON_FICTION,
+    ROMANCE
 }

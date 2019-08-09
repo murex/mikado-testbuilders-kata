@@ -1,6 +1,6 @@
 package com.murex.tbw;
 
-import com.murex.tbw.client.BooksBasket;
+import com.murex.tbw.client.BooksOrder;
 import com.murex.tbw.client.Client;
 import com.murex.tbw.domain.book.*;
 import com.murex.tbw.domain.country.Country;
@@ -21,14 +21,14 @@ public class EndToEndTest {
         Country usa = new Country("USA", Currency.US_DOLLAR, Language.ENGLISH);
         Country germany = new Country("Germany", Currency.EURO, Language.GERMAN);
 
-        Author authorA = new Author("Author_A", "AuthorA@english.com", usa);
-        Author franzKafka = new Author("Franz Kafka", "Franz.Kafka@novel.com", germany);
+        Author authorA = new Author("Author_A", usa);
+        Author franzKafka = new Author("Franz Kafka", germany);
 
         Book englishBook = new EducationalBook("English for Beginners", 35.5, authorA, Language.ENGLISH, Category.LANGUAGE);
         Book theTrial = new Novel("The Trial", 15d, franzKafka, Language.ENGLISH, Arrays.asList(Genre.MYSTERY));
 
-        BooksBasket usClient = new BooksBasket(new Client("ClientA", usa));
-        BooksBasket germanyClient = new BooksBasket(new Client("ClientB", germany));
+        BooksOrder usClient = new BooksOrder(new Client("ClientA", usa));
+        BooksOrder germanyClient = new BooksOrder(new Client("ClientB", germany));
 
         usClient.addBook(englishBook, 1);
         usClient.addBook(theTrial, 2);
@@ -38,6 +38,6 @@ public class EndToEndTest {
         germanyClient.checkOut();
 
         ReportGenerator reportGenerator = new ReportGenerator(configuredRepository());
-        Assertions.assertEquals(83.455d, reportGenerator.getTotalCost());
+        Assertions.assertEquals(83.455d, reportGenerator.getTotalAmount());
     }
 }

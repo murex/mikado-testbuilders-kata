@@ -15,7 +15,7 @@ public class TaxRuleTest {
     public void
     WhenNoTaxRulesApply_ThePriceShouldBeMultiplyPriceByTheTax() {
         Country usa = new Country("USA", Currency.US_DOLLAR, Language.ENGLISH);
-        Author authorA = new Author("Author_A", "AuthorA@Computer.com", usa);
+        Author authorA = new Author("Author_A", usa);
         Book computerBook = new EducationalBook("Computer for Beginners", 35.5, authorA, Language.ENGLISH, Category.COMPUTER);
 
         Country invoiceCountry = new Country("France", Currency.EURO, Language.FRENCH);
@@ -28,7 +28,7 @@ public class TaxRuleTest {
     public void
     InTheUS_TheTotalCostOfNovelsIsReducedBy2Percent() {
         Country germany = new Country("Germany", Currency.EURO, Language.GERMAN);
-        Author franzKafka = new Author("Franz Kafka", "Franz.Kafka@novel.com", germany);
+        Author franzKafka = new Author("Franz Kafka", germany);
         Book theTrial = new Novel("The Trial", 15d, franzKafka, Language.ENGLISH, Arrays.asList(Genre.MYSTERY));
 
         Country invoiceCountry = new Country("USA", Currency.US_DOLLAR, Language.ENGLISH);
@@ -41,7 +41,7 @@ public class TaxRuleTest {
     public void
     InTheUK_TheTotalCostOfNovelsIsReducedBy7Percent() {
         Country germany = new Country("Germany", Currency.EURO, Language.GERMAN);
-        Author franzKafka = new Author("Franz Kafka", "Franz.Kafka@novel.com", germany);
+        Author franzKafka = new Author("Franz Kafka", germany);
         Book theTrial = new Novel("The Trial", 20d, franzKafka, Language.ENGLISH, Arrays.asList(Genre.MYSTERY));
 
         Country invoiceCountry = new Country("UK", Currency.POUND_STERLING, Language.ENGLISH);
@@ -54,7 +54,7 @@ public class TaxRuleTest {
     public void
     InGermanyThePriceWrittenByGermanAuthors_ShouldHaveFivePercentageTaxes() {
         Country germany = new Country("Germany", Currency.EURO, Language.GERMAN);
-        Author franzKafka = new Author("Franz Kafka", "Franz.Kafka@novel.com", germany);
+        Author franzKafka = new Author("Franz Kafka", germany);
         Book theTrial = new Novel("The Trial", 15d, franzKafka, Language.ENGLISH, Arrays.asList(Genre.MYSTERY));
 
         Country invoiceCountry = new Country("Germany", Currency.EURO, Language.GERMAN);
@@ -67,7 +67,7 @@ public class TaxRuleTest {
     public void
     TaxesShouldBeExcludedOnLanguageBooks_IfTheCountryIsChina() {
         Country usa = new Country("USA", Currency.US_DOLLAR, Language.ENGLISH);
-        Author authorA = new Author("Author_A", "AuthorA@english.com", usa);
+        Author authorA = new Author("Author_A", usa);
         Book englishBook = new EducationalBook("English for Beginners", 35.5, authorA, Language.ENGLISH, Category.LANGUAGE);
 
         Country invoiceCountry = new Country("China", Currency.RENMINBI, Language.MANDARIN);
@@ -80,7 +80,7 @@ public class TaxRuleTest {
     public void
     TaxesShouldBeExcludedOnLanguageBooks_IfTheCountryIsSpain() {
         Country usa = new Country("USA", Currency.US_DOLLAR, Language.ENGLISH);
-        Author authorA = new Author("Author_A", "AuthorA@english.com", usa);
+        Author authorA = new Author("Author_A", usa);
         Book englishBook = new EducationalBook("English for Beginners", 30.5, authorA, Language.ENGLISH, Category.LANGUAGE);
 
         Country invoiceCountry = new Country("Spain", Currency.EURO, Language.SPANISH);

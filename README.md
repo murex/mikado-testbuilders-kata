@@ -16,7 +16,7 @@ In addition to this conversion, each country has defined a its own tax rules tha
 | France        | Euro              | French    | 1.14                  | 25%      |
 | UK            | Pound Sterling    | English   | 1.27                  | 20%      |
 | Spain         | Euro              | Spanish   | 1.14                  | 10%      |
-| China         | Renminbi          | Chinese   | 0.15                  | 35%      |
+| China         | Renminbi          | Mandarin  | 0.15                  | 35%      |
 | Japan         | YEN               | Japanese  | 0.0093                | 30%      |
 | Australia     | Australian Dollar | English   | 0.70                  | 13%      |
 | Germany       | Euro              | German    | 1.14                  | 22%      |

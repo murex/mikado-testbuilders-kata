@@ -16,9 +16,9 @@ import static java.util.Arrays.asList;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertIterableEquals;
 
-public class BooksBasketTest {
+public class BooksOrderTest {
 
-    private Basket booksBasket;
+    private Order booksOrder;
     private Book novelA;
     private Book englishBook;
     private Client clientA;
@@ -33,7 +33,7 @@ public class BooksBasketTest {
                 .setCurrency(EURO)
                 .createCountry();
         clientA = new Client("User_A", france);
-        booksBasket = new BooksBasket(clientA);
+        booksOrder = new BooksOrder(clientA);
         novelA = newNovelBuilder()
                 .setName("NovelA")
                 .setPrice(10.0)
@@ -48,29 +48,29 @@ public class BooksBasketTest {
     @Test
     public void
     AddingNewBooksToTheBasket_ShouldAddNewBooksToTheHashMap() {
-        booksBasket.addBook(novelA, 1);
+        booksOrder.addBook(novelA, 1);
 
-        assertEquals((Integer) 1, booksBasket.getQuantityOf(novelA));
+        assertEquals((Integer) 1, booksOrder.getQuantityOf(novelA));
     }
 
     @Test
     public void
     AddingMoreQuantityOfExistingBooks_ShouldIncrementTheExistingQuantity() {
-        booksBasket.addBook(novelA, 1);
-        booksBasket.addBook(englishBook, 3);
-        booksBasket.addBook(novelA, 4);
+        booksOrder.addBook(novelA, 1);
+        booksOrder.addBook(englishBook, 3);
+        booksOrder.addBook(novelA, 4);
 
-        assertEquals((Integer) 5, booksBasket.getQuantityOf(novelA));
+        assertEquals((Integer) 5, booksOrder.getQuantityOf(novelA));
     }
 
     @Test
     public void
     CallingCheckOut_ShouldGenerateAnInvoiceOfAllBooksInTheBasket() {
-        booksBasket.addBook(novelA, 1);
-        booksBasket.addBook(englishBook, 3);
-        booksBasket.addBook(novelA, 4);
+        booksOrder.addBook(novelA, 1);
+        booksOrder.addBook(englishBook, 3);
+        booksOrder.addBook(novelA, 4);
 
-        Invoice invoice = booksBasket.checkOut();
+        Invoice invoice = booksOrder.checkOut();
         assertIterableEquals(
                 asList(
                         newPurchasedBookBuilder()

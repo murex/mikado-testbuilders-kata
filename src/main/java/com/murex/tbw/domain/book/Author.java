@@ -7,12 +7,10 @@ import java.util.Objects;
 public final class Author {
 
     private final String name;
-    private final String emailAddress;
     private final Country nationality;
 
-    public Author(String name, String emailAddress, Country nationality) {
+    public Author(String name, Country nationality) {
         this.name = name;
-        this.emailAddress = emailAddress;
         this.nationality = nationality;
     }
 
@@ -20,9 +18,6 @@ public final class Author {
         return name;
     }
 
-    public String getEmailAddress() {
-        return emailAddress;
-    }
 
     public Country getNationality() {
         return nationality;
@@ -32,7 +27,6 @@ public final class Author {
     public String toString() {
         return "Author{" +
                 "name='" + name + '\'' +
-                ", emailAddress='" + emailAddress + '\'' +
                 ", nationality=" + nationality +
                 '}';
     }
@@ -43,12 +37,11 @@ public final class Author {
         if (o == null || getClass() != o.getClass()) return false;
         Author author = (Author) o;
         return Objects.equals(name, author.name) &&
-                Objects.equals(emailAddress, author.emailAddress) &&
                 Objects.equals(nationality, author.nationality);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, emailAddress, nationality);
+        return Objects.hash(name, nationality);
     }
 }

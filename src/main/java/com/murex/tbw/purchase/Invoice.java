@@ -14,7 +14,11 @@ public final class Invoice {
     private final Country country;
 
     public Invoice(String clientName, Country country) {
-        this.id = IdGenerator.nextId();
+        this(IdGenerator.nextId(), clientName, country);
+    }
+
+    public Invoice(int id, String clientName, Country country) {
+        this.id = id;
         this.clientName = clientName;
         this.country = country;
         this.purchasedBooks = new ArrayList<>();
@@ -32,7 +36,7 @@ public final class Invoice {
         this.purchasedBooks.add(book);
     }
 
-    public double computeTotalPrice() {
+    public double computeTotalAmount() {
         return purchasedBooks.stream().mapToDouble(PurchasedBook::getTotalPrice).sum();
     }
 

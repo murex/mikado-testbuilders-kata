@@ -8,11 +8,11 @@ import com.murex.tbw.purchase.PurchasedBook;
 import java.util.HashMap;
 import java.util.Map;
 
-public final class BooksBasket implements Basket {
+public final class BooksOrder implements Order {
     private final Map<Book, Integer> booksInBasket;
     private final Client client;
 
-    public BooksBasket(Client client) {
+    public BooksOrder(Client client) {
         this.client = client;
         booksInBasket = new HashMap<>();
     }
