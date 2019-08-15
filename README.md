@@ -1,71 +1,88 @@
 # Test Builders Workshop 
 
 The purpose of this project is to illustrate how we can use TestBuilder and 
-Mikado in code refactoring. 
+the Mikado Method while refactoring legacy code. 
 
 ## Introduction
 
-We own a company that sells Books in various cities around the world.
+Let us assume that we own a company that sells Books on-line in various cities around the world. 
+To manage our purchases, we have developed an internal system that has two portals:
 
-The price of the book is the same across all the countries (ex: a 2$ book in 
-the US costs 2 Euros in France).
+### 1. Customer Portal
+This portal, provides our customers with features allowing them to search for and purchase books. 
 
-An invoice should be generated upon each purchase of books.
+The purchase workflow is as follows: 
+1. They add the books they want to purchase to a basket.     
+2. To purchase the books, they need to checkout their basket.
+3. Upon checkout, our system should generate an invoice for each basket
+    1. The invoice should apply the tax rates and tax reduction rules for each item in the basket 
+    2. The total amount of the invoice should be the sum of amount of all books (after tax) in the basket
+    3. The currency of the invoice is the same currency as the respective country    
+4. The Invoice is sent to the customer and a copy of it is saved in our repository for future reference   
 
-`FIXME Don't understand why there is a conversion when the price is the same everywhere?`
-In addition to this conversion, each country has defined its own tax rules 
-that we need to apply in order to get the final price of each book. 
-
-## Countries, Currencies, Language and Tax Rates 
-
-| Country       | Currency          | Language  | Exchange Rate to USD  | Tax Rate | 
-| :-------------|:-----------------:| :--------:| :--------------------:|:--------:|
-| USA           | USD               | English   | 1.0                   | 15%      |
-| France        | Euro              | French    | 1.14                  | 25%      |
-| UK            | Pound Sterling    | English   | 1.27                  | 20%      |
-| Spain         | Euro              | Spanish   | 1.14                  | 10%      |
-| China         | Renminbi          | Mandarin  | 0.15                  | 35%      |
-| Japan         | YEN               | Japanese  | 0.0093                | 30%      |
-| Australia     | Australian Dollar | English   | 0.70                  | 13%      |
-| Germany       | Euro              | German    | 1.14                  | 22%      |
-
-
-## Features
-
-### Customers 
-
-The customers of this application do the following: 
-
-1. Add books to their basket 
-2. Checkout basket to purchase the selected books 
-3. The system generates an invoice following any purchase
-4. The invoice is saved in the System's repository
-
-### Invoice
-
-1. The invoice takes into consideration the tax regulation for the respective
- countries
+> It is important to note that each country has its own tax rates and tax reduction rules. 
+You can find a table of those rules below.  
  
-#### Tax Rules
+### 2. Reporting Portal 
+The second portal is used by administrators to generate reports of the sales around the world. 
 
-1. To encourage their citizens to learn a second language, China & Spain 
-decided to exclude all 2nd language books from taxes (i.e. no additional taxes 
-will be applied to those books)
-2. Germany dropped down the taxes to 5% on all books written by German Authors 
-3. USA is reducing the taxes by 2% for all Novels, whereas UK is dropping that
-by 7%
+The report should include the following: 
+1. Accumulative sum of all the invoices in the database
+2. The currency of the report should be in USD 
 
-### Repository
+## Countries, Currencies, Language, Tax Rates, and Tax Reduction Rules   
 
-The system has a Repository interface to save all the generated invoices.
+| Country       | Currency          | Language  | Exchange Rate to USD  | Tax Rate | Tax Reduction Rules                              | 
+| :-------------|:-----------------:| :--------:| :--------------------:|:--------:|:------------------------------------------------:|
+| USA           | USD               | English   | 1.0                   | 15%      | Reduction by 2% on Novels                        |  
+| France        | Euro              | French    | 1.14                  | 25%      | No Reduction on taxes                            | 
+| UK            | Pound Sterling    | English   | 1.27                  | 20%      | Reduction by 7% on Novels                        |
+| Spain         | Euro              | Spanish   | 1.14                  | 10%      | Removed taxes on all foreign language books      |  
+| China         | Renminbi          | Mandarin  | 0.15                  | 35%      | Removed taxes on all foreign language books      |
+| Japan         | YEN               | Japanese  | 0.0093                | 30%      | No Reduction on taxes                            |
+| Australia     | Australian Dollar | English   | 0.70                  | 13%      | No Reduction on taxes                            |     
+| Germany       | Euro              | German    | 1.14                  | 22%      | Dropped to 5% on books written by German Authors |  
 
-The InMemoryRepository is one implementation of that interface to store the 
-invoices in a HashMap in memory.
+
+## Repository
+
+The repository is our database where we store copies of all the issued invoices. 
+The repository is defined by an interface that has 2 methods: 
+ 1. addInvoice: 
+ 2. getInvoiceMap: one to add invoices and the second to return all of the available invoices.
+
+Having this interface enables us to have different implementations for our database (InMemory, Relational, NoSql, etc). 
+
+For this workshop, we have implemented an InMemoryRepository that stores our invoices in a HashMap in memory.
 
 The MainRepository singleton returns the currently configured Repository.
 
-### Report Generator 
-1. The report generated should be based on all the items in the repository
-2. The total sum in the report should be displayed in USD 
+## Your Tasks 
 
-  
+### Input 
+Under the resources folder, you can find a JSON file ([repository.json](./src/main/resources/repository.json)) that contains the data of issued invoices 
+from previous transactions.
+
+> Note that the total amount of each invoice is not included in this list. 
+
+Our Main class ([Application.java](./src/main/java/Application.java)) does the following: 
+1. Reads the JSON file
+2. Rebuilds the invoices in our current Repository instance 
+3. Initializes a ReportGenerator 
+4. Prints 3 values: 
+    1. Total number of books sold 
+    2. Total number of issued invoices
+    3. Sum of total amount of all invoices 
+
+### Tasks
+We noticed that some of the numbers generated by the report are wrong (as shown below) 
+
+| Country                                 | Actual | Expected | 
+|:---------------------------------------:|:------:|:--------:| 
+| The total number of books sold          | 16     |    16    |
+| The total number of issued invoices     | 6      |    6     |
+| The total amount of all invoices in USD | 1016.04|          |
+
+Your task is to find and fix the bugs in the code to have the application generate a correct report. 
+
+   
