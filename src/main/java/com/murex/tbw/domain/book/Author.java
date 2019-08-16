@@ -18,7 +18,6 @@ public final class Author {
         return name;
     }
 
-
     public Country getNationality() {
         return nationality;
     }

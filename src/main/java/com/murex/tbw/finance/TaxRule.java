@@ -1,13 +1,25 @@
 package com.murex.tbw.finance;
 
+import com.google.common.collect.ImmutableMap;
 import com.murex.tbw.domain.book.Book;
 import com.murex.tbw.domain.book.Novel;
 import com.murex.tbw.domain.country.Country;
 import com.murex.tbw.domain.country.Language;
 
-import static com.murex.tbw.finance.FinanceConstants.getTaxRate;
+import java.util.Map;
 
-public class TaxRule {
+public final class TaxRule {
+
+    private static final Map<String, Double> TAX_RATES = ImmutableMap.<String, Double>builder()
+            .put("USA", 1.15d)
+            .put("France", 1.25d)
+            .put("UK", 1.20d)
+            .put("Spain", 1.10d)
+            .put("China", 1.35d)
+            .put("Japan", 1.30d)
+            .put("Australia", 1.13d)
+            .put("Germany", 1.22d)
+            .build();
 
     public static double getApplicableTax(Country invoiceCountry, Book book) {
         if (invoiceCountry.getName().equals("Germany")) {
@@ -36,5 +48,9 @@ public class TaxRule {
             }
         }
         return getTaxRate(invoiceCountry.getName());
+    }
+
+    private static double getTaxRate(String country) {
+        return TAX_RATES.get(country);
     }
 }
