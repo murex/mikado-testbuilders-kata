@@ -1,38 +1,46 @@
 # Test Builders Workshop 
 
-Developers working on legacy code are always told to write tests before fixing any bug. 
-In theory, it is very nice, but in practice, it is a lot more tricky!
+Developers working on legacy code are always told to write tests before fixing 
+any bug. In theory, it is very nice, but in practice, it is a lot more tricky!
 
 We know we need to add tests, but it’s more easily said than done. 
-In legacy codebase, just setting up the objects for the test is most often an unjustifiable nightmarish 2 weeks work. 
-Mocks are a common workaround, but mocking legacy codebase usually makes them more difficult to change, not less!
+In legacy codebase, just setting up the objects for the test is most often an 
+unjustifiable nightmarish 2 weeks work. Mocks are a common workaround, but 
+mocking legacy codebase usually makes them more difficult to change, not less!
 
-In this hands-on pair programming dojo, you will combine the mikado method with test data builders to build a baby-step plan
-to add your first test to a legacy codebase. 
-We'll draw a graph of nested test data builders so that we can instantiate test data, without mocks.
+In this hands-on pair programming dojo, you will combine the mikado method with 
+test data builders to build a baby-step plan to add your first test to a legacy  
+codebase. We'll draw a graph of nested test data builders so that we can 
+instantiate test data, without mocks.
 
 ## Introduction
 
-Let us assume that we own a company that sells Books on-line in various cities around the world. 
-To manage our purchases, we have developed an internal system that has two portals:
+Let us assume that we own a company that sells Books on-line in various cities 
+around the world. To manage our purchases, we have developed an internal system 
+that has two portals:
 
 ### 1. Customer Portal
-This portal, provides our customers with features allowing them to search for and purchase books. 
+This portal, provides our customers with features allowing them to search for 
+and purchase books. 
 
 The purchase workflow is as follows: 
 1. They add the books they want to purchase to a basket.     
 1. To purchase the books, they need to checkout their basket.
 1. Upon checkout, our system should generate an invoice for each basket
-    1. The invoice should apply the tax rates and tax reduction rules for each item in the basket 
-    2. The total amount of the invoice should be the sum of amount of all books (after tax) in the basket
+    1. The invoice should apply the tax rates and tax reduction rules for each 
+    item in the basket 
+    2. The total amount of the invoice should be the sum of amount of all books 
+    (after tax) in the basket
     3. The currency of the invoice is the same currency as the respective country    
-1. The Invoice is sent to the customer and a copy of it is saved in our repository for future reference   
+1. The Invoice is sent to the customer and a copy of it is saved in our 
+repository for future reference   
 
-> It is important to note that each country has its own tax rates and tax reduction rules. 
-You can find a table of those rules below.  
+> It is important to note that each country has its own tax rates and tax 
+reduction rules. You can find a table of those rules below.  
  
 ### 2. Reporting Portal 
-The second portal is used by administrators to generate reports of the sales around the world. 
+The second portal is used by administrators to generate reports of the sales 
+around the world. 
 
 The report should include the following: 
 1. Accumulative sum of all the invoices in the database
@@ -56,12 +64,18 @@ The report should include the following:
 
 The repository is our database where we store copies of all the issued invoices. 
 The repository is defined by an interface that has 2 methods: 
- 1. addInvoice: 
- 1. getInvoiceMap: one to add invoices and the second to return all of the available invoices.
+ 1. addInvoice: adds an invoice to the repository's database 
+ 1. getInvoiceMap: return all the available invoices in a Map  
 
-Having this interface enables us to have different implementations for our database (InMemory, Relational, NoSql, etc). 
+Having this interface enables us to have different implementations for our 
+database (Json, InMemory, Relational, NoSql, etc). 
 
-For this workshop, we have implemented an InMemoryRepository that stores our invoices in a HashMap in memory.
+In this workshop, we wrote a JSON implementation for this Repository interface
+([JsonRepository.java](./src/main/java/com/murex/tbw/storage/JsonRepository.java)). 
+We assumed that we are storing our data in JSON format in a [file](./src/main/resources/repository.json) 
+under the resources folder.  
+
+On initialization, the class parses the Json file and loads the data into a Map.
 
 The MainRepository singleton returns the currently configured Repository.
 
