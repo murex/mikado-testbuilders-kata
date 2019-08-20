@@ -1,6 +1,6 @@
 package com.murex.tbw;
 
-import com.murex.tbw.storage.InMemoryRepository;
+import com.murex.tbw.storage.JsonRepository;
 import com.murex.tbw.storage.Repository;
 
 public final class MainRepository {
@@ -9,7 +9,7 @@ public final class MainRepository {
     private final Repository repository;
 
     private MainRepository() {
-        repository = new InMemoryRepository();
+        repository = new JsonRepository();
     }
 
     public static Repository configuredRepository() {
@@ -17,9 +17,5 @@ public final class MainRepository {
             runningRepository = new MainRepository();
         }
         return runningRepository.repository;
-    }
-
-    public Repository getRepository() {
-        return repository;
     }
 }
