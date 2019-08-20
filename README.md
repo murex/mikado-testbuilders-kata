@@ -1,7 +1,15 @@
 # Test Builders Workshop 
 
-The purpose of this project is to illustrate how we can use TestBuilder and 
-the Mikado Method while refactoring legacy code. 
+Developers working on legacy code are always told to write tests before fixing any bug. 
+In theory, it is very nice, but in practice, it is a lot more tricky!
+
+We know we need to add tests, but it’s more easily said than done. 
+In legacy codebase, just setting up the objects for the test is most often an unjustifiable nightmarish 2 weeks work. 
+Mocks are a common workaround, but mocking legacy codebase usually makes them more difficult to change, not less!
+
+In this hands-on pair programming dojo, you will combine the mikado method with test data builders to build a baby-step plan
+to add your first test to a legacy codebase. 
+We'll draw a graph of nested test data builders so that we can instantiate test data, without mocks.
 
 ## Introduction
 
@@ -13,12 +21,12 @@ This portal, provides our customers with features allowing them to search for an
 
 The purchase workflow is as follows: 
 1. They add the books they want to purchase to a basket.     
-2. To purchase the books, they need to checkout their basket.
-3. Upon checkout, our system should generate an invoice for each basket
+1. To purchase the books, they need to checkout their basket.
+1. Upon checkout, our system should generate an invoice for each basket
     1. The invoice should apply the tax rates and tax reduction rules for each item in the basket 
     2. The total amount of the invoice should be the sum of amount of all books (after tax) in the basket
     3. The currency of the invoice is the same currency as the respective country    
-4. The Invoice is sent to the customer and a copy of it is saved in our repository for future reference   
+1. The Invoice is sent to the customer and a copy of it is saved in our repository for future reference   
 
 > It is important to note that each country has its own tax rates and tax reduction rules. 
 You can find a table of those rules below.  
@@ -28,7 +36,7 @@ The second portal is used by administrators to generate reports of the sales aro
 
 The report should include the following: 
 1. Accumulative sum of all the invoices in the database
-2. The currency of the report should be in USD 
+1. The currency of the report should be in USD 
 
 ## Countries, Currencies, Language, Tax Rates, and Tax Reduction Rules   
 
@@ -49,7 +57,7 @@ The report should include the following:
 The repository is our database where we store copies of all the issued invoices. 
 The repository is defined by an interface that has 2 methods: 
  1. addInvoice: 
- 2. getInvoiceMap: one to add invoices and the second to return all of the available invoices.
+ 1. getInvoiceMap: one to add invoices and the second to return all of the available invoices.
 
 Having this interface enables us to have different implementations for our database (InMemory, Relational, NoSql, etc). 
 
@@ -67,9 +75,9 @@ from previous transactions.
 
 Our Main class ([Application.java](./src/main/java/Application.java)) does the following: 
 1. Reads the JSON file
-2. Rebuilds the invoices in our current Repository instance 
-3. Initializes a ReportGenerator 
-4. Prints 3 values: 
+1. Rebuilds the invoices in our current Repository instance 
+1. Initializes a ReportGenerator 
+1. Prints 3 values: 
     1. Total number of books sold 
     2. Total number of issued invoices
     3. Sum of total amount of all invoices 
