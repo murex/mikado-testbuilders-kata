@@ -4,9 +4,7 @@ import com.murex.tbw.storage.Repository;
 
 public class Application {
     public static void main(String[] args) {
-        Repository applicationRepository = MainRepository.configuredRepository();
-
-        ReportGenerator reportGenerator = new ReportGenerator(applicationRepository);
+        ReportGenerator reportGenerator = new ReportGenerator();
 
         System.out.println("****************************************************");
         System.out.println("*****************Application Report*****************");

@@ -1,5 +1,6 @@
 package com.murex.tbw.report;
 
+import com.murex.tbw.MainRepository;
 import com.murex.tbw.purchase.Invoice;
 import com.murex.tbw.purchase.PurchasedBook;
 import com.murex.tbw.storage.Repository;
@@ -9,11 +10,7 @@ import java.util.Map;
 
 public class ReportGenerator {
 
-    private final Repository repository;
-
-    public ReportGenerator(Repository repository) {
-        this.repository = repository;
-    }
+    private final Repository repository = MainRepository.configuredRepository();
 
     public double getTotalAmount() {
         Map<Integer, Invoice> invoiceMap = repository.getInvoiceMap();
