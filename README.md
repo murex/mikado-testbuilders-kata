@@ -1,7 +1,8 @@
-# Test Builders Workshop 
+# Test-Builders Workshop 
 
 Developers working on legacy code are always told to write tests before fixing 
-any bug. In theory, it is very nice, but in practice, it is a lot more tricky!
+any bug. 
+In theory, it is very nice, but in practice, it is a lot more tricky!
 
 We know we need to add tests, but it’s more easily said than done. 
 In legacy codebase, just setting up the objects for the test is most often an 
