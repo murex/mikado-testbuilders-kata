@@ -64,8 +64,8 @@ Having this interface enables us to have different implementations for our
 database (Json, InMemory, Relational, NoSql, etc). 
 
 In this workshop, we wrote a JSON implementation for this Repository interface
-([JsonRepository.java](./src/main/java/com/murex/tbw/storage/JsonRepository.java)). 
-We assumed that we are storing our data in JSON format in a [file](./src/main/resources/repository.json) 
+([JsonRepository.java](../src/main/java/com/murex/tbw/storage/JsonRepository.java)). 
+We assumed that we are storing our data in JSON format in a [file](../src/main/resources/repository.json) 
 under the resources folder.  
 
 On initialization, the class parses the Json file and loads the data into a Map.
@@ -98,12 +98,12 @@ problem:
 
 Let's start by exploring the problem.
 
-Under the resources folder, you can find a JSON file ([repository.json](./src/main/resources/repository.json)) 
+Under the resources folder, you can find a JSON file ([repository.json](../src/main/resources/repository.json)) 
 that contains the data of issued invoices from previous transactions.
 
 > Note that the total amount of each invoice is not included in this list. 
 
-Our Main class ([Application.java](./src/main/java/Application.java)) does the
+Our Main class ([Application.java](../src/main/java/Application.java)) does the
 following: 
 1. Reads the JSON file
 1. Rebuilds the invoices in our current Repository instance 
@@ -115,21 +115,27 @@ following:
 
 ### 2. Now revert
 
-You should have found 2 bugs, one in Invoice, and another one in 
-ReportGenerator. Now that we know what caused the issue, let's try to do the
-fix correctly. We'd like to add a unit test to reproduce the issue first.
+You should have found 2 bugs, one in 
+[Invoice](../src/main/java/com/murex/tbw/purchase/Invoice.java), and another 
+one in
+[ReportGenerator](../src/main/java/com/murex/tbw/report/ReportGenerator.java).
+Now that we know what caused the issue, let's try to do the fix correctly.
+We'd like to add a unit test to reproduce the issue first.
 
 So let's revert!
 
 ### 3. Write a test on Invoice and only then fix it
 
-Let's add the test to Invoice, reproduce the issue, and fix the code. 
+Let's add the test to 
+[Invoice](../src/main/java/com/murex/tbw/purchase/Invoice.java), reproduce the
+issue, and fix the code. 
 
 ### 4. [BONUS] Write a test on ReportGenerator and only then fix it
 
-If you have the time, do the same for ReportGenerator: add a test, reproduce
-and fix.
+If you have the time, do the same for
+[ReportGenerator](../src/main/java/com/murex/tbw/report/ReportGenerator.java):
+add a test, reproduce and fix.
 
 ## Mini Retro
 
-Take a few minutes to discuss the goods and the bads of this approach.
+Take a few minutes to discuss the good and the bad of this approach.
