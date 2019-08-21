@@ -28,3 +28,7 @@ What could we do against these problems?
 
 How would these problems become in the legacy code base you deal with everyday?
 What could we do against these problems?
+
+### 4 - Mikado Method to the Rescue
+
+`TODO`
