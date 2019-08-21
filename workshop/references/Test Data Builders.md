@@ -53,12 +53,13 @@ Using the above code-snippet, we can create an instance of France with this code
             .build();
 
 ## Benefits
-Here are some 
+Mainly, Test Data Builders helps us create tests that are expressive and 
+more resilient to change. Test Builders Help us: 
 1. Wrap up most of the syntax noise when creating new objects 
 1. Make default case simple, and special cases not much complicated
 1. Protect tests against changes in the object structure. Existing tests will 
-not fail if a new field is adding to an existing object.  
-1. Makes core more readable and easier to spot the errors
+not fail if new fields were added to existing objects.  
+1. Make test code more readable and easier to spot the errors
 
 ## Variations
 
