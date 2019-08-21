@@ -41,3 +41,6 @@ workshop with many developers.
 [Introduction.md](./workshop/1%20-%20Introduction.md)
 * The kata is under [MIT License](./LICENSE), contributing instructions are in
 [Contributing.md](./Contributing.md)
+
+----
+[Start...](./workshop/1%20-%20Introduction.md)

@@ -18,3 +18,6 @@ data builders and the mikado method, to add tests without stopping feature
 delivery.
 
 You'll be programming in pairs for most of the workshop.
+
+----
+[Continue...](./2%20-%20Easy%20Fix%20Difficult%20Test.md)

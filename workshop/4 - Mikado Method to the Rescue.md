@@ -72,5 +72,8 @@ Let's do a more thorough retrospective this time.
 
 3- If you want, volunteer to share it with everyone
 
-4- You can also check what usually say in
+4- You can also check what people usually say in
 [Animation Guide.md](./Animation%20Guide.md)
+
+----
+[Continue...](./5%20-%20Conclusion.md)

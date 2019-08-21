@@ -25,3 +25,6 @@ Take a few minutes to discuss the good and the bad of this approach.
 
 Then compare them to what people usually say in
 [Animation Guide.md](./Animation%20Guide.md)
+
+----
+[Continue...](./4%20-%20Mikado%20Method%20to%20the%20Rescue.md)

@@ -43,8 +43,11 @@ builders.
 | Avoids mocks                                  |                                   |
 | You don't need full-fledged builders to start |                                   |
 
-How do you think you could apply these techniques in the legacy code base you
-deal with every day?
+Ideas to apply this in your daily work:
+
+* Do this workshop with your team
+* Stick test mikado graphs on the wall, so that everyone can contribute
+* Try it on the next bug you have to deal with, while pairing with a buddy
 
 ## Pedagogy
 
