@@ -1,19 +1,22 @@
 # Test Data Builders
 
 ## Summary
+
 'Test Data Builders' is technique that leverages on the [Builder Pattern](https://en.wikipedia.org/wiki/Builder_pattern#Java) 
 to construct complex objects in tests.  
-With 'Test Data Builders' we can emmit fields or properties that do not 
+With 'Test Data Builders' we can omit fields or properties that do not 
 contribute to the behavior of the object being tested.  
 A test data builder class has the following features: 
-1. Has a field for each constructor parameter 
-1. The fields are initialized to a default safe value
-1. Has 'chainable' public methods to override the default values 
-1. Has a 'build' method that returns an instance of object initialized with 
+
+1. A field for each constructor parameter 
+2. The fields are initialized to a default safe value
+3. Fluent public methods to override the default values
+4. A 'build' method that returns an instance of object initialized with 
 the fields' values. 
 
 ## Examples
-Below is an example of a TestBuilder for the Country object we in our code:
+
+Below is an example of a TestBuilder for the Country object from our code:
 
     public class CountryTestBuilder {
         private String name = "";
@@ -53,13 +56,15 @@ Using the above code-snippet, we can create an instance of France with this code
             .build();
 
 ## Benefits
+
 Mainly, Test Data Builders helps us create tests that are expressive and 
-more resilient to change. Test Builders Help us: 
-1. Wrap up most of the syntax noise when creating new objects 
-1. Make default case simple, and special cases not much complicated
-1. Protect tests against changes in the object structure. Existing tests will 
-not fail if new fields were added to existing objects.  
-1. Make test code more readable and easier to spot the errors
+more resilient to change. Test Data Builders achieve this by: 
+
+1. Wrapping up most of the syntax noise when creating new objects 
+2. Making the default case simple, and special cases not much complicated
+3. Protecting tests against changes in the object structure. Existing tests
+will not fail if new fields were added to existing objects.
+4. Making test code more readable and easier to spot the errors
 
 ## Variations
 
