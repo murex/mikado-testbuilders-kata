@@ -58,10 +58,11 @@ for France with this code:
 
     import static com.murex.tbw.domain.country.Currency.US_DOLLAR;
     import static com.murex.tbw.domain.country.Language.ENGLISH;
+    import static com.murex.tbw.domain.country.CountryTestBuilder.aCountry;
     
     @Test
     public void test() {
-        Country france = CountryTestBuilder.aCountry()
+        Country france = aCountry()
                 .withName("France")
                 .withCurrency(EURO)
                 .withLanguage(FRENCH)
@@ -92,12 +93,11 @@ Knowing that both have Euro as a currency, we can do the following:
 
     import static com.murex.tbw.domain.country.Currency.US_DOLLAR;
     import static com.murex.tbw.domain.country.Language.ENGLISH;
+    import static com.murex.tbw.domain.country.CountryTestBuilder.aCountry;
     
     @Test
     public void test() {
-        CountryTestBuilder europeCountryBuilder = CountryTestBuilder
-                .aCountry()
-                .withCurrency(EURO);
+        CountryTestBuilder europeCountryBuilder = aCountry().withCurrency(EURO);
 
         Country france = europeCountryBuilder
                 .withName("France")
@@ -118,6 +118,27 @@ duplicated code in tests!
 ## Variations
 
 ### Test Constants
+Another approach that can help reduce duplication in the tests is by using 
+Tests Constants. Those constants can be initialed: 
+1. using the Test Data Builder or calling constructor directly 
+1. in a separate class or the Test Class it self. 
+
+For example, we can initialize the instances of France and Germany this way:
+
+    import static com.murex.tbw.domain.country.Currency.EURO;
+    import static com.murex.tbw.domain.country.Language.GERMAN;
+    import static com.murex.tbw.domain.country.CountryTestBuilder.aCountry;
+    
+    public final class TestConstants {
+        public final Country FRANCE = new Country("France", EURO, Language.FRENCH);
+        
+        public final Country GERMANY = aCountry()
+                .withName("Germany")
+                .withCurrency(EURO)
+                .withLanguage(GERMAN)
+                .build();
+    }
+
 ### Dealing with dependencies in constructors with JUnitRules or RAII
 
 inject a fake (cf Working effectively with Legacy Code)
