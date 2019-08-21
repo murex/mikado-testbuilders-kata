@@ -38,6 +38,6 @@ workshop with many developers.
 ## Where to start
 
 * All kata instructions are in the workshop folder. It starts with the
-[Introduction](./workshop/1%20-%20Introduction.md)
+[Introduction.md](./workshop/1%20-%20Introduction.md)
 * The kata is under [MIT License](./LICENSE), contributing instructions are in
 [Contributing.md](./Contributing.md)

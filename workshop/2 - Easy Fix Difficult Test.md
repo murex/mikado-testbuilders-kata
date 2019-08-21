@@ -128,7 +128,11 @@ So let's revert!
 
 Let's add the test to 
 [Invoice](../src/main/java/com/murex/tbw/purchase/Invoice.java), reproduce the
-issue, and fix the code. 
+issue, and fix the code.
+
+Mocking a legacy code base is not a great idea. The only fake we are allowed is
+the 
+[InMemoryRepository](../src/test/java/com/murex/tbw/storage/InMemoryRepository.java)
 
 ### 4. [BONUS] Write a test on ReportGenerator and only then fix it
 
@@ -139,3 +143,6 @@ add a test, reproduce and fix.
 ## Mini Retro
 
 Take a few minutes to discuss the good and the bad of this approach.
+
+Then compare them to what people usually say in
+[Animation Guide.md](./Animation%20Guide.md)
