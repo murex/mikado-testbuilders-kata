@@ -2,9 +2,9 @@
 
 ## Summary
 'Test Data Builders' is technique that leverages on the [Builder Pattern](https://en.wikipedia.org/wiki/Builder_pattern#Java) 
-to construct complex objects in tests. With 'Test Data Builders' we can emmit 
-fields or properties that do not contribute to the behavior of the object
-being tested.  
+to construct complex objects in tests.  
+With 'Test Data Builders' we can emmit fields or properties that do not 
+contribute to the behavior of the object being tested.  
 A test data builder class has the following features: 
 1. Has a field for each constructor parameter 
 1. The fields are initialized to a default safe value
@@ -51,6 +51,14 @@ Using the above code-snippet, we can create an instance of France with this code
             .withCurrency(Currency.EURO)
             .withLanguage(Language.FRENCH)
             .build();
+
+## Benefits
+Here are some 
+1. Wrap up most of the syntax noise when creating new objects 
+1. Make default case simple, and special cases not much complicated
+1. Protect tests against changes in the object structure. Existing tests will 
+not fail if a new field is adding to an existing object.  
+1. Makes core more readable and easier to spot the errors
 
 ## Variations
 
