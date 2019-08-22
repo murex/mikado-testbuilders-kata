@@ -1,5 +1,7 @@
 # Animation Guide
 
+![A lego hiker guiding is way with a compass and a map](./images/guide.jpg)
+
 Here are information to run this workshop.
 
 ## Time Table
@@ -100,7 +102,7 @@ We are trying to maximize self-learning as much as possible in this workshop.
 That's why there is a lot of time reserved for coding. We also borrowed
 techniques from [Training from the Back of the Room](https://www.goodreads.com/book/show/8141935-training-from-the-back-of-the-room)
 
-[![Cover of the Book Training from the Back of the Room](./training-from-the-back-of-the-room-cover.jpg)](https://www.goodreads.com/book/show/8141935-training-from-the-back-of-the-room)
+[![Cover of the Book Training from the Back of the Room](images/training-from-the-back-of-the-room-cover.jpg)](https://www.goodreads.com/book/show/8141935-training-from-the-back-of-the-room)
 
 ### Turn and talk Energizer
 

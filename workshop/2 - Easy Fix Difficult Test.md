@@ -1,5 +1,7 @@
 # Easy Fix, Difficult Test
 
+![A pipe fixed with wrenches](images/quick-fix.jpg)
+
 ## Here is the sample app
 
 ### What does it do?

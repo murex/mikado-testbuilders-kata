@@ -1,5 +1,7 @@
 # Mikado Method to the rescue
 
+![Mikado game sticks](images/mikado-sticks.jpg)
+
 Test Data Builders make writing new tests faster once you have them.
 Unfortunately, they take even longer to write in the first place!
 

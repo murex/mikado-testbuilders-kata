@@ -1,5 +1,7 @@
 # Conclusion
 
+![2 children raising arms in victory in front of a laptop](images/win-win.jpg)
+
 That's all folks!
 
 ## Other Takeaways and important points

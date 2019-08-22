@@ -1,6 +1,6 @@
 # Test Data Builders
 
-![IMAGE](./GrowingObjectOrientedSoftwareGuidedByTests.PNG)
+![IMAGE](../images/GrowingObjectOrientedSoftwareGuidedByTests.PNG)
 
 ## Summary
 
