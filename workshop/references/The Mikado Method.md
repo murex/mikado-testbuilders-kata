@@ -28,7 +28,7 @@ previous steps in a Mikado graph format.
 
 Below is an example taken from the book (The Mikado Method) 
 
-![IMAGE](./TheMikadoMethod_Visualize.jpg)
+![IMAGE](../images/mikado-method-visualize-example.jpg)
 
 ### Undo  
 After visualizing a Mikado Graph, you should undo your changes to get back to
