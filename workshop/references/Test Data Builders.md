@@ -20,6 +20,7 @@ the fields' values.
 
 Below is an example of a TestBuilder for the Country object from our code:
 
+```java
     import static com.murex.tbw.domain.country.Currency.US_DOLLAR;
     import static com.murex.tbw.domain.country.Language.ENGLISH;
     
@@ -51,11 +52,13 @@ Below is an example of a TestBuilder for the Country object from our code:
             return new Country(name, currency, language);
         }   
     }
+```
 
 By using the above builder, we can now easily create an a country instance 
 for France with this code: 
 > Note that using the static imports made our code even clearer and shorter    
 
+```java
     import static com.murex.tbw.domain.country.Currency.US_DOLLAR;
     import static com.murex.tbw.domain.country.Language.ENGLISH;
     import static com.murex.tbw.domain.country.CountryTestBuilder.aCountry;
@@ -68,6 +71,7 @@ for France with this code:
                 .withLanguage(FRENCH)
                 .build();
     }
+```
 
 ## Benefits
 
@@ -91,6 +95,7 @@ Test Data Builders can help creating similar objects in a cleaner way.
 For example, assume we want to create country instances for France and Germany. 
 Knowing that both have Euro as a currency, we can do the following: 
 
+```java
     import static com.murex.tbw.domain.country.Currency.US_DOLLAR;
     import static com.murex.tbw.domain.country.Language.ENGLISH;
     import static com.murex.tbw.domain.country.CountryTestBuilder.aCountry;
@@ -109,6 +114,7 @@ Knowing that both have Euro as a currency, we can do the following:
                 .withLanguage(GERMAN)
                 .build();
     }
+```
 
 In most cases with more complex code, this approach will also help get rid of 
 duplicated code in tests!
@@ -121,6 +127,7 @@ builder class should contain an instance of the respective Country as well.
 Instead of passing an instance of Country as parameter to the withCountry 
 method, we can pass an instance of CountryTestBuilder as shown below: 
 
+```java
     public class AuthorTestBuilder {
         private String name = "";
         private CountryTestBuilder countryTestBuilder;
@@ -143,9 +150,11 @@ method, we can pass an instance of CountryTestBuilder as shown below:
             return new Author(name, countryTestBuilder.build());
         }
     } 
+```
 
 Here is an example of how to build an instance of the Author class:
- 
+
+```java 
     @Test 
     public static void test() {
         Author author = anAuthor()
@@ -156,6 +165,7 @@ Here is an example of how to build an instance of the Author class:
                         .withLanguage(Language.FRENCH))
                 .build();
     }
+```
 
 ## Variations
 
@@ -167,6 +177,7 @@ Tests Constants. Those constants can be initialized:
 
 For example, we can initialize the instances of France and Germany this way:
 
+```java
     import static com.murex.tbw.domain.country.Currency.EURO;
     import static com.murex.tbw.domain.country.Language.GERMAN;
     import static com.murex.tbw.domain.country.CountryTestBuilder.aCountry;
@@ -180,6 +191,7 @@ For example, we can initialize the instances of France and Germany this way:
                 .withLanguage(GERMAN)
                 .build();
     }
+```
 
 ### Dealing with dependencies in constructors with JUnitRules or RAII
 
@@ -201,31 +213,33 @@ Here's a technique inspired from [Working Effectively with Legacy Code](https://
 * Inject it before the test
 
 ```java
-@Before public void
-setUp() {
-     MainRepository.override(new InMemoryRepository());
-}
+    @Before public void
+    setUp() {
+         MainRepository.override(new InMemoryRepository());
+    }
 ```
 
 * Remove the fake after the test
 
 ```java
-@After public void
-tearDown() {
-     MainRepository.reset();
-}
+    @After public void
+    tearDown() {
+         MainRepository.reset();
+    }
 ```
 
 One drawback of this solution is that we must not forget to reset the injected
 dependency after each test.
 
-One nice thing about TestDataBuilders is that they compose well with the Mikado
-Method and make their dependencies explicit. With a bit of syntaxic sugar, we
-can fix all of these problems here.
+Using [JUnit 4 Rules](https://www.testwithspring.com/lesson/introduction-to-junit-4-rules/),
+[JUnit 5 Extensions](https://www.baeldung.com/junit-5-extensions), or 
+[C++ RAII](https://en.cppreference.com/w/cpp/language/raii), it is possible to
+wrap this dependency injection in a small object that can be reused across many
+tests. A bit like Test Data Builders.
+
+### Making implicit dependencies explicit
 
 `TODO`
-Use something to rollback
-These small bricks are compatible with Mikado
 
 ### Dealing with cyclic dependencies between objects
 
