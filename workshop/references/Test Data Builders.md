@@ -193,7 +193,7 @@ For example, we can initialize the instances of France and Germany this way:
     }
 ```
 
-### Dealing with dependencies in constructors with JUnitRules or RAII
+### Wrapping dependencies in small test objects
 
 Objects in legacy code are often very messy! It is very common to have an
 object you need to instantiate in your test doing some problematic side
@@ -234,8 +234,8 @@ dependency after each test.
 Using [JUnit 4 Rules](https://www.testwithspring.com/lesson/introduction-to-junit-4-rules/),
 [JUnit 5 Extensions](https://www.baeldung.com/junit-5-extensions), or 
 [C++ RAII](https://en.cppreference.com/w/cpp/language/raii), it is possible to
-wrap this dependency injection in a small object that can be reused across many
-tests. A bit like Test Data Builders.
+wrap this dependency injection life-cycle in a small object that can be easily
+reused across many tests. A bit like Test Data Builders.
 
 ### Making implicit dependencies explicit
 
