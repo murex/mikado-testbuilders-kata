@@ -243,7 +243,16 @@ reused across many tests. A bit like Test Data Builders.
 
 ### Dealing with cyclic dependencies between objects
 
-esp mutable things!
+Cyclic dependency between objects is very common in Legacy code. That adds 
+complexity to the testing phase.   
+Here again, test data builders can help us!   
+Assume you have 2 objects that are cyclically dependent: 
+1. Create a Test Data Builder for each class 
+1. Create a parent Test Data Builder and let it handle creating the cyclic 
+dependency between the objects. 
+
+Be aware that in this case things might become a bit messy especially if you 
+have a big number of interdependent objects!  
 
 ## References
 1. [Growing Object-Oriented Software, Guided by Tests](https://www.goodreads.com/book/show/4268826-growing-object-oriented-software-guided-by-tests)
