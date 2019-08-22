@@ -54,7 +54,7 @@ Below is an example of a TestBuilder for the Country object from our code:
 
 By using the above builder, we can now easily create an a country instance 
 for France with this code: 
-> Note that using the static imports made our code even clearer     
+> Note that using the static imports made our code even clearer and shorter    
 
     import static com.murex.tbw.domain.country.Currency.US_DOLLAR;
     import static com.murex.tbw.domain.country.Language.ENGLISH;
@@ -119,7 +119,7 @@ duplicated code in tests!
 
 ### Test Constants
 Another approach that can help reduce duplication in the tests is by using 
-Tests Constants. Those constants can be initialed: 
+Tests Constants. Those constants can be initialized: 
 1. using the Test Data Builder or calling constructor directly 
 1. in a separate class or the Test Class it self. 
 
@@ -146,3 +146,7 @@ Use something to rollback
 These small bricks are compatible with Mikado
 
 ### Dealing with cyclic dependencies between objects
+
+
+## References
+1. [Growing Object-Oriented Software, Guided by Tests](https://www.amazon.com/Growing-Object-Oriented-Software-Guided-Tests/dp/0321503627)
