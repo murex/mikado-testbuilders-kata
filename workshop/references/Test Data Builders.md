@@ -239,7 +239,44 @@ reused across many tests. A bit like Test Data Builders.
 
 ### Making implicit dependencies explicit
 
-`TODO`
+One thing that makes legacy code difficult to test is that dependencies are
+most the time implicit. You might instantiate an object to discover that it
+crashes at runtime because it accesses an uninitialized dependency.
+
+One nice thing about creating small objects to wrap implicit dependency
+injection (cf Wrapping dependencies in small test objects) is that we can use
+them as explicit builder argument.
+
+If an object has an implicit dependency, add a mandatory argument to its
+builder! Make sure the only way to get this object is through the dependency
+injection wrapper.
+
+Here is an example, using [JUnit5 Extensions](https://www.baeldung.com/junit-5-extensions),
+and the [Repository](../../src/main/java/com/murex/tbw/storage/Repository.java).
+
+```java
+@ExtendWith(InMemoryRepositoryInjector.class)
+class ReportGeneratorTest {
+
+    private final InMemoryRepositoryInjector.InMemoryRepository repository;
+    
+    // The InMemoryRepository is provided by the injection wrapper
+    ReportGeneratorTest(InMemoryRepositoryInjector.InMemoryRepository repository) {
+        this.repository = repository;
+    }
+
+    @Test public void
+    total_amount_should_convert_all_invoices_to_USD() {
+        repository.addInvoice(anInvoice().build());
+        
+        // Eventhough ReportGenerator constructor has no arguments
+        // the builder requires an InMemoryRepository
+        // The only way to get one is through InMemoryRepositoryInjector 
+        ReportGenerator reportGenerator = aReportGenerator(repository).build();
+        // ...
+    }
+}
+```
 
 ### Dealing with cyclic dependencies between objects
 
@@ -254,6 +291,6 @@ dependency between the objects.
 Be aware that in this case things might become a bit messy especially if you 
 have a big number of interdependent objects!  
 
-## References
+## Book References
 1. [Growing Object-Oriented Software, Guided by Tests](https://www.goodreads.com/book/show/4268826-growing-object-oriented-software-guided-by-tests)
 2. [Working Effectively with Legacy Code](https://www.goodreads.com/book/show/44919.Working_Effectively_with_Legacy_Code)
