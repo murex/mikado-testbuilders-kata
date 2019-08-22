@@ -183,12 +183,54 @@ For example, we can initialize the instances of France and Germany this way:
 
 ### Dealing with dependencies in constructors with JUnitRules or RAII
 
-inject a fake (cf Working effectively with Legacy Code)
+Objects in legacy code are often very messy! It is very common to have an
+object you need to instantiate in your test doing some problematic side
+effect in its constructor. Loading something from the DB is the canonical
+example. We cannot use Test Data Builders by the book in this situation.
+
+We have a small example of this in this codebase, with the [ReportGenerator](../../src/main/java/com/murex/tbw/report/ReportGenerator.java)
+constructor calling the [MainRepository](../../src/main/java/com/murex/tbw/MainRepository.java)
+singleton directly.
+
+Here's a technique inspired from [Working Effectively with Legacy Code](https://www.goodreads.com/book/show/44919.Working_Effectively_with_Legacy_Code)
+
+* Find a place where you can inject a different implementation (here,
+  [Repository](../../src/main/java/com/murex/tbw/storage/Repository.java))
+* Write an in-memory fake implementation of this implementation (here, it
+  already exists in [InMemoryRepository](../../src/test/java/com/murex/tbw/storage/InMemoryRepository.java))
+* Inject it before the test
+
+```java
+@Before public void
+setUp() {
+     MainRepository.override(new InMemoryRepository());
+}
+```
+
+* Remove the fake after the test
+
+```java
+@After public void
+tearDown() {
+     MainRepository.reset();
+}
+```
+
+One drawback of this solution is that we must not forget to reset the injected
+dependency after each test.
+
+One nice thing about TestDataBuilders is that they compose well with the Mikado
+Method and make their dependencies explicit. With a bit of syntaxic sugar, we
+can fix all of these problems here.
+
+`TODO`
 Use something to rollback
 These small bricks are compatible with Mikado
 
 ### Dealing with cyclic dependencies between objects
 
+esp mutable things!
 
 ## References
-1. [Growing Object-Oriented Software, Guided by Tests](https://www.amazon.com/Growing-Object-Oriented-Software-Guided-Tests/dp/0321503627)
+1. [Growing Object-Oriented Software, Guided by Tests](https://www.goodreads.com/book/show/4268826-growing-object-oriented-software-guided-by-tests)
+2. [Working Effectively with Legacy Code](https://www.goodreads.com/book/show/44919.Working_Effectively_with_Legacy_Code)
