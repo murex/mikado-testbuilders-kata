@@ -213,7 +213,7 @@ Here's a technique inspired from [Working Effectively with Legacy Code](https://
 * Inject it before the test
 
 ```java
-    @Before public void
+    @BeforeEach public void
     setUp() {
          MainRepository.override(new InMemoryRepository());
     }
@@ -222,7 +222,7 @@ Here's a technique inspired from [Working Effectively with Legacy Code](https://
 * Remove the fake after the test
 
 ```java
-    @After public void
+    @AfterEach public void
     tearDown() {
          MainRepository.reset();
     }

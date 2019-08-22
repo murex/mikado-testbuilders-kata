@@ -5,18 +5,16 @@ import com.murex.tbw.storage.Repository;
 
 public final class MainRepository {
 
-    private static MainRepository runningRepository = null;
-    private Repository repository;
+    private static Repository runningRepository;
 
     private MainRepository() {
-        repository = new JsonRepository();
     }
 
     public static Repository configuredRepository() {
         if (runningRepository == null) {
-            runningRepository = new MainRepository();
+            runningRepository = new JsonRepository();
         }
-        return runningRepository.repository;
+        return runningRepository;
     }
 
     /* Working effectively with Legacy Code
@@ -24,10 +22,10 @@ public final class MainRepository {
      */
     @Deprecated
     public void override(Repository newRepository) {
-        repository = newRepository;
+        runningRepository = newRepository;
     }
     @Deprecated
     public void reset() {
-        repository = new JsonRepository();
+        runningRepository = new JsonRepository();
     }
 }
