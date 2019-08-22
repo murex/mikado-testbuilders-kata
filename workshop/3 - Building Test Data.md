@@ -12,6 +12,11 @@ handful to build test data. They should help us here.
 You'll find resource about Test Data Builders 
 [here](./references/Test%20Data%20Builders.md) or on your room walls.
 
+### Rapid Response Question
+
+> As a group, what are the top 5 most important things about the Test Data
+> Builders?
+
 ## Give it a try
 
 Now that you know everything about Test Data Builders, try to use them to

@@ -1,9 +1,54 @@
 # Animation Guide
 
+Here are information to run this workshop.
+
 ## Time Table
 
-TODO
+Here is a typical time table to make the workshop stick in 2 hours and 30
+minutes. With this length, tests and work on ReportGenerator is a 'bonus'
+depending on the time we have. With a bit more time, it could become a
+standard part of the workshop.
 
+### 1 - Introduction (5 minutes)
+
+| Phase | Length | Start | End |
+|-------|--------|-------|-----|
+| Present the learning goal | 2 | 0 | 2 |
+| Energizer | 3 | 2 | 5 |
+	
+### 2 - Easy Fix, Difficult Test (50 minutes)
+
+| Phase | Length | Start | End |
+|-------|--------|-------|-----|
+| Present the code and the exercise | 10 | 5 | 15 |
+| In pairs, fix the bugs | 10 | 15 | 25
+| Rollback Invoice, write a test and fix, same with ReportGenerator (bonus) | 25 | 25 | 50 |
+| Mini retro | 5 | 50 | 55 |
+	
+### 3 - Building Test Data (25 minutes)
+
+| Phase | Length | Start | End |
+|-------|--------|-------|-----|
+| Present test data builders | 10 | 55 | 65 |
+| Let them try to use in InvoiceTest | 10 | 65 | 75 |
+| Mini retro | 5 | 75 | 80 |
+	
+### 4 - Mikado Method to the Rescue (60 minutes)
+
+| Phase | Length | Start | End |
+|-------|--------|-------|-----|
+| Present Mikado graph | 10 | 80 | 90 |
+| Live code beginning of Mikado | 10 | 90 | 100 |
+| Delete tests, and use 2 techniques to add InvoiceTest, continue on ReportGeneratorTest (bonus) | 30 | 100 | 130 |
+| Mini retro | 10 | 130 | 140 |
+	
+### 5 - Conclusion (10 minutes)
+
+| Phase | Length | Start | End |
+|-------|--------|-------|-----|
+| Conclusion | 5 | 140 | 145 |
+| Q&A | 5 | 145 | 150 |
+	
 ## Retrospectives
 
 Here are the topics that usually come up during mini-retros
@@ -51,12 +96,51 @@ Ideas to apply this in your daily work:
 
 ## Pedagogy
 
-`TODO` 
+We are trying to maximize self-learning as much as possible in this workshop.
+That's why there is a lot of time reserved for coding. We also borrowed
+techniques from [Training from the Back of the Room](https://www.goodreads.com/book/show/8141935-training-from-the-back-of-the-room)
 
-Training from the back of the room
-* Turn and talk
-* rapid response
-* paired work
-* Teach back in mini-retros
-* Wall and Web centers
-* Learning logs
+[![Cover of the Book Training from the Back of the Room](./training-from-the-back-of-the-room-cover.jpg)](https://www.goodreads.com/book/show/8141935-training-from-the-back-of-the-room)
+
+### Turn and talk Energizer
+
+People will need to pair for programming, so it's a good icebreaker to get them
+to meet and discuss the topic at the beginning
+
+### Rapid Response during Lectures
+
+After presenting the Test Data Builders and the Mikado Method, we'll ask some
+questions to the attendees to check their understanding. It will also help them
+to assess what they learned after programming.
+
+### Wall and Web centers
+
+This collection of markdown files contains 2 'Web Centers':
+* [Test Data Builders](./references/Test%20Data%20Builders.md)
+* [The Mikado Method](./references/The%20Mikado%20Method.md)
+
+These are web pages where attendees can look for clues as to how to get through
+the exercise.
+
+If you are running the workshop in a room, you can create physical Wall Centers
+with real copies of books, and printouts of articles
+* [The Mikado Method](https://www.goodreads.com/book/show/17974534-the-mikado-method)
+* [Growing Object-Oriented Software, Guided by Tests](https://www.goodreads.com/book/show/4268826-growing-object-oriented-software-guided-by-tests?from_search=true)
+* [Working Effectively with Legacy Code](https://www.goodreads.com/book/show/44919.Working_Effectively_with_Legacy_Code?ac=1&from_search=true)
+* ...
+
+### Pair programming
+
+Will act as a kind of 'Paired Teach Back' activity all along.
+
+### Stand and Talk for Mini-Retros
+
+Mini retros start by asking a simple question like "What worked well and what
+did not". This will make the attendees think before they can state their answer
+in front of all the class. Following on with other insightful questions will
+help them to envision how to use their new knowledge.
+
+### Learning logs as a Conclusion
+
+By writing down what they think they can do with their new knowledge, attendees
+have a higher chance of actually using it in their daily work.

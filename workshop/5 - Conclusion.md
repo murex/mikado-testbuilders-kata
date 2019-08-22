@@ -7,9 +7,11 @@ That's all folks!
 Test Data Builders and the Mikado Method are only some of the legacy-
 refactoring techniques out there:
 
-* Golden Master Testing (or Approval Testing)
-* Strangler application
-* Bubble Context (or Anti-Corruption Layer extraction)
+* [Golden Master Testing](https://blog.thecodewhisperer.com/permalink/surviving-legacy-code-with-golden-master-and-sampling)
+  (or [Approval Testing](https://approvaltests.com/))
+* [Strangler application](https://martinfowler.com/bliki/StranglerFigApplication.html)
+* [Bubble Context](http://domainlanguage.com/wp-content/uploads/2016/04/GettingStartedWithDDDWhenSurroundedByLegacySystemsV1.pdf)
+  (or extracting an [Anti-Corruption Layer](https://dev.to/asarnaout/the-anti-corruption-layer-pattern-pcd))
  
 We can combine most of them as we did today. These combinations are more
 powerful than the each technique separately. This is the case where 
@@ -18,7 +20,7 @@ powerful than the each technique separately. This is the case where
 
 When we started to coach teams about refactoring, experience had taught us that
 that legacy code bases had to go through a long and painful refactoring phase 
-before we could apply agile-coding practices like TDD.
+before we could apply agile-coding practices like Test Driven Development.
 
 We are now convinced that it is possible to jump into TDD much faster, in 
 almost any code base, as long as you learn the skills.

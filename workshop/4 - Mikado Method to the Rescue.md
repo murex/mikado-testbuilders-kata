@@ -13,6 +13,11 @@ incrementally do large refactorings, alongside feature delivery.
 You'll find resource about the Mikado Method 
 [here](./references/The%20Mikado%20Method.md) or on your room walls.
 
+### Rapid Response Question
+
+> As a group, what are the top 5 most important things about the the Mikado
+> Method?
+
 ## Live code the beginning of the Mikado Graph here
 
 To help you to get started, here is a demo of how to use the Mikado Method in
