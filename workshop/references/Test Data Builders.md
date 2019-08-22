@@ -114,6 +114,48 @@ In most cases with more complex code, this approach will also help get rid of
 duplicated code in tests!
 
 ### Passing Builders as Parameters 
+We can also pass Test Data Builders as parameters to other Test Data Builders. 
+
+For example, the Author class has Country as one of its fields. Thus, its 
+builder class should contain an instance of the respective Country as well. 
+Instead of passing an instance of Country as parameter to the withCountry 
+method, we can pass an instance of CountryTestBuilder as shown below: 
+
+    public class AuthorTestBuilder {
+        private String name = "";
+        private CountryTestBuilder countryTestBuilder;
+    
+        public static AuthorTestBuilder anAuthor() {
+            return new AuthorTestBuilder();
+        }
+    
+        public AuthorTestBuilder withName(String name) {
+            this.name = name;
+            return this;
+        }
+    
+        public AuthorTestBuilder withCountry(CountryTestBuilder countryTestBuilder) {
+            this.countryTestBuilder = countryTestBuilder;
+            return this;
+        }
+    
+        public Author build() {
+            return new Author(name, countryTestBuilder.build());
+        }
+    } 
+
+Here is an example of how to build an instance of the Author class:
+ 
+    @Test 
+    public static void test() {
+        Author author = anAuthor()
+                .withName("Franz Kafka")
+                .withCountry(aCountry()
+                        .withName("France")
+                        .withCurrency(Currency.EURO)
+                        .withLanguage(Language.FRENCH))
+                .build();
+    }
 
 ## Variations
 
