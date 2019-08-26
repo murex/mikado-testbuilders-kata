@@ -63,6 +63,10 @@ not a problem. Simply update the graph, undo your change, and continue.
 
 (The demo is 7 minutes between 12:25 and 19:30, and it's viewable at x1.5 speed)
 
+[![Live Coding de Refactoring by Philippe - French Version](../images/CPP%20FRUG%20-%20YouTube.jpg)](https://youtu.be/Xp7YeQsV9L4?t=868)
+
+(This video is of one of the sessions by Philippe Bourgau at CPP FRUG in Paris)
+
 ## Different scales
 
 We can apply the concepts of the Mikado Method at different scales. We can be
