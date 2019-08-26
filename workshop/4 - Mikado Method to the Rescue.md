@@ -32,7 +32,7 @@ our particular situation.
 Now that you have a better idea, grab a whiteboard, a marker, some post-its and
 start creating your own mikado graph to add a test.
 
-`TODO drawing`
+![Photo of a whiteboard, markers and post-its, the material needed to draw a Mikado Method](./images/workshop-material.jpg)
 
 ### Delete the tests
 
