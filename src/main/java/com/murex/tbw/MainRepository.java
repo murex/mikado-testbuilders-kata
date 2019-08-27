@@ -20,11 +20,12 @@ public final class MainRepository {
     /* Working effectively with Legacy Code
      * https://www.goodreads.com/book/show/44919.Working_Effectively_with_Legacy_Code
      */
-    @Deprecated
+    // TESTING ONLY
     public void override(Repository newRepository) {
         runningRepository = newRepository;
     }
-    @Deprecated
+
+    // TESTING ONLY
     public void reset() {
         runningRepository = new JsonRepository();
     }
