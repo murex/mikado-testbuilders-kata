@@ -111,7 +111,44 @@ values:
 1. Total number of books sold
 1. Total number of issued invoices
 1. Sum of total amount of all invoices
+
+#### Bug Fixes
+
+One of our developers was able to quickly identify the bugs in the code and provided us with code snippets!  
+
+<details>
+  <summary>Sneak Peek at Bug Fix in Invoice.java</summary>
+
+```diff
+    public double computeTotalAmount() {
+        double sum = 0.0;
+        for (PurchasedBook purchasedBook : purchasedBooks) {
+-           double totalPrice = purchasedBook.getTotalPrice();
++           double totalPrice = purchasedBook.getTotalPrice() * TaxRule.getApplicableRate(country, purchasedBook.getBook());
+            sum += totalPrice;
+        }
+        return sum;
+    } 
+```
+
+</details>
    
+<details>
+  <summary>Sneak Peek at Bug Fix in ReportGenerator.java</summary>
+
+```diff
+    public double getTotalAmount() {
+        Map<Integer, Invoice> invoiceMap = repository.getInvoiceMap();
+        double totalAmount = 0.0;
+        for (Invoice invoice : invoiceMap.values()) {       
+-            totalAmount += invoice.computeTotalAmount();
++            totalAmount += CurrencyConverter.toUSD(invoice.computeTotalAmount(), invoice.getCountry().getCurrency());
+        }
+        return totalAmount;
+    }
+```
+
+</details>
 
 ### 2. Now revert
 

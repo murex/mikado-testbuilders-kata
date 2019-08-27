@@ -21,7 +21,7 @@ public final class TaxRule {
             .put("Germany", 1.22d)
             .build();
 
-    public static double getApplicableTax(Country invoiceCountry, Book book) {
+    public static double getApplicableRate(Country invoiceCountry, Book book) {
         if (invoiceCountry.getName().equals("Germany")) {
             if (book.getAuthor().getNationality().getName().equals("Germany")) {
                 return 1.05;
