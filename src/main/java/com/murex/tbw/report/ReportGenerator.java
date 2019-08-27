@@ -14,15 +14,23 @@ public class ReportGenerator {
 
     public double getTotalAmount() {
         Map<Integer, Invoice> invoiceMap = repository.getInvoiceMap();
-        return invoiceMap.values().stream().mapToDouble(Invoice::computeTotalAmount).sum();
+        double totalAmount = 0.0;
+        for (Invoice invoice : invoiceMap.values()) {
+            totalAmount += invoice.computeTotalAmount();
+        }
+        return totalAmount;
     }
 
     public int getTotalSoldBooks() {
         Map<Integer, Invoice> invoiceMap = repository.getInvoiceMap();
-        return invoiceMap.values().stream().mapToInt(invoice -> {
+        int totalSoldBooks = 0;
+        for (Invoice invoice : invoiceMap.values()) {
             List<PurchasedBook> purchasedBooks = invoice.getPurchasedBooks();
-            return purchasedBooks.stream().mapToInt(PurchasedBook::getQuantity).sum();
-        }).sum();
+            for (PurchasedBook purchasedBook : purchasedBooks) {
+                totalSoldBooks += purchasedBook.getQuantity();
+            }
+        }
+        return totalSoldBooks;
     }
 
     public long getNumberOfIssuedInvoices() {

@@ -45,7 +45,12 @@ public final class Invoice {
     }
 
     public double computeTotalAmount() {
-        return purchasedBooks.stream().mapToDouble(PurchasedBook::getTotalPrice).sum();
+        double sum = 0.0;
+        for (PurchasedBook purchasedBook : purchasedBooks) {
+            double totalPrice = purchasedBook.getTotalPrice();
+            sum += totalPrice;
+        }
+        return sum;
     }
 
     public List<PurchasedBook> getPurchasedBooks() {
