@@ -94,30 +94,30 @@ problem:
 > It's weird because there is code for these in TaxRule and CurrencyConverter!
 > [A senior developer]
 
-## Your mission is to fix it and unit test it
+## Your mission is to fix the bug and unit test the code 
 
-### 1. Explore and test a fix
+### 1. Bug Description 
 
-Let's start by exploring the problem.
-
-Under the resources folder, you can find a JSON file ([repository.json](../src/main/resources/repository.json)) 
-that contains the data of issued invoices from previous transactions.
+The reporting team provided a scenario to reproduce the bug!  
+Under the resources folder, they saved a JSON file ([repository.json](../src/main/resources/repository.json)) that contains 
+some data issued invoices from previous transactions.
 
 > Note that the total amount of each invoice is not included in this list. 
 
-Our Main class ([Application.java](../src/main/java/Application.java)) initializes
+The Main class ([Application.java](../src/main/java/Application.java)) initializes
 an instance of ReportGenerator and then calls the methods to get the 3 report
 values: 
 1. Total number of books sold
 1. Total number of issued invoices
 1. Sum of total amount of all invoices
 
-#### Bug Fixes
+### 2. Bug Fixes
 
-One of our developers was able to quickly identify the bugs in the code and provided us with code snippets!  
+After some analysis, one of our developers was able to quickly identify the bugs
+in the code and provided us with quick fixes!  
 
 <details>
-  <summary>Sneak Peek at Bug Fix in Invoice.java</summary>
+  <summary>Sneak Peek at Bug Fix in [Invoice](../src/main/java/com/murex/tbw/purchase/Invoice.java)</summary>
 
 ```diff
     public double computeTotalAmount() {
@@ -134,7 +134,7 @@ One of our developers was able to quickly identify the bugs in the code and prov
 </details>
    
 <details>
-  <summary>Sneak Peek at Bug Fix in ReportGenerator.java</summary>
+  <summary>Sneak Peek at Bug Fix in [ReportGenerator](../src/main/java/com/murex/tbw/report/ReportGenerator.java)</summary>
 
 ```diff
     public double getTotalAmount() {
@@ -150,12 +150,11 @@ One of our developers was able to quickly identify the bugs in the code and prov
 
 </details>
 
-### 2. Now revert
+### 2. Apply Fixes and Then revert
 
-You should have found 2 bugs, one in 
-[Invoice](../src/main/java/com/murex/tbw/purchase/Invoice.java), and another 
-one in
-[ReportGenerator](../src/main/java/com/murex/tbw/report/ReportGenerator.java).
+If you apply the above 2 patches to your code and re-run the Main class, you 
+should see the correct values printed.  
+
 Now that we know what caused the issue, let's try to do the fix correctly.
 We'd like to add a unit test to reproduce the issue first.
 
