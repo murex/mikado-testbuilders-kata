@@ -27,6 +27,9 @@ our particular situation.
 
 [![Video of the beginning of the solution](./images/Testing%20legacy%20code%20with%20Mikado%20Method%20and%20Test%20Data%20Builders%20-%20YouTube.jpg)](https://www.youtube.com/watch?v=2wIb8kdxay4&feature=youtu.be)
 
+Below is a screen-shot of the Mikado Graph from the video: 
+![screen capture](./images/MIkdaoScreenCapture.PNG) 
+
 ## DIY
 
 Now that you have a better idea, grab a whiteboard, a marker, some post-its and
