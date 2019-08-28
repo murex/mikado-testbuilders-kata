@@ -27,10 +27,18 @@ our particular situation.
 
 [![Video of the beginning of the solution](./images/Testing%20legacy%20code%20with%20Mikado%20Method%20and%20Test%20Data%20Builders%20-%20YouTube.jpg)](https://www.youtube.com/watch?v=2wIb8kdxay4&feature=youtu.be)
 
-Below is a screen-shot of the Mikado Graph from the video: 
+### Video Screen Shots 
+
+#### Mikado Graph
+
+<details>
+  <summary>Screen-shot of the Mikado Graph from the video</summary>
+  
 ![screen capture](./images/MIkdaoScreenCapture.PNG) 
 
-### Code Snippets 
+</details>
+
+#### Code Snippets 
 
 <details>
   <summary>Code of InvoiceTest from the video</summary>
