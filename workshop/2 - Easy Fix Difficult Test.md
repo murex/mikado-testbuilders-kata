@@ -29,7 +29,7 @@ have the following properties:
 1. The Invoice is sent to the customer and a copy of it is saved in our 
 repository for future reference   
 
-> It is important to note that each country has its own tax rates and tax 
+>Tip: It is important to note that each country has its own tax rates and tax 
 reduction rules. You can find a table of those rules below.  
  
 #### 2. Reporting Portal
@@ -71,6 +71,9 @@ In this workshop, we wrote a JSON implementation for this Repository interface
 We assumed that we are storing our data in JSON format in a [file](../src/main/resources/repository.json) 
 under the resources folder.  
 
+> Tip: Reading the repository.json file might help you understand the structure
+of the code faster.  
+
 On initialization, the class parses the Json file and loads the data into a Map.
  
 The MainRepository singleton returns the currently configured Repository.
@@ -102,7 +105,7 @@ The reporting team provided a scenario to reproduce the bug!
 Under the resources folder, they saved a JSON file ([repository.json](../src/main/resources/repository.json)) that contains 
 some data issued invoices from previous transactions.
 
-> Note that the total amount of each invoice is not included in this list. 
+> Tip: The total amount of each invoice is not included in this list. 
 
 The Main class ([Application.java](../src/main/java/Application.java)) initializes
 an instance of ReportGenerator and then calls the methods to get the 3 report
