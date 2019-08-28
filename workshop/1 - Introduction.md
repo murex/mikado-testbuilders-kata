@@ -12,7 +12,7 @@ with an activity that will get you to know each other.
 
 ## Before we start! 
 
-On a piece of paper, note down your 1-2 expectation(s) out of this workshop. 
+On a piece of paper, note down your 1 or 2 expectation(s) out of this workshop.
 
 ## Organization of this workshop
 

@@ -133,16 +133,19 @@ this test.
 
 Let's do a more thorough retrospective this time.
 
-1- Take a few minutes to write 1 or 2 paragraphs to answer this question:
+1- Have this workshop fulfill your expectations?
+> Go back to the note you wrote at the beginning of the workshop   
+
+2- Take a few minutes to write 1 or 2 paragraphs to answer this question:
 
 > For you, what are the most important concepts and insights from this
 > training? How do you plan to use what you’ve learned?
 
-2- Read it to your pair, and discuss
+3- Read it to your pair, and discuss
 
-3- If you want, volunteer to share it with everyone
+4- If you want, volunteer to share it with everyone
 
-4- You can also check what people usually say in
+5- You can also check what people usually say in
 [Animation Guide.md](./Animation%20Guide.md)
 
 ----
