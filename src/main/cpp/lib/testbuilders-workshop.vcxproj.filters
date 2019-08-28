@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="client">
+      <UniqueIdentifier>{b3a86061-aa2a-415a-9954-9d0ae75124c1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="domain">
+      <UniqueIdentifier>{c5093452-8ec0-4a86-acab-809044a594ee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="finance">
+      <UniqueIdentifier>{b607cc3d-a713-4b4f-8e2c-3ebcf91aef55}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="purchase">
+      <UniqueIdentifier>{1a47d100-f18b-4482-89df-5b1452c0d646}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="report">
+      <UniqueIdentifier>{b196c653-ab1c-4fa8-823d-e099fafc1f82}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="storage">
+      <UniqueIdentifier>{a6d135b7-e06a-4d8b-960a-d4ce9c5ee26d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="domain\book">
+      <UniqueIdentifier>{87e32542-6314-420a-8e33-7dfe4e935ad2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="domain\country">
+      <UniqueIdentifier>{d1a4b1d6-4665-4ec3-b66e-76f3fcd492eb}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="client\BooksOrder.h">
+      <Filter>client</Filter>
+    </ClInclude>
+    <ClInclude Include="client\Client.h">
+      <Filter>client</Filter>
+    </ClInclude>
+    <ClInclude Include="client\Order.h">
+      <Filter>client</Filter>
+    </ClInclude>
+    <ClInclude Include="domain\book\Author.h">
+      <Filter>domain\book</Filter>
+    </ClInclude>
+    <ClInclude Include="domain\book\Book.h">
+      <Filter>domain\book</Filter>
+    </ClInclude>
+    <ClInclude Include="domain\book\Category.h">
+      <Filter>domain\book</Filter>
+    </ClInclude>
+    <ClInclude Include="domain\book\EducationalBook.h">
+      <Filter>domain\book</Filter>
+    </ClInclude>
+    <ClInclude Include="domain\book\Genre.h">
+      <Filter>domain\book</Filter>
+    </ClInclude>
+    <ClInclude Include="domain\book\Novel.h">
+      <Filter>domain\book</Filter>
+    </ClInclude>
+    <ClInclude Include="domain\country\Country.h">
+      <Filter>domain\country</Filter>
+    </ClInclude>
+    <ClInclude Include="domain\country\Currency.h">
+      <Filter>domain\country</Filter>
+    </ClInclude>
+    <ClInclude Include="domain\country\Language.h">
+      <Filter>domain\country</Filter>
+    </ClInclude>
+    <ClInclude Include="finance\CurrencyConverter.h">
+      <Filter>finance</Filter>
+    </ClInclude>
+    <ClInclude Include="finance\TaxRule.h">
+      <Filter>finance</Filter>
+    </ClInclude>
+    <ClInclude Include="purchase\Invoice.h">
+      <Filter>purchase</Filter>
+    </ClInclude>
+    <ClInclude Include="purchase\PurchasedBook.h">
+      <Filter>purchase</Filter>
+    </ClInclude>
+    <ClInclude Include="report\ReportGenerator.h">
+      <Filter>report</Filter>
+    </ClInclude>
+    <ClInclude Include="storage\JsonRepository.h">
+      <Filter>storage</Filter>
+    </ClInclude>
+    <ClInclude Include="storage\Repository.h">
+      <Filter>storage</Filter>
+    </ClInclude>
+    <ClInclude Include="IdGenerator.h" />
+    <ClInclude Include="MainRepository.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Country.cpp">
+      <Filter>domain\country</Filter>
+    </ClCompile>
+    <ClCompile Include="Author.cpp">
+      <Filter>domain\book</Filter>
+    </ClCompile>
+    <ClCompile Include="Book.cpp">
+      <Filter>domain\book</Filter>
+    </ClCompile>
+    <ClCompile Include="EducationalBook.cpp">
+      <Filter>domain\book</Filter>
+    </ClCompile>
+    <ClCompile Include="Novel.cpp">
+      <Filter>domain\book</Filter>
+    </ClCompile>
+    <ClCompile Include="Order.cpp">
+      <Filter>client</Filter>
+    </ClCompile>
+    <ClCompile Include="Client.cpp">
+      <Filter>client</Filter>
+    </ClCompile>
+    <ClCompile Include="CurrencyConverter.cpp">
+      <Filter>finance</Filter>
+    </ClCompile>
+    <ClCompile Include="TaxRule.cpp">
+      <Filter>finance</Filter>
+    </ClCompile>
+    <ClCompile Include="PurchasedBook.cpp">
+      <Filter>purchase</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

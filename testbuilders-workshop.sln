@@ -1,0 +1,98 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.757
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{708DA455-51CE-407E-AB4D-AFC50B30564F}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workshop", "workshop", "{A6EAD9AB-DDA9-45FC-A831-6981287ACFCD}"
+	ProjectSection(SolutionItems) = preProject
+		workshop\1 - Introduction.md = workshop\1 - Introduction.md
+		workshop\2 - Easy Fix Difficult Test.md = workshop\2 - Easy Fix Difficult Test.md
+		workshop\3 - Building Test Data.md = workshop\3 - Building Test Data.md
+		workshop\4 - Mikado Method to the Rescue.md = workshop\4 - Mikado Method to the Rescue.md
+		workshop\5 - Conclusion.md = workshop\5 - Conclusion.md
+		workshop\Animation Guide.md = workshop\Animation Guide.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "images", "images", "{D3A04D10-DEB0-4483-B1AD-59F91BBAD9C3}"
+	ProjectSection(SolutionItems) = preProject
+		workshop\images\child-legos.jpg = workshop\images\child-legos.jpg
+		workshop\images\CPP FRUG - YouTube.jpg = workshop\images\CPP FRUG - YouTube.jpg
+		workshop\images\GrowingObjectOrientedSoftwareGuidedByTests.PNG = workshop\images\GrowingObjectOrientedSoftwareGuidedByTests.PNG
+		workshop\images\guide.jpg = workshop\images\guide.jpg
+		workshop\images\Mikado Method for Legacy Code - YouTube.jpg = workshop\images\Mikado Method for Legacy Code - YouTube.jpg
+		workshop\images\mikado-method-cover.jpg = workshop\images\mikado-method-cover.jpg
+		workshop\images\mikado-method-visualize-example.jpg = workshop\images\mikado-method-visualize-example.jpg
+		workshop\images\mikado-sticks.jpg = workshop\images\mikado-sticks.jpg
+		workshop\images\MIkdaoScreenCapture.PNG = workshop\images\MIkdaoScreenCapture.PNG
+		workshop\images\quick-fix.jpg = workshop\images\quick-fix.jpg
+		workshop\images\sparrows.jpg = workshop\images\sparrows.jpg
+		workshop\images\Testing legacy code with Mikado Method and Test Data Builders - YouTube.jpg = workshop\images\Testing legacy code with Mikado Method and Test Data Builders - YouTube.jpg
+		workshop\images\training-from-the-back-of-the-room-cover.jpg = workshop\images\training-from-the-back-of-the-room-cover.jpg
+		workshop\images\win-win.jpg = workshop\images\win-win.jpg
+		workshop\images\workshop-material.jpg = workshop\images\workshop-material.jpg
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "References", "References", "{A850F482-0DE7-480F-833B-7CEF6612AE4C}"
+	ProjectSection(SolutionItems) = preProject
+		workshop\references\Test Data Builders.md = workshop\references\Test Data Builders.md
+		workshop\references\The Mikado Method.md = workshop\references\The Mikado Method.md
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "testbuilders-workshop-bin", "src\main\cpp\bin\testbuilders-workshop-bin.vcxproj", "{5CF1CE67-FD49-44E9-AEEF-34E1F2A24C55}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "testbuilders-workshop", "src\main\cpp\lib\testbuilders-workshop.vcxproj", "{0BCAEDF3-A07C-48DA-930C-1FBD7C9BE283}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "testbuilders-workshop-tests", "src\test\cpp\testbuilders-workshop-tests.vcxproj", "{67E49DFF-53E9-48BA-91FE-F53B4AD96B79}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5CF1CE67-FD49-44E9-AEEF-34E1F2A24C55}.Debug|x64.ActiveCfg = Debug|x64
+		{5CF1CE67-FD49-44E9-AEEF-34E1F2A24C55}.Debug|x64.Build.0 = Debug|x64
+		{5CF1CE67-FD49-44E9-AEEF-34E1F2A24C55}.Debug|x86.ActiveCfg = Debug|Win32
+		{5CF1CE67-FD49-44E9-AEEF-34E1F2A24C55}.Debug|x86.Build.0 = Debug|Win32
+		{5CF1CE67-FD49-44E9-AEEF-34E1F2A24C55}.Release|x64.ActiveCfg = Debug|x64
+		{5CF1CE67-FD49-44E9-AEEF-34E1F2A24C55}.Release|x64.Build.0 = Debug|x64
+		{5CF1CE67-FD49-44E9-AEEF-34E1F2A24C55}.Release|x86.ActiveCfg = Release|Win32
+		{5CF1CE67-FD49-44E9-AEEF-34E1F2A24C55}.Release|x86.Build.0 = Release|Win32
+		{0BCAEDF3-A07C-48DA-930C-1FBD7C9BE283}.Debug|x64.ActiveCfg = Debug|x64
+		{0BCAEDF3-A07C-48DA-930C-1FBD7C9BE283}.Debug|x64.Build.0 = Debug|x64
+		{0BCAEDF3-A07C-48DA-930C-1FBD7C9BE283}.Debug|x86.ActiveCfg = Debug|Win32
+		{0BCAEDF3-A07C-48DA-930C-1FBD7C9BE283}.Debug|x86.Build.0 = Debug|Win32
+		{0BCAEDF3-A07C-48DA-930C-1FBD7C9BE283}.Release|x64.ActiveCfg = Debug|x64
+		{0BCAEDF3-A07C-48DA-930C-1FBD7C9BE283}.Release|x64.Build.0 = Debug|x64
+		{0BCAEDF3-A07C-48DA-930C-1FBD7C9BE283}.Release|x86.ActiveCfg = Release|Win32
+		{0BCAEDF3-A07C-48DA-930C-1FBD7C9BE283}.Release|x86.Build.0 = Release|Win32
+		{67E49DFF-53E9-48BA-91FE-F53B4AD96B79}.Debug|x64.ActiveCfg = Debug|x64
+		{67E49DFF-53E9-48BA-91FE-F53B4AD96B79}.Debug|x64.Build.0 = Debug|x64
+		{67E49DFF-53E9-48BA-91FE-F53B4AD96B79}.Debug|x86.ActiveCfg = Debug|Win32
+		{67E49DFF-53E9-48BA-91FE-F53B4AD96B79}.Debug|x86.Build.0 = Debug|Win32
+		{67E49DFF-53E9-48BA-91FE-F53B4AD96B79}.Release|x64.ActiveCfg = Debug|x64
+		{67E49DFF-53E9-48BA-91FE-F53B4AD96B79}.Release|x64.Build.0 = Debug|x64
+		{67E49DFF-53E9-48BA-91FE-F53B4AD96B79}.Release|x86.ActiveCfg = Release|Win32
+		{67E49DFF-53E9-48BA-91FE-F53B4AD96B79}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A6EAD9AB-DDA9-45FC-A831-6981287ACFCD} = {708DA455-51CE-407E-AB4D-AFC50B30564F}
+		{D3A04D10-DEB0-4483-B1AD-59F91BBAD9C3} = {A6EAD9AB-DDA9-45FC-A831-6981287ACFCD}
+		{A850F482-0DE7-480F-833B-7CEF6612AE4C} = {A6EAD9AB-DDA9-45FC-A831-6981287ACFCD}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9B629D9F-9F90-4E2A-A893-D2D2441A83D5}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="storage">
+      <UniqueIdentifier>{727d5a34-34f3-4eba-ade7-cdf213c81dfb}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="storage\InMemoryRepository.h">
+      <Filter>storage</Filter>
+    </ClInclude>
+    <ClInclude Include="pch.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="pch.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+</Project>
