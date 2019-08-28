@@ -111,13 +111,13 @@ values:
 1. Total number of issued invoices
 1. Sum of total amount of all invoices
 
-### 2. Bug Fixes
+### 2. Tips to Fix the Bugs Fixes
 
 After some analysis, one of our developers was able to quickly identify the bugs
 in the code and provided us with quick fixes!  
 
 <details>
-  <summary>Sneak Peek at Bug Fix in [Invoice](../src/main/java/com/murex/tbw/purchase/Invoice.java)</summary>
+  <summary>Sneak Peek at Bug Fix in Invoice.java</summary>
 
 ```diff
     public double computeTotalAmount() {
@@ -134,7 +134,7 @@ in the code and provided us with quick fixes!
 </details>
    
 <details>
-  <summary>Sneak Peek at Bug Fix in [ReportGenerator](../src/main/java/com/murex/tbw/report/ReportGenerator.java)</summary>
+  <summary>Sneak Peek at Bug Fix in ReportGenerator.java</summary>
 
 ```diff
     public double getTotalAmount() {
@@ -150,10 +150,13 @@ in the code and provided us with quick fixes!
 
 </details>
 
-### 2. Apply Fixes and Then revert
+### 3. Apply Fixes and Then revert
 
-If you apply the above 2 patches to your code and re-run the Main class, you 
-should see the correct values printed.  
+One approach to fix the problem is to: 
+1. Apply the above 2 patches to your code in [Invoice](../src/main/java/com/murex/tbw/purchase/Invoice.java) and 
+[ReportGenerator](../src/main/java/com/murex/tbw/report/ReportGenerator.java) respectively 
+1. Re-run the Main class ([Application.java](../src/main/java/Application.java))
+1. Ensure you see the correct values printed
 
 Now that we know what caused the issue, let's try to do the fix correctly.
 We'd like to add a unit test to reproduce the issue first.
