@@ -30,6 +30,58 @@ our particular situation.
 Below is a screen-shot of the Mikado Graph from the video: 
 ![screen capture](./images/MIkdaoScreenCapture.PNG) 
 
+### Code Snippets 
+
+<details>
+  <summary>Code of InvoiceTest from the video</summary>
+  
+```java
+package com.murex.tbw.purchase;
+
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+
+class InvoiceTest {
+
+    @Test
+    public void
+    applies_tax_rules_when_computing_total_amount() {
+        Invoice oneNovelUSAInvoice = anInvoice()
+                .from(USA)
+                .with(aPurchasedBook().of(
+                        aNovel().costing(2.99))).build();
+
+        Assertions.assertEquals(2.99 * 1.15 * 0.98, oneNovelUSAInvoice.computeTotalAmount());
+    }
+}
+```
+
+</details>
+
+<details>
+  <summary>Code of NovelTestBuilder from the video</summary>
+  
+```java
+package com.murex.tbw.domain.book;
+import com.murex.tbw.domain.country.Language;
+import java.util.ArrayList;
+
+public class NovelTestBuilder {
+    private double price = 3.99;
+
+    public  NovelTestBuilder costing(double price){
+        this.price = price;
+        return this;
+    }
+
+    public Novel build() {
+        return  new Novel("Grapes with Wrath", 3.99, null, Language.ENGLISH, new ArrayList<>());
+    }
+}
+```
+
+</details>  
+
 ## DIY
 
 Now that you have a better idea, grab a whiteboard, a marker, some post-its and
