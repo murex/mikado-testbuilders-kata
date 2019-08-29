@@ -17,7 +17,6 @@ public:
 
 	virtual void addInvoice(const std::shared_ptr<purchase::Invoice>& invoice) = 0;
 
-	//FIXME should we put this const?
 	virtual std::map<int, std::shared_ptr<purchase::Invoice>> getInvoiceMap() const = 0;
 };
 }

@@ -1,6 +1,7 @@
 #include "purchase/Invoice.h"
 #include "purchase/PurchasedBook.h"
 #include "IdGenerator.h"
+#include "finance/TaxRule.h"
 
 purchase::Invoice::Invoice(const std::string& clientName, const domain::country::Country& country)
 : Invoice(id_generator::nextId(), clientName, country)
@@ -29,7 +30,7 @@ double purchase::Invoice::computeTotalAmount() const
 	double sum = 0.0;
 	for (const auto purchasedBook : purchasedBooks_)
 	{
-		double totalPrice = purchasedBook->getTotalPrice();
+		double totalPrice = purchasedBook->getTotalPrice() * finance::getApplicableRate(country_, *purchasedBook->getBook());
 		sum += totalPrice;
 	}
 	return sum;

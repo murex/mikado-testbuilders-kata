@@ -15,7 +15,6 @@ namespace client
 
 	void BooksOrder::addBook(const shared_ptr<Book>& book, int quantity)
 	{
-		//FIXME check this
 		booksInBasket_[book] += quantity;
 	}
 
