@@ -45,11 +45,11 @@ builders.
 | Testability increases at every step           |                                   |
 | People are more likely to add tests           |                                   |
 | People are more likely to improve the builders|                                   |
-| => It can become viral!                       |                                   |
-| Avoids mocks                                  |                                   |
 | You don't need full-fledged builders to start |                                   |
+| It can become viral!                          |                                   |
+| Avoids mocks                                  |                                   |
 
-Would this workshop work with your team? 
+Can this workshop work with your team? 
 How can you compare the approach to writing the two tests?   
 
 Ideas to apply this in your daily work: 
