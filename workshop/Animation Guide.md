@@ -14,20 +14,24 @@ Here are the topics that usually come up during mini-retros
 |----------------------------|----------------------------------------------|
 | We managed to fix and test | We see a lot of duplication in the tests     |
 |                            | Tests took more time to write than the fixes |
+|                            | Rollback was painful                         |
+|                            | Minimal Coverage                             |
+|                            | Tests are ugly                               |
 
-How would these problems become in the legacy code base you deal with everyday?
-What took so long about adding the test?
-What could we do against these problems?
+How does these problems reflect to your existing legacy code?     
+What took so long about adding the test?  
+How can we tackle those problems?  
 
 ### 3 - Building Test Data
 
-| The good                  | The bad                                        |
-|---------------------------|------------------------------------------------|
-| Tests are more readable   | Writing the test data builders is even slower  |
-| Less duplication in tests | Not sure how to apply this in other code bases |
+| The good                            | The bad                                        |
+|-------------------------------------|------------------------------------------------|
+| Tests are more readable             | Writing the test data builders is even slower  |
+| Less duplication in tests           | Not sure how to apply this in other code bases |
+| Would make adding new tests easier  |                                                |
 
-How would these problems become in the legacy code base you deal with everyday?
-What could we do against these problems?
+How does these problems reflect to your existing legacy code?    
+How can we tackle those problems?  
 
 ### 4 - Mikado Method to the Rescue
 
@@ -45,10 +49,13 @@ builders.
 | Avoids mocks                                  |                                   |
 | You don't need full-fledged builders to start |                                   |
 
-Ideas to apply this in your daily work:
+Would this workshop work with your team? 
+How can you compare the approach to writing the two tests?   
 
-* Do this workshop with your team
+Ideas to apply this in your daily work: 
 * Stick test mikado graphs on the wall, so that everyone can contribute
+* Use and online mind-map software and share it with the team (especially with 
+a remote team)
 * Try it on the next bug you have to deal with, while pairing with a buddy
 * Try [mob programming](https://en.wikipedia.org/wiki/Mob_programming), to quickly
   agree on a shared way of working
