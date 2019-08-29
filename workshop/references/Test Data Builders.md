@@ -78,7 +78,8 @@ for France with this code:
 There is no definite answer for that. But, as mentioned earlier, the Test Data
 Builder is based on the Builder pattern. In general, it is better to have the 
 builder next to the class it is building.   
-Thus, with Test Data Builders, it would be better for our builders to be next 
+Thus, with Test Data Builders, it would be better for our builders to be in the
+same package/namespace as a real class, but in the test structure.
 to its tests. 
 
 ## Benefits
