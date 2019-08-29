@@ -152,3 +152,17 @@ help them to envision how to use their new knowledge.
 
 By writing down what they think they can do with their new knowledge, attendees
 have a higher chance of actually using it in their daily work.
+
+## General Animation tips
+
+### Do a live demo of the mikado beginning for large audience
+
+If attendees are remote, or only a single pair, letting them watch the video is fine. If they are all in the same room though, you'll get a chaos of unsynchronized replays...
+
+We could also just watch it through the main screen
+
+### Use wide visible timers
+
+The workshop follows a particular narrative. It is very important to stick to the agenda. Time lost at the beginning is eventually taken from the last activity, which is where people finally 'get' the power of Test Data Builders + Mikado Method.
+
+In order to make sure to stick to the agenda, use wide visible timer in the room. Time-boxing is preferred way to go. Activities don't rely on the code written previously, so people can start the next activity even if they did not finished the previous one. 
