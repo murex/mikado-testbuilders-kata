@@ -39,7 +39,9 @@ builders.
 | Tests are more readable                       | Test for the bug is postponed     |
 | Less duplication in tests                     | Cyclic dependencies remain tricky |
 | Testability increases at every step           |                                   |
-| It snowballs                                  |                                   |
+| People are more likely to add tests           |                                   |
+| People are more likely to improve the builders|                                   |
+| => It can become viral!                       |                                   |
 | Avoids mocks                                  |                                   |
 | You don't need full-fledged builders to start |                                   |
 
@@ -48,6 +50,8 @@ Ideas to apply this in your daily work:
 * Do this workshop with your team
 * Stick test mikado graphs on the wall, so that everyone can contribute
 * Try it on the next bug you have to deal with, while pairing with a buddy
+* Try [mob programming](https://en.wikipedia.org/wiki/Mob_programming), to quickly
+  agree on a shared way of working
 
 ## Time Table
 

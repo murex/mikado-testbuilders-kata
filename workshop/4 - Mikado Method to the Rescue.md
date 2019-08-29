@@ -133,13 +133,18 @@ this test.
 
 Let's do a more thorough retrospective this time.
 
-1- Have this workshop fulfill your expectations?
+1- Take a few minutes to write 1 or 2 paragraphs to answer these questions:
+
+> What are the goods and bads of combining test data builders with the 
+> mikado method ?
+>
+> For you, what are the most important concepts and insights from this 
+> training?
+> 
+> How do you plan to use what you’ve learned?
+
+2- Have this workshop fulfilled your expectations?
 > Go back to the note you wrote at the beginning of the workshop   
-
-2- Take a few minutes to write 1 or 2 paragraphs to answer this question:
-
-> For you, what are the most important concepts and insights from this
-> training? How do you plan to use what you’ve learned?
 
 3- Read it to your pair, and discuss
 
