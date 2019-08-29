@@ -1,40 +1,26 @@
-package com.murex.tbw.report;
+#ifndef TESTBUILDERS_WORKSHOP_REPORT_REPORT_GENERATOR_H_INCLUDED
+#define TESTBUILDERS_WORKSHOP_REPORT_REPORT_GENERATOR_H_INCLUDED
 
-import com.murex.tbw.MainRepository;
-import com.murex.tbw.purchase.Invoice;
-import com.murex.tbw.purchase.PurchasedBook;
-import com.murex.tbw.storage.Repository;
+#include "MainRepository.h"
 
-import java.util.List;
-import java.util.Map;
-
-public class ReportGenerator {
-
-    private final Repository repository = MainRepository.configuredRepository();
-
-    public double getTotalAmount() {
-        Map<Integer, Invoice> invoiceMap = repository.getInvoiceMap();
-        double totalAmount = 0.0;
-        for (Invoice invoice : invoiceMap.values()) {
-            totalAmount += invoice.computeTotalAmount();
-        }
-        return totalAmount;
-    }
-
-    public int getTotalSoldBooks() {
-        Map<Integer, Invoice> invoiceMap = repository.getInvoiceMap();
-        int totalSoldBooks = 0;
-        for (Invoice invoice : invoiceMap.values()) {
-            List<PurchasedBook> purchasedBooks = invoice.getPurchasedBooks();
-            for (PurchasedBook purchasedBook : purchasedBooks) {
-                totalSoldBooks += purchasedBook.getQuantity();
-            }
-        }
-        return totalSoldBooks;
-    }
-
-    public long getNumberOfIssuedInvoices() {
-        Map<Integer, Invoice> invoiceMap = repository.getInvoiceMap();
-        return invoiceMap.values().size();
-    }
+namespace storage {
+	class Repository;
 }
+
+namespace report
+{
+
+class ReportGenerator
+{
+	const std::shared_ptr<const storage::Repository> repository_;
+
+public:
+	ReportGenerator();
+
+	double getTotalAmount() const;
+	int getTotalSoldBooks() const;
+	size_t getNumberOfIssuedInvoices() const;
+};
+}
+
+#endif // TESTBUILDERS_WORKSHOP_REPORT_REPORT_GENERATOR_H_INCLUDED

@@ -28,6 +28,9 @@
     <Filter Include="domain\country">
       <UniqueIdentifier>{d1a4b1d6-4665-4ec3-b66e-76f3fcd492eb}</UniqueIdentifier>
     </Filter>
+    <Filter Include="thirdparty">
+      <UniqueIdentifier>{f77628f7-cd93-4489-8d00-dc4256493dfa}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="client\BooksOrder.h">
@@ -89,6 +92,9 @@
     </ClInclude>
     <ClInclude Include="IdGenerator.h" />
     <ClInclude Include="MainRepository.h" />
+    <ClInclude Include="thirdparty\json.hpp">
+      <Filter>thirdparty</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Country.cpp">
@@ -120,6 +126,23 @@
     </ClCompile>
     <ClCompile Include="PurchasedBook.cpp">
       <Filter>purchase</Filter>
+    </ClCompile>
+    <ClCompile Include="Invoice.cpp">
+      <Filter>purchase</Filter>
+    </ClCompile>
+    <ClCompile Include="IdGenerator.cpp" />
+    <ClCompile Include="Repository.cpp">
+      <Filter>storage</Filter>
+    </ClCompile>
+    <ClCompile Include="MainRepository.cpp" />
+    <ClCompile Include="BooksOrder.cpp">
+      <Filter>client</Filter>
+    </ClCompile>
+    <ClCompile Include="JsonRepository.cpp">
+      <Filter>storage</Filter>
+    </ClCompile>
+    <ClCompile Include="ReportGenerator.cpp">
+      <Filter>report</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

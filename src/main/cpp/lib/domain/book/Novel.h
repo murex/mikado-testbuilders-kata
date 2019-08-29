@@ -18,14 +18,8 @@ namespace domain
 			const country::Language language_;
 			const std::vector<Genre> genres_;
 
-			Novel(std::string& name, double price, const Author& author, country::Language language, const std::vector<Genre>& genres)
-				: name_(name)
-				, price_(price)
-				, author_(author)
-				, language_(language)
-				, genres_(genres)
-			{
-			}
+			Novel(std::string& name, double price, const Author& author, country::Language language,
+			      const std::vector<Genre>& genres);
 
 			virtual std::string getName() const
 			{
@@ -55,3 +49,4 @@ namespace domain
 	}
 }
 
+#endif // TESTBUILDERS_WORKSHOP_DOMAIN_BOOK_NOVEL_H_INCLUDED

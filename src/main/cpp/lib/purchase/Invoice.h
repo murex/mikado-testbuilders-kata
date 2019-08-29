@@ -1,85 +1,52 @@
-package com.murex.tbw.purchase;
+#ifndef TESTBUILDERS_WORKSHOP_PURCHASE_INVOICE_H_INCLUDED
+#define TESTBUILDERS_WORKSHOP_PURCHASE_INVOICE_H_INCLUDED
 
-import com.murex.tbw.IdGenerator;
-import com.murex.tbw.domain.country.Country;
+#include <string>
+#include <vector>
+#include "../domain/country/Country.h"
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
+namespace purchase
+{
+	class PurchasedBook;
 
-public final class Invoice {
-    private final int id;
-    private final String clientName;
-    private final List<PurchasedBook> purchasedBooks;
-    private final Country country;
+	class Invoice 
+{
+	const int id_;
+	const std::string clientName_;
+	std::vector<std::shared_ptr<const PurchasedBook>> purchasedBooks_;
+	const domain::country::Country country_;
 
-    public Invoice(String clientName, Country country) {
-        this(IdGenerator.nextId(), clientName, country);
-    }
+public:
+	Invoice(const std::string& clientName, const domain::country::Country& country);
 
-    public Invoice(int id, String clientName, Country country) {
-        this.id = id;
-        this.clientName = clientName;
-        this.country = country;
-        this.purchasedBooks = new ArrayList<>();
-    }
+	Invoice(int id, const std::string& clientName, const domain::country::Country& country);
 
-    public int getId() {
-        return id;
-    }
+	int getId() const
+	{
+		return id_;
+	}
 
-    public String getClientName() {
-        return clientName;
-    }
+	std::string getClientName() const
+	{
+		return clientName_;
+	}
 
-    public Country getCountry() {
-        return country;
-    }
+	domain::country::Country getCountry() const
+	{
+		return country_;
+	}
 
-    public void addPurchasedBooks(List<PurchasedBook> books) {
-        purchasedBooks.addAll(books);
-    }
+	void addPurchasedBooks(std::vector<std::shared_ptr<const PurchasedBook>> books);
 
-    public void addPurchasedBook(PurchasedBook book) {
-        this.purchasedBooks.add(book);
-    }
+	void addPurchasedBook(const std::shared_ptr <const PurchasedBook>& book);
 
-    public double computeTotalAmount() {
-        double sum = 0.0;
-        for (PurchasedBook purchasedBook : purchasedBooks) {
-            double totalPrice = purchasedBook.getTotalPrice();
-            sum += totalPrice;
-        }
-        return sum;
-    }
+	double computeTotalAmount() const;
 
-    public List<PurchasedBook> getPurchasedBooks() {
-        return purchasedBooks;
-    }
-
-    @Override
-    public String toString() {
-        return "Invoice{" +
-                "id=" + id +
-                ", clientName='" + clientName + '\'' +
-                ", purchasedBooks=" + purchasedBooks +
-                ", country=" + country +
-                '}';
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Invoice invoice = (Invoice) o;
-        return id == invoice.id &&
-                Objects.equals(clientName, invoice.clientName) &&
-                Objects.equals(purchasedBooks, invoice.purchasedBooks) &&
-                Objects.equals(country, invoice.country);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, clientName, purchasedBooks, country);
-    }
+	std::vector<std::shared_ptr<const PurchasedBook>> getPurchasedBooks() const
+	{
+		return purchasedBooks_;
+	}
+};
 }
+
+#endif // TESTBUILDERS_WORKSHOP_PURCHASE_INVOICE_H_INCLUDED

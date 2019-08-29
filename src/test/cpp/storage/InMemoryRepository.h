@@ -1,26 +1,22 @@
-package com.murex.tbw.storage;
+#ifndef TESTBUILDERS_WORKSHOP_TESTS_STORAGE_IN_MEMORY_REPOSITORY_H_INCLUDED
+#define TESTBUILDERS_WORKSHOP_TESTS_STORAGE_IN_MEMORY_REPOSITORY_H_INCLUDED
 
-import com.murex.tbw.purchase.Invoice;
+#include "../../../main/cpp/lib/storage/Repository.h"
 
-import java.util.HashMap;
-import java.util.Map;
+namespace storage
+{
+	
+class InMemoryRepository : public Repository
+{
+	std::map<int, std::shared_ptr<purchase::Invoice>> invoiceMap_;
 
-public class InMemoryRepository implements Repository {
-    private final Map<Integer, Invoice> invoiceMap;
+public:
 
-    public InMemoryRepository() {
-        this.invoiceMap = new HashMap<>();
-    }
+	void addInvoice(const std::shared_ptr<purchase::Invoice>& invoice) override;
 
-    @Override
-    public void addInvoice(Invoice invoice) {
-        invoiceMap.put(invoice.getId(), invoice);
-    }
-
-    @Override
-    public Map<Integer, Invoice> getInvoiceMap() {
-        return invoiceMap;
-    }
-
+	std::map<int, std::shared_ptr<purchase::Invoice>> getInvoiceMap() const override;
+};
 
 }
+
+#endif // TESTBUILDERS_WORKSHOP_TESTS_STORAGE_IN_MEMORY_REPOSITORY_H_INCLUDED

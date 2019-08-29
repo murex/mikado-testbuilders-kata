@@ -31,6 +31,7 @@ double finance::getApplicableRate(const domain::country::Country& invoiceCountry
 			return 1.05;
 		}
 	}
+	//FIXME does this typeid(thing) work?
 	if (invoiceCountry.getName() == "USA") {
 		if (typeid(book).name() == "domain::book::Novel") {
 			return getTaxRate(invoiceCountry.getName()) * 0.98;
@@ -42,12 +43,12 @@ double finance::getApplicableRate(const domain::country::Country& invoiceCountry
 		}
 	}
 	if (invoiceCountry.getName() == "China") {
-		if (!book.getLanguage() == domain::country::MANDARIN) {
+		if (book.getLanguage() != domain::country::MANDARIN) {
 			return 1;
 		}
 	}
 	if (invoiceCountry.getName() == "Spain") {
-		if (!book.getLanguage() == domain::country::SPANISH) {
+		if (book.getLanguage() != domain::country::SPANISH) {
 			return 1;
 		}
 	}

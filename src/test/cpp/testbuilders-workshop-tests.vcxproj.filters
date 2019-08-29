@@ -9,12 +9,13 @@
     <ClInclude Include="storage\InMemoryRepository.h">
       <Filter>storage</Filter>
     </ClInclude>
-    <ClInclude Include="pch.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="pch.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="InMemoryRepository.cpp">
+      <Filter>storage</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

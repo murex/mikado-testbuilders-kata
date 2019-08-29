@@ -7,26 +7,23 @@
 namespace client
 {
 
-	class Client {
-		const std::string name_;
-		const domain::country::Country country_;
+class Client {
+	const std::string name_;
+	const domain::country::Country country_;
 
-		Client(const std::string& name, const domain::country::Country& country)
-			: name_(name)
-			, country_(country)
-		{
-		}
+public:
+	Client(const std::string& name, const domain::country::Country& country);
 
-		std::string getName() const
-		{
-			return name_;
-		}
+	std::string getName() const
+	{
+		return name_;
+	}
 
-		domain::country::Country getCountry() const
-		{
-			return country_;
-		}
-	};
+	domain::country::Country getCountry() const
+	{
+		return country_;
+	}
+};
 }
 
 #endif // TESTBUILDERS_WORKSHOP_CLIENT_CLIENT_H_INCLUDED

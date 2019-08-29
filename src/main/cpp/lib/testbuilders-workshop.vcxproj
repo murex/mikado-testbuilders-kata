@@ -64,17 +64,25 @@
     <ClInclude Include="report\ReportGenerator.h" />
     <ClInclude Include="storage\JsonRepository.h" />
     <ClInclude Include="storage\Repository.h" />
+    <ClInclude Include="thirdparty\json.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Book.cpp" />
+    <ClCompile Include="BooksOrder.cpp" />
     <ClCompile Include="Client.cpp" />
     <ClCompile Include="Country.cpp" />
     <ClCompile Include="Author.cpp" />
     <ClCompile Include="CurrencyConverter.cpp" />
     <ClCompile Include="EducationalBook.cpp" />
+    <ClCompile Include="IdGenerator.cpp" />
+    <ClCompile Include="Invoice.cpp" />
+    <ClCompile Include="JsonRepository.cpp" />
+    <ClCompile Include="MainRepository.cpp" />
     <ClCompile Include="Novel.cpp" />
     <ClCompile Include="Order.cpp" />
     <ClCompile Include="PurchasedBook.cpp" />
+    <ClCompile Include="ReportGenerator.cpp" />
+    <ClCompile Include="Repository.cpp" />
     <ClCompile Include="TaxRule.cpp" />
   </ItemGroup>
   <ItemDefinitionGroup />

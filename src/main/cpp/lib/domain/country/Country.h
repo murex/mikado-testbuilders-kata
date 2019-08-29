@@ -15,12 +15,7 @@ namespace country
 		const Language language_;
 
 	public:
-		Country(const std::string& name, Currency currency, Language language)
-			: name_(name)
-			, currency_(currency)	
-			, language_(language)
-		{
-		}
+		Country(const std::string& name, Currency currency, Language language);
 
 		std::string getName() const
 		{

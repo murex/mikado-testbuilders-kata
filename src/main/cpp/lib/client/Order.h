@@ -9,11 +9,13 @@ namespace client
 	class Order
 	{
 	public:
-		virtual void addBook(const domain::book::Book& book, int quantity);
+		virtual ~Order();
 
-		virtual purchase::Invoice checkOut();
+		virtual void addBook(const std::shared_ptr<domain::book::Book>&, int quantity) = 0;
 
-		virtual int getQuantityOf(const domain::book::Book& book) const;
+		virtual std::shared_ptr<purchase::Invoice> checkOut() = 0;
+
+		virtual int getQuantityOf(const std::shared_ptr<domain::book::Book>& book) const = 0;
 	};
 
 }
