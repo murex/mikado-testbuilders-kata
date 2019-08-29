@@ -15,7 +15,7 @@ namespace domain
 		public:
 			virtual ~Book();
 
-			virtual std::string vrtName() const = 0;
+			virtual std::string getName() const = 0;
 			virtual double getPrice() const = 0;
 			virtual Author getAuthor() const = 0;
 			virtual country::Language getLanguage() const = 0;

@@ -46,6 +46,7 @@
     <IncludePath>$(SolutionDir)src\main\cpp\lib;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemGroup>
+    <None Include="..\..\resources\repository.json" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
