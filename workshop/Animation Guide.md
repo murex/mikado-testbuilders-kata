@@ -18,9 +18,9 @@ Here are the topics that usually come up during mini-retros
 |                            | Minimal Coverage                             |
 |                            | Tests are ugly                               |
 
-How does these problems reflect to your existing legacy code?     
-What took so long about adding the test?  
-How can we tackle those problems?  
+What issues did you face while writing your tests?  
+Do you face the same problems with your existing legacy code?    
+How can you tackle those problems to avoid having them in the future?  
 
 ### 3 - Building Test Data
 
@@ -30,8 +30,8 @@ How can we tackle those problems?
 | Less duplication in tests           | Not sure how to apply this in other code bases |
 | Would make adding new tests easier  |                                                |
 
-How does these problems reflect to your existing legacy code?    
-How can we tackle those problems?  
+What issues did you face while writing your tests with Test Data Builders?  
+How can you compare this approach of writing tests to the previous section?   
 
 ### 4 - Mikado Method to the Rescue
 
@@ -49,8 +49,9 @@ builders.
 | It can become viral!                          |                                   |
 | Avoids mocks                                  |                                   |
 
-Can this workshop work with your team? 
-How can you compare the approach to writing the two tests?   
+What issues did you face while writing your tests by following the Mikado Method?     
+How can you compare this approach of writing tests to the previous 2 sections?     
+Can you use this method with your team?   
 
 Ideas to apply this in your daily work: 
 * Stick test mikado graphs on the wall, so that everyone can contribute

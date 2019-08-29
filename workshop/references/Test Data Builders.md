@@ -73,6 +73,14 @@ for France with this code:
     }
 ```
 
+## Best Practices 
+### Where to place the Test Data Builders?
+There is no definite answer for that. But, as mentioned earlier, the Test Data
+Builder is based on the Builder pattern. In general, it is better to have the 
+builder next to the class it is building.   
+Thus, with Test Data Builders, it would be better for our builders to be next 
+to its tests. 
+
 ## Benefits
 
 Mainly, Test Data Builders helps us create tests that are expressive and 
