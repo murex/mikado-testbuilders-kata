@@ -71,6 +71,12 @@ standard part of the workshop.
 | In pairs, fix the bugs | 10 | 15 | 25
 | Rollback Invoice, write a test and fix, same with ReportGenerator (bonus) | 25 | 25 | 50 |
 | Mini retro | 5 | 50 | 55 |
+
+----
+
+### 5 minutes break!
+
+----
 	
 ### 3 - Building Test Data (25 minutes)
 
@@ -86,7 +92,7 @@ standard part of the workshop.
 |-------|--------|-------|-----|
 | Present Mikado graph | 10 | 80 | 90 |
 | Live code beginning of Mikado | 10 | 90 | 100 |
-| Delete tests, and use 2 techniques to add InvoiceTest, continue on ReportGeneratorTest (bonus) | 30 | 100 | 130 |
+| Delete tests, and use 2 techniques to add InvoiceTest, continue on ReportGeneratorTest (bonus) | 25 | 100 | 130 |
 | Mini retro | 10 | 130 | 140 |
 	
 ### 5 - Conclusion (10 minutes)
