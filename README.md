@@ -39,8 +39,18 @@ workshop with many developers.
 
 * All kata instructions are in the workshop folder. It starts with
 [Introduction.md](./workshop/1%20-%20Introduction.md)
-* The kata is under [MIT License](./LICENSE), contributing instructions are in
-[Contributing.md](./Contributing.md)
+
+## License
+
+`pmx` and the accompanying materials are made available under the terms of the 
+Eclipse Public License v1.0 ([here](LICENSE.txt)) which accompanies this 
+distribution, and is available at http://www.eclipse.org/legal/epl-v10.html.
+
+## Contributing 
+
+The master branch of this repository contains the latest stable changes. Pull 
+requests should be submitted against the latest head of master. See 
+[here](https://github.com/murex/contribution) for contribution agreement and guidelines.
 
 ----
 [Start...](./workshop/1%20-%20Introduction.md)
