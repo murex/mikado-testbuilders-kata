@@ -2,6 +2,8 @@
 
 ![IMAGE](../images/GrowingObjectOrientedSoftwareGuidedByTests.PNG)
 
+[Copyright:[Growing Object-Oriented Software, Guided by Tests](https://www.goodreads.com/book/show/4268826-growing-object-oriented-software-guided-by-tests)]
+
 ## Summary
 
 'Test Data Builders' is technique that leverages on the [Builder Pattern](https://en.wikipedia.org/wiki/Builder_pattern#Java) 
