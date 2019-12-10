@@ -3,7 +3,7 @@
 ![IMAGE](../images/GrowingObjectOrientedSoftwareGuidedByTests.PNG)
 
 [Copyright:[Growing Object-Oriented Software, Guided by Tests](http://www.informit.com/store/growing-object-oriented-software-guided-by-tests-9780321503626), 
-by [Nay Pryce](http://natpryce.com/bio.html) and [Steve Freeman](https://www.higherorderlogic.com/)]
+by [Nat Pryce](http://natpryce.com/bio.html) and [Steve Freeman](https://www.higherorderlogic.com/)]
 
 ## Summary
 
@@ -304,5 +304,6 @@ Be aware that in this case things might become a bit messy especially if you
 have a big number of interdependent objects!  
 
 ## Book References
-1. [Growing Object-Oriented Software, Guided by Tests](https://www.goodreads.com/book/show/4268826-growing-object-oriented-software-guided-by-tests)
+1. [Growing Object-Oriented Software, Guided by Tests](http://www.informit.com/store/growing-object-oriented-software-guided-by-tests-9780321503626), 
+by [Nat Pryce](http://natpryce.com/bio.html) and [Steve Freeman](https://www.higherorderlogic.com/)
 2. [Working Effectively with Legacy Code](https://www.r7krecon.com/legacy-code), by [Michael C. Feathers](https://www.r7krecon.com/)
