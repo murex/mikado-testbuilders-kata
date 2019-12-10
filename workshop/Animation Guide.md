@@ -121,6 +121,8 @@ That's why there is a lot of time reserved for coding. We also borrowed
 techniques from [Training from the Back of the Room](https://www.goodreads.com/book/show/8141935-training-from-the-back-of-the-room)
 
 [![Cover of the Book Training from the Back of the Room](images/training-from-the-back-of-the-room-cover.jpg)](https://www.goodreads.com/book/show/8141935-training-from-the-back-of-the-room)
+[Copyright:[Training from the Back of the Room!](https://www.goodreads.com/book/show/8141935-training-from-the-back-of-the-room), 
+by [Sharon Bowman](https://bowperson.com/)]
 
 ### Turn and talk Energizer
 
@@ -143,11 +145,8 @@ These are web pages where attendees can look for clues as to how to get through
 the exercise.
 
 If you are running the workshop in a room, you can create physical Wall Centers
-with real copies of books, and printouts of articles
-* [The Mikado Method](https://www.goodreads.com/book/show/17974534-the-mikado-method)
-* [Growing Object-Oriented Software, Guided by Tests](https://www.goodreads.com/book/show/4268826-growing-object-oriented-software-guided-by-tests?from_search=true)
-* [Working Effectively with Legacy Code](https://www.goodreads.com/book/show/44919.Working_Effectively_with_Legacy_Code?ac=1&from_search=true)
-* ...
+with real copies of books, and printouts of articles. All referenced books and 
+articles are listed under the [References](./references/References.md) page. 
 
 ### Pair programming
 

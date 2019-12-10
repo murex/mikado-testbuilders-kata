@@ -6,6 +6,8 @@ by [Nat Pryce](http://natpryce.com/bio.html) and Steve Freeman
 1. [Working Effectively with Legacy Code](https://www.r7krecon.com/legacy-code), by [Michael C. Feathers](https://www.r7krecon.com/)
 1. [The Mikado Method](https://www.manning.com/books/the-mikado-method), by [Ola Ellnestam](https://ellnestam.wordpress.com/) 
 and [Daniel Brolund](https://twitter.com/danielbrolund) 
+1. [Training from the Back of the Room!](https://www.goodreads.com/book/show/8141935-training-from-the-back-of-the-room), 
+   by [Sharon Bowman](https://bowperson.com/)
 
 ## Youtube Videos & Channels
 1. [Mikado Method for Legacy Code](https://www.youtube.com/watch?v=qvlkyJ26PGc)
@@ -19,5 +21,6 @@ and [Daniel Brolund](https://twitter.com/danielbrolund)
 1. [Michael C. Feathers](https://www.r7krecon.com/)
 1. [Ola Ellnestam](https://ellnestam.wordpress.com/)
 1. [Daniel Brolund](https://twitter.com/danielbrolund)
+1. [Sharon Bowman](https://bowperson.com/)
 1. [David Tanzer](https://www.davidtanzer.net/)
 1. [Philippe Bourgau](https://philippe.bourgau.net/) 
