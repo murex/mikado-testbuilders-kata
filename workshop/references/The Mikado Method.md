@@ -2,7 +2,8 @@
 
 [![Cover of the book the mikado method](../images/mikado-method-cover.jpg)](https://www.goodreads.com/book/show/17974534-the-mikado-method)
 
-[Copyright: [The Mikado Method](https://www.manning.com/books/the-mikado-method)]
+[Copyright: [The Mikado Method](https://www.manning.com/books/the-mikado-method), by [Ola Ellnestam](https://ellnestam.wordpress.com/) 
+               and [Daniel Brolund](https://twitter.com/danielbrolund)]
 
 ## Summary
 The Mikado Method is a framework that helps you visualize, plan, and perform 
@@ -65,11 +66,11 @@ not a problem. Simply update the graph, undo your change, and continue.
 
 [![Video of a demo of the Mikado Method](../images/Mikado%20Method%20for%20Legacy%20Code%20-%20YouTube.jpg)](https://www.youtube.com/watch?v=qvlkyJ26PGc&start=745)
 
-(The demo is 7 minutes between 12:25 and 19:30, and it's viewable at x1.5 speed)
+(The demo is 7 minutes between 12:25 and 19:30, and it's viewable at x1.5 speed by [David Tanzer](https://www.davidtanzer.net/))
 
 [![Live Coding de Refactoring by Philippe - French Version](../images/CPP%20FRUG%20-%20YouTube.jpg)](https://youtu.be/Xp7YeQsV9L4?t=868)
 
-(This video is of one of the sessions by Philippe Bourgau at CPP FRUG in Paris)
+(This video is of one of the sessions by [Philippe Bourgau](https://philippe.bourgau.net/) at CPP FRUG in Paris)
 
 ## Different scales
 
@@ -84,5 +85,8 @@ Finally, we can even apply the method to process improvements, where it becomes
 very similar to [Toyota's Improvement Kata](https://en.wikipedia.org/wiki/Toyota_Kata#The_Improvement_Kata).
 
 ## References 
-1. [The Mikado Method](https://www.manning.com/books/the-mikado-method)
-2. [Working Effectively with Legacy Code](https://www.r7krecon.com/legacy-code), by [Michael C. Feathers](https://www.r7krecon.com/)
+1. [The Mikado Method](https://www.manning.com/books/the-mikado-method), by [Ola Ellnestam](https://ellnestam.wordpress.com/) 
+1  and [Daniel Brolund](https://twitter.com/danielbrolund)
+1. [Working Effectively with Legacy Code](https://www.r7krecon.com/legacy-code), by [Michael C. Feathers](https://www.r7krecon.com/)
+1. [Mikado Method for Legacy Code](https://www.youtube.com/watch?v=qvlkyJ26PGc), by [David Tanzer](https://www.davidtanzer.net/)
+1. [Live Coding de Refactoring - Philippe Bourgau - French Version](https://www.youtube.com/watch?v=Xp7YeQsV9L4), by [Philippe Bourgau](https://philippe.bourgau.net/)
