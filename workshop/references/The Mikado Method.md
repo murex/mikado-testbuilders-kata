@@ -85,4 +85,4 @@ very similar to [Toyota's Improvement Kata](https://en.wikipedia.org/wiki/Toyota
 
 ## References 
 1. [The Mikado Method](https://www.manning.com/books/the-mikado-method)
-2. [Workding effectively with Legacy Code](https://www.goodreads.com/book/show/44919.Working_Effectively_with_Legacy_Code)
+2. [Working Effectively with Legacy Code](https://www.r7krecon.com/legacy-code), by [Michael C. Feathers](https://www.r7krecon.com/)

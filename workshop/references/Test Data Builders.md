@@ -2,7 +2,8 @@
 
 ![IMAGE](../images/GrowingObjectOrientedSoftwareGuidedByTests.PNG)
 
-[Copyright:[Growing Object-Oriented Software, Guided by Tests](https://www.goodreads.com/book/show/4268826-growing-object-oriented-software-guided-by-tests)]
+[Copyright:[Growing Object-Oriented Software, Guided by Tests](http://www.informit.com/store/growing-object-oriented-software-guided-by-tests-9780321503626), 
+by [Nay Pryce](http://natpryce.com/bio.html) and [Steve Freeman](https://www.higherorderlogic.com/)]
 
 ## Summary
 
@@ -215,7 +216,7 @@ We have a small example of this in this codebase, with the [ReportGenerator](../
 constructor calling the [MainRepository](../../src/main/java/com/murex/tbw/MainRepository.java)
 singleton directly.
 
-Here's a technique inspired from [Working Effectively with Legacy Code](https://www.goodreads.com/book/show/44919.Working_Effectively_with_Legacy_Code)
+Here's a technique inspired from [Working Effectively with Legacy Code](https://www.r7krecon.com/legacy-code), by [Michael C. Feathers](https://www.r7krecon.com/)
 
 * Find a place where you can inject a different implementation (here,
   [Repository](../../src/main/java/com/murex/tbw/storage/Repository.java))
@@ -304,4 +305,4 @@ have a big number of interdependent objects!
 
 ## Book References
 1. [Growing Object-Oriented Software, Guided by Tests](https://www.goodreads.com/book/show/4268826-growing-object-oriented-software-guided-by-tests)
-2. [Working Effectively with Legacy Code](https://www.goodreads.com/book/show/44919.Working_Effectively_with_Legacy_Code)
+2. [Working Effectively with Legacy Code](https://www.r7krecon.com/legacy-code), by [Michael C. Feathers](https://www.r7krecon.com/)
