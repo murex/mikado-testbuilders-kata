@@ -2,6 +2,8 @@
 
 ![IMAGE](../images/book-shelve.jpg)
 
+*[Image Source](https://pixabay.com/photos/library-books-knowledge-information-1147815/)*
+
 ## Books
 1. [Growing Object-Oriented Software, Guided by Tests](https://www.goodreads.com/book/show/4268826-growing-object-oriented-software-guided-by-tests), 
 by [Nat Pryce](http://natpryce.com/bio.html) and Steve Freeman
