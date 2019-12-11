@@ -1,8 +1,7 @@
 # Animation Guide
 
 ![A lego hiker guiding is way with a compass and a map](./images/guide.jpg)
-
-[Image Source](https://pixabay.com/photos/hiker-walker-rambler-lego-walk-1984421/)
+*[Image Source](https://pixabay.com/photos/hiker-walker-rambler-lego-walk-1984421/)*
 
 Here are information to run this workshop.
 

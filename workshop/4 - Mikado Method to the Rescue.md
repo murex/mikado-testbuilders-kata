@@ -1,8 +1,7 @@
 # Mikado Method to the rescue
 
 ![Mikado game sticks](images/mikado-sticks.jpg)
-
-[Image Source](https://pixabay.com/photos/mikado-play-puzzle-skill-colorful-1743593/)
+*[Image Source](https://pixabay.com/photos/mikado-play-puzzle-skill-colorful-1743593/)*
 
 Test Data Builders make writing new tests faster once you have them.
 Unfortunately, they take even longer to write in the first place!
@@ -98,8 +97,7 @@ Now that you have a better idea, grab a whiteboard, a marker, some post-its and
 start creating your own mikado graph to add a test.
 
 ![Photo of a whiteboard, markers and post-its, the material needed to draw a Mikado Method](./images/workshop-material.jpg)
-
-[Image Source](https://pixabay.com/photos/workshop-pens-post-it-note-2209239/)
+*[Image Source](https://pixabay.com/photos/workshop-pens-post-it-note-2209239/)*
 
 ### Delete the tests
 
