@@ -2,6 +2,8 @@
 
 ![2 children raising arms in victory in front of a laptop](images/win-win.jpg)
 
+[Image Source](https://pixabay.com/photos/children-win-success-video-game-593313/)
+
 That's all folks!
 
 ## Other Takeaways and important points
