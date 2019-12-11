@@ -2,7 +2,9 @@
 
 ## Turn and Talk Energizer
 
-![Pictures of sparrows](images/sparrows.jpg)*[Image Source](https://pixabay.com/photos/sparrows-sparrows-family-birds-2759978/)*
+![Pictures of sparrows](images/sparrows.jpg)
+
+*[Image Source](https://pixabay.com/photos/sparrows-sparrows-family-birds-2759978/)*
 
 You'll need to collaborate a lot during this workshop, so let's get started
 with an activity that will get you to know each other.

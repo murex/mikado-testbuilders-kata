@@ -1,6 +1,8 @@
 # Easy Fix, Difficult Test
 
-![A pipe fixed with wrenches](images/quick-fix.jpg)*[Image Source](https://pixabay.com/photos/plumbing-pipe-wrench-plumber-840835/)*
+![A pipe fixed with wrenches](images/quick-fix.jpg)
+
+*[Image Source](https://pixabay.com/photos/plumbing-pipe-wrench-plumber-840835/)*
 
 ## Here is the sample app
 

@@ -6,7 +6,9 @@ Let's try to improve the following:
 
 ## Present Test Data Builders
 
-![A child pilling up legos](images/child-legos.jpg)*[Image Source](https://pixabay.com/photos/child-tower-building-blocks-blocks-1864718/)*
+![A child pilling up legos](images/child-legos.jpg)
+
+*[Image Source](https://pixabay.com/photos/child-tower-building-blocks-blocks-1864718/)*
 
 [Test Data Builders](./references/Test%20Data%20Builders.md) are particularly
 handful to build test data. They should help us here.

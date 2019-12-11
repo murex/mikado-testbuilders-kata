@@ -1,6 +1,7 @@
 # Mikado Method to the rescue
 
 ![Mikado game sticks](images/mikado-sticks.jpg)
+
 *[Image Source](https://pixabay.com/photos/mikado-play-puzzle-skill-colorful-1743593/)*
 
 Test Data Builders make writing new tests faster once you have them.
