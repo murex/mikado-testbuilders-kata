@@ -46,5 +46,12 @@ The `testbuilders-workshop` and the accompanying materials are made available
 under the terms of the Eclipse Public License v1.0 ([here](LICENSE.txt)) which 
 accompanies this distribution, and is available at the Eclipse site [here](http://www.eclipse.org/legal/epl-v10.html)
 
+## Contact Us
+
+If you have any question, you can reach the project maintainers: 
+1. [Ahmad Atwi](https://github.com/aatwi)
+1. [Philippe Bourgau](https://github.com/philou) 
+
+
 ----
 [Start...](./workshop/1%20-%20Introduction.md)
