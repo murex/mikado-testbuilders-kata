@@ -1,4 +1,4 @@
-# Test-Builders Workshop
+# Mikado Method and Test Data Builders Kata
 
 _A kata or a workshop to teach how to combine Test Data Builders and the Mikado
 Method to add tests on a bug in a legacy codebase without freezing features_
