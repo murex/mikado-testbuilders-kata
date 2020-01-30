@@ -10,39 +10,39 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workshop", "workshop", "{A6EAD9AB-DDA9-45FC-A831-6981287ACFCD}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{A6EAD9AB-DDA9-45FC-A831-6981287ACFCD}"
 	ProjectSection(SolutionItems) = preProject
-		workshop\1 - Introduction.md = workshop\1 - Introduction.md
-		workshop\2 - Easy Fix Difficult Test.md = workshop\2 - Easy Fix Difficult Test.md
-		workshop\3 - Building Test Data.md = workshop\3 - Building Test Data.md
-		workshop\4 - Mikado Method to the Rescue.md = workshop\4 - Mikado Method to the Rescue.md
-		workshop\5 - Conclusion.md = workshop\5 - Conclusion.md
-		workshop\Animation Guide.md = workshop\Animation Guide.md
+		docs\1 - Introduction.md = docs\1 - Introduction.md
+		docs\2 - Easy Fix Difficult Test.md = docs\2 - Easy Fix Difficult Test.md
+		docs\3 - Building Test Data.md = docs\3 - Building Test Data.md
+		docs\4 - Mikado Method to the Rescue.md = docs\4 - Mikado Method to the Rescue.md
+		docs\5 - Conclusion.md = docs\5 - Conclusion.md
+		docs\Animation Guide.md = docs\Animation Guide.md
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "images", "images", "{D3A04D10-DEB0-4483-B1AD-59F91BBAD9C3}"
 	ProjectSection(SolutionItems) = preProject
-		workshop\images\child-legos.jpg = workshop\images\child-legos.jpg
-		workshop\images\CPP FRUG - YouTube.jpg = workshop\images\CPP FRUG - YouTube.jpg
-		workshop\images\GrowingObjectOrientedSoftwareGuidedByTests.PNG = workshop\images\GrowingObjectOrientedSoftwareGuidedByTests.PNG
-		workshop\images\guide.jpg = workshop\images\guide.jpg
-		workshop\images\Mikado Method for Legacy Code - YouTube.jpg = workshop\images\Mikado Method for Legacy Code - YouTube.jpg
-		workshop\images\mikado-method-cover.jpg = workshop\images\mikado-method-cover.jpg
-		workshop\images\mikado-method-visualize-example.jpg = workshop\images\mikado-method-visualize-example.jpg
-		workshop\images\mikado-sticks.jpg = workshop\images\mikado-sticks.jpg
-		workshop\images\MIkdaoScreenCapture.PNG = workshop\images\MIkdaoScreenCapture.PNG
-		workshop\images\quick-fix.jpg = workshop\images\quick-fix.jpg
-		workshop\images\sparrows.jpg = workshop\images\sparrows.jpg
-		workshop\images\Testing legacy code with Mikado Method and Test Data Builders - YouTube.jpg = workshop\images\Testing legacy code with Mikado Method and Test Data Builders - YouTube.jpg
-		workshop\images\training-from-the-back-of-the-room-cover.jpg = workshop\images\training-from-the-back-of-the-room-cover.jpg
-		workshop\images\win-win.jpg = workshop\images\win-win.jpg
-		workshop\images\workshop-material.jpg = workshop\images\workshop-material.jpg
+		docs\images\child-legos.jpg = docs\images\child-legos.jpg
+		docs\images\CPP FRUG - YouTube.jpg = docs\images\CPP FRUG - YouTube.jpg
+		docs\images\GrowingObjectOrientedSoftwareGuidedByTests.PNG = docs\images\GrowingObjectOrientedSoftwareGuidedByTests.PNG
+		docs\images\guide.jpg = docs\images\guide.jpg
+		docs\images\Mikado Method for Legacy Code - YouTube.jpg = docs\images\Mikado Method for Legacy Code - YouTube.jpg
+		docs\images\mikado-method-cover.jpg = docs\images\mikado-method-cover.jpg
+		docs\images\mikado-method-visualize-example.jpg = docs\images\mikado-method-visualize-example.jpg
+		docs\images\mikado-sticks.jpg = docs\images\mikado-sticks.jpg
+		docs\images\MIkdaoScreenCapture.PNG = docs\images\MIkdaoScreenCapture.PNG
+		docs\images\quick-fix.jpg = docs\images\quick-fix.jpg
+		docs\images\sparrows.jpg = docs\images\sparrows.jpg
+		docs\images\Testing legacy code with Mikado Method and Test Data Builders - YouTube.jpg = docs\images\Testing legacy code with Mikado Method and Test Data Builders - YouTube.jpg
+		docs\images\training-from-the-back-of-the-room-cover.jpg = docs\images\training-from-the-back-of-the-room-cover.jpg
+		docs\images\win-win.jpg = docs\images\win-win.jpg
+		docs\images\docs-material.jpg = docs\images\docs-material.jpg
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "References", "References", "{A850F482-0DE7-480F-833B-7CEF6612AE4C}"
 	ProjectSection(SolutionItems) = preProject
-		workshop\references\Test Data Builders.md = workshop\references\Test Data Builders.md
-		workshop\references\The Mikado Method.md = workshop\references\The Mikado Method.md
+		docs\references\Test Data Builders.md = docs\references\Test Data Builders.md
+		docs\references\The Mikado Method.md = docs\references\The Mikado Method.md
 	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "testbuilders-workshop-bin", "src\main\cpp\bin\testbuilders-workshop-bin.vcxproj", "{5CF1CE67-FD49-44E9-AEEF-34E1F2A24C55}"
