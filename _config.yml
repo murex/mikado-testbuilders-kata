@@ -1,1 +1,6 @@
-theme: jekyll-theme-minimal
+theme: jekyll-theme-time-machine
+title: Mikado Testbuilders Kata 
+
+include: 
+  - docs
+  - LICENSE.txt
