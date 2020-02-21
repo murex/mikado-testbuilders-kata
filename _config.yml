@@ -1,6 +1,11 @@
 theme: jekyll-theme-time-machine
-title: Mikado Testbuilders Kata 
+title: Mikado Testbuilders Kata
 
+plugins:
+  - jekyll-relative-links
+relative_links:
+  enabled: true
+  collections: true
 include: 
   - docs
   - LICENSE.txt
