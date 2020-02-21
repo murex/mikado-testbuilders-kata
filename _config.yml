@@ -2,5 +2,5 @@ theme: jekyll-theme-time-machine
 title: Mikado Testbuilders Kata 
 
 include: 
-  - /docs
+  - docs
   - LICENSE.txt
