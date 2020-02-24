@@ -10,7 +10,7 @@ include:
   - docs
   - LICENSE.txt
   - docs/1_-_Introduction.md
-  - docs/1 - Introduction.md
+  - docs/1%20-%20Introduction.md
 
 markdown: kramdown
 highlighter: rouge
