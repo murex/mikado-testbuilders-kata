@@ -141,8 +141,8 @@ to assess what they learned after programming.
 ### Wall and Web centers
 
 This collection of markdown files contains 2 'Web Centers':
-* [Test Data Builders](./references/Test%20Data%20Builders.md)
-* [The Mikado Method](./references/The%20Mikado%20Method.md)
+* [Test Data Builders](./references/Test_Data_Builders.md)
+* [The Mikado Method](./references/The_Mikado_Method.md)
 
 These are web pages where attendees can look for clues as to how to get through
 the exercise.
