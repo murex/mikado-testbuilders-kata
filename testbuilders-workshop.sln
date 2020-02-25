@@ -18,12 +18,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{A6EAD9AB-D
 		docs\4_Mikado_Method_to_the_Rescue.md = docs\4_Mikado_Method_to_the_Rescue.md
 		docs\5_Conclusion.md = docs\5_Conclusion.md
 		docs\Animation_Guide.md = docs\Animation_Guide.md
+		docs\Troubleshooting.md = docs\Troubleshooting.md
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "images", "images", "{D3A04D10-DEB0-4483-B1AD-59F91BBAD9C3}"
 	ProjectSection(SolutionItems) = preProject
 		docs\images\child-legos.jpg = docs\images\child-legos.jpg
 		docs\images\CPP FRUG - YouTube.jpg = docs\images\CPP FRUG - YouTube.jpg
+		docs\images\docs-material.jpg = docs\images\docs-material.jpg
 		docs\images\GrowingObjectOrientedSoftwareGuidedByTests.PNG = docs\images\GrowingObjectOrientedSoftwareGuidedByTests.PNG
 		docs\images\guide.jpg = docs\images\guide.jpg
 		docs\images\Mikado Method for Legacy Code - YouTube.jpg = docs\images\Mikado Method for Legacy Code - YouTube.jpg
@@ -36,7 +38,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "images", "images", "{D3A04D
 		docs\images\Testing legacy code with Mikado Method and Test Data Builders - YouTube.jpg = docs\images\Testing legacy code with Mikado Method and Test Data Builders - YouTube.jpg
 		docs\images\training-from-the-back-of-the-room-cover.jpg = docs\images\training-from-the-back-of-the-room-cover.jpg
 		docs\images\win-win.jpg = docs\images\win-win.jpg
-		docs\images\docs-material.jpg = docs\images\docs-material.jpg
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "References", "References", "{A850F482-0DE7-480F-833B-7CEF6612AE4C}"

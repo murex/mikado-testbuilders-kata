@@ -32,5 +32,14 @@ references to important concepts in this workshop. If you are in a room, there
 might also be 'Wall Centers' on the wall were you'll find similar information
 and physical books.
 
+Open the code in your favorite IDE:
+
+* To work on the java version, simply load the root [pom.xml](../pom.xml) in 
+  your favourite IDE
+* We currently only have a Visual Studio environment around the C++ code (BTW,
+  contributions are welcome :-)). Open [testbuilders-workshop.sln](../testbuilders-workshop.sln).
+
+If you have problems compiling and running the code, check our [Troubleshooting guide](Troubleshooting.md)
+
 ----
 [Continue...](./2_Easy_Fix_Difficult_Test.md)
