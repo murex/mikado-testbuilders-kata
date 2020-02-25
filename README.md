@@ -43,7 +43,7 @@ workshop with many developers.
 ## License
 
 The `mikado-testbuilders-kata` and the accompanying materials are made available 
-under the terms of the MIT License ([here](LICENSE)) which accompanies this
+under the terms of the MIT License ([here](docs/LICENSE.txt)) which accompanies this
 distribution, and is available at the Open Source site [here](https://opensource.org/licenses/MIT)
 
 ## Contributors 
