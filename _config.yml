@@ -7,7 +7,7 @@ relative_links:
   enabled: true
   collections: true
 include:
-  - docs/LICENSE.md
+  - LICENSE.md
   - docs/1_Introduction.md
   - docs/2_Easy_Fix_Difficult_Test.md
   - docs/3_Building_Test_Data.md
