@@ -29,7 +29,7 @@ class Novel : public Book
 	const std::vector<Genre> genres_;
 
 public:
-	Novel(std::string& name, double price, const Author& author, country::Language language, const std::vector<Genre>& genres);
+	Novel(const std::string& name, double price, const Author& author, country::Language language, const std::vector<Genre>& genres);
 
 	virtual std::string getName() const
 	{
