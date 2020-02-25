@@ -12,12 +12,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{A6EAD9AB-DDA9-45FC-A831-6981287ACFCD}"
 	ProjectSection(SolutionItems) = preProject
-		docs\1 - Introduction.md = docs\1 - Introduction.md
-		docs\2 - Easy Fix Difficult Test.md = docs\2 - Easy Fix Difficult Test.md
-		docs\3 - Building Test Data.md = docs\3 - Building Test Data.md
-		docs\4 - Mikado Method to the Rescue.md = docs\4 - Mikado Method to the Rescue.md
-		docs\5 - Conclusion.md = docs\5 - Conclusion.md
-		docs\Animation Guide.md = docs\Animation Guide.md
+		docs\1_Introduction.md = docs\1_Introduction.md
+		docs\2_Easy_Fix_Difficult_Test.md = docs\2_Easy_Fix_Difficult_Test.md
+		docs\3_Building_Test_Data.md = docs\3_Building_Test_Data.md
+		docs\4_Mikado_Method_to_the_Rescue.md = docs\4_Mikado_Method_to_the_Rescue.md
+		docs\5_Conclusion.md = docs\5_Conclusion.md
+		docs\Animation_Guide.md = docs\Animation_Guide.md
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "images", "images", "{D3A04D10-DEB0-4483-B1AD-59F91BBAD9C3}"
@@ -41,8 +41,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "images", "images", "{D3A04D
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "References", "References", "{A850F482-0DE7-480F-833B-7CEF6612AE4C}"
 	ProjectSection(SolutionItems) = preProject
-		docs\references\Test Data Builders.md = docs\references\Test Data Builders.md
-		docs\references\The Mikado Method.md = docs\references\The Mikado Method.md
+		docs\references\Test_Data_Builders.md = docs\references\Test_Data_Builders.md
+		docs\references\The_Mikado_Method.md = docs\references\The_Mikado_Method.md
 	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "testbuilders-workshop-bin", "src\main\cpp\bin\testbuilders-workshop-bin.vcxproj", "{5CF1CE67-FD49-44E9-AEEF-34E1F2A24C55}"
