@@ -17,5 +17,6 @@
     <ClCompile Include="InMemoryRepository.cpp">
       <Filter>storage</Filter>
     </ClCompile>
+    <ClCompile Include="Tests.cpp" />
   </ItemGroup>
 </Project>
