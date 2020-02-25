@@ -171,6 +171,10 @@ namespace
 void JsonRepository::loadJsonData()
 {
 	ifstream fileStream(sourceFile_);
+	if (fileStream.fail())
+	{
+		throw std::invalid_argument("Could not load repository.json data. Make sure to run from the solution folder");
+	}
 	json repoJson;
 	fileStream >> repoJson;
 
