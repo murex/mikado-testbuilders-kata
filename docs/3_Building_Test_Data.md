@@ -10,11 +10,11 @@ Let's try to improve the following:
 
 *[Image Source](https://pixabay.com/photos/child-tower-building-blocks-blocks-1864718/)*
 
-[Test Data Builders](./references/Test%20Data%20Builders.md) are particularly
+[Test Data Builders](./references/Test_Data_Builders.md) are particularly
 handful to build test data. They should help us here.
 
 You'll find resource about Test Data Builders 
-[here](./references/Test%20Data%20Builders.md) or on your room walls.
+[here](./references/Test_Data_Builders.md) or on your room walls.
 
 ### Rapid Response Question
 
@@ -33,7 +33,7 @@ Time for a mini-retro again.
 Take a few minutes to discuss the good and the bad of this approach.
 
 Then compare them to what people usually say in
-[Animation Guide.md](./Animation%20Guide.md)
+[Animation Guide.md](./Animation_Guide.md)
 
 ----
-[Continue...](./4%20-%20Mikado%20Method%20to%20the%20Rescue.md)
+[Continue...](./4_Mikado_Method_to_the_Rescue.md)

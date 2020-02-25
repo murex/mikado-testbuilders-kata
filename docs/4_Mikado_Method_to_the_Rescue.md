@@ -11,11 +11,11 @@ That's not going to help us to test our bugs in legacy code!
 
 ## Present the Mikado Method
 
-The [Mikado Method](./references/The%20Mikado%20Method.md) is a technique to
+The [Mikado Method](./references/The_Mikado_Method.md) is a technique to
 incrementally do large refactorings, alongside feature delivery.
 
 You'll find resource about the Mikado Method 
-[here](./references/The%20Mikado%20Method.md) or on your room walls.
+[here](./references/The_Mikado_Method.md) or on your room walls.
 
 ### Rapid Response Question
 
@@ -130,7 +130,7 @@ If you have the time, repeat the same exercise with the test on
 You should be able to re-use many builders you wrote before.
 
 You might need to look for 
-[other flavors of builders](./references/Test%20Data%20Builders.md) to finish
+[other flavors of builders](./references/Test_Data_Builders.md) to finish
 this test.
 
 ## Retrospective
@@ -155,7 +155,7 @@ Let's do a more thorough retrospective this time.
 4- If you want, volunteer to share it with everyone
 
 5- You can also check what people usually say in
-[Animation Guide.md](./Animation%20Guide.md)
+[Animation Guide.md](./Animation_Guide.md)
 
 ----
-[Continue...](./5%20-%20Conclusion.md)
+[Continue...](./5_Conclusion.md)

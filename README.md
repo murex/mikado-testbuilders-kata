@@ -38,12 +38,12 @@ workshop with many developers.
 ## Where to start
 
 * All kata instructions are in the docs folder. It starts with
-[Introduction.md](./docs/1%20-%20Introduction.md)
+[Introduction.md](./docs/1_Introduction.md)
 
 ## License
 
 The `mikado-testbuilders-kata` and the accompanying materials are made available 
-under the terms of the MIT License ([here](LICENSE.txt)) which accompanies this
+under the terms of the MIT License ([here](LICENSE.md)) which accompanies this
 distribution, and is available at the Open Source site [here](https://opensource.org/licenses/MIT)
 
 ## Contributors 
@@ -53,4 +53,4 @@ distribution, and is available at the Open Source site [here](https://opensource
 
 
 ----
-[Start...](./docs/1%20-%20Introduction.md)
+[Start...](./docs/1_Introduction.md)
