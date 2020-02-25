@@ -9,11 +9,11 @@ relative_links:
 include: 
   - docs
   - LICENSE.txt
-  - docs/1_-_Introduction.md
-  - docs/2_-_Easy_Fix_Difficult_Test.md
-  - docs/3_-_Building_Test_Data.md
-  - docs/4_-_Mikado_Method_to_the_Rescue.md
-  - docs/5_-_Conclusion.md
+  - docs/1_Introduction.md
+  - docs/2_Easy_Fix_Difficult_Test.md
+  - docs/3_Building_Test_Data.md
+  - docs/4_Mikado_Method_to_the_Rescue.md
+  - docs/5_Conclusion.md
   - docs/Animation_Guide.md
   - docs/references/References.md
   - docs/references/Test_Data_Builders.md

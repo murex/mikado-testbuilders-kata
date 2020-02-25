@@ -36,4 +36,4 @@ Then compare them to what people usually say in
 [Animation Guide.md](./Animation_Guide.md)
 
 ----
-[Continue...](./4_-_Mikado_Method_to_the_Rescue.md)
+[Continue...](./4_Mikado_Method_to_the_Rescue.md)

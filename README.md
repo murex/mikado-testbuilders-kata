@@ -38,7 +38,7 @@ workshop with many developers.
 ## Where to start
 
 * All kata instructions are in the docs folder. It starts with
-[Introduction.md](./docs/1_-_Introduction.md)
+[Introduction.md](./docs/1_Introduction.md)
 
 ## License
 
@@ -53,4 +53,4 @@ distribution, and is available at the Open Source site [here](https://opensource
 
 
 ----
-[Start...](./docs/1_-_Introduction.md)
+[Start...](./docs/1_Introduction.md)
