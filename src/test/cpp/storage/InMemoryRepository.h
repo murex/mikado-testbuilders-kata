@@ -1,7 +1,7 @@
 #ifndef TESTBUILDERS_WORKSHOP_TESTS_STORAGE_IN_MEMORY_REPOSITORY_H_INCLUDED
 #define TESTBUILDERS_WORKSHOP_TESTS_STORAGE_IN_MEMORY_REPOSITORY_H_INCLUDED
 
-#include "../../../main/cpp/lib/storage/Repository.h"
+#include "storage/Repository.h"
 
 namespace storage
 {
