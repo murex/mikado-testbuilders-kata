@@ -182,7 +182,7 @@ in the code and provided us with quick fixes!
   Sneak Peek at Bug Fix in ReportGenerator.cpp
   </summary>
 
-  ```diff
+  ```diff java
            double totalAmount = 0.0;
            for (const auto id2Invoice : invoiceMap)
            {
