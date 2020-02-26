@@ -129,9 +129,9 @@ in the code and provided us with quick fixes!
   public double computeTotalAmount() {
     double sum = 0.0;
     for (PurchasedBook purchasedBook : purchasedBooks) {
-  -           double totalPrice = purchasedBook.getTotalPrice();
-  +           double totalPrice = purchasedBook.getTotalPrice() * TaxRule.getApplicableRate(country, purchasedBook.getBook());
-        sum += totalPrice;
+  -   double totalPrice = purchasedBook.getTotalPrice();
+  +   double totalPrice = purchasedBook.getTotalPrice() * TaxRule.getApplicableRate(country, purchasedBook.getBook());
+      sum += totalPrice;
     }
     return sum;
   } 
