@@ -1,7 +1,6 @@
 theme: jekyll-theme-cayman
 title: Mikado Testbuilders Kata
 
-markdown: kramdown
 plugins:
   - jekyll-relative-links
 relative_links:
