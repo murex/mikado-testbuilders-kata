@@ -37,7 +37,7 @@ our particular situation.
   <summary>
     Screen-shot of the Mikado Graph from the video
   </summary>
-  <img src="./images/MIkdaoScreenCapture.PNG" alt="Mikado Graph">
+  <img src="./images/MIkdaoScreenCapture.PNG" alt="Mikado Graph" />
   
 
 </details>
@@ -69,21 +69,7 @@ our particular situation.
         }
     } 
   </script>
-
-##### C++
-
-```C++
-TEST(InvoiceTest, applies_tax_rules_when_computing_total_amount)
-{
-	Invoice oneNovelUSAInvoice = an_invoice()
-		.from(USA)
-		.with(a_purchased_book().of(
-			a_novel().costing(2.99))).build();
-
-	EXPECT_EQ(2.99 * 1.15 * 0.98, oneNovelUSAInvoice.computeTotalAmount());
-}
-```
-
+  
 </details>
 
 <details>
