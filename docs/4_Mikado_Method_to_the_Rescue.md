@@ -72,24 +72,24 @@ our particular situation.
 <details>
   <summary>Code of NovelTestBuilder from the video</summary>
   
-```java
-package com.murex.tbw.domain.book;
-import com.murex.tbw.domain.country.Language;
-import java.util.ArrayList;
-
-public class NovelTestBuilder {
-    private double price = 3.99;
-
-    public  NovelTestBuilder costing(double price){
-        this.price = price;
-        return this;
-    }
-
-    public Novel build() {
-        return  new Novel("Grapes with Wrath", 3.99, null, Language.ENGLISH, new ArrayList<>());
-    }
-}
-```
+  ```java
+  package com.murex.tbw.domain.book;
+  import com.murex.tbw.domain.country.Language;
+  import java.util.ArrayList;
+  
+  public class NovelTestBuilder {
+      private double price = 3.99;
+  
+      public  NovelTestBuilder costing(double price){
+          this.price = price;
+          return this;
+      }
+  
+      public Novel build() {
+          return  new Novel("Grapes with Wrath", 3.99, null, Language.ENGLISH, new ArrayList<>());
+      }
+  }
+  ```
 
 </details>  
 
