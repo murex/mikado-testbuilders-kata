@@ -37,8 +37,8 @@ our particular situation.
   <summary>
     <p>Screen-shot of the Mikado Graph from the video</p>
   </summary>
+  <img src="./images/MIkdaoScreenCapture.PNG" alt="Mikado Graph">
   
-![screen capture](./images/MIkdaoScreenCapture.PNG) 
 
 </details>
 
