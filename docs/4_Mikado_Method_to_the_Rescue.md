@@ -43,7 +43,9 @@ our particular situation.
 #### Code Snippets 
 
 <details>
-  <summary>Code of InvoiceTest from the video</summary>
+  <summary>
+  Code of InvoiceTest from the video
+  </summary>
   
   ```java
   package com.murex.tbw.purchase;
@@ -64,7 +66,7 @@ our particular situation.
           Assertions.assertEquals(2.99 * 1.15 * 0.98, oneNovelUSAInvoice.computeTotalAmount());
       }
   }
-```
+  ```
 </details>
 
 <details>
