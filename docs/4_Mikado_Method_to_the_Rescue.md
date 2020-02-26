@@ -34,7 +34,7 @@ our particular situation.
 #### Mikado Graph
 
 <details>
-    Screen-shot of the Mikado Graph from the video
+  <summary>Screen-shot of the Mikado Graph from the video</summary>
   <img src="./images/MIkdaoScreenCapture.PNG" alt="Mikado Graph" />
 </details>
 
