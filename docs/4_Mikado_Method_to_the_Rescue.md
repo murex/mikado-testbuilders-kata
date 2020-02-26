@@ -70,7 +70,9 @@ our particular situation.
 </details>
 
 <details>
-  <summary>Code of NovelTestBuilder from the video</summary>
+  <summary>
+  Code of NovelTestBuilder from the video
+  </summary>
   
   ```java
   package com.murex.tbw.domain.book;
