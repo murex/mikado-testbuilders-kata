@@ -42,6 +42,7 @@ our particular situation.
 
 #### Code Snippets 
 
+$ echo -e "<details><summary>Collapsed Block</summary>\n\n## Header\n</details>" | kramdown --parse-block-html
 <details>
   <summary>
     Code of InvoiceTest from the video
