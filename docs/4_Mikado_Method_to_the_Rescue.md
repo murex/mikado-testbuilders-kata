@@ -45,30 +45,30 @@ our particular situation.
 #### Code Snippets 
 
 <details>
-  <summary>Code of InvoiceTest from the video</summary>
+  <summary>
+    Code of InvoiceTest from the video
+  </summary>
   
-##### Java
-
-<script type="text/java"> 
-package com.murex.tbw.purchase;
-
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
-
-class InvoiceTest {
-
-    @Test
-    public void
-    applies_tax_rules_when_computing_total_amount() {
-        Invoice oneNovelUSAInvoice = anInvoice()
-                .from(USA)
-                .with(aPurchasedBook().of(
-                        aNovel().costing(2.99))).build();
-
-        Assertions.assertEquals(2.99 * 1.15 * 0.98, oneNovelUSAInvoice.computeTotalAmount());
-    }
-}
-</script>
+  <script type="text/java"> 
+    package com.murex.tbw.purchase;
+    
+    import org.junit.jupiter.api.Assertions;
+    import org.junit.jupiter.api.Test;
+    
+    class InvoiceTest {
+    
+        @Test
+        public void
+        applies_tax_rules_when_computing_total_amount() {
+            Invoice oneNovelUSAInvoice = anInvoice()
+                    .from(USA)
+                    .with(aPurchasedBook().of(
+                            aNovel().costing(2.99))).build();
+    
+            Assertions.assertEquals(2.99 * 1.15 * 0.98, oneNovelUSAInvoice.computeTotalAmount());
+        }
+    } 
+  </script>
 
 ##### C++
 
