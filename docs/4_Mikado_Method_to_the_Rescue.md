@@ -38,8 +38,6 @@ our particular situation.
     Screen-shot of the Mikado Graph from the video
   </summary>
   <img src="./images/MIkdaoScreenCapture.PNG" alt="Mikado Graph" />
-  
-
 </details>
 
 #### Code Snippets 
@@ -48,7 +46,6 @@ our particular situation.
   <summary>
     Code of InvoiceTest from the video
   </summary>
-  
   <script type="text/java"> 
     package com.murex.tbw.purchase;
     
