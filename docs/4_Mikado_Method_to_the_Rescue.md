@@ -62,7 +62,6 @@ our particular situation.
       }
      } 
   </script>
-  
 </details>
 
 <details>
