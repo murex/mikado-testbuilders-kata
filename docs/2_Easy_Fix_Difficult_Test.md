@@ -122,8 +122,7 @@ After some analysis, one of our developers was able to quickly identify the bugs
 in the code and provided us with quick fixes!  
 
 <details>
-  <summary>
-  Sneak Peek at Bug Fix in Invoice.java
+  <summary>Sneak Peek at Bug Fix in Invoice.java
   </summary>
 
   ```diff
