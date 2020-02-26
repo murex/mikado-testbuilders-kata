@@ -49,7 +49,7 @@ our particular situation.
   
 ##### Java
 
-```java
+<script type="text/java"> 
 package com.murex.tbw.purchase;
 
 import org.junit.jupiter.api.Assertions;
@@ -68,7 +68,7 @@ class InvoiceTest {
         Assertions.assertEquals(2.99 * 1.15 * 0.98, oneNovelUSAInvoice.computeTotalAmount());
     }
 }
-```
+</script>
 
 ##### C++
 
