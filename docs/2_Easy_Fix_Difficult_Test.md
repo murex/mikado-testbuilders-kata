@@ -173,7 +173,6 @@ in the code and provided us with quick fixes!
                   sum += totalPrice;
           }
           return sum;
-  
   ```
 
 </details>
