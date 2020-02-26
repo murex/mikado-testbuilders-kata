@@ -126,15 +126,15 @@ in the code and provided us with quick fixes!
   </summary>
 
   ```diff
-      public double computeTotalAmount() {
-          double sum = 0.0;
-          for (PurchasedBook purchasedBook : purchasedBooks) {
+  public double computeTotalAmount() {
+    double sum = 0.0;
+    for (PurchasedBook purchasedBook : purchasedBooks) {
   -           double totalPrice = purchasedBook.getTotalPrice();
   +           double totalPrice = purchasedBook.getTotalPrice() * TaxRule.getApplicableRate(country, purchasedBook.getBook());
-              sum += totalPrice;
-          }
-          return sum;
-      } 
+        sum += totalPrice;
+    }
+    return sum;
+  } 
   ```
 
 </details>
