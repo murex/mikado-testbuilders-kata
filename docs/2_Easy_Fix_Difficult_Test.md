@@ -122,7 +122,8 @@ After some analysis, one of our developers was able to quickly identify the bugs
 in the code and provided us with quick fixes!  
 
 <details>
-  <summary>Sneak Peek at Bug Fix in Invoice.java
+  <summary markdown='span'>
+  Sneak Peek at Bug Fix in Invoice.java
   </summary>
 
   ```diff
@@ -140,7 +141,7 @@ in the code and provided us with quick fixes!
 </details>
 
 <details>
-  <summary>
+  <summary markdown='span'>
   Sneak Peek at Bug Fix in ReportGenerator.java
   </summary>
 
@@ -159,7 +160,7 @@ in the code and provided us with quick fixes!
 </details>
 
 <details>
-  <summary>
+  <summary markdown='span'>
   Sneak Peek at Bug Fix in Invoice.cpp
   </summary>
 
@@ -177,7 +178,7 @@ in the code and provided us with quick fixes!
 </details>
    
 <details>
-  <summary>
+  <summary markdown='span'>
   Sneak Peek at Bug Fix in ReportGenerator.cpp
   </summary>
 

@@ -34,7 +34,8 @@ our particular situation.
 #### Mikado Graph
 
 <details>
-  <summary  markdown='span'>Screen-shot of the Mikado Graph from the video
+  <summary  markdown='span'>
+  Screen-shot of the Mikado Graph from the video
   </summary>
   <img src="./images/MIkdaoScreenCapture.PNG" alt="Mikado Graph" />
 </details>
@@ -69,7 +70,7 @@ our particular situation.
 </details>
 
 <details>
-  <summary>
+  <summary markdown='span'>
   Code of NovelTestBuilder from the video
   </summary>
   
@@ -91,7 +92,6 @@ our particular situation.
       }
   }
   ```
-
 </details>  
 
 ## DIY
