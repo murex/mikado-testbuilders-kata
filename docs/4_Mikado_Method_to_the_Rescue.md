@@ -34,8 +34,7 @@ our particular situation.
 #### Mikado Graph
 
 <details>
-  <summary>
-  Screen-shot of the Mikado Graph from the video
+  <summary  markdown='span'>Screen-shot of the Mikado Graph from the video
   </summary>
   <img src="./images/MIkdaoScreenCapture.PNG" alt="Mikado Graph" />
 </details>
@@ -43,7 +42,7 @@ our particular situation.
 #### Code Snippets 
 
 <details>
-  <summary>
+  <summary markdown='span'>
   Code of InvoiceTest from the video
   </summary>
   
@@ -66,7 +65,7 @@ our particular situation.
           Assertions.assertEquals(2.99 * 1.15 * 0.98, oneNovelUSAInvoice.computeTotalAmount());
       }
   }
-  ```
+      ```
 </details>
 
 <details>
