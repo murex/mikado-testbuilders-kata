@@ -65,7 +65,7 @@ our particular situation.
           Assertions.assertEquals(2.99 * 1.15 * 0.98, oneNovelUSAInvoice.computeTotalAmount());
       }
   }
-      ```
+  ```
 </details>
 
 <details>
