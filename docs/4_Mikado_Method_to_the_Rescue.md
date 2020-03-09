@@ -118,18 +118,18 @@ our particular situation.
   #include "domain/book/Novel.h"
   namespace domain
   {
-  namespace book
-  {
-  class NovelTestBuilder
-  {
-  	double price = 3.99;
-  	static const Author nullAuthor;
-  public:
-  	static NovelTestBuilder a_novel();
-  	NovelTestBuilder costing(double price);
-  	Novel build() const;
-  };
-  }
+    namespace book
+    {
+        class NovelTestBuilder
+        {
+  	        double price = 3.99;
+  	        static const Author nullAuthor;
+            public:
+  	            static NovelTestBuilder a_novel();
+  	            NovelTestBuilder costing(double price);
+  	            Novel build() const;
+        };
+    }
   }
   #endif // TESTBUILDERS_WORKSHOP_TESTS_DOMAIN_BOOKS_NOVEL_TEST_BUILDER_H_INCLUDED
   ```
@@ -140,28 +140,28 @@ our particular situation.
   #include "domain/book/NovelTestBuilder.h"
   namespace domain
   {
-  namespace book
-  {
-  const Author NovelTestBuilder::nullAuthor("Joe", country::Country("USA", country::Currency::US_DOLLAR, country::Language::ENGLISH));
-  NovelTestBuilder NovelTestBuilder::a_novel()
-  {
-  	return {};
-  }
-  NovelTestBuilder NovelTestBuilder::costing(double price)
-  {
-  	this->price = price;
-  	return *this;
-  }
-  Novel NovelTestBuilder::build() const
-  {
-  	return Novel(
-  		"Grapes with Wrath",
-  		price,
-  		nullAuthor,
-  		country::Language::ENGLISH,
-  		std::vector<Genre>());
-  }
-  }
+    namespace book
+  	{
+        const Author NovelTestBuilder::nullAuthor("Joe", country::Country("USA", country::Currency::US_DOLLAR, country::Language::ENGLISH));
+        NovelTestBuilder NovelTestBuilder::a_novel()
+        {
+  	        return {};
+        }
+        NovelTestBuilder NovelTestBuilder::costing(double price)
+        {
+  	        this->price = price;
+  	        return *this;
+        }
+        Novel NovelTestBuilder::build() const
+        {
+  	        return Novel(
+  		        "Grapes with Wrath",
+  		        price,
+  		        nullAuthor,
+  		        country::Language::ENGLISH,
+  		    std::vector<Genre>());
+        }
+    }
   }
   ```
   
