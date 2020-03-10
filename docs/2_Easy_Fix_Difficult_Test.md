@@ -122,69 +122,76 @@ After some analysis, one of our developers was able to quickly identify the bugs
 in the code and provided us with quick fixes!  
 
 <details>
-  <summary>Sneak Peek at Bug Fix in Invoice.java</summary>
+  <summary markdown='span'>
+  Sneak Peek at Bug Fix in Invoice.java
+  </summary>
 
-```diff
-    public double computeTotalAmount() {
-        double sum = 0.0;
-        for (PurchasedBook purchasedBook : purchasedBooks) {
--           double totalPrice = purchasedBook.getTotalPrice();
-+           double totalPrice = purchasedBook.getTotalPrice() * TaxRule.getApplicableRate(country, purchasedBook.getBook());
-            sum += totalPrice;
-        }
-        return sum;
-    } 
-```
-
-</details>
-
-<details>
-  <summary>Sneak Peek at Bug Fix in ReportGenerator.java</summary>
-
-```diff
-    public double getTotalAmount() {
-        Map<Integer, Invoice> invoiceMap = repository.getInvoiceMap();
-        double totalAmount = 0.0;
-        for (Invoice invoice : invoiceMap.values()) {       
--            totalAmount += invoice.computeTotalAmount();
-+            totalAmount += CurrencyConverter.toUSD(invoice.computeTotalAmount(), invoice.getCountry().getCurrency());
-        }
-        return totalAmount;
+  ```diff
+  public double computeTotalAmount() {
+    double sum = 0.0;
+    for (PurchasedBook purchasedBook : purchasedBooks) {
+  -   double totalPrice = purchasedBook.getTotalPrice();
+  +   double totalPrice = purchasedBook.getTotalPrice() * TaxRule.getApplicableRate(country, purchasedBook.getBook());
+      sum += totalPrice;
     }
-```
+    return sum;
+  } 
+  ```
 
 </details>
 
 <details>
-  <summary>Sneak Peek at Bug Fix in Invoice.cpp</summary>
+  <summary markdown='span'>
+  Sneak Peek at Bug Fix in ReportGenerator.java
+  </summary>
 
-```diff
-        double sum = 0.0;
-        for (const auto purchasedBook : purchasedBooks_)
-        {
--               double totalPrice = purchasedBook->getTotalPrice();
-+               double totalPrice = purchasedBook->getTotalPrice() * finance::getApplicableRate(country_, *purchasedBook->getBook());
-                sum += totalPrice;
-        }
-        return sum;
+  ```diff
+      public double getTotalAmount() {
+          Map<Integer, Invoice> invoiceMap = repository.getInvoiceMap();
+          double totalAmount = 0.0;
+          for (Invoice invoice : invoiceMap.values()) {       
+  -            totalAmount += invoice.computeTotalAmount();
+  +            totalAmount += CurrencyConverter.toUSD(invoice.computeTotalAmount(), invoice.getCountry().getCurrency());
+          }
+          return totalAmount;
+      }
+  ```
 
-```
+</details>
+
+<details>
+  <summary markdown='span'>
+  Sneak Peek at Bug Fix in Invoice.cpp
+  </summary>
+
+  ```diff
+          double sum = 0.0;
+          for (const auto purchasedBook : purchasedBooks_)
+          {
+  -               double totalPrice = purchasedBook->getTotalPrice();
+  +               double totalPrice = purchasedBook->getTotalPrice() * finance::getApplicableRate(country_, *purchasedBook->getBook());
+                  sum += totalPrice;
+          }
+          return sum;
+  ```
 
 </details>
    
 <details>
-  <summary>Sneak Peek at Bug Fix in ReportGenerator.cpp</summary>
+  <summary markdown='span'>
+  Sneak Peek at Bug Fix in ReportGenerator.cpp
+  </summary>
 
-```diff
-         double totalAmount = 0.0;
-         for (const auto id2Invoice : invoiceMap)
-         {
--                totalAmount += id2Invoice.second->computeTotalAmount();
-+                const auto& invoice = *id2Invoice.second;
-+                totalAmount += finance::toUSD(invoice.computeTotalAmount(), invoice.getCountry().getCurrency());
-         }
-         return totalAmount;
-```
+  ```diff java
+           double totalAmount = 0.0;
+           for (const auto id2Invoice : invoiceMap)
+           {
+  -                totalAmount += id2Invoice.second->computeTotalAmount();
+  +                const auto& invoice = *id2Invoice.second;
+  +                totalAmount += finance::toUSD(invoice.computeTotalAmount(), invoice.getCountry().getCurrency());
+           }
+           return totalAmount;
+  ```
 
 </details>
 

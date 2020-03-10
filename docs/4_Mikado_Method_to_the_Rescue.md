@@ -34,149 +34,137 @@ our particular situation.
 #### Mikado Graph
 
 <details>
-  <summary>Screen-shot of the Mikado Graph from the video</summary>
-  
-![screen capture](./images/MIkdaoScreenCapture.PNG) 
-
+  <summary  markdown='span'>
+  Screen-shot of the Mikado Graph from the video
+  </summary>
+  <img src="./images/MIkdaoScreenCapture.PNG" alt="Mikado Graph" />
 </details>
 
 #### Code Snippets 
 
 <details>
-  <summary>Code of InvoiceTest from the video</summary>
+  <summary markdown='span'>
+  Code of InvoiceTest from the video
+  </summary>
   
 ##### Java
 
-```java
-package com.murex.tbw.purchase;
+  ```java
+  package com.murex.tbw.purchase;
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
+  import org.junit.jupiter.api.Assertions;
+  import org.junit.jupiter.api.Test;
 
-class InvoiceTest {
+  class InvoiceTest {
 
-    @Test
-    public void
-    applies_tax_rules_when_computing_total_amount() {
-        Invoice oneNovelUSAInvoice = anInvoice()
-                .from(USA)
-                .with(aPurchasedBook().of(
-                        aNovel().costing(2.99))).build();
+      @Test
+      public void
+      applies_tax_rules_when_computing_total_amount() {
+          Invoice oneNovelUSAInvoice = anInvoice()
+                  .from(USA)
+                  .with(aPurchasedBook().of(
+                          aNovel().costing(2.99))).build();
 
-        Assertions.assertEquals(2.99 * 1.15 * 0.98, oneNovelUSAInvoice.computeTotalAmount());
-    }
-}
-```
+          Assertions.assertEquals(2.99 * 1.15 * 0.98, oneNovelUSAInvoice.computeTotalAmount());
+      }
+  }
+  ```
 
 ##### C++
 
-```C++
-TEST(InvoiceTest, applies_tax_rules_when_computing_total_amount)
-{
-	Invoice oneNovelUSAInvoice = an_invoice()
-		.from(USA)
-		.with(a_purchased_book().of(
-			a_novel().costing(2.99))).build();
-
-	EXPECT_EQ(2.99 * 1.15 * 0.98, oneNovelUSAInvoice.computeTotalAmount());
-}
-```
+  ```C++
+  TEST(InvoiceTest, applies_tax_rules_when_computing_total_amount)
+  {
+  	Invoice oneNovelUSAInvoice = an_invoice()
+  		.from(USA)
+  		.with(a_purchased_book().of(
+  			a_novel().costing(2.99))).build();
+  	EXPECT_EQ(2.99 * 1.15 * 0.98, oneNovelUSAInvoice.computeTotalAmount());
+  }
+  ```
 
 </details>
 
 <details>
-  <summary>Code of NovelTestBuilder from the video</summary>
+  <summary markdown='span'>
+  Code of NovelTestBuilder from the video
+  </summary>
   
-##### Java
-
-```java
-package com.murex.tbw.domain.book;
-import com.murex.tbw.domain.country.Language;
-import java.util.ArrayList;
-
-public class NovelTestBuilder {
-    private double price = 3.99;
-
-    public  NovelTestBuilder costing(double price){
-        this.price = price;
-        return this;
-    }
-
-    public Novel build() {
+  ```java
+  package com.murex.tbw.domain.book;
+  import com.murex.tbw.domain.country.Language;
+  import java.util.ArrayList;
+  
+  public class NovelTestBuilder {
+      private double price = 3.99;
+  
+      public  NovelTestBuilder costing(double price){
+          this.price = price;
+          return this;
+      }
+  
+      public Novel build() {
         return  new Novel("Grapes with Wrath", price, null, Language.ENGLISH, new ArrayList<>());
-    }
-}
-```
-
+      }
+  }
+  ```
 ##### C++
 
-NovelTestBuilder.h
+  NovelTestBuilder.h
+  
+  ```C++
+  #ifndef TESTBUILDERS_WORKSHOP_TESTS_DOMAIN_BOOKS_NOVEL_TEST_BUILDER_H_INCLUDED
+  #define TESTBUILDERS_WORKSHOP_TESTS_DOMAIN_BOOKS_NOVEL_TEST_BUILDER_H_INCLUDED
+  #include "domain/book/Novel.h"
+  namespace domain
+  {
+    namespace book
+    {
+        class NovelTestBuilder
+        {
+  	        double price = 3.99;
+  	        static const Author nullAuthor;
+            public:
+  	            static NovelTestBuilder a_novel();
+  	            NovelTestBuilder costing(double price);
+  	            Novel build() const;
+        };
+    }
+  }
+  #endif // TESTBUILDERS_WORKSHOP_TESTS_DOMAIN_BOOKS_NOVEL_TEST_BUILDER_H_INCLUDED
+  ```
 
-```C++
-#ifndef TESTBUILDERS_WORKSHOP_TESTS_DOMAIN_BOOKS_NOVEL_TEST_BUILDER_H_INCLUDED
-#define TESTBUILDERS_WORKSHOP_TESTS_DOMAIN_BOOKS_NOVEL_TEST_BUILDER_H_INCLUDED
-
-#include "domain/book/Novel.h"
-
-namespace domain
-{
-namespace book
-{
-
-class NovelTestBuilder
-{
-	double price = 3.99;
-	static const Author nullAuthor;
-
-public:
-	static NovelTestBuilder a_novel();
-
-	NovelTestBuilder costing(double price);
-
-	Novel build() const;
-};
-
-}
-}
-#endif // TESTBUILDERS_WORKSHOP_TESTS_DOMAIN_BOOKS_NOVEL_TEST_BUILDER_H_INCLUDED
-```
-
-NovelTestBuilder.cpp
-
-```C++
-#include "domain/book/NovelTestBuilder.h"
-
-namespace domain
-{
-namespace book
-{
-
-const Author NovelTestBuilder::nullAuthor("Joe", country::Country("USA", country::Currency::US_DOLLAR, country::Language::ENGLISH));
-
-NovelTestBuilder NovelTestBuilder::a_novel()
-{
-	return {};
-}
-
-NovelTestBuilder NovelTestBuilder::costing(double price)
-{
-	this->price = price;
-	return *this;
-}
-
-Novel NovelTestBuilder::build() const
-{
-	return Novel(
-		"Grapes with Wrath",
-		price,
-		nullAuthor,
-		country::Language::ENGLISH,
-		std::vector<Genre>());
-}
-}
-}
-```
-
+  NovelTestBuilder.cpp
+  
+  ```C++
+  #include "domain/book/NovelTestBuilder.h"
+  namespace domain
+  {
+    namespace book
+  	{
+        const Author NovelTestBuilder::nullAuthor("Joe", country::Country("USA", country::Currency::US_DOLLAR, country::Language::ENGLISH));
+        NovelTestBuilder NovelTestBuilder::a_novel()
+        {
+  	        return {};
+        }
+        NovelTestBuilder NovelTestBuilder::costing(double price)
+        {
+  	        this->price = price;
+  	        return *this;
+        }
+        Novel NovelTestBuilder::build() const
+        {
+  	        return Novel(
+  		        "Grapes with Wrath",
+  		        price,
+  		        nullAuthor,
+  		        country::Language::ENGLISH,
+  		    std::vector<Genre>());
+        }
+    }
+  }
+  ```
+  
 </details>  
 
 ## DIY
