@@ -7,7 +7,7 @@ by [Nat Pryce](http://natpryce.com/bio.html) and [Steve Freeman](https://www.hig
 
 ## Summary
 
-'Test Data Builders' is technique that leverages on the [Builder Pattern](https://en.wikipedia.org/wiki/Builder_pattern#Java) 
+'Test Data Builders' is a technique that leverages on the [Builder Pattern](https://en.wikipedia.org/wiki/Builder_pattern#Java) 
 to construct complex objects in tests.  
 With 'Test Data Builders' we can omit fields or properties that do not 
 contribute to the behavior of the object being tested.  
@@ -57,7 +57,7 @@ Below is an example of a TestBuilder for the Country object from our code:
     }
 ```
 
-By using the above builder, we can now easily create an a country instance 
+By using the above builder, we can now easily create a country instance 
 for France with this code: 
 > Note that using the static imports made our code even clearer and shorter    
 
@@ -102,7 +102,7 @@ will not fail if new fields were added to existing objects.
 ## Advanced Usage 
 
 ### Creating Similar Objects 
-Test Data Builders can help creating similar objects in a cleaner way. 
+Test Data Builders can help create similar objects in a cleaner way. 
 
 For example, assume we want to create country instances for France and Germany. 
 Knowing that both have Euro as a currency, we can do the following: 
@@ -122,7 +122,7 @@ Knowing that both have Euro as a currency, we can do the following:
                 .build();
 
         Country germany = europeCountryBuilder
-                .withName("France")
+                .withName("Germany")
                 .withLanguage(GERMAN)
                 .build();
     }
@@ -170,7 +170,7 @@ Here is an example of how to build an instance of the Author class:
     @Test 
     public static void test() {
         Author author = anAuthor()
-                .withName("Franz Kafka")
+                .withName("Victor Hugo")
                 .withCountry(aCountry()
                         .withName("France")
                         .withCurrency(Currency.EURO)
@@ -185,7 +185,7 @@ Here is an example of how to build an instance of the Author class:
 Another approach that can help reduce duplication in the tests is by using 
 Tests Constants. Those constants can be initialized: 
 1. using the Test Data Builder or calling constructor directly 
-1. in a separate class or the Test Class it self. 
+1. in a separate class or the Test Class itself.
 
 For example, we can initialize the instances of France and Germany this way:
 
@@ -252,11 +252,11 @@ reused across many tests. A bit like Test Data Builders.
 ### Making implicit dependencies explicit
 
 One thing that makes legacy code difficult to test is that dependencies are
-most the time implicit. You might instantiate an object to discover that it
+most of the time implicit. You might instantiate an object to discover that it
 crashes at runtime because it accesses an uninitialized dependency.
 
 One nice thing about creating small objects to wrap implicit dependency
-injection (cf Wrapping dependencies in small test objects) is that we can use
+injection (cf. Wrapping dependencies in small test objects) is that we can use
 them as explicit builder argument.
 
 If an object has an implicit dependency, add a mandatory argument to its
@@ -281,7 +281,7 @@ class ReportGeneratorTest {
     total_amount_should_convert_all_invoices_to_USD() {
         repository.addInvoice(anInvoice().build());
         
-        // Eventhough ReportGenerator constructor has no arguments
+        // Even though ReportGenerator constructor has no arguments
         // the builder requires an InMemoryRepository
         // The only way to get one is through InMemoryRepositoryInjector 
         ReportGenerator reportGenerator = aReportGenerator(repository).build();
