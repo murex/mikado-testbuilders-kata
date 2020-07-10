@@ -57,7 +57,7 @@ Can you use this method with your team?
 
 Ideas to apply this in your daily work: 
 * Stick test mikado graphs on the wall, so that everyone can contribute
-* Use and online mind-map software and share it with the team (especially with 
+* Use an online mind-map software and share it with the team (especially with 
 a remote team)
 * Try it on the next bug you have to deal with, while pairing with a buddy
 * Try [mob programming](https://en.wikipedia.org/wiki/Mob_programming), to quickly
