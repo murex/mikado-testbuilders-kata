@@ -15,18 +15,18 @@ The Mikado Method consists of the following four major concepts:
 
 ### Set a Goal
 Two things need to be defined when setting a Goal, the state to be reached in 
-the future and the code that needs to be changed for that purpose. In other 
-words, you are will be defining the start and end point of your change. 
+the future, and the code that needs to be changed for that purpose. In other 
+words, you are defining the start and end point of your change. 
 
 ### Experiment 
-Experiments are used to validate a hypothesis. With complex and big codebase, 
-it is hard to know the impact of small change on the system. That is why, in 
-this leverage on this step to make the change and observer what pats of your 
+Experiments are used to validate a hypothesis. With a complex and big codebase, 
+it is hard to know the impact of a small change on the system. That is why,
+leverage on this step to make the change and observe what parts of your 
 system breaks down!
 
 By doing so, you can identify the pre-requisites needed to achieve your goal.
 
-In practice, experiments are like [Scratch Refactoring](https://www.goodreads.com/book/show/44919.Working_Effectively_with_Legacy_Code)
+In practice, experiments are like [Scratch Refactoring](https://www.goodreads.com/book/show/44919.Working_Effectively_with_Legacy_Code).
 Try to code your change, and see what errors you get:
 
 * what does not build
@@ -74,7 +74,7 @@ not a problem. Simply update the graph, undo your change, and continue.
 
 ## Different scales
 
-We can apply the concepts of the Mikado Method at different scales. We can be
+We can apply the concepts of the Mikado Method at different scales. We can
 stick very close to the code, and build a very precise change graph. This works
 particularly well with static-type languages.
 
