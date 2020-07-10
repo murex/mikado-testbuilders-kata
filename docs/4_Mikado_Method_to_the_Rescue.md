@@ -222,10 +222,10 @@ Let's do a more thorough retrospective this time.
 > 
 > How do you plan to use what you’ve learned?
 
-2- Have this workshop fulfilled your expectations?
-> Go back to the note you wrote at the beginning of the workshop   
+2- Has this workshop fulfilled your expectations?
+> Go back to the notes you wrote at the beginning of the workshop   
 
-3- Read it to your pair, and discuss
+3- Read them to your pair, and discuss
 
 4- If you want, volunteer to share it with everyone
 

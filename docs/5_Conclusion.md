@@ -18,11 +18,11 @@ refactoring techniques out there:
   (or extracting an [Anti-Corruption Layer](https://dev.to/asarnaout/the-anti-corruption-layer-pattern-pcd))
  
 We can combine most of them as we did today. These combinations are more
-powerful than the each technique separately. This is the case where 
+powerful than each technique used separately. This is the case where 
 
 > 1 + 1 > 2
 
-When we started to coach teams about refactoring, experience had taught us that
+When we started to coach teams about refactoring, experience had taught us
 that legacy code bases had to go through a long and painful refactoring phase 
 before we could apply agile-coding practices like Test Driven Development.
 

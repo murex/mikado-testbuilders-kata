@@ -28,7 +28,7 @@ have the following properties:
     books (after tax) in the basket
     3. The currency of the invoice is the same currency as the respective 
     country
-1. The Invoice is sent to the customer and a copy of it is saved in our 
+1. The Invoice is sent to the customer, and a copy of it is saved in our 
 repository for future reference   
 
 >Tip: It is important to note that each country has its own tax rates and tax 
@@ -116,7 +116,7 @@ values:
 1. Total number of issued invoices
 1. Sum of total amount of all invoices
 
-### 2. Tips to Fix the Bugs Fixes
+### 2. Tips to Fix the Bugs
 
 After some analysis, one of our developers was able to quickly identify the bugs
 in the code and provided us with quick fixes!  
