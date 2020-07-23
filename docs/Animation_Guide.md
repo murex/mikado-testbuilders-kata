@@ -21,7 +21,7 @@ Here are the topics that usually come up during mini-retros
 |                            | Tests are ugly                               |
 
 What issues did you face while writing your tests?  
-Do you face the same problems with your existing legacy code?    
+Do you face the same problems with your existing legacy code?  
 How can you tackle those problems to avoid having them in the future?  
 
 ### 3 - Building Test Data
@@ -33,7 +33,7 @@ How can you tackle those problems to avoid having them in the future?
 | Would make adding new tests easier  |                                                |
 
 What issues did you face while writing your tests with Test Data Builders?  
-How can you compare this approach of writing tests to the previous section?   
+How can you compare this approach of writing tests to the previous section?  
 
 ### 4 - Mikado Method to the Rescue
 
@@ -51,14 +51,14 @@ builders.
 | It can become viral!                          |                                   |
 | Avoids mocks                                  |                                   |
 
-What issues did you face while writing your tests by following the Mikado Method?     
-How can you compare this approach of writing tests to the previous 2 sections?     
-Can you use this method with your team?   
+What issues did you face while writing your tests by following the Mikado Method?  
+How can you compare this approach of writing tests to the previous 2 sections?  
+Can you use this method with your team?  
 
-Ideas to apply this in your daily work: 
+Ideas to apply this in your daily work:
+
 * Stick test mikado graphs on the wall, so that everyone can contribute
-* Use an online mind-map software and share it with the team (especially with 
-a remote team)
+* Use an online mind-map software and share it with the team (especially with a remote team)
 * Try it on the next bug you have to deal with, while pairing with a buddy
 * Try [mob programming](https://en.wikipedia.org/wiki/Mob_programming), to quickly
   agree on a shared way of working
@@ -76,7 +76,7 @@ standard part of the workshop.
 |-------|--------|-------|-----|
 | Present the learning goal | 2 | 0 | 2 |
 | Energizer | 3 | 2 | 5 |
-	
+
 ### 2 - Easy Fix, Difficult Test (50 minutes)
 
 | Phase | Length | Start | End |
@@ -91,7 +91,7 @@ standard part of the workshop.
 ### 5 minutes break!
 
 ----
-	
+
 ### 3 - Building Test Data (25 minutes)
 
 | Phase | Length | Start | End |
@@ -99,7 +99,7 @@ standard part of the workshop.
 | Present test data builders | 10 | 55 | 65 |
 | Let them try to use in InvoiceTest | 10 | 65 | 75 |
 | Mini retro | 5 | 75 | 80 |
-	
+
 ### 4 - Mikado Method to the Rescue (60 minutes)
 
 | Phase | Length | Start | End |
@@ -108,14 +108,14 @@ standard part of the workshop.
 | Live code beginning of Mikado | 10 | 90 | 100 |
 | Delete tests, and use 2 techniques to add InvoiceTest, continue on ReportGeneratorTest (bonus) | 25 | 100 | 130 |
 | Mini retro | 10 | 130 | 140 |
-	
+
 ### 5 - Conclusion (10 minutes)
 
 | Phase | Length | Start | End |
 |-------|--------|-------|-----|
 | Conclusion | 5 | 140 | 145 |
 | Q&A | 5 | 145 | 150 |
-	
+
 ## Pedagogy
 
 We are trying to maximize self-learning as much as possible in this workshop.
@@ -124,8 +124,7 @@ techniques from [Training from the Back of the Room](https://www.goodreads.com/b
 
 [![Cover of the Book Training from the Back of the Room](images/training-from-the-back-of-the-room-cover.jpg)](https://www.goodreads.com/book/show/8141935-training-from-the-back-of-the-room)
 
-[Copyright:[Training from the Back of the Room!](https://www.goodreads.com/book/show/8141935-training-from-the-back-of-the-room), 
-by [Sharon Bowman](https://bowperson.com/)]
+[Copyright:[Training from the Back of the Room!](https://www.goodreads.com/book/show/8141935-training-from-the-back-of-the-room), by [Sharon Bowman](https://bowperson.com/)]
 
 ### Turn and talk Energizer
 
@@ -141,15 +140,14 @@ to assess what they learned after programming.
 ### Wall and Web centers
 
 This collection of markdown files contains 2 'Web Centers':
+
 * [Test Data Builders](./references/Test_Data_Builders.md)
 * [The Mikado Method](./references/The_Mikado_Method.md)
 
 These are web pages where attendees can look for clues as to how to get through
 the exercise.
 
-If you are running the workshop in a room, you can create physical Wall Centers
-with real copies of books, and printouts of articles. All referenced books and 
-articles are listed under the [References](./references/References.md) page. 
+If you are running the workshop in a room, you can create physical Wall Centers with real copies of books, and printouts of articles. All referenced books and articles are listed under the [References](./references/References.md) page.
 
 ### Pair programming
 
@@ -179,4 +177,4 @@ We could also just watch it through the main screen
 
 The workshop follows a particular narrative. It is very important to stick to the agenda. Time lost at the beginning is eventually taken from the last activity, which is where people finally 'get' the power of Test Data Builders + Mikado Method.
 
-In order to make sure to stick to the agenda, use wide visible timer in the room. Time-boxing is preferred way to go. Activities don't rely on the code written previously, so people can start the next activity even if they did not finished the previous one. 
+In order to make sure to stick to the agenda, use wide visible timer in the room. Time-boxing is preferred way to go. Activities don't rely on the code written previously, so people can start the next activity even if they did not finished the previous one.

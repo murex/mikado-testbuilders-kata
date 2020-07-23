@@ -9,5 +9,4 @@ are some links that helped me:
 * [NuGet config reference](https://docs.microsoft.com/en-us/nuget/reference/nuget-config-file)
 * [NuGet proxy settings](http://skolima.blogspot.com/2012/07/nuget-proxy-settings.html)
 
-(Alternatively, you can also connect without a proxy to download the 
-dependency, it should continue to build when you get back behind the proxy)
+(Alternatively, you can also connect without a proxy to download the dependency, it should continue to build when you get back behind the proxy)

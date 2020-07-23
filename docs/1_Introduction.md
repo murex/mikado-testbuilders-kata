@@ -12,7 +12,7 @@ with an activity that will get you to know each other.
 > Introduce yourself to a person seated next to you. Tell this person why you
 > are here and what you want to learn from this workshop.
 
-## Before we start! 
+## Before we start!
 
 On a piece of paper, note down your 1 or 2 expectation(s) out of this workshop.
 
@@ -34,8 +34,7 @@ and physical books.
 
 Open the code in your favorite IDE:
 
-* To work on the java version, simply load the root [pom.xml](../pom.xml) in 
-  your favourite IDE
+* To work on the java version, simply load the root [pom.xml](../pom.xml) in your favourite IDE
 * We currently only have a Visual Studio environment around the C++ code (BTW,
   contributions are welcome :-)). Open [testbuilders-workshop.sln](../testbuilders-workshop.sln).
 

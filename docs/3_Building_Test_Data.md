@@ -1,6 +1,7 @@
 # Building Test Data
 
 Let's try to improve the following:
+
 * Our tests contain a lot of duplication
 * Setting up data for our tests was long and painful
 
@@ -13,8 +14,7 @@ Let's try to improve the following:
 [Test Data Builders](./references/Test_Data_Builders.md) are particularly
 handful to build test data. They should help us here.
 
-You'll find resource about Test Data Builders 
-[here](./references/Test_Data_Builders.md) or on your room walls.
+You'll find resource about Test Data Builders [here](./references/Test_Data_Builders.md) or on your room walls.
 
 ### Rapid Response Question
 

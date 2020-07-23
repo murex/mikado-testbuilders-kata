@@ -7,20 +7,18 @@
 Test Data Builders make writing new tests faster once you have them.
 Unfortunately, they take even longer to write in the first place!
 
-That's not going to help us to test our bugs in legacy code! 
+That's not going to help us to test our bugs in legacy code!
 
 ## Present the Mikado Method
 
 The [Mikado Method](./references/The_Mikado_Method.md) is a technique to
 incrementally do large refactorings, alongside feature delivery.
 
-You'll find resource about the Mikado Method 
-[here](./references/The_Mikado_Method.md) or on your room walls.
+You'll find resource about the Mikado Method [here](./references/The_Mikado_Method.md) or on your room walls.
 
 ### Rapid Response Question
 
-> As a group, what are the top 5 most important things about the the Mikado
-> Method?
+> As a group, what are the top 5 most important things about the the Mikado Method?
 
 ## Live code the beginning of the Mikado Graph here
 
@@ -29,7 +27,7 @@ our particular situation.
 
 [![Video of the beginning of the solution](./images/Testing%20legacy%20code%20with%20Mikado%20Method%20and%20Test%20Data%20Builders%20-%20YouTube.jpg)](https://www.youtube.com/watch?v=2wIb8kdxay4&feature=youtu.be)
 
-### Video Screen Shots 
+### Video Screen Shots
 
 #### Mikado Graph
 
@@ -40,7 +38,7 @@ our particular situation.
   <img src="./images/MIkdaoScreenCapture.PNG" alt="Mikado Graph" />
 </details>
 
-#### Code Snippets 
+#### Code Snippets
 
 <details>
   <summary markdown='span'>
@@ -75,11 +73,11 @@ our particular situation.
   ```C++
   TEST(InvoiceTest, applies_tax_rules_when_computing_total_amount)
   {
-  	Invoice oneNovelUSAInvoice = an_invoice()
-  		.from(USA)
-  		.with(a_purchased_book().of(
-  			a_novel().costing(2.99))).build();
-  	EXPECT_EQ(2.99 * 1.15 * 0.98, oneNovelUSAInvoice.computeTotalAmount());
+    Invoice oneNovelUSAInvoice = an_invoice()
+      .from(USA)
+      .with(a_purchased_book().of(
+        a_novel().costing(2.99))).build();
+    EXPECT_EQ(2.99 * 1.15 * 0.98, oneNovelUSAInvoice.computeTotalAmount());
   }
   ```
 
@@ -108,6 +106,7 @@ our particular situation.
       }
   }
   ```
+
 ##### C++
 
   NovelTestBuilder.h
@@ -122,12 +121,12 @@ our particular situation.
     {
         class NovelTestBuilder
         {
-  	        double price = 3.99;
-  	        static const Author nullAuthor;
+            double price = 3.99;
+            static const Author nullAuthor;
             public:
-  	            static NovelTestBuilder a_novel();
-  	            NovelTestBuilder costing(double price);
-  	            Novel build() const;
+                static NovelTestBuilder a_novel();
+                NovelTestBuilder costing(double price);
+                Novel build() const;
         };
     }
   }
@@ -141,25 +140,25 @@ our particular situation.
   namespace domain
   {
     namespace book
-  	{
+    {
         const Author NovelTestBuilder::nullAuthor("Joe", country::Country("USA", country::Currency::US_DOLLAR, country::Language::ENGLISH));
         NovelTestBuilder NovelTestBuilder::a_novel()
         {
-  	        return {};
+            return {};
         }
         NovelTestBuilder NovelTestBuilder::costing(double price)
         {
-  	        this->price = price;
-  	        return *this;
+            this->price = price;
+            return *this;
         }
         Novel NovelTestBuilder::build() const
         {
-  	        return Novel(
-  		        "Grapes with Wrath",
-  		        price,
-  		        nullAuthor,
-  		        country::Language::ENGLISH,
-  		    std::vector<Genre>());
+            return Novel(
+              "Grapes with Wrath",
+              price,
+              nullAuthor,
+              country::Language::ENGLISH,
+          std::vector<Genre>());
         }
     }
   }
@@ -199,13 +198,11 @@ something useful.
 
 ### Use Mikado Method to create Test Data Builders to add a test on Report Generator (advanced)
 
-If you have the time, repeat the same exercise with the test on 
-[ReportGenerator](../src/main/java/com/murex/tbw/report/ReportGenerator.java)
+If you have the time, repeat the same exercise with the test on [ReportGenerator](../src/main/java/com/murex/tbw/report/ReportGenerator.java)
 
 You should be able to re-use many builders you wrote before.
 
-You might need to look for 
-[other flavors of builders](./references/Test_Data_Builders.md) to finish
+You might need to look for [other flavors of builders](./references/Test_Data_Builders.md) to finish
 this test.
 
 ## Retrospective
@@ -214,16 +211,14 @@ Let's do a more thorough retrospective this time.
 
 1- Take a few minutes to write 1 or 2 paragraphs to answer these questions:
 
-> What are the goods and bads of combining test data builders with the 
-> mikado method ?
+> What are the goods and bads of combining test data builders with the mikado method ?
 >
-> For you, what are the most important concepts and insights from this 
-> training?
-> 
+> For you, what are the most important concepts and insights from this training?
+>
 > How do you plan to use what you’ve learned?
 
 2- Has this workshop fulfilled your expectations?
-> Go back to the notes you wrote at the beginning of the workshop   
+> Go back to the notes you wrote at the beginning of the workshop
 
 3- Read them to your pair, and discuss
 

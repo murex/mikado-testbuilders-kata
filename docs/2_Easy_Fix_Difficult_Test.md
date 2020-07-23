@@ -8,84 +8,76 @@
 
 ### What does it do?
 
-We own a company that sells Books on-line in various cities around the world. 
-To manage our purchases, we have developed an internal system that has two 
-portals:
+We own a company that sells Books on-line in various cities around the world.
+
+To manage our purchases, we have developed an internal system that has two portals:
 
 #### 1. Customer Portal
 
-This portal, provides our customers with features allowing them to search for 
-and purchase books. 
+This portal, provides our customers with features allowing them to search for and purchase books.
 
-The purchase workflow is as follows: 
-1. Customers add the books they want to purchase to a basket.     
+The purchase workflow is as follows:
+
+1. Customers add the books they want to purchase to a basket.
 1. They then checkout their basket.
-1. Upon checkout, our system should generate an invoice. The invoice should 
-have the following properties: 
-    1. Tax rates and tax reduction rules should be applied for each item in 
-    the basket 
-    2. The total amount of the invoice should be the sum of the amount of all 
-    books (after tax) in the basket
-    3. The currency of the invoice is the same currency as the respective 
-    country
-1. The Invoice is sent to the customer, and a copy of it is saved in our 
-repository for future reference   
+1. Upon checkout, our system should generate an invoice. The invoice should have the following properties:
+    1. Tax rates and tax reduction rules should be applied for each item in the basket
+    2. The total amount of the invoice should be the sum of the amount of all books (after tax) in the basket
+    3. The currency of the invoice is the same currency as the respective country
+1. The Invoice is sent to the customer, and a copy of it is saved in our repository for future reference
 
->Tip: It is important to note that each country has its own tax rates and tax 
-reduction rules. You can find a table of those rules below.  
- 
+> Tip: It is important to note that each country has its own tax rates and tax reduction rules. You can find a table of those rules below.  
+
 #### 2. Reporting Portal
 
-The second portal is used by administrators to generate reports of the sales 
-around the world. 
+The second portal is used by administrators to generate reports of the sales around the world.
 
-The report should include the following: 
+The report should include the following:
+
 1. Accumulative sum of all the issued invoices' amount
-1. The count of processed invoices 
-1. The currency of the report should be in USD 
+1. The count of processed invoices
+1. The currency of the report should be in USD
 
-### Countries, Currencies, Language, Tax Rates, and Tax Reduction Rules   
+### Countries, Currencies, Language, Tax Rates, and Tax Reduction Rules
 
-| Country       | Currency          | Language  | Exchange Rate to USD  | Tax Rate | Tax Reduction Rules                              | 
+| Country       | Currency          | Language  | Exchange Rate to USD  | Tax Rate | Tax Reduction Rules                              |
 | :-------------|:-----------------:| :--------:| :--------------------:|:--------:|:------------------------------------------------:|
 | USA           | USD               | English   | 1.0                   | 15%      | Reduction by 2% on Novels                        |  
-| France        | Euro              | French    | 1.14                  | 25%      | No Reduction on taxes                            | 
+| France        | Euro              | French    | 1.14                  | 25%      | No Reduction on taxes                            |
 | UK            | Pound Sterling    | English   | 1.27                  | 20%      | Reduction by 7% on Novels                        |
 | Spain         | Euro              | Spanish   | 1.14                  | 10%      | Removed taxes on all foreign language books      |  
 | China         | Renminbi          | Mandarin  | 0.15                  | 35%      | Removed taxes on all foreign language books      |
 | Japan         | YEN               | Japanese  | 0.0093                | 30%      | No Reduction on taxes                            |
-| Australia     | Australian Dollar | English   | 0.70                  | 13%      | No Reduction on taxes                            |     
+| Australia     | Australian Dollar | English   | 0.70                  | 13%      | No Reduction on taxes                            |
 | Germany       | Euro              | German    | 1.14                  | 22%      | Dropped to 5% on books written by German Authors |  
-
 
 ### Repository
 
-The repository is our database where we store copies of all the issued invoices. 
-The repository is defined by an interface that has 2 methods: 
-1. addInvoice: adds an invoice to the repository's database 
-1. getInvoiceMap: return all the available invoices in a Map  
+The repository is our database where we store copies of all the issued invoices.
+The repository is defined by an interface that has 2 methods:
 
-Having this interface enables us to have different implementations for our 
-database (Json, InMemory, Relational, NoSql, etc). 
+1. `addInvoice`: adds an invoice to the repository's database
+1. `getInvoiceMap`: return all the available invoices in a Map  
 
-In this workshop, we wrote a JSON implementation for this Repository interface
-([JsonRepository.java](../src/main/java/com/murex/tbw/storage/JsonRepository.java)). 
-We assumed that we are storing our data in JSON format in a [file](../src/main/resources/repository.json) 
-under the resources folder.  
+Having this interface enables us to have different implementations for our database (Json, InMemory, Relational, NoSql, etc).
+
+In this workshop, we wrote a JSON implementation for this Repository interface ([JsonRepository.java](../src/main/java/com/murex/tbw/storage/JsonRepository.java)).
+
+We assumed that we are storing our data in JSON format in a [file](../src/main/resources/repository.json) under the resources folder.  
 
 > Tip: Reading the repository.json file might help you understand the structure
 of the code faster.  
 
 On initialization, the class parses the Json file and loads the data into a Map.
- 
+
 The MainRepository singleton returns the currently configured Repository.
 
 ## With a bug!
 
-We noticed that some of the numbers generated by the report are wrong. 
+We noticed that some of the numbers generated by the report are wrong.
 
-| Report                                  | Actual | Expected | 
-|:---------------------------------------:|:------:|:--------:| 
+| Report                                  | Actual | Expected |
+|:---------------------------------------:|:------:|:--------:|
 | The total number of books sold          | 16     |  16      |
 | The total number of issued invoices     | 6      |  6       |
 | The total amount of all invoices in USD | 1016.04|  424.60  |
@@ -95,33 +87,32 @@ problem:
 
 > It looks like conversion rates and tax reductions were not applied.
 > [The domain expert]
-
 > It's weird because there is code for these in TaxRule and CurrencyConverter!
 > [A senior developer]
 
-## Your mission is to fix the bug and unit test the code 
+## Your mission is to fix the bug and unit test the code
 
-### 1. Bug Description 
+### 1. Bug Description
 
 The reporting team provided a scenario to reproduce the bug!  
-Under the resources folder, they saved a JSON file ([repository.json](../src/main/resources/repository.json)) that contains 
-some data issued invoices from previous transactions.
+Under the resources folder, they saved a JSON file ([repository.json](../src/main/resources/repository.json)) that contains some data issued invoices from previous transactions.
 
-> Tip: The total amount of each invoice is not included in this list. 
+> Tip: The total amount of each invoice is not included in this list.
 
 The Main class ([Application.java](../src/main/java/Application.java)) initializes
 an instance of ReportGenerator and then calls the methods to get the 3 report
-values: 
+values:
+
 1. Total number of books sold
 1. Total number of issued invoices
 1. Sum of total amount of all invoices
 
 ### 2. Tips to Fix the Bugs
 
-After some analysis, one of our developers was able to quickly identify the bugs
-in the code and provided us with quick fixes!  
+After some analysis, one of our developers was able to quickly identify the bugs in the code and provided us with quick fixes!  
 
 <details>
+
   <summary markdown='span'>
   Sneak Peek at Bug Fix in Invoice.java
   </summary>
@@ -135,12 +126,13 @@ in the code and provided us with quick fixes!
       sum += totalPrice;
     }
     return sum;
-  } 
+  }
   ```
 
 </details>
 
 <details>
+
   <summary markdown='span'>
   Sneak Peek at Bug Fix in ReportGenerator.java
   </summary>
@@ -149,7 +141,7 @@ in the code and provided us with quick fixes!
       public double getTotalAmount() {
           Map<Integer, Invoice> invoiceMap = repository.getInvoiceMap();
           double totalAmount = 0.0;
-          for (Invoice invoice : invoiceMap.values()) {       
+          for (Invoice invoice : invoiceMap.values()) {
   -            totalAmount += invoice.computeTotalAmount();
   +            totalAmount += CurrencyConverter.toUSD(invoice.computeTotalAmount(), invoice.getCountry().getCurrency());
           }
@@ -160,6 +152,7 @@ in the code and provided us with quick fixes!
 </details>
 
 <details>
+
   <summary markdown='span'>
   Sneak Peek at Bug Fix in Invoice.cpp
   </summary>
@@ -176,8 +169,9 @@ in the code and provided us with quick fixes!
   ```
 
 </details>
-   
+
 <details>
+
   <summary markdown='span'>
   Sneak Peek at Bug Fix in ReportGenerator.cpp
   </summary>
@@ -197,9 +191,9 @@ in the code and provided us with quick fixes!
 
 ### 3. Apply Fixes and Then revert
 
-One approach to fix the problem is to: 
-1. Apply the above 2 patches to your code in [Invoice](../src/main/java/com/murex/tbw/purchase/Invoice.java) and 
-[ReportGenerator](../src/main/java/com/murex/tbw/report/ReportGenerator.java) respectively 
+One approach to fix the problem is to:
+
+1. Apply the above 2 patches to your code in [Invoice](../src/main/java/com/murex/tbw/purchase/Invoice.java) and [ReportGenerator](../src/main/java/com/murex/tbw/report/ReportGenerator.java) respectively
 1. Re-run the Main class ([Application.java](../src/main/java/Application.java))
 1. Ensure you see the correct values printed
 
@@ -210,13 +204,11 @@ So let's revert!
 
 ### 3. Write a test on Invoice and only then fix it
 
-Let's add the test to 
-[Invoice](../src/main/java/com/murex/tbw/purchase/Invoice.java), reproduce the
+Let's add the test to [Invoice](../src/main/java/com/murex/tbw/purchase/Invoice.java), reproduce the
 issue, and fix the code.
 
 Mocking a legacy code base is not a great idea. The only fake we are allowed is
-the 
-[InMemoryRepository](../src/test/java/com/murex/tbw/storage/InMemoryRepository.java)
+the [InMemoryRepository](../src/test/java/com/murex/tbw/storage/InMemoryRepository.java)
 
 ### 4. [BONUS] Write a test on ReportGenerator and only then fix it
 
