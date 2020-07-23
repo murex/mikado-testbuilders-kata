@@ -28,7 +28,7 @@ int main()
 		std::cout << "****************************************************" << std::endl;
 		std::cout << "****************************************************" << std::endl;
 	}
-	catch(const std::exception& e)
+	catch (const std::exception &e)
 	{
 		std::cerr << e.what() << std::endl;
 		return 1;
