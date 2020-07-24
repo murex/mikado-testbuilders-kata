@@ -20,6 +20,7 @@
 #include "domain/book/Novel.h"
 #include "purchase/PurchasedBook.h"
 
+#include <fstream>
 
 using namespace purchase;
 using namespace nlohmann;
@@ -31,7 +32,7 @@ namespace storage
 {
 
 JsonRepository::JsonRepository()
-	: sourceFile_("src/main/resources/repository.json")
+	: sourceFile_("src/resources/repository.json")
 {
 	loadJsonData();
 }

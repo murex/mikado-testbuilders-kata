@@ -63,7 +63,7 @@ Having this interface enables us to have different implementations for our datab
 
 In this workshop, we wrote a JSON implementation for this Repository interface ([JsonRepository.java](../src/main/java/com/murex/tbw/storage/JsonRepository.java)).
 
-We assumed that we are storing our data in JSON format in a [file](../src/main/resources/repository.json) under the resources folder.  
+We assumed that we are storing our data in JSON format in a [file](../src/resources/repository.json) under the resources folder.  
 
 > Tip: Reading the repository.json file might help you understand the structure
 of the code faster.  
@@ -95,7 +95,7 @@ problem:
 ### 1. Bug Description
 
 The reporting team provided a scenario to reproduce the bug!  
-Under the resources folder, they saved a JSON file ([repository.json](../src/main/resources/repository.json)) that contains some data issued invoices from previous transactions.
+Under the resources folder, they saved a JSON file ([repository.json](../src/resources/repository.json)) that contains some data issued invoices from previous transactions.
 
 > Tip: The total amount of each invoice is not included in this list.
 
