@@ -14,6 +14,7 @@
 #include <string>
 #include <vector>
 #include "../domain/country/Country.h"
+#include <memory>
 
 namespace purchase
 {

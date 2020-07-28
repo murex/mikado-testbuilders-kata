@@ -1,6 +1,23 @@
 
-# Created by https://www.toptal.com/developers/gitignore/api/java,code-java,visualstudio,visualstudiocode,intellij,eclipse,maven
-# Edit at https://www.toptal.com/developers/gitignore?templates=java,code-java,visualstudio,visualstudiocode,intellij,eclipse,maven
+# Created by https://www.toptal.com/developers/gitignore/api/java,maven,eclipse,intellij,code-java,visualstudio,visualstudiocode,cmake
+# Edit at https://www.toptal.com/developers/gitignore?templates=java,maven,eclipse,intellij,code-java,visualstudio,visualstudiocode,cmake
+
+### CMake ###
+CMakeLists.txt.user
+CMakeCache.txt
+CMakeFiles
+CMakeScripts
+Testing
+Makefile
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+CTestTestfile.cmake
+_deps
+
+### CMake Patch ###
+# External projects
+*-prefix/
 
 ### Code-Java ###
 # Language Support for Java(TM) by Red Hat extension for Visual Studio Code - https://marketplace.visualstudio.com/items?itemName=redhat.java
@@ -574,10 +591,7 @@ MigrationBackup/
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
 
-# End of https://www.toptal.com/developers/gitignore/api/java,code-java,visualstudio,visualstudiocode,intellij,eclipse,maven
-.idea/encodings.xml
+# End of https://www.toptal.com/developers/gitignore/api/java,maven,eclipse,intellij,code-java,visualstudio,visualstudiocode,cmake
 
-# ApprovalTests - generated golden master files
-**/java/GoldenMasterTest.*.txt
-**/cpp/GoldenMasterTest.*.txt
-*.txt.bak
+!src/cpp/bin
+src/cpp/build
