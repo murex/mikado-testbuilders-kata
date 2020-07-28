@@ -3,16 +3,22 @@ name: Build
 on: [push, pull_request]
 
 jobs:
-  build:
+  cpp:
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest]
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v2
-      - name: Build C++
+      - name: Build
         run: |
           cd src/cpp
           cmake -B build .
           cmake --build ./build
 
+  java:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: mvn package
+        run: cd src/java && mvn --batch-mode package
