@@ -24,55 +24,55 @@ the fields' values.
 Below is an example of a TestBuilder for the Country object from our code:
 
 ```java
-import static com.murex.tbw.domain.country.Currency.US_DOLLAR;
-import static com.murex.tbw.domain.country.Language.ENGLISH;
+    import static com.murex.tbw.domain.country.Currency.US_DOLLAR;
+    import static com.murex.tbw.domain.country.Language.ENGLISH;
 
-public class CountryTestBuilder {
-    private String name = "";
-    private Currency currency = US_DOLLAR;
-    private Language language = ENGLISH;
+    public class CountryTestBuilder {
+        private String name = "";
+        private Currency currency = US_DOLLAR;
+        private Language language = ENGLISH;
 
-    public static CountryTestBuilder aCountry() {
-        return new CountryTestBuilder();
+        public static CountryTestBuilder aCountry() {
+            return new CountryTestBuilder();
+        }
+
+        public CountryTestBuilder withName(String name) {
+            this.name = name;
+            return this;
+        }
+
+        public CountryTestBuilder withCurrency(Currency currency) {
+            this.currency = currency;
+            return this;
+        }
+
+        public CountryTestBuilder withLanguage(Language language) {
+            this.language = language;
+            return this;
+        }
+
+        public Country build() {
+            return new Country(name, currency, language);
+        }
     }
-
-    public CountryTestBuilder withName(String name) {
-        this.name = name;
-        return this;
-    }
-
-    public CountryTestBuilder withCurrency(Currency currency) {
-        this.currency = currency;
-        return this;
-    }
-
-    public CountryTestBuilder withLanguage(Language language) {
-        this.language = language;
-        return this;
-    }
-
-    public Country build() {
-        return new Country(name, currency, language);
-    }
-}
 ```
 
 By using the above builder, we can now easily create a country instance for France with this code:
 > Note that using the static imports made our code even clearer and shorter
 
 ```java
-import static com.murex.tbw.domain.country.Currency.US_DOLLAR;
-import static com.murex.tbw.domain.country.Language.ENGLISH;
-import static com.murex.tbw.domain.country.CountryTestBuilder.aCountry;
+    import static com.murex.tbw.domain.country.Currency.US_DOLLAR;
+    import static com.murex.tbw.domain.country.Language.ENGLISH;
+    import static com.murex.tbw.domain.country.CountryTestBuilder.aCountry;
 
-@Test
-public void test() {
-    Country france = aCountry()
-            .withName("France")
-            .withCurrency(EURO)
-            .withLanguage(FRENCH)
-            .build();
-}
+    @Test
+    public void test() {
+        Country france = aCountry()
+                .withName("France")
+                .withCurrency(EURO)
+                .withLanguage(FRENCH)
+                .build();
+    }
 ```
 
 ## Best Practices
@@ -108,24 +108,24 @@ For example, assume we want to create country instances for France and Germany.
 Knowing that both have Euro as a currency, we can do the following:
 
 ```java
-import static com.murex.tbw.domain.country.Currency.US_DOLLAR;
-import static com.murex.tbw.domain.country.Language.ENGLISH;
-import static com.murex.tbw.domain.country.CountryTestBuilder.aCountry;
+    import static com.murex.tbw.domain.country.Currency.US_DOLLAR;
+    import static com.murex.tbw.domain.country.Language.ENGLISH;
+    import static com.murex.tbw.domain.country.CountryTestBuilder.aCountry;
 
-@Test
-public void test() {
-    CountryTestBuilder europeCountryBuilder = aCountry().withCurrency(EURO);
+    @Test
+    public void test() {
+        CountryTestBuilder europeCountryBuilder = aCountry().withCurrency(EURO);
 
-    Country france = europeCountryBuilder
-            .withName("France")
-            .withLanguage(FRENCH)
-            .build();
+        Country france = europeCountryBuilder
+                .withName("France")
+                .withLanguage(FRENCH)
+                .build();
 
-    Country germany = europeCountryBuilder
-            .withName("Germany")
-            .withLanguage(GERMAN)
-            .build();
-}
+        Country germany = europeCountryBuilder
+                .withName("Germany")
+                .withLanguage(GERMAN)
+                .build();
+    }
 ```
 
 In most cases with more complex code, this approach will also help get rid of duplicated code in tests!
@@ -137,43 +137,43 @@ We can also pass Test Data Builders as parameters to other Test Data Builders.
 For example, the Author class has Country as one of its fields. Thus, its builder class should contain an instance of the respective Country as well. Instead of passing an instance of Country as parameter to the withCountry method, we can pass an instance of CountryTestBuilder as shown below:
 
 ```java
-public class AuthorTestBuilder {
-    private String name = "";
-    private CountryTestBuilder countryTestBuilder;
+    public class AuthorTestBuilder {
+        private String name = "";
+        private CountryTestBuilder countryTestBuilder;
 
-    public static AuthorTestBuilder anAuthor() {
-        return new AuthorTestBuilder();
-    }
+        public static AuthorTestBuilder anAuthor() {
+            return new AuthorTestBuilder();
+        }
 
-    public AuthorTestBuilder withName(String name) {
-        this.name = name;
-        return this;
-    }
+        public AuthorTestBuilder withName(String name) {
+            this.name = name;
+            return this;
+        }
 
-    public AuthorTestBuilder withCountry(CountryTestBuilder countryTestBuilder) {
-        this.countryTestBuilder = countryTestBuilder;
-        return this;
-    }
+        public AuthorTestBuilder withCountry(CountryTestBuilder countryTestBuilder) {
+            this.countryTestBuilder = countryTestBuilder;
+            return this;
+        }
 
-    public Author build() {
-        return new Author(name, countryTestBuilder.build());
+        public Author build() {
+            return new Author(name, countryTestBuilder.build());
+        }
     }
-}
 ```
 
 Here is an example of how to build an instance of the Author class:
 
 ```java
-@Test
-public static void test() {
-    Author author = anAuthor()
-            .withName("Victor Hugo")
-            .withCountry(aCountry()
-                    .withName("France")
-                    .withCurrency(Currency.EURO)
-                    .withLanguage(Language.FRENCH))
-            .build();
-}
+    @Test
+    public static void test() {
+        Author author = anAuthor()
+                .withName("Victor Hugo")
+                .withCountry(aCountry()
+                        .withName("France")
+                        .withCurrency(Currency.EURO)
+                        .withLanguage(Language.FRENCH))
+                .build();
+    }
 ```
 
 ## Variations
@@ -188,19 +188,19 @@ Another approach that can help reduce duplication in the tests is by using Tests
 For example, we can initialize the instances of France and Germany this way:
 
 ```java
-import static com.murex.tbw.domain.country.Currency.EURO;
-import static com.murex.tbw.domain.country.Language.GERMAN;
-import static com.murex.tbw.domain.country.CountryTestBuilder.aCountry;
+    import static com.murex.tbw.domain.country.Currency.EURO;
+    import static com.murex.tbw.domain.country.Language.GERMAN;
+    import static com.murex.tbw.domain.country.CountryTestBuilder.aCountry;
 
-public final class TestConstants {
-    public final Country FRANCE = new Country("France", EURO, Language.FRENCH);
+    public final class TestConstants {
+        public final Country FRANCE = new Country("France", EURO, Language.FRENCH);
 
-    public final Country GERMANY = aCountry()
-            .withName("Germany")
-            .withCurrency(EURO)
-            .withLanguage(GERMAN)
-            .build();
-}
+        public final Country GERMANY = aCountry()
+                .withName("Germany")
+                .withCurrency(EURO)
+                .withLanguage(GERMAN)
+                .build();
+    }
 ```
 
 ### Wrapping dependencies in small test objects
@@ -264,33 +264,32 @@ Here is an example, using [JUnit5 Extensions](https://www.baeldung.com/junit-5-e
 and the [Repository](../../src/main/java/com/murex/tbw/storage/Repository.java).
 
 ```java
-@ExtendWith(InMemoryRepositoryInjector.class)
-class ReportGeneratorTest {
+    @ExtendWith(InMemoryRepositoryInjector.class)
+    class ReportGeneratorTest {
 
-    private final InMemoryRepositoryInjector.InMemoryRepository repository;
+        private final InMemoryRepositoryInjector.InMemoryRepository repository;
 
-    // The InMemoryRepository is provided by the injection wrapper
-    ReportGeneratorTest(InMemoryRepositoryInjector.InMemoryRepository repository) {
-        this.repository = repository;
+        // The InMemoryRepository is provided by the injection wrapper
+        ReportGeneratorTest(InMemoryRepositoryInjector.InMemoryRepository repository) {
+            this.repository = repository;
+        }
+
+        @Test public void
+        total_amount_should_convert_all_invoices_to_USD() {
+            repository.addInvoice(anInvoice().build());
+
+            // Even though ReportGenerator constructor has no arguments
+            // the builder requires an InMemoryRepository
+            // The only way to get one is through InMemoryRepositoryInjector
+            ReportGenerator reportGenerator = aReportGenerator(repository).build();
+            // ...
+        }
     }
-
-    @Test public void
-    total_amount_should_convert_all_invoices_to_USD() {
-        repository.addInvoice(anInvoice().build());
-
-        // Even though ReportGenerator constructor has no arguments
-        // the builder requires an InMemoryRepository
-        // The only way to get one is through InMemoryRepositoryInjector 
-        ReportGenerator reportGenerator = aReportGenerator(repository).build();
-        // ...
-    }
-}
 ```
 
 ### Dealing with cyclic dependencies between objects
 
-Cyclic dependency between objects is very common in Legacy code. That adds 
-complexity to the testing phase.
+Cyclic dependency between objects is very common in Legacy code. That adds complexity to the testing phase.
 
 Here again, test data builders can help us!
 
