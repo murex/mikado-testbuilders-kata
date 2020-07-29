@@ -593,5 +593,5 @@ MigrationBackup/
 
 # End of https://www.toptal.com/developers/gitignore/api/java,maven,eclipse,intellij,code-java,visualstudio,visualstudiocode,cmake
 
-!src/cpp/bin
-src/cpp/build
+!cpp/bin
+cpp/build

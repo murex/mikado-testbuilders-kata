@@ -34,7 +34,7 @@ public final class JsonRepository implements Repository {
 
     public JsonRepository() {
         invoiceMap = new HashMap<>();
-        final String path = "src/resources/repository.json";
+        final String path = "resources/repository.json";
         sourceFile = Paths.get(path).toFile();
         try {
             if (!sourceFile.exists()) {
