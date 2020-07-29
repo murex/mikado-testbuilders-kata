@@ -22,6 +22,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -33,8 +34,12 @@ public final class JsonRepository implements Repository {
 
     public JsonRepository() {
         invoiceMap = new HashMap<>();
-        sourceFile = new File(this.getClass().getClassLoader().getResource("repository.json").getFile());
+        final String path = "src/resources/repository.json";
+        sourceFile = Paths.get(path).toFile();
         try {
+            if (!sourceFile.exists()) {
+                throw new FileNotFoundException("repository.json cannot be found under the following path: " + path);
+            }
             loadJsonData();
         } catch (FileNotFoundException e) {
             System.out.println(e.getMessage());
