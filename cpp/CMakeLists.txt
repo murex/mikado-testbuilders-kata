@@ -3,10 +3,11 @@ project (MikadoKata)
 
 file (GLOB source_files lib/*.cpp)
 
-include_directories(lib)
+add_subdirectory(lib)
 
 add_executable(
     ${PROJECT_NAME}
     bin/Application.cpp
-    ${source_files}
 )
+
+target_link_libraries(${PROJECT_NAME} Client Domain Finance Purchase Report Storage MainRepository IdGenerator)

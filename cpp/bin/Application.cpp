@@ -8,7 +8,7 @@
  *
  *******************************************************************************/
 
-#include "report/ReportGenerator.h"
+#include "ReportGenerator.h"
 #include <iostream>
 
 int main()
