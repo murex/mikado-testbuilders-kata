@@ -9,13 +9,36 @@ jobs:
       matrix:
         os: [ubuntu-latest, windows-latest]
     runs-on: ${{ matrix.os }}
+    defaults:
+      run:
+        shell: bash
     steps:
       - uses: actions/checkout@v2
+      - name: Set up Linux environment
+        if: matrix.os == 'ubuntu-latest'
+        run: |
+          sudo apt purge cmake
+          sudo apt update
+          sudo apt install -y python3-setuptools
+          echo "::add-path::${HOME}/.local/bin"
+      - name: Set up tools
+        env:
+          OS: ${{ matrix.os }}
+        run: |
+          pip3 install --upgrade pip
+          pip3 install wheel
+          pip3 install cmake conan
+          if [ "$OS" = "ubuntu-latest" ]; then
+            conan profile new default --detect
+            conan profile update settings.compiler.libcxx=libstdc++11 default
+          fi
       - name: Build
         run: |
           cd cpp
-          cmake -B build .
-          cmake --build ./build
+          mkdir build
+          conan install -s build_type=Debug -if build .
+          cmake -DCMAKE_TOOLCHAIN_FILE=build/conan_paths.cmake -B build .
+          cmake --build build
 
   java:
     runs-on: ubuntu-latest
