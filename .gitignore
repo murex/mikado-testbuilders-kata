@@ -1,6 +1,5 @@
-
-# Created by https://www.toptal.com/developers/gitignore/api/java,maven,eclipse,intellij,code-java,visualstudio,visualstudiocode,cmake
-# Edit at https://www.toptal.com/developers/gitignore?templates=java,maven,eclipse,intellij,code-java,visualstudio,visualstudiocode,cmake
+# Created by https://www.toptal.com/developers/gitignore/api/java,cmake,maven,eclipse,intellij,code-java,visualstudio,visualstudiocode,gradle
+# Edit at https://www.toptal.com/developers/gitignore?templates=java,cmake,maven,eclipse,intellij,code-java,visualstudio,visualstudiocode,gradle
 
 ### CMake ###
 CMakeLists.txt.user
@@ -86,7 +85,7 @@ local.properties
 
 # Uncomment this line if you wish to ignore the project description file.
 # Typically, this file would be tracked if it contains build/dependency configurations:
-.project
+#.project
 
 ### Eclipse Patch ###
 # Spring Boot Tooling
@@ -123,14 +122,14 @@ local.properties
 # When using Gradle or Maven with auto-import, you should exclude module files,
 # since they will be recreated, and may cause churn.  Uncomment if using
 # auto-import.
-.idea/artifacts
-.idea/compiler.xml
-.idea/jarRepositories.xml
-.idea/modules.xml
-.idea/*.iml
-.idea/modules
-*.iml
-*.ipr
+# .idea/artifacts
+# .idea/compiler.xml
+# .idea/jarRepositories.xml
+# .idea/modules.xml
+# .idea/*.iml
+# .idea/modules
+# *.iml
+# *.ipr
 
 # CMake
 cmake-build-*/
@@ -174,12 +173,15 @@ fabric.properties
 # *.ipr
 
 # Sonarlint plugin
+# https://plugins.jetbrains.com/plugin/7973-sonarlint
 .idea/**/sonarlint/
 
 # SonarQube Plugin
+# https://plugins.jetbrains.com/plugin/7238-sonarqube-community-plugin
 .idea/**/sonarIssues.xml
 
 # Markdown Navigator plugin
+# https://plugins.jetbrains.com/plugin/7896-markdown-navigator-enhanced
 .idea/**/markdown-navigator.xml
 .idea/**/markdown-navigator-enh.xml
 .idea/**/markdown-navigator/
@@ -187,6 +189,10 @@ fabric.properties
 # Cache file creation bug
 # See https://youtrack.jetbrains.com/issue/JBR-2257
 .idea/$CACHE_FILE$
+
+# CodeStream plugin
+# https://plugins.jetbrains.com/plugin/12206-codestream
+.idea/codestream.xml
 
 ### Java ###
 # Compiled class file
@@ -229,14 +235,33 @@ buildNumber.properties
 ### VisualStudioCode ###
 .vscode/*
 .vscode/settings.json
-.vscode/tasks.json
-.vscode/launch.json
-.vscode/extensions.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
 *.code-workspace
 
 ### VisualStudioCode Patch ###
 # Ignore all local history of files
 .history
+
+### Gradle ###
+.gradle
+build/
+
+# Ignore Gradle GUI config
+gradle-app.setting
+
+# Avoid ignoring Gradle wrapper jar file (.jar files are usually ignored)
+!gradle-wrapper.jar
+
+# Cache of project
+.gradletasknamecache
+
+# # Work around https://youtrack.jetbrains.com/issue/IDEA-116898
+# gradle/wrapper/gradle-wrapper.properties
+
+### Gradle Patch ###
+**/build/
 
 ### VisualStudio ###
 ## Ignore Visual Studio temporary files, build results, and
@@ -591,7 +616,4 @@ MigrationBackup/
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
 
-# End of https://www.toptal.com/developers/gitignore/api/java,maven,eclipse,intellij,code-java,visualstudio,visualstudiocode,cmake
-
-!cpp/bin
-cpp/build
+# End of https://www.toptal.com/developers/gitignore/api/java,cmake,maven,eclipse,intellij,code-java,visualstudio,visualstudiocode,gradle

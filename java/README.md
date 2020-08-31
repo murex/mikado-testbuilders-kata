@@ -5,3 +5,9 @@
 ```bash
 mvn package
 ```
+
+## Build with Gradle
+
+```bash
+../gradlew build
+```
