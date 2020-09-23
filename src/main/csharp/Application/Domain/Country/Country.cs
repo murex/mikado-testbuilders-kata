@@ -2,7 +2,7 @@
 
 namespace Application.Domain.Country
 {
-    public class Country
+    public sealed class Country
     {
         public string Name { get; }
         public Currency Currency { get; }
