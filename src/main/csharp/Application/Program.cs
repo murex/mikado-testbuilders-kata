@@ -1,12 +1,24 @@
 ﻿using System;
+using Application.Report;
 
 namespace Application
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var reportGenerator = new ReportGenerator();
+
+            Console.WriteLine("****************************************************");
+            Console.WriteLine("*****************Application Report*****************");
+            Console.WriteLine("****************************************************");
+            Console.WriteLine();
+            Console.WriteLine("The total number of books sold is: " + reportGenerator.GetTotalSoldBooks());
+            Console.WriteLine("The total number of issued invoices is: " + reportGenerator.GetNumberOfIssuedInvoices());
+            Console.WriteLine("The total amount of all invoices in USD is: " + reportGenerator.GetTotalAmount());
+            Console.WriteLine();
+            Console.WriteLine("****************************************************");
+            Console.WriteLine("****************************************************");
         }
     }
 }
