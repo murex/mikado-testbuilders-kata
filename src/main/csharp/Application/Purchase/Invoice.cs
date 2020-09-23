@@ -31,6 +31,11 @@ namespace Application.Purchase
             PurchasedBooks.AddRange(books);
         }
 
+        public void AddPurchasedBook(PurchasedBook book)
+        {
+            PurchasedBooks.Add(book);
+        }
+
         public double ComputeTotalAmount()
         {
             var totalAmount = 0.0;
