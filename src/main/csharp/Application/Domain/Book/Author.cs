@@ -17,7 +17,7 @@ namespace Application.Domain.Book
             => $"Author [ {nameof(Name)}: '{Name}', " +
                $"{nameof(Nationality)}: '{Nationality}' ]";
 
-        protected bool Equals(Author other)
+        private bool Equals(Author other)
         {
             return Name == other.Name && Equals(Nationality, other.Nationality);
         }

@@ -20,7 +20,7 @@ namespace Application.Domain.Country
                $", {nameof(Currency)}: '{Currency}'" +
                $", {nameof(Language)}: '{Language}' ]";
 
-        protected bool Equals(Country other)
+        private bool Equals(Country other)
         {
             return Name == other.Name
                    && Currency == other.Currency
