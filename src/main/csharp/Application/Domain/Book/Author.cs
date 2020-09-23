@@ -2,7 +2,7 @@
 
 namespace Application.Domain.Book
 {
-    public class Author
+    public sealed class Author
     {
         public string Name { get; }
         public Country.Country Nationality { get; }
