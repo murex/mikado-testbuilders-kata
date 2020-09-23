@@ -35,9 +35,6 @@ namespace Application.Domain.Country
             return Equals((Country) obj);
         }
 
-        public override int GetHashCode()
-        {
-            return HashCode.Combine(Name, (int) Currency, (int) Language);
-        }
+        public override int GetHashCode() => HashCode.Combine(Name, (int) Currency, (int) Language);
     }
 }
