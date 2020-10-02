@@ -13,9 +13,9 @@ namespace Application
             Console.WriteLine("*****************Application Report*****************");
             Console.WriteLine("****************************************************");
             Console.WriteLine();
-            Console.WriteLine("The total number of books sold is: " + reportGenerator.GetTotalSoldBooks());
-            Console.WriteLine("The total number of issued invoices is: " + reportGenerator.GetNumberOfIssuedInvoices());
-            Console.WriteLine("The total amount of all invoices in USD is: " + reportGenerator.GetTotalAmount());
+            Console.WriteLine($"The total number of books sold is: {reportGenerator.GetTotalSoldBooks()}");
+            Console.WriteLine($"The total number of issued invoices is: {reportGenerator.GetNumberOfIssuedInvoices()}");
+            Console.WriteLine($"The total amount of all invoices in USD is: {reportGenerator.GetTotalAmount():N}");
             Console.WriteLine();
             Console.WriteLine("****************************************************");
             Console.WriteLine("****************************************************");
