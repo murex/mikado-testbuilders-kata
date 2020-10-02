@@ -4,7 +4,12 @@ namespace Application
 {
     public sealed class MainRepository
     {
-        public static IRepository ConfiguredRepository { get; set; } = new JsonRepository();
+        public static IRepository ConfiguredRepository { get; set; }
+
+        public MainRepository()
+        {
+            ConfiguredRepository = new JsonRepository();
+        }
 
         /**
          * Working effectively with Legacy Code
