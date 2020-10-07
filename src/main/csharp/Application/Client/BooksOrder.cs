@@ -6,14 +6,15 @@ namespace Application.Client
 {
    public sealed class BooksOrder : IOrder
     {
-        private readonly Client _client;
         private readonly Dictionary<IBook, int> _booksInBasket;
+        private readonly Client _client;
 
         public BooksOrder(Client client)
         {
             _client = client;
             _booksInBasket = new Dictionary<IBook, int>();
         }
+
         public void AddBook(IBook book, int quantity)
         {
             var existingQuanty =  _booksInBasket.GetValueOrDefault(book,0);
