@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using Application.Domain.Book;
 using Application.Domain.Country;
 using static Application.Domain.Country.Language;
@@ -7,17 +8,19 @@ namespace Application.Finance
 {
     public static class TaxRule
     {
-        private static readonly IReadOnlyDictionary<string, double> TaxRates = new Dictionary<string, double>
-        {
-            {"USA", 1.15},
-            {"France", 1.25},
-            {"UK", 1.20d},
-            {"Spain", 1.10d},
-            {"China", 1.35d},
-            {"Japan", 1.30d},
-            {"Australia", 1.13d},
-            {"Germany", 1.22d},
-        };
+        private static readonly IReadOnlyDictionary<string, double> TaxRates =
+            new ReadOnlyDictionary<string, double>(
+                new Dictionary<string, double>
+                {
+                    {"USA", 1.15},
+                    {"France", 1.25},
+                    {"UK", 1.20d},
+                    {"Spain", 1.10d},
+                    {"China", 1.35d},
+                    {"Japan", 1.30d},
+                    {"Australia", 1.13d},
+                    {"Germany", 1.22d},
+                });
 
         public static double GetApplicableRate(Country invoiceCountry, IBook book)
         {
