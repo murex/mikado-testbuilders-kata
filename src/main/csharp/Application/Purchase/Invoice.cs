@@ -13,7 +13,7 @@ namespace Application.Purchase
         public List<PurchasedBook> PurchasedBooks { get; }
 
 
-        public Invoice(string clientName, Country country) 
+        public Invoice(string clientName, Country country)
             : this(IdGenerator.NextId(), clientName, country)
         {
         }
@@ -43,24 +43,18 @@ namespace Application.Purchase
             return totalAmount;
         }
 
-        public override string ToString() 
-            => $"Invoice [ {nameof(Id)}: '{Id}'" +
-               $", {nameof(ClientName)}: '{ClientName}'" +
-               $", {nameof(Country)}: '{Country}'" +
-               $", {nameof(PurchasedBooks)}: '{PurchasedBooks}' ]";
+        public override string ToString() => $"Invoice [ {nameof(Id)}: '{Id}'" +
+                                             $", {nameof(ClientName)}: '{ClientName}'" +
+                                             $", {nameof(Country)}: '{Country}'" +
+                                             $", {nameof(PurchasedBooks)}: '{PurchasedBooks}' ]";
 
-        private bool Equals(Invoice other)
-        {
-            return Id == other.Id
-                   && ClientName == other.ClientName
-                   && Equals(Country, other.Country) 
-                   && Equals(PurchasedBooks, other.PurchasedBooks);
-        }
+        private bool Equals(Invoice other) => Id == other.Id
+                                              && ClientName == other.ClientName
+                                              && Equals(Country, other.Country)
+                                              && Equals(PurchasedBooks, other.PurchasedBooks);
 
-        public override bool Equals(object obj)
-        {
-            return ReferenceEquals(this, obj) || obj is Invoice other && Equals(other);
-        }
+        public override bool Equals(object obj) => ReferenceEquals(this, obj)
+                                                   || obj is Invoice other && Equals(other);
 
         public override int GetHashCode() => HashCode.Combine(Id, ClientName, Country, PurchasedBooks);
     }

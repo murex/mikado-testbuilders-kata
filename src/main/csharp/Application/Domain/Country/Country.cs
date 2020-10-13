@@ -15,17 +15,13 @@ namespace Application.Domain.Country
             Language = language;
         }
 
-        public override string ToString()
-            => $"Country [ {nameof(Name)}: '{Name}'" +
-               $", {nameof(Currency)}: '{Currency}'" +
-               $", {nameof(Language)}: '{Language}' ]";
+        public override string ToString() => $"Country [ {nameof(Name)}: '{Name}'" +
+                                             $", {nameof(Currency)}: '{Currency}'" +
+                                             $", {nameof(Language)}: '{Language}' ]";
 
-        private bool Equals(Country other)
-        {
-            return Name == other.Name
-                   && Currency == other.Currency
-                   && Language == other.Language;
-        }
+        private bool Equals(Country other) => Name == other.Name
+                                              && Currency == other.Currency
+                                              && Language == other.Language;
 
         public override bool Equals(object obj)
         {

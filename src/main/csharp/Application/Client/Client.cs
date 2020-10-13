@@ -14,15 +14,11 @@ namespace Application.Client
             Country = country;
         }
 
-        public override string ToString()
-            => $"Client [ {nameof(Name)}: '{Name}'" +
-               $", {nameof(Country)}: '{Country}' ]";
+        public override string ToString() => $"Client [ {nameof(Name)}: '{Name}'" +
+                                             $", {nameof(Country)}: '{Country}' ]";
 
-        protected bool Equals(Client other)
-        {
-            return Name == other.Name 
-                   && Equals(Country, other.Country);
-        }
+        protected bool Equals(Client other) => Name == other.Name
+                                               && Equals(Country, other.Country);
 
         public override bool Equals(object obj)
         {

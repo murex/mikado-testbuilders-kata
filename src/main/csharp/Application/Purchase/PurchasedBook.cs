@@ -15,20 +15,14 @@ namespace Application.Purchase
             Quantity = quantity;
         }
 
-        public override string ToString() 
-            => $"PurchasedBook [ {nameof(Book)}: '{Book}'" +
-               $", {nameof(Quantity)}: '{Quantity}' ]";
+        public override string ToString() => $"PurchasedBook [ {nameof(Book)}: '{Book}'" +
+                                             $", {nameof(Quantity)}: '{Quantity}' ]";
 
-        private bool Equals(PurchasedBook other)
-        {
-            return Equals(Book, other.Book) 
-                   && Quantity == other.Quantity;
-        }
+        private bool Equals(PurchasedBook other) => Equals(Book, other.Book)
+                                                    && Quantity == other.Quantity;
 
-        public override bool Equals(object obj)
-        {
-            return ReferenceEquals(this, obj) || obj is PurchasedBook other && Equals(other);
-        }
+        public override bool Equals(object obj) => ReferenceEquals(this, obj) 
+                                                   || obj is PurchasedBook other && Equals(other);
 
         public override int GetHashCode() => HashCode.Combine(Book, Quantity);
     }

@@ -13,14 +13,11 @@ namespace Application.Domain.Book
             Nationality = nationality;
         }
 
-        public override string ToString() 
-            => $"Author [ {nameof(Name)}: '{Name}', " +
-               $"{nameof(Nationality)}: '{Nationality}' ]";
+        public override string ToString() => $"Author [ {nameof(Name)}: '{Name}', " +
+                                             $"{nameof(Nationality)}: '{Nationality}' ]";
 
-        private bool Equals(Author other)
-        {
-            return Name == other.Name && Equals(Nationality, other.Nationality);
-        }
+        private bool Equals(Author other) => Name == other.Name
+                                             && Equals(Nationality, other.Nationality);
 
         public override bool Equals(object obj)
         {
