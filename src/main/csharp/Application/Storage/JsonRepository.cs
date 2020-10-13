@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Linq;
 using System.Text.Json;
@@ -18,6 +16,8 @@ namespace Application.Storage
     {
         public Dictionary<int, Invoice> Invoices { get; }
 
+        public Dictionary<int, Invoice> GetInvoiceMap() => Invoices;
+       
         public JsonRepository()
         {
             Invoices = new Dictionary<int, Invoice>();
@@ -26,38 +26,67 @@ namespace Application.Storage
 
         private void LoadJsonData()
         {
-            var records = JsonSerializer.Deserialize<Record[]>(
-                File.ReadAllText("../../../../../../main/resources/repository.json"),
-                new JsonSerializerOptions()
+            var jsonContent = GetJsonContent();
+            var records = DeserializeJson(jsonContent);
+
+            foreach (var record in records)
+            {
+                var invoice = CreateInvoice(record);
+                AddInvoice(invoice);
+            }
+        }
+
+        private string GetJsonContent()
+        {
+            try
+            {
+                return File.ReadAllText("../../../../../../main/resources/repository.json");
+            }
+            catch (Exception e) when (e is FileNotFoundException || e is DirectoryNotFoundException)
+            {
+                Console.WriteLine();
+                Console.WriteLine($"***** ERROR : JSON file was not found.");
+                Console.WriteLine();
+                Console.WriteLine();
+                
+                var emptyJson = "[]";
+                return emptyJson;
+            }
+        }
+
+        private Record[] DeserializeJson(string jsonContent)
+        {
+            return JsonSerializer.Deserialize<Record[]>(
+                jsonContent,
+                new JsonSerializerOptions
                 {
                     PropertyNameCaseInsensitive = true,
                     Converters = {new JsonStringEnumConverter()}
                 });
+        }
 
-            foreach (var record in records)
-            {
-                var invoice = new Invoice(
-                    record.Id,
-                    record.Client,
-                    record.Country.ToDomain());
+        private Invoice CreateInvoice(Record record)
+        {
+            var invoice = new Invoice(
+                record.Id,
+                record.Client,
+                record.Country.ToDomain());
 
-                var purchasedBooks = record.BooksInBasket
-                    .Select(b =>
-                    {
-                        IBook book = b.Category.HasValue
-                            ? (IBook) new EducationalBook(b.Name, b.Price, b.Author.ToDomain(), b.Language,
-                                b.Category.Value)
-                            : (IBook) new Novel(b.Name, b.Price, b.Author.ToDomain(), b.Language, b._Genre);
+            var purchasedBooks = record.BooksInBasket
+                .Select(b =>
+                {
+                    IBook book = b.Category.HasValue
+                        ? new EducationalBook(b.Name, b.Price, b.Author.ToDomain(), b.Language,
+                            b.Category.Value)
+                        : (IBook) new Novel(b.Name, b.Price, b.Author.ToDomain(), b.Language, b._Genre);
 
 
-                        return new PurchasedBook(book, b.Quantity);
-                    })
-                    .ToList();
+                    return new PurchasedBook(book, b.Quantity);
+                })
+                .ToList();
 
-                invoice.AddPurchasedBooks(purchasedBooks);
-
-                AddInvoice(invoice);
-            }
+            invoice.AddPurchasedBooks(purchasedBooks);
+            return invoice;
         }
 
         public void AddInvoice(Invoice invoice)
@@ -65,7 +94,6 @@ namespace Application.Storage
             Invoices.Add(invoice.Id, invoice);
         }
 
-        public Dictionary<int, Invoice> GetInvoiceMap() => Invoices;
 
         public class Record
         {
