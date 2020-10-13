@@ -32,9 +32,6 @@ namespace Application.Client
             return invoice;
         }
 
-        public int GetQuantityOf(IBook book)
-        {
-            throw new System.NotImplementedException();
-        }
+        public int GetQuantityOf(IBook book) => _booksInBasket.GetValueOrDefault(book, 0);
     }
 }
