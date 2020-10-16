@@ -50,7 +50,7 @@ namespace Application.Storage
         {
             try
             {
-                return File.ReadAllText("../../../../../../main/resources/repository.json");
+                return File.ReadAllText("./Storage/repository.json");
             }
             catch (Exception e) when (e is FileNotFoundException || e is DirectoryNotFoundException)
             {
