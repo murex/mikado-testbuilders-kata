@@ -109,7 +109,7 @@ some data issued invoices from previous transactions.
 
 > Tip: The total amount of each invoice is not included in this list. 
 
-The Main class ([Application.java](../java/src/main/java/Application.java)) initializes
+The Main class ([Application.java](../java/src/main/java/com/murex/Application.java)) initializes
 an instance of ReportGenerator and then calls the methods to get the 3 report
 values: 
 1. Total number of books sold
@@ -182,15 +182,15 @@ in the code and provided us with quick fixes!
   Sneak Peek at Bug Fix in ReportGenerator.cpp
   </summary>
 
-  ```diff java
-           double totalAmount = 0.0;
-           for (const auto id2Invoice : invoiceMap)
-           {
-  -                totalAmount += id2Invoice.second->computeTotalAmount();
-  +                const auto& invoice = *id2Invoice.second;
-  +                totalAmount += finance::toUSD(invoice.computeTotalAmount(), invoice.getCountry().getCurrency());
-           }
-           return totalAmount;
+  ```diff
+          double totalAmount = 0.0;
+          for (const auto id2Invoice : invoiceMap)
+          {
+  -               totalAmount += id2Invoice.second->computeTotalAmount();
+  +               const auto& invoice = *id2Invoice.second;
+  +               totalAmount += finance::toUSD(invoice.computeTotalAmount(), invoice.getCountry().getCurrency());
+          }
+          return totalAmount;
   ```
 
 </details>
@@ -200,7 +200,7 @@ in the code and provided us with quick fixes!
 One approach to fix the problem is to: 
 1. Apply the above 2 patches to your code in [Invoice](../java/src/main/java/com/murex/tbw/purchase/Invoice.java) and 
 [ReportGenerator](../java/src/main/java/com/murex/tbw/report/ReportGenerator.java) respectively 
-1. Re-run the Main class ([Application.java](../java/src/main/java/Application.java))
+1. Re-run the Main class ([Application.java](../java/src/main/java/com/murex/Application.java))
 1. Ensure you see the correct values printed
 
 Now that we know what caused the issue, let's try to do the fix correctly.
@@ -215,8 +215,7 @@ Let's add the test to
 issue, and fix the code.
 
 Mocking a legacy code base is not a great idea. The only fake we are allowed is
-the 
-[InMemoryRepository](../src/test/java/com/murex/tbw/storage/InMemoryRepository.java)
+the [InMemoryRepository](../java/src/test/java/com/murex/tbw/storage/InMemoryRepository.java)
 
 ### 4. [BONUS] Write a test on ReportGenerator and only then fix it
 
