@@ -1,4 +1,4 @@
-/*******************************************************************************
+package com.murex; /*******************************************************************************
  *
  * Copyright (c) {2003-2019} Murex S.A.S. and its affiliates.
  * All rights reserved. This program and the accompanying materials

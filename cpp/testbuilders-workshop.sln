@@ -46,11 +46,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "References", "References", 
 		docs\references\The_Mikado_Method.md = docs\references\The_Mikado_Method.md
 	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "testbuilders-workshop-bin", "src\main\cpp\bin\testbuilders-workshop-bin.vcxproj", "{5CF1CE67-FD49-44E9-AEEF-34E1F2A24C55}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "testbuilders-workshop-bin", "src\bin\testbuilders-workshop-bin.vcxproj", "{5CF1CE67-FD49-44E9-AEEF-34E1F2A24C55}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "testbuilders-workshop", "src\main\cpp\lib\testbuilders-workshop.vcxproj", "{0BCAEDF3-A07C-48DA-930C-1FBD7C9BE283}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "testbuilders-workshop", "src\lib\testbuilders-workshop.vcxproj", "{0BCAEDF3-A07C-48DA-930C-1FBD7C9BE283}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "testbuilders-workshop-tests", "src\test\cpp\testbuilders-workshop-tests.vcxproj", "{67E49DFF-53E9-48BA-91FE-F53B4AD96B79}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "testbuilders-workshop-tests", "tests\testbuilders-workshop-tests.vcxproj", "{67E49DFF-53E9-48BA-91FE-F53B4AD96B79}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
