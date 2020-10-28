@@ -47,6 +47,7 @@ our particular situation.
   Code of InvoiceTest from the video
   </summary>
   
+
 ##### Java
 
   ```java
@@ -83,12 +84,40 @@ our particular situation.
   }
   ```
 
+##### C#
+
+  ```C#
+  using Xunit;
+  using Application.Purchase;
+
+  namespace Application.Tests
+  {
+      public class InvoiceTest
+      {
+          [Fact]
+          public void Applies_Tax_Rules_When_Computing_Total_Amount()
+          {
+              Invoice oneNovelUsaInvoice = AnInvoice()
+                  .From(USA)
+                  .With(
+                      APurchasedBook().Of(ANovel().Costing(2.99)))
+                  .Build();
+
+              Assert.Equal(2.99 * 1.15  *0.98, oneNovelUsaInvoice.ComputeTotalAmount());
+          }
+      }
+  }
+  ```
+
 </details>
+
 
 <details>
   <summary markdown='span'>
   Code of NovelTestBuilder from the video
   </summary>
+
+##### Java
   
   ```java
   package com.murex.tbw.domain.book;
@@ -108,6 +137,7 @@ our particular situation.
       }
   }
   ```
+
 ##### C++
 
   NovelTestBuilder.h
