@@ -194,6 +194,32 @@ our particular situation.
     }
   }
   ```
+
+##### C#
+  ```C#
+  using System.Collections.Generic;
+  using Application.Domain.Book;
+  using Application.Domain.Country;
+
+  namespace Application.Tests
+  {
+      public class NovelTestBuilder
+      {
+          private double _price = 3.99;
+
+          public NovelTestBuilder Costing(double price)
+          {
+              _price = price;
+              return this;
+          }
+
+          public Novel Build()
+          {
+              return new Novel("Grapes with Wrath", _price, null, Language.English, new List<Genre>());
+          }
+      }
+  }
+  ```
   
 </details>  
 
