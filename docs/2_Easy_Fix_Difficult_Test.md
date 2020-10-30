@@ -202,7 +202,7 @@ in the code and provided us with quick fixes!
   
   ```diff c#
       public double ComputeTotalAmount()
-      
+      {
           var totalAmount = 0.0;
   -       totalAmount = PurchasedBooks.Sum(book => book.TotalPrice);
   +       totalAmount = PurchasedBooks.Sum(book => book.TotalPrice * TaxRule.GetApplicableRate(Country, book.Book));
