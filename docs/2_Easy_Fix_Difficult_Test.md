@@ -69,8 +69,8 @@ Having this interface enables us to have different implementations for our
 database (Json, InMemory, Relational, NoSql, etc). 
 
 In this workshop, we wrote a JSON implementation for this Repository interface
-([JsonRepository.java](../src/main/java/com/murex/tbw/storage/JsonRepository.java)). 
-We assumed that we are storing our data in JSON format in a [file](../src/main/resources/repository.json) 
+([JsonRepository.java](../java/src/main/java/com/murex/tbw/storage/JsonRepository.java)). 
+We assumed that we are storing our data in JSON format in a [file](../java/src/main/resources/repository.json) 
 under the resources folder.  
 
 > Tip: Reading the repository.json file might help you understand the structure
@@ -104,12 +104,12 @@ problem:
 ### 1. Bug Description 
 
 The reporting team provided a scenario to reproduce the bug!  
-Under the resources folder, they saved a JSON file ([repository.json](../src/main/resources/repository.json)) that contains 
+Under the resources folder, they saved a JSON file ([repository.json](../java/src/main/resources/repository.json)) that contains 
 some data issued invoices from previous transactions.
 
 > Tip: The total amount of each invoice is not included in this list. 
 
-The Main class ([Application.java](../src/main/java/Application.java)) initializes
+The Main class ([Application.java](../java/src/main/java/Application.java)) initializes
 an instance of ReportGenerator and then calls the methods to get the 3 report
 values: 
 1. Total number of books sold
@@ -231,9 +231,9 @@ in the code and provided us with quick fixes!
 ### 3. Apply Fixes and Then revert
 
 One approach to fix the problem is to: 
-1. Apply the above 2 patches to your code in [Invoice](../src/main/java/com/murex/tbw/purchase/Invoice.java) and 
-[ReportGenerator](../src/main/java/com/murex/tbw/report/ReportGenerator.java) respectively 
-1. Re-run the Main class ([Application.java](../src/main/java/Application.java))
+1. Apply the above 2 patches to your code in [Invoice](../java/src/main/java/com/murex/tbw/purchase/Invoice.java) and 
+[ReportGenerator](../java/src/main/java/com/murex/tbw/report/ReportGenerator.java) respectively 
+1. Re-run the Main class ([Application.java](../java/src/main/java/Application.java))
 1. Ensure you see the correct values printed
 
 Now that we know what caused the issue, let's try to do the fix correctly.
@@ -244,7 +244,7 @@ So let's revert!
 ### 3. Write a test on Invoice and only then fix it
 
 Let's add the test to 
-[Invoice](../src/main/java/com/murex/tbw/purchase/Invoice.java), reproduce the
+[Invoice](../java/src/main/java/com/murex/tbw/purchase/Invoice.java), reproduce the
 issue, and fix the code.
 
 Mocking a legacy code base is not a great idea. The only fake we are allowed is
@@ -254,7 +254,7 @@ the
 ### 4. [BONUS] Write a test on ReportGenerator and only then fix it
 
 If you have the time, do the same for
-[ReportGenerator](../src/main/java/com/murex/tbw/report/ReportGenerator.java):
+[ReportGenerator](../java/src/main/java/com/murex/tbw/report/ReportGenerator.java):
 add a test, reproduce and fix.
 
 ## Mini Retro

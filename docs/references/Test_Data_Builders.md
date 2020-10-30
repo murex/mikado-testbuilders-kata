@@ -212,14 +212,14 @@ object you need to instantiate in your test doing some problematic side
 effect in its constructor. Loading something from the DB is the canonical
 example. We cannot use Test Data Builders by the book in this situation.
 
-We have a small example of this in this codebase, with the [ReportGenerator](../../src/main/java/com/murex/tbw/report/ReportGenerator.java)
-constructor calling the [MainRepository](../../src/main/java/com/murex/tbw/MainRepository.java)
+We have a small example of this in this codebase, with the [ReportGenerator](../../java/src/main/java/com/murex/tbw/report/ReportGenerator.java)
+constructor calling the [MainRepository](../../java/src/main/java/com/murex/tbw/MainRepository.java)
 singleton directly.
 
 Here's a technique inspired from [Working Effectively with Legacy Code](https://www.r7krecon.com/legacy-code), by [Michael C. Feathers](https://www.r7krecon.com/)
 
 * Find a place where you can inject a different implementation (here,
-  [Repository](../../src/main/java/com/murex/tbw/storage/Repository.java))
+  [Repository](../../java/src/main/java/com/murex/tbw/storage/Repository.java))
 * Write an in-memory fake implementation of this implementation (here, it
   already exists in [InMemoryRepository](../../src/test/java/com/murex/tbw/storage/InMemoryRepository.java))
 * Inject it before the test
@@ -264,7 +264,7 @@ builder! Make sure the only way to get this object is through the dependency
 injection wrapper.
 
 Here is an example, using [JUnit5 Extensions](https://www.baeldung.com/junit-5-extensions),
-and the [Repository](../../src/main/java/com/murex/tbw/storage/Repository.java).
+and the [Repository](../../java/src/main/java/com/murex/tbw/storage/Repository.java).
 
 ```java
 @ExtendWith(InMemoryRepositoryInjector.class)

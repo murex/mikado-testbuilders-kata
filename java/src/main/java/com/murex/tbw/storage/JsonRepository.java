@@ -28,21 +28,29 @@ import java.util.List;
 import java.util.Map;
 
 public final class JsonRepository implements Repository {
-    private final File sourceFile;
+    private static final String REPOSITORY_FILE = "repository.json";
     private final Map<Integer, Invoice> invoiceMap;
 
     public JsonRepository() {
         invoiceMap = new HashMap<>();
-        sourceFile = new File(this.getClass().getClassLoader().getResource("repository.json").getFile());
-        try {
-            loadJsonData();
-        } catch (FileNotFoundException e) {
-            System.out.println(e.getMessage());
-        }
+        loadJsonData(getJsonReader());
     }
 
-    private void loadJsonData() throws FileNotFoundException {
-        JsonReader jsonReader = new JsonReader(new FileReader(sourceFile));
+    private JsonReader getJsonReader() {
+        try {
+            File sourceFile = new File(this.getClass().getClassLoader().getResource(REPOSITORY_FILE).getFile());
+            return new JsonReader(new FileReader(sourceFile));
+        } catch (FileNotFoundException | NullPointerException exception) {
+            System.out.println("*********************WARNING*********************");
+            System.out.printf("Error reading the file '%s'%s", REPOSITORY_FILE, ".\n");
+            System.out.println("*************************************************");
+            System.out.println("\n\n");
+        }
+        System.exit(0);
+        return null;
+    }
+
+    private void loadJsonData(JsonReader jsonReader) {
         try {
             jsonReader.beginArray();
             while (jsonReader.hasNext()) {
