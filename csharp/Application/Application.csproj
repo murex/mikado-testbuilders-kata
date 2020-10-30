@@ -21,4 +21,8 @@
     </Compile>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Report\" />
+  </ItemGroup>
+
 </Project>
