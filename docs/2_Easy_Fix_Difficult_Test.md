@@ -195,6 +195,39 @@ in the code and provided us with quick fixes!
 
 </details>
 
+<details>
+  <summary markdown='span'>
+  Sneak Peek at Bug Fix in Invoice.cs
+  </summary>
+  
+  ```diff c#
+      public double ComputeTotalAmount()
+      
+          var totalAmount = 0.0;
+  -       totalAmount = PurchasedBooks.Sum(book => book.TotalPrice);
+  +       totalAmount = PurchasedBooks.Sum(book => book.TotalPrice * TaxRule.GetApplicableRate(Country, book.Book));
+          return totalAmount;
+      }
+  ```
+</details>
+
+<details>
+  <summary markdown='span'>
+  Sneak Peek at Bug Fix in ReportGenerator.cs
+  </summary>
+
+  ```diff c#
+        public double GetTotalAmount()
+        {
+            var invoices = _repository.GetInvoiceMap().Values;
+  -         var totalAmount = invoices.Sum(invoice => invoice.ComputeTotalAmount());
+  +         var totalAmount = invoices.Sum(invoice => CurrencyConverter.ToUsd(invoice.ComputeTotalAmount(), invoice.Country.Currency));
+            return totalAmount;
+        }
+  ```
+
+</details>
+
 ### 3. Apply Fixes and Then revert
 
 One approach to fix the problem is to: 
