@@ -12,7 +12,7 @@ using System.Collections.Generic;
 using Application.Purchase;
 using Application.Storage;
 
-namespace Application.Tests
+namespace Application.Tests.Storage
 {
     public class InMemoryRepository : IRepository
     {
