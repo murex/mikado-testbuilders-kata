@@ -50,7 +50,7 @@ distribution, and is available at the Open Source site [here](https://opensource
  
 1. [Ahmad Atwi](https://github.com/aatwi)
 1. [Philippe Bourgau](https://github.com/philou) 
-
+1. [Christophe Cadilhac](https://github.com/cadichris) 
 
 ----
 [Start...](./docs/1_Introduction.md)
