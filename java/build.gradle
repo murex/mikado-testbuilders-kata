@@ -1,0 +1,19 @@
+plugins {
+    id 'java'
+    id 'maven-publish'
+}
+
+group = 'murex.com'
+version = '1.0-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.junit.platform:junit-platform-surefire-provider:1.0.0'
+    implementation 'com.google.guava:guava:28.0-jre'
+    implementation 'com.google.code.gson:gson:2.8.5'
+    testImplementation 'org.junit.jupiter:junit-jupiter-engine:5.0.0'
+}
