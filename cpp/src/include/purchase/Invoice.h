@@ -13,7 +13,7 @@
 
 #include <string>
 #include <vector>
-#include "../domain/country/Country.h"
+#include "domain/country/Country.h"
 
 namespace purchase
 {

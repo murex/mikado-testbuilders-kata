@@ -11,6 +11,9 @@
 # BlueJ files
 *.ctxt
 
+# C++ Build Directories
+**/build-dir/**
+
 ### Gradle ###
 .gradle
 build/
@@ -400,3 +403,23 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
+
+# CMake
+cmake-build-*/
+
+### CMake ###
+CMakeLists.txt.user
+CMakeCache.txt
+CMakeFiles
+CMakeScripts
+Testing
+Makefile
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+CTestTestfile.cmake
+_deps
+
+### CMake Patch ###
+# External projects
+*-prefix/
