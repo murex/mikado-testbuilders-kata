@@ -1,6 +1,11 @@
 cmake_minimum_required(VERSION 3.10.0)
 
-project(Mikado-TestBuilders-Workshop CXX)
+set(ProjectId Mikado-TestBuilders-Workshop)
+
+set(CMAKE_TOOLCHAIN_FILE ${CMAKE_CURRENT_SOURCE_DIR}/vcpkg/scripts/buildsystems/vcpkg.cmake
+  CACHE STRING "Vcpkg toolchain file")
+
+project(${ProjectId} CXX)
 
 enable_testing()
 
@@ -43,11 +48,11 @@ if (NOT TARGET gtest)
    set_property(TARGET gtest_main PROPERTY FOLDER "Thirdparties")
 endif()
 
-add_library(Mikado-TestBuilders-Workshop STATIC)
+add_library(${ProjectId} STATIC)
 
-target_compile_definitions(Mikado-TestBuilders-Workshop PRIVATE MIKADO_TESTBUILDERS_WORKSHOP_EXPORTS)
+target_compile_definitions(${ProjectId} PRIVATE MIKADO_TESTBUILDERS_WORKSHOP_EXPORTS)
 
-target_sources(Mikado-TestBuilders-Workshop
+target_sources(${ProjectId}
 	PRIVATE
 		${CMAKE_CURRENT_SOURCE_DIR}/src/lib/Author.cpp
 		${CMAKE_CURRENT_SOURCE_DIR}/src/lib/Book.cpp
@@ -92,21 +97,21 @@ target_sources(Mikado-TestBuilders-Workshop
 		
 )
 
-target_link_libraries(Mikado-TestBuilders-Workshop
+target_link_libraries(${ProjectId}
     PRIVATE
 		gtest
         gtest_main)
 
-target_include_directories(Mikado-TestBuilders-Workshop
+target_include_directories(${ProjectId}
 	PRIVATE
 		${CMAKE_CURRENT_SOURCE_DIR}/src/lib
     PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}/src/include
 )
 
-add_executable(Mikado-TestBuilders-Workshop-test)
+add_executable(${ProjectId}-test)
 
-target_sources(Mikado-TestBuilders-Workshop-test
+target_sources(${ProjectId}-test
 	PRIVATE
         ${CMAKE_CURRENT_SOURCE_DIR}/tests/InMemoryRepository.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/tests/Tests.cpp		
@@ -114,21 +119,21 @@ target_sources(Mikado-TestBuilders-Workshop-test
         ${CMAKE_CURRENT_SOURCE_DIR}/thirdparty.gtest.in.txt
 )
 
-target_include_directories(Mikado-TestBuilders-Workshop-test
+target_include_directories(${ProjectId}-test
     PRIVATE
         ${CMAKE_CURRENT_SOURCE_DIR}/tests
 )
 
-target_link_libraries(Mikado-TestBuilders-Workshop-test
+target_link_libraries(${ProjectId}-test
     PRIVATE
 		gtest
-	    Mikado-TestBuilders-Workshop
+	    ${ProjectId}
         gtest_main)
 		
-add_test(NAME ctest-Mikado-TestBuilders-Workshop COMMAND Mikado-TestBuilders-Workshop-test)
+add_test(NAME ctest-${ProjectId} COMMAND ${ProjectId}-test)
 
-set_property(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT Mikado-TestBuilders-Workshop-test)
-set_property(TARGET Mikado-TestBuilders-Workshop PROPERTY FOLDER "Workshop")
-set_property(TARGET Mikado-TestBuilders-Workshop-test PROPERTY FOLDER "Workshop")
+set_property(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT ${ProjectId}-test)
+set_property(TARGET ${ProjectId} PROPERTY FOLDER "Workshop")
+set_property(TARGET ${ProjectId}-test PROPERTY FOLDER "Workshop")
 
 set_property(GLOBAL PROPERTY PREDEFINED_TARGETS_FOLDER "CMake Generated")
