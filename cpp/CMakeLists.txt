@@ -1,11 +1,11 @@
 cmake_minimum_required(VERSION 3.10.0)
 
-set(ProjectId Mikado-TestBuilders-Workshop)
+set(PROJECT_NAME Mikado-TestBuilders-Workshop)
 
 set(CMAKE_TOOLCHAIN_FILE ${CMAKE_CURRENT_SOURCE_DIR}/vcpkg/scripts/buildsystems/vcpkg.cmake
   CACHE STRING "Vcpkg toolchain file")
 
-project(${ProjectId} CXX)
+project(${PROJECT_NAME} CXX)
 
 enable_testing()
 
@@ -48,11 +48,11 @@ if (NOT TARGET gtest)
    set_property(TARGET gtest_main PROPERTY FOLDER "Thirdparties")
 endif()
 
-add_library(${ProjectId} STATIC)
+add_library(${PROJECT_NAME} STATIC)
 
-target_compile_definitions(${ProjectId} PRIVATE MIKADO_TESTBUILDERS_WORKSHOP_EXPORTS)
+target_compile_definitions(${PROJECT_NAME} PRIVATE MIKADO_TESTBUILDERS_WORKSHOP_EXPORTS)
 
-target_sources(${ProjectId}
+target_sources(${PROJECT_NAME}
 	PRIVATE
 		${CMAKE_CURRENT_SOURCE_DIR}/src/lib/Author.cpp
 		${CMAKE_CURRENT_SOURCE_DIR}/src/lib/Book.cpp
@@ -97,21 +97,21 @@ target_sources(${ProjectId}
 		
 )
 
-target_link_libraries(${ProjectId}
+target_link_libraries(${PROJECT_NAME}
     PRIVATE
 		gtest
         gtest_main)
 
-target_include_directories(${ProjectId}
+target_include_directories(${PROJECT_NAME}
 	PRIVATE
 		${CMAKE_CURRENT_SOURCE_DIR}/src/lib
     PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}/src/include
 )
 
-add_executable(${ProjectId}-test)
+add_executable(${PROJECT_NAME}-test)
 
-target_sources(${ProjectId}-test
+target_sources(${PROJECT_NAME}-test
 	PRIVATE
         ${CMAKE_CURRENT_SOURCE_DIR}/tests/InMemoryRepository.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/tests/Tests.cpp		
@@ -119,21 +119,21 @@ target_sources(${ProjectId}-test
         ${CMAKE_CURRENT_SOURCE_DIR}/thirdparty.gtest.in.txt
 )
 
-target_include_directories(${ProjectId}-test
+target_include_directories(${PROJECT_NAME}-test
     PRIVATE
         ${CMAKE_CURRENT_SOURCE_DIR}/tests
 )
 
-target_link_libraries(${ProjectId}-test
+target_link_libraries(${PROJECT_NAME}-test
     PRIVATE
 		gtest
-	    ${ProjectId}
+	    ${PROJECT_NAME}
         gtest_main)
 		
-add_test(NAME ctest-${ProjectId} COMMAND ${ProjectId}-test)
+add_test(NAME ctest-${PROJECT_NAME} COMMAND ${PROJECT_NAME}-test)
 
-set_property(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT ${ProjectId}-test)
-set_property(TARGET ${ProjectId} PROPERTY FOLDER "Workshop")
-set_property(TARGET ${ProjectId}-test PROPERTY FOLDER "Workshop")
+set_property(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT ${PROJECT_NAME}-test)
+set_property(TARGET ${PROJECT_NAME} PROPERTY FOLDER "Workshop")
+set_property(TARGET ${PROJECT_NAME}-test PROPERTY FOLDER "Workshop")
 
 set_property(GLOBAL PROPERTY PREDEFINED_TARGETS_FOLDER "CMake Generated")
