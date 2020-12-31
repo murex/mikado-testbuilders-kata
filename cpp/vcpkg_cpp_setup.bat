@@ -12,6 +12,9 @@ if not exist %BUILD_SYSTEM_DIR% (
     mkdir %BUILD_SYSTEM_DIR%
 )
 
+echo '*** Updating the submodules ***'
+git submodule update
+
 .\vcpkg\vcpkg.exe install gtest
 
 set CMAKE_VERSION=3.18.4
