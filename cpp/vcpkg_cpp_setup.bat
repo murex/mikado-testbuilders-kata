@@ -15,7 +15,10 @@ if not exist %BUILD_SYSTEM_DIR% (
 echo '*** Updating the submodules ***'
 git submodule update
 
-.\vcpkg\vcpkg.exe install gtest
+echo '*** Running vcpkg bootstrap ***'
+call .\vcpkg\bootstrap-vcpkg.bat
+echo '*** Installing GTest using vcpkg ***'
+call .\vcpkg\vcpkg.exe install gtest
 
 set CMAKE_VERSION=3.18.4
 set CMAKE_ZIP_URL="http://github.com/Kitware/CMake/releases/download/v%CMAKE_VERSION%/cmake-%CMAKE_VERSION%-win64-x64.zip"
@@ -32,7 +35,7 @@ if not exist %CMAKE_EXPECTED_ZIP_FILE% (
 )
 
 pushd ..
-cmake-dl\cmake-win-x64\bin\cmake.exe -B . -S .. -DCMAKE_TOOLCHAIN_FILE=../vcpkg/scripts/buildsystems/vcpkg.cmake
+cmake-dl\cmake-win-x64\bin\cmake.exe -B . -S .. -DCMAKE_TOOLCHAIN_FILE=.\vcpkg\scripts\buildsystems\vcpkg.cmake
 cmake-dl\cmake-win-x64\bin\cmake.exe --build .
 cmake-dl\cmake-win-x64\bin\ctest.exe -C Debug
 popd
