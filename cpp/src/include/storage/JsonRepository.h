@@ -12,6 +12,9 @@
 #define TESTBUILDERS_WORKSHOP_STORAGE_JSON_REPOSITORY_H_INCLUDED
 
 #include <memory>
+#include <string>
+#include <sstream>
+#include <iostream>
 #include "Repository.h"
 
 namespace purchase {

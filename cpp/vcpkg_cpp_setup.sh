@@ -6,9 +6,10 @@ BUILD_SYSTEM_DIR=${BUILD_DIR}/cmake-dl
 mkdir -p ${BUILD_DIR}
 mkdir -p ${BUILD_SYSTEM_DIR}
 
+echo '*** Initializing the submodules ***'
+git submodule init
 echo '*** Updating the submodules ***'
 git submodule update
-
 
 echo '*** Running vcpkg bootstrap ***'
 ./vcpkg/bootstrap-vcpkg.sh

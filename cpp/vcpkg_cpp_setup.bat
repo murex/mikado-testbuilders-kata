@@ -12,6 +12,8 @@ if not exist %BUILD_SYSTEM_DIR% (
     mkdir %BUILD_SYSTEM_DIR%
 )
 
+echo '*** Initializing the submodules ***'
+git submodule init
 echo '*** Updating the submodules ***'
 git submodule update
 
