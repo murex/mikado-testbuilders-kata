@@ -82,7 +82,7 @@ standard part of the workshop.
 | Phase | Length | Start | End |
 |-------|--------|-------|-----|
 | Present the code and the exercise | 10 | 5 | 15 |
-| In pairs, fix the bugs | 10 | 15 | 25
+| In mobs, fix the bugs | 10 | 15 | 25
 | Rollback Invoice, write a test and fix, same with ReportGenerator (bonus) | 25 | 25 | 50 |
 | Mini retro | 5 | 50 | 55 |
 
@@ -129,7 +129,7 @@ by [Sharon Bowman](https://bowperson.com/)]
 
 ### Turn and talk Energizer
 
-People will need to pair for programming, so it's a good icebreaker to get them
+People will need to mob for programming, so it's a good icebreaker to get them
 to meet and discuss the topic at the beginning
 
 ### Rapid Response during Lectures
@@ -151,7 +151,7 @@ If you are running the workshop in a room, you can create physical Wall Centers
 with real copies of books, and printouts of articles. All referenced books and 
 articles are listed under the [References](./references/References.md) page. 
 
-### Pair programming
+### Mob or pair programming
 
 Will act as a kind of 'Paired Teach Back' activity all along.
 
@@ -171,7 +171,7 @@ have a higher chance of actually using it in their daily work.
 
 ### Do a live demo of the mikado beginning for large audience
 
-If attendees are remote, or only a single pair, letting them watch the video is fine. If they are all in the same room though, you'll get a chaos of unsynchronized replays...
+If attendees are remote, or only a single mob, letting them watch the video is fine. If they are all in the same room though, you'll get a chaos of unsynchronized replays...
 
 We could also just watch it through the main screen
 
