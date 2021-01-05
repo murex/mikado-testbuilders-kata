@@ -84,6 +84,7 @@ target_sources(${PROJECT_NAME}
 		${CMAKE_CURRENT_SOURCE_DIR}/src/lib/finance/CurrencyConverter.h
 		${CMAKE_CURRENT_SOURCE_DIR}/src/lib/finance/TaxRule.h
 		${CMAKE_CURRENT_SOURCE_DIR}/src/lib/purchase/PurchasedBook.h
+		${CMAKE_CURRENT_SOURCE_DIR}/src/lib/thirdparty/json.hpp
 		
     PUBLIC
 		${CMAKE_CURRENT_SOURCE_DIR}/src/include/MainRepository.h
