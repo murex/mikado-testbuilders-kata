@@ -13,8 +13,6 @@
 
 #include <memory>
 #include <string>
-#include <sstream>
-#include <iostream>
 #include "Repository.h"
 
 namespace purchase {
