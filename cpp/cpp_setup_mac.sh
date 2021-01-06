@@ -14,7 +14,7 @@ git submodule update
 echo '*** Running vcpkg bootstrap ***'
 ./vcpkg/bootstrap-vcpkg.sh
 echo '*** Installing GTest using vcpkg ***'
-./vcpkg/vcpkg.sh install gtest 
+./vcpkg/vcpkg install gtest 
 
 
 CMAKE_VERSION=3.18.4
