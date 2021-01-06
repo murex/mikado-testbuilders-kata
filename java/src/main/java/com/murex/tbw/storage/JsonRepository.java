@@ -18,10 +18,10 @@ import com.murex.tbw.domain.country.Language;
 import com.murex.tbw.purchase.Invoice;
 import com.murex.tbw.purchase.PurchasedBook;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -38,11 +38,12 @@ public final class JsonRepository implements Repository {
 
     private JsonReader getJsonReader() {
         try {
-            File sourceFile = new File(this.getClass().getClassLoader().getResource(REPOSITORY_FILE).getFile());
-            return new JsonReader(new FileReader(sourceFile));
-        } catch (FileNotFoundException | NullPointerException exception) {
+            InputStream resourceAsStream = this.getClass().getResourceAsStream("/" + REPOSITORY_FILE);
+            return new JsonReader(new BufferedReader(new InputStreamReader(resourceAsStream)));
+        } catch (Exception exp) {
             System.out.println("*********************WARNING*********************");
             System.out.printf("Error reading the file '%s'%s", REPOSITORY_FILE, ".\n");
+            System.out.println(exp);
             System.out.println("*************************************************");
             System.out.println("\n\n");
         }
