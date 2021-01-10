@@ -5,7 +5,7 @@ Darwin)
     os="Darwin"
     arch="x86_64"
     archive_extension="tar.gz"
-    cmake_bin_dir="CMake.app/Contents"
+    cmake_bin_dir="CMake.app/Contents/bin"
     cmake="cmake"
     ctest="ctest"
     cmake_generator_options="-G Xcode -DCMAKE_TOOLCHAIN_FILE=../vcpkg/scripts/buildsystems/vcpkg.cmake"
@@ -35,6 +35,9 @@ MINGW64_NT-*)
     ;;
 esac
 
+base_dir=$(dirname -- "$0")
+cd "${base_dir}" || exit
+
 echo '*** Initializing the submodules ***'
 git submodule init
 echo '*** Updating the submodules ***'
@@ -50,9 +53,6 @@ cmake_expected_dir="cmake-${cmake_version}-${os}-${arch}"
 cmake_expected_archive_file="${cmake_expected_dir}.${archive_extension}"
 cmake_archive_url="http://github.com/Kitware/CMake/releases/download/v${cmake_version}/${cmake_expected_archive_file}"
 cmake_home="cmake-${os}-${arch}"
-
-base_dir=$(dirname -- "$0")
-cd "${base_dir}" || exit
 
 build_dir="build"
 mkdir -p "${build_dir}"
