@@ -28,7 +28,11 @@ If executed successfully, the above command should generate the jar file
 #### Run Command
 To try out the application, run the command: 
 ```shell
-java -jar target\MikadoTestBuilderKata.jar
+# Windows
+  java -jar target\MikadoTestBuilderKata.jar
+
+# Mac & Linux
+  java -jar target/MikadoTestBuilderKata.jar
 ```
 
 The following output should be generated: 
@@ -59,7 +63,11 @@ To try out the application, run the command:
 
 To , run the following command:
 ```shell
-java -jar build\libs\MikadoTestBuilderKata.jar
+# Windows 
+  java -jar build\libs\MikadoTestBuilderKata.jar
+
+# Mac & Linux 
+  java -jar build/libs/MikadoTestBuilderKata.jar
 ```
 
 The following output should be generated:
