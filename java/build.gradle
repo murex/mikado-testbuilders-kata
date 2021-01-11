@@ -34,6 +34,7 @@ task uberJar(type: Jar) {
     }
 
     setArchivesBaseName("MikadoTestBuilderKata")
+    project.version = ""
     with jar
 }
 
