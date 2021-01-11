@@ -4,7 +4,9 @@
 
 ### Build Tools 
 We provided the necessary to build the project with either [Maven](https://maven.apache.org/) 
-or [Gradle](https://gradle.org/)! Ensure that you have at-least one of them installed on 
+or [Gradle](https://gradle.org/)!
+
+You are requested to ensure that you have at-least one of them installed on 
 your machine.  
 
 ### IDEs
@@ -21,10 +23,11 @@ To build and run the project, follow one of the options below:
 mvn clean install 
 ```
 
-If executed successfully, the above command should generate the jar file 
-[MikadoTestBuilderKata](target/MikadoTestBuilderKata.jar) under the 
-[target](target) folder.
-
+If executed successfully, the above command should generate the following: 
+1. The typical maven [target](target) folder
+1. The executable jar file [MikadoTestBuilderKata](target/MikadoTestBuilderKata.jar) 
+   under the [target](target) folder.
+   
 #### Run Command
 To try out the application, run the command: 
 ```shell
@@ -54,9 +57,11 @@ The total amount of all invoices in USD is: 1016.04
 ```shell
 gradle clean build 
 ```
-If executed successfully, the above command should generate the jar file
-[MikadoTestBuilderKata](build/libs/MikadoTestBuilderKata.jar) under the
-[build/libs](build/libs) folder.
+
+If executed successfully, the above command should generate the following:
+1. The typical gradle [build](build) folder
+1. The executable jar file [MikadoTestBuilderKata](build/libs/MikadoTestBuilderKata.jar)
+   under the [build/libs](build/libs) folder.
 
 #### Run Command
 To try out the application, run the command:
