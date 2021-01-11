@@ -66,7 +66,6 @@ If executed successfully, the above command should generate the following:
 #### Run Command
 To try out the application, run the command:
 
-To , run the following command:
 ```shell
 # Windows 
   java -jar build\libs\MikadoTestBuilderKata.jar
