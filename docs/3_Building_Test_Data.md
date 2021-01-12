@@ -33,7 +33,7 @@ Time for a mini-retro again.
 Take a few minutes to discuss the good and the bad of this approach.
 
 Then compare them to what people usually say in
-[Animation Guide.md](./Animation_Guide.md)
+the [Retrospectives Guide](./Retrospectives_Guide.md)
 
 ----
 [Continue...](./4_Mikado_Method_to_the_Rescue.md)
