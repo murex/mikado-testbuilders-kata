@@ -35,13 +35,18 @@ MINGW64_NT-*)
     ;;
 esac
 
+start_dir=$(pwd)
 base_dir=$(dirname -- "$0")
-cd "${base_dir}" || exit
+git_repo_root_dir=$(git rev-parse --show-toplevel)
 
+cd "${git_repo_root_dir}" || exit
 echo '*** Initializing the submodules ***'
 git submodule init
 echo '*** Updating the submodules ***'
 git submodule update
+
+cd "${start_dir}" || exit
+cd "${base_dir}" || exit
 
 echo '*** Running vcpkg bootstrap ***'
 ./vcpkg/bootstrap-vcpkg.sh
@@ -61,6 +66,7 @@ cd "${build_dir}" || exit
 cmake_build_dir="cmake"
 mkdir -p "${cmake_build_dir}"
 cd "${cmake_build_dir}" || exit
+
 
 if ! [ -f "${cmake_expected_archive_file}" ]
 then
