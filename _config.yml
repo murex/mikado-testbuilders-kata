@@ -16,7 +16,8 @@ include:
   - docs/3_Building_Test_Data.md
   - docs/4_Mikado_Method_to_the_Rescue.md
   - docs/5_Conclusion.md
-  - docs/Animation_Guide.md
+  - docs/Facilitation_Guide.md
+  - docs/Retrospectives_Guide.md
   - docs/references/References.md
   - docs/references/Test_Data_Builders.md
   - docs/references/The_Mikado_Method.md

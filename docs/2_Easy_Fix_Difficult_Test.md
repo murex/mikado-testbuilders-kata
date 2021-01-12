@@ -261,7 +261,7 @@ add a test, reproduce and fix.
 Take a few minutes to discuss the good and the bad of this approach.
 
 Then compare them to what people usually say in
-[Animation Guide.md](./Animation_Guide.md)
+the [Retrospectives Guide](./Retrospectives_Guide.md)
 
 ---
 [Continue...](./3_Building_Test_Data.md)

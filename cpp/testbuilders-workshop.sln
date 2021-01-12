@@ -17,7 +17,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{A6EAD9AB-D
 		docs\3_Building_Test_Data.md = docs\3_Building_Test_Data.md
 		docs\4_Mikado_Method_to_the_Rescue.md = docs\4_Mikado_Method_to_the_Rescue.md
 		docs\5_Conclusion.md = docs\5_Conclusion.md
-		docs\Animation_Guide.md = docs\Animation_Guide.md
+		docs\Facilitation_Guide.md = docs\Facilitation_Guide.md
+		docs\Retrospectives_Guide.md = docs\Retrospectives_Guide.md
 		docs\Troubleshooting.md = docs\Troubleshooting.md
 	EndProjectSection
 EndProject
