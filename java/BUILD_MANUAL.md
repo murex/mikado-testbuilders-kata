@@ -1,13 +1,17 @@
 # Java Build Manual
 
-## Prerequisites 
+## Prerequisites
 
 ### Build Tools 
 We provided the necessary to build the project with either [Maven](https://maven.apache.org/) 
 or [Gradle](https://gradle.org/)!
 
-You are requested to ensure that you have at-least one of them installed on 
-your machine.  
+Please ensure that you have at-least one of them installed on your machine.  
+
+### Java Version 
+The source code of this project is compatible with [Java-8](https://www.oracle.com/java/technologies/java8.html) and above. 
+In the [pom.xml](pom.xml) and [build.gradle](build.gradle), you can notice that the source version 
+has been set to 1.8. Remember to change that configuration to your preferred version if needed. 
 
 ### IDEs
 We are using [IntelliJ](https://www.jetbrains.com/idea/), but you can choose any IDE that
@@ -15,7 +19,12 @@ supports loading Maven or Gradle projects!
  
 ## Process 
 
-To build and run the project, follow one of the options below:    
+---
+***REMINDER***: You need to run the commands below from the [java](.) folder! 
+
+---
+
+To build and run the project, follow one of the options below:
 
 ### Maven
 #### Build Command 
