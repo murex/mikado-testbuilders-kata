@@ -19,10 +19,7 @@ supports loading Maven or Gradle projects!
  
 ## Process 
 
----
-***REMINDER***: You need to run the commands below from the [java](.) folder! 
-
----
+> ***Reminder***:  You need to run the commands below from the [java](.) folder!
 
 To build and run the project, follow one of the options below:
 
