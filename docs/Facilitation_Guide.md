@@ -1,10 +1,10 @@
 # Facilitation Guide
 
-![A lego hiker guiding is way with a compass and a map](./images/guide.jpg)
+![A lego hiker guiding his way with a compass and a map](./images/guide.jpg)
 
 *[Image Source](https://pixabay.com/photos/hiker-walker-rambler-lego-walk-1984421/)*
 
-Here are information to run this workshop.
+Here is information to run this workshop.
 
 
 ## Time Table
@@ -67,7 +67,7 @@ help them to envision how to use their new knowledge.
 By writing down what they think they can do with their new knowledge, attendees
 have a higher chance of actually using it in their daily work.
 
-## General Animation tips
+## General Facilitation tips
 
 ### Do a live demo of the mikado beginning for large audience
 
