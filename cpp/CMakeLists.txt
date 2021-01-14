@@ -11,6 +11,8 @@ enable_testing()
 
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
+# GTest retrieval
+
 if (NOT TARGET gtest)
 	# Download and unpack googletest at configure time
 	configure_file(thirdparty.gtest.in.txt googletest-download/CMakeLists.txt)
@@ -47,6 +49,8 @@ if (NOT TARGET gtest)
    set_property(TARGET gtest PROPERTY FOLDER "Thirdparties")
    set_property(TARGET gtest_main PROPERTY FOLDER "Thirdparties")
 endif()
+
+# Library
 
 add_library(${PROJECT_NAME} STATIC)
 
@@ -97,6 +101,11 @@ set(PUBLIC_LIBRARY_SOURCES
 		${CMAKE_CURRENT_SOURCE_DIR}/src/include/storage/JsonRepository.h
 )
 
+target_compile_definitions(${PROJECT_NAME} 
+	PRIVATE 
+		DEFAULT_JSON_PATH="${CMAKE_CURRENT_SOURCE_DIR}/src/resources/repository.json"
+)
+
 target_sources(${PROJECT_NAME}
 	PRIVATE
 		${LIBRARY_SOURCES}
@@ -112,9 +121,25 @@ target_include_directories(${PROJECT_NAME}
         ${CMAKE_CURRENT_SOURCE_DIR}/src/include
 )
 
-
 source_group(TREE ${CMAKE_CURRENT_SOURCE_DIR}/src/lib PREFIX private FILES ${LIBRARY_SOURCES})
 source_group(TREE ${CMAKE_CURRENT_SOURCE_DIR}/src/include PREFIX public FILES ${PUBLIC_LIBRARY_SOURCES})
+
+# Console Executable
+
+add_executable(${PROJECT_NAME}-app) 
+
+set(APP_SOURCES
+	${CMAKE_CURRENT_SOURCE_DIR}/app/Application.cpp
+)
+
+target_sources(${PROJECT_NAME}-app PRIVATE ${APP_SOURCES})
+
+target_link_libraries(${PROJECT_NAME}-app
+    PRIVATE
+	    ${PROJECT_NAME}
+)
+
+# Test Executable
 
 add_executable(${PROJECT_NAME}-test)
 
@@ -147,5 +172,6 @@ add_test(NAME ctest-${PROJECT_NAME} COMMAND ${PROJECT_NAME}-test)
 set_property(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT ${PROJECT_NAME}-test)
 set_property(TARGET ${PROJECT_NAME} PROPERTY FOLDER "Workshop")
 set_property(TARGET ${PROJECT_NAME}-test PROPERTY FOLDER "Workshop")
+set_property(TARGET ${PROJECT_NAME}-app PROPERTY FOLDER "Workshop")
 
 set_property(GLOBAL PROPERTY PREDEFINED_TARGETS_FOLDER "CMake Generated")
