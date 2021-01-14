@@ -52,8 +52,7 @@ add_library(${PROJECT_NAME} STATIC)
 
 target_compile_definitions(${PROJECT_NAME} PRIVATE MIKADO_TESTBUILDERS_WORKSHOP_EXPORTS)
 
-target_sources(${PROJECT_NAME}
-	PRIVATE
+set(LIBRARY_SOURCES
 		${CMAKE_CURRENT_SOURCE_DIR}/src/lib/Author.cpp
 		${CMAKE_CURRENT_SOURCE_DIR}/src/lib/Book.cpp
 		${CMAKE_CURRENT_SOURCE_DIR}/src/lib/BooksOrder.cpp
@@ -85,8 +84,9 @@ target_sources(${PROJECT_NAME}
 		${CMAKE_CURRENT_SOURCE_DIR}/src/lib/finance/TaxRule.h
 		${CMAKE_CURRENT_SOURCE_DIR}/src/lib/purchase/PurchasedBook.h
 		${CMAKE_CURRENT_SOURCE_DIR}/src/lib/thirdparty/json.hpp
-		
-    PUBLIC
+)
+
+set(PUBLIC_LIBRARY_SOURCES
 		${CMAKE_CURRENT_SOURCE_DIR}/src/include/MainRepository.h
 		${CMAKE_CURRENT_SOURCE_DIR}/src/include/domain/country/Country.h
 		${CMAKE_CURRENT_SOURCE_DIR}/src/include/domain/country/Currency.h
@@ -95,7 +95,14 @@ target_sources(${PROJECT_NAME}
 		${CMAKE_CURRENT_SOURCE_DIR}/src/include/report/ReportGenerator.h
 		${CMAKE_CURRENT_SOURCE_DIR}/src/include/storage/Repository.h
 		${CMAKE_CURRENT_SOURCE_DIR}/src/include/storage/JsonRepository.h
+)
+
+target_sources(${PROJECT_NAME}
+	PRIVATE
+		${LIBRARY_SOURCES}
 		
+    PUBLIC
+		${PUBLIC_LIBRARY_SOURCES}
 )
 
 target_include_directories(${PROJECT_NAME}
@@ -105,13 +112,21 @@ target_include_directories(${PROJECT_NAME}
         ${CMAKE_CURRENT_SOURCE_DIR}/src/include
 )
 
+
+source_group(TREE ${CMAKE_CURRENT_SOURCE_DIR}/src/lib PREFIX private FILES ${LIBRARY_SOURCES})
+source_group(TREE ${CMAKE_CURRENT_SOURCE_DIR}/src/include PREFIX public FILES ${PUBLIC_LIBRARY_SOURCES})
+
 add_executable(${PROJECT_NAME}-test)
 
-target_sources(${PROJECT_NAME}-test
-	PRIVATE
+set(TEST_SOURCES
         ${CMAKE_CURRENT_SOURCE_DIR}/tests/InMemoryRepository.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/tests/Tests.cpp		
 		${CMAKE_CURRENT_SOURCE_DIR}/tests/storage/InMemoryRepository.h
+)
+
+target_sources(${PROJECT_NAME}-test
+	PRIVATE
+		${TEST_SOURCES}
         ${CMAKE_CURRENT_SOURCE_DIR}/thirdparty.gtest.in.txt
 )
 
@@ -119,6 +134,8 @@ target_include_directories(${PROJECT_NAME}-test
     PRIVATE
         ${CMAKE_CURRENT_SOURCE_DIR}/tests
 )
+
+source_group(TREE ${CMAKE_CURRENT_SOURCE_DIR}/tests PREFIX tests FILES ${TEST_SOURCES})
 
 target_link_libraries(${PROJECT_NAME}-test
     PRIVATE
