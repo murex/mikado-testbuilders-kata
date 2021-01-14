@@ -20,17 +20,19 @@ jobs:
     - name: Generate Makefiles
       working-directory: ${{github.workspace}}/cpp
       run:|
-        set(ENV{CC} "gcc" )
+        set(ENV{CC} "gcc")
         set(ENV{CXX} "g++")
         cmake -G "Unix Makefiles" -S . -B build
+
 
     - name: Build
       working-directory: ${{github.workspace}}/cpp
       shell: bash
       run:|
-        set(ENV{CC} "gcc" )
+        set(ENV{CC} "gcc")
         set(ENV{CXX} "g++")
         cmake --build ./build
+
 
     - name: Test
       working-directory: ${{github.workspace}}/cpp/build
