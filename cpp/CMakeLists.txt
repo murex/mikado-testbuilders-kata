@@ -100,7 +100,6 @@ target_sources(${PROJECT_NAME}
 
 target_link_libraries(${PROJECT_NAME}
     PRIVATE
-		gtest
         gtest_main)
 
 target_include_directories(${PROJECT_NAME}
@@ -127,7 +126,6 @@ target_include_directories(${PROJECT_NAME}-test
 
 target_link_libraries(${PROJECT_NAME}-test
     PRIVATE
-		gtest
 	    ${PROJECT_NAME}
         gtest_main)
 		
