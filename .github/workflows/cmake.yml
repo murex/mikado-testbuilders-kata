@@ -19,7 +19,7 @@ jobs:
 
     - name: Generate Makefiles
       working-directory: ${{github.workspace}}
-      run: cmake -G "" -S . -B build
+      run: cmake -G "Unix Makefiles" -S . -B build
 
     - name: Build
       working-directory: ${{github.workspace}}
