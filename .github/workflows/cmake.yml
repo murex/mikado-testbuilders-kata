@@ -19,6 +19,7 @@ jobs:
     - name: Build & Test
       uses: ashutoshvarma/action-cmake-build@master
       with:
+        submodule-update: true
         source-dir: ${{github.workspace}}/cpp
         build-dir: ${{ runner.workspace }}/build
         cc: gcc
