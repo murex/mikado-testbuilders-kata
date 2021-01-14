@@ -74,19 +74,6 @@ set(LIBRARY_SOURCES
 		${CMAKE_CURRENT_SOURCE_DIR}/src/lib/ReportGenerator.cpp
 		${CMAKE_CURRENT_SOURCE_DIR}/src/lib/Repository.cpp
 		${CMAKE_CURRENT_SOURCE_DIR}/src/lib/TaxRule.cpp
-		${CMAKE_CURRENT_SOURCE_DIR}/src/lib/IdGenerator.h
-		${CMAKE_CURRENT_SOURCE_DIR}/src/lib/client/BooksOrder.h
-		${CMAKE_CURRENT_SOURCE_DIR}/src/lib/client/Client.h
-		${CMAKE_CURRENT_SOURCE_DIR}/src/lib/client/Order.h
-		${CMAKE_CURRENT_SOURCE_DIR}/src/lib/domain/book/Author.h
-		${CMAKE_CURRENT_SOURCE_DIR}/src/lib/domain/book/Book.h
-		${CMAKE_CURRENT_SOURCE_DIR}/src/lib/domain/book/Category.h
-		${CMAKE_CURRENT_SOURCE_DIR}/src/lib/domain/book/EducationalBook.h
-		${CMAKE_CURRENT_SOURCE_DIR}/src/lib/domain/book/Genre.h
-		${CMAKE_CURRENT_SOURCE_DIR}/src/lib/domain/book/Novel.h
-		${CMAKE_CURRENT_SOURCE_DIR}/src/lib/finance/CurrencyConverter.h
-		${CMAKE_CURRENT_SOURCE_DIR}/src/lib/finance/TaxRule.h
-		${CMAKE_CURRENT_SOURCE_DIR}/src/lib/purchase/PurchasedBook.h
 		${CMAKE_CURRENT_SOURCE_DIR}/src/lib/thirdparty/json.hpp
 )
 
@@ -99,6 +86,19 @@ set(PUBLIC_LIBRARY_SOURCES
 		${CMAKE_CURRENT_SOURCE_DIR}/src/include/report/ReportGenerator.h
 		${CMAKE_CURRENT_SOURCE_DIR}/src/include/storage/Repository.h
 		${CMAKE_CURRENT_SOURCE_DIR}/src/include/storage/JsonRepository.h
+		${CMAKE_CURRENT_SOURCE_DIR}/src/include/IdGenerator.h
+		${CMAKE_CURRENT_SOURCE_DIR}/src/include/client/BooksOrder.h
+		${CMAKE_CURRENT_SOURCE_DIR}/src/include/client/Client.h
+		${CMAKE_CURRENT_SOURCE_DIR}/src/include/client/Order.h
+		${CMAKE_CURRENT_SOURCE_DIR}/src/include/domain/book/Author.h
+		${CMAKE_CURRENT_SOURCE_DIR}/src/include/domain/book/Book.h
+		${CMAKE_CURRENT_SOURCE_DIR}/src/include/domain/book/Category.h
+		${CMAKE_CURRENT_SOURCE_DIR}/src/include/domain/book/EducationalBook.h
+		${CMAKE_CURRENT_SOURCE_DIR}/src/include/domain/book/Genre.h
+		${CMAKE_CURRENT_SOURCE_DIR}/src/include/domain/book/Novel.h
+		${CMAKE_CURRENT_SOURCE_DIR}/src/include/finance/CurrencyConverter.h
+		${CMAKE_CURRENT_SOURCE_DIR}/src/include/finance/TaxRule.h
+		${CMAKE_CURRENT_SOURCE_DIR}/src/include/purchase/PurchasedBook.h
 )
 
 target_compile_definitions(${PROJECT_NAME} 
