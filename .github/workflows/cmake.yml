@@ -19,7 +19,7 @@ jobs:
 
     - name: Generate Makefiles
       working-directory: ${{github.workspace}}/cpp
-      run: 
+      run:|
         set(ENV{CC} "gcc" )
         set(ENV{CXX} "g++")
         cmake -G "Unix Makefiles" -S . -B build
@@ -27,7 +27,7 @@ jobs:
     - name: Build
       working-directory: ${{github.workspace}}/cpp
       shell: bash
-      run:
+      run:|
         set(ENV{CC} "gcc" )
         set(ENV{CXX} "g++")
         cmake --build ./build
