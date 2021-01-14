@@ -5,6 +5,8 @@ on: [push]
 env:
   # Customize the CMake build type here (Release, Debug, RelWithDebInfo, etc.)
   BUILD_TYPE: Debug
+  CC: clang
+  CXX: clang++
 
 jobs:
   build:
@@ -19,19 +21,13 @@ jobs:
 
     - name: Generate Makefiles
       working-directory: ${{github.workspace}}/cpp
-      run:|
-        set(ENV{CC} "gcc")
-        set(ENV{CXX} "g++")
-        cmake -G "Unix Makefiles" -S . -B build
+      run: cmake -G "Unix Makefiles" -S . -B build
 
 
     - name: Build
       working-directory: ${{github.workspace}}/cpp
       shell: bash
-      run:|
-        set(ENV{CC} "gcc")
-        set(ENV{CXX} "g++")
-        cmake --build ./build
+      run: cmake --build ./build
 
 
     - name: Test
