@@ -7,7 +7,7 @@
 Here is information to run this workshop.
 
 
-## Time Table
+## Timetable
 
 Here are 2 agendas that you can use to run this workshop:
 
