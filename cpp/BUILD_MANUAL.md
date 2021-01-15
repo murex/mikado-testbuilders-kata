@@ -9,7 +9,11 @@ In addition to CMake, we are using [vcpkg](https://github.com/microsoft/vcpkg) t
 
 Don't worry if you don't have those tools installed as we provided you with a script that handles compiling and building the project. 
  
-### C++ Compiler Version 
+### Required Versions 
+
+1. CMake 
+	1. Minimum required: 3.10.0
+	1. Used: 3.18.4
 
 ### IDEs 
 1. [Microsoft Visual Studio](https://visualstudio.microsoft.com/): Our build script will generate a solution file (SLN) for Microsoft Visual Studio
