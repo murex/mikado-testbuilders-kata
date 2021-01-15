@@ -21,13 +21,11 @@ Don't worry if you don't have those tools installed as we provided you with a sc
 
 ### CMake Build Command 
 
-If you already have CMake installed on your machine, then you can simply run the 
-below CMake command to generate the solution files:
+If you already have CMake installed on your machine, then you can simply run the below CMake command to generate the solution files:
 
 ```shell
 
 ```
-
 
 ### Setup Script 
 
@@ -41,12 +39,23 @@ As mentioned earlier, we prepared a script to help compile and build the project
 ./cpp_setup.sh
 ```
 
-If executed successfully, the above command should generate the following:
-1. A [build-dir](./build-dir) folder that includes the files outputted from running CMake
-1. A [Mikado-TestBuilders-Workshop](./build-dir/Mikado-TestBuilders-Workshop.sln) solution file that can be used to open the project with Microsot Visual Studio
+If executed successfully, the last 3 lines of the output should be: 
 
+```shell
+Start 1: ctest-Mikado-TestBuilders-Workshop
+1/1 Test #1: ctest-Mikado-TestBuilders-Workshop ...   Passed    0.00 sec
+
+100% tests passed, 0 tests failed out of 1
+```
+
+In addition to the above, the following folders and files should be generated:
+1. A [build-dir](./build-dir) folder that includes the files outputted from running CMake
+1. For *Windows*: A [Mikado-TestBuilders-Workshop](./build-dir/Mikado-TestBuilders-Workshop.sln) solution file that can be used to open the project with Microsot Visual Studio
+1. For *Linux*: Two executable files [Mikado-TestBuilders-Workshop-app](./build-dir/Mikado-TestBuilders-Workshop-app) and [Mikado-TestBuilders-Workshop-test](./build-dir/Mikado-TestBuilders-Workshop-test)
+
+#### Script Steps 
 The script performs the following actions: 
-1. Create a new directory (build_dir)
+1. Create a new directory [build-dir](./build-dir)
 1. Initialize and update the vcpkg git submodule
 1. Bootstrap vcpkg
 1. Install [gtest](https://github.com/google/googletest) using vcpkg
@@ -62,7 +71,7 @@ To try out the application, run the command:
 build-dir\Debug\Mikado-TestBuilders-Workshop-app.exe
 
 # Mac & Linux 
-
+./build-dir/Mikado-TestBuilders-Workshop-app
 ```
 
 The following output should be generated:

@@ -59,7 +59,7 @@ cmake_expected_archive_file="${cmake_expected_dir}.${archive_extension}"
 cmake_archive_url="http://github.com/Kitware/CMake/releases/download/v${cmake_version}/${cmake_expected_archive_file}"
 cmake_home="cmake-${os}-${arch}"
 
-build_dir="build"
+build_dir="build-dir"
 mkdir -p "${build_dir}"
 cd "${build_dir}" || exit
 
