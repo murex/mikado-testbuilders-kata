@@ -56,7 +56,7 @@ add_library(${PROJECT_NAME} STATIC)
 
 target_compile_definitions(${PROJECT_NAME} PRIVATE MIKADO_TESTBUILDERS_WORKSHOP_EXPORTS)
 
-set(LIBRARY_SOURCES
+set(PRIVATE_LIBRARY_SOURCES
 		${CMAKE_CURRENT_SOURCE_DIR}/src/lib/Author.cpp
 		${CMAKE_CURRENT_SOURCE_DIR}/src/lib/Book.cpp
 		${CMAKE_CURRENT_SOURCE_DIR}/src/lib/BooksOrder.cpp
@@ -101,6 +101,20 @@ set(PUBLIC_LIBRARY_SOURCES
 		${CMAKE_CURRENT_SOURCE_DIR}/src/include/purchase/PurchasedBook.h
 )
 
+set(DOCS_SOURCES
+        ${CMAKE_CURRENT_SOURCE_DIR}/../docs/1_Introduction.md
+        ${CMAKE_CURRENT_SOURCE_DIR}/../docs/2_Easy_Fix_Difficult_Test.md
+        ${CMAKE_CURRENT_SOURCE_DIR}/../docs/3_Building_Test_Data.md
+        ${CMAKE_CURRENT_SOURCE_DIR}/../docs/4_Mikado_Method_to_the_Rescue.md
+        ${CMAKE_CURRENT_SOURCE_DIR}/../docs/5_Conclusion.md
+        ${CMAKE_CURRENT_SOURCE_DIR}/../docs/Animation_Guide.md
+        ${CMAKE_CURRENT_SOURCE_DIR}/../docs/Troubleshooting.md
+        ${CMAKE_CURRENT_SOURCE_DIR}/../docs/references/References.md
+        ${CMAKE_CURRENT_SOURCE_DIR}/../docs/references/Test_Data_Builders.md
+        ${CMAKE_CURRENT_SOURCE_DIR}/../docs/references/The_Mikado_Method.md	
+        ${CMAKE_CURRENT_SOURCE_DIR}/../README.md
+)
+
 target_compile_definitions(${PROJECT_NAME} 
 	PRIVATE 
 		DEFAULT_JSON_PATH="${CMAKE_CURRENT_SOURCE_DIR}/src/resources/repository.json"
@@ -108,8 +122,9 @@ target_compile_definitions(${PROJECT_NAME}
 
 target_sources(${PROJECT_NAME}
 	PRIVATE
-		${LIBRARY_SOURCES}
-		
+		${PRIVATE_LIBRARY_SOURCES}
+		${DOCS_SOURCES}
+		${CMAKE_CURRENT_SOURCE_DIR}/BUILD_MANUAL.md
     PUBLIC
 		${PUBLIC_LIBRARY_SOURCES}
 )
@@ -121,8 +136,10 @@ target_include_directories(${PROJECT_NAME}
         ${CMAKE_CURRENT_SOURCE_DIR}/src/include
 )
 
-source_group(TREE ${CMAKE_CURRENT_SOURCE_DIR}/src/lib PREFIX private FILES ${LIBRARY_SOURCES})
+source_group(TREE ${CMAKE_CURRENT_SOURCE_DIR}/src/lib PREFIX private FILES ${PRIVATE_LIBRARY_SOURCES})
 source_group(TREE ${CMAKE_CURRENT_SOURCE_DIR}/src/include PREFIX public FILES ${PUBLIC_LIBRARY_SOURCES})
+source_group(TREE ${CMAKE_CURRENT_SOURCE_DIR}/.. PREFIX docs FILES ${DOCS_SOURCES})
+source_group(TREE ${CMAKE_CURRENT_SOURCE_DIR}/ PREFIX docs FILES ${CMAKE_CURRENT_SOURCE_DIR}/BUILD_MANUAL.md)
 
 # Console Executable
 
@@ -132,7 +149,10 @@ set(APP_SOURCES
 	${CMAKE_CURRENT_SOURCE_DIR}/app/Application.cpp
 )
 
-target_sources(${PROJECT_NAME}-app PRIVATE ${APP_SOURCES})
+target_sources(${PROJECT_NAME}-app 
+	PRIVATE 
+		${APP_SOURCES}
+)
 
 target_link_libraries(${PROJECT_NAME}-app
     PRIVATE
@@ -168,6 +188,22 @@ target_link_libraries(${PROJECT_NAME}-test
         gtest_main)
 		
 add_test(NAME ctest-${PROJECT_NAME} COMMAND ${PROJECT_NAME}-test)
+
+# Reference Documents
+
+add_executable(${PROJECT_NAME}-docs)
+
+target_sources(${PROJECT_NAME}-docs
+	PRIVATE
+		${DOCS_SOURCES}
+        ${CMAKE_CURRENT_SOURCE_DIR}/../README.md
+		${CMAKE_CURRENT_SOURCE_DIR}/BUILD_MANUAL.md
+)
+
+target_link_libraries(${PROJECT_NAME}-docs
+    PRIVATE
+	    ${PROJECT_NAME}
+)
 
 set_property(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT ${PROJECT_NAME}-test)
 set_property(TARGET ${PROJECT_NAME} PROPERTY FOLDER "Workshop")
