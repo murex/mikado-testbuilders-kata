@@ -189,22 +189,6 @@ target_link_libraries(${PROJECT_NAME}-test
 		
 add_test(NAME ctest-${PROJECT_NAME} COMMAND ${PROJECT_NAME}-test)
 
-# Reference Documents
-
-add_executable(${PROJECT_NAME}-docs)
-
-target_sources(${PROJECT_NAME}-docs
-	PRIVATE
-		${DOCS_SOURCES}
-        ${CMAKE_CURRENT_SOURCE_DIR}/../README.md
-		${CMAKE_CURRENT_SOURCE_DIR}/BUILD_MANUAL.md
-)
-
-target_link_libraries(${PROJECT_NAME}-docs
-    PRIVATE
-	    ${PROJECT_NAME}
-)
-
 set_property(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT ${PROJECT_NAME}-test)
 set_property(TARGET ${PROJECT_NAME} PROPERTY FOLDER "Workshop")
 set_property(TARGET ${PROJECT_NAME}-test PROPERTY FOLDER "Workshop")
