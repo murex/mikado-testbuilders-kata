@@ -1,16 +1,51 @@
 # CPP Build Manual
 
-## Tools 
+## Prerequisites 
 
-For C++, we are using the tools below to build the project: 
-1. [CMake](https://cmake.org/)
-1. [vcpkg](https://github.com/microsoft/vcpkg) 
-1. [VisualStudio](https://visualstudio.microsoft.com/) 
+### Build Tools 
+
+[CMake](https://cmake.org/) is our main build tool for the C++ version of this Kata. 
+In addition to CMake, we are using [vcpkg](https://github.com/microsoft/vcpkg) to avoid compiling our third-party libraries.  
+
+Don't worry if you don't have those tools installed as we provided you with a script that handles compiling and building the project. 
  
-## Process 
-To make the build process easier, we built a script that wraps all the required compilation steps. 
+### C++ Compiler Version 
 
-The script performs the following: 
+### IDEs 
+1. [Microsoft Visual Studio](https://visualstudio.microsoft.com/): Our build script will generate a solution file (SLN) for Microsoft Visual Studio
+1. [Visual Studio Code](https://code.visualstudio.com/): 
+
+## Process 
+
+> ***Reminder***:  You need to run the commands below from the [cpp](.) folder!
+
+### CMake Build Command 
+
+If you already have CMake installed on your machine, then you can simply run the 
+below CMake command to generate the solution files:
+
+```shell
+
+```
+
+
+### Setup Script 
+
+As mentioned earlier, we prepared a script to help compile and build the project. 
+
+```shell
+# Windows
+./cpp_setup_win.bat
+
+# Mac & Linux 
+./cpp_setup.sh
+```
+
+If executed successfully, the above command should generate the following:
+1. A [build-dir](./build-dir) folder that includes the files outputted from running CMake
+1. A [Mikado-TestBuilders-Workshop](./build-dir/Mikado-TestBuilders-Workshop.sln) solution file that can be used to open the project with Microsot Visual Studio
+
+The script performs the following actions: 
 1. Create a new directory (build_dir)
 1. Initialize and update the vcpkg git submodule
 1. Bootstrap vcpkg
@@ -18,19 +53,29 @@ The script performs the following:
 1. Download CMake as a sub-folder
 1. Run CMake to build the project
 
-C++ requires us to generate the binary and Dlls files separately for each platform. 
-Therefore, we created several versions of the script: 
+### Run Command
 
-1. **Windows**: [cpp_setup_win.bat](./cpp_setup_win.bat)
-1. **Mac**: [cpp_setup_mac.sh](./cpp_setup_mac.sh)
+To try out the application, run the command:
 
-## Successful build
+```shell
+# Windows
+build-dir\Debug\Mikado-TestBuilders-Workshop-app.exe
 
-To ensure that the build was executed successfully, you need to verify the below folders:
-1. [build-dir](./build-dir): This folder includes all the files outputted from the 
-   CMake command. 
-   1. **For Windows**: Use the solution file [Mikado-TestBuilders-Workshop](./build-dir/Mikado-TestBuilders-Workshop.sln) 
-   to open the project in Visual Studio.   
-1. [vcpkg](./vcpkg): In addition to downloading the vcpkg submodule from github, 
-   you should find the vcpkg executable file ([windows](./vcpkg/vcpkg.exe), [mac](./vcpkg/vcpkg.sh)) 
-   created as a result of bootstrapping vcpkg.
+# Mac & Linux 
+
+```
+
+The following output should be generated:
+
+```shell
+****************************************************
+*****************Application Report*****************
+****************************************************
+
+The total number of books sold is: 16
+The total number of issued invoices is: 6
+The total amount of all invoices in USD is: 1016.04
+
+****************************************************
+****************************************************
+```
