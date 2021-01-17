@@ -1,3 +1,9 @@
 export enum Language {
-    English
+    English,
+    French,
+    Spanish,
+    Japanese,
+    Mandarin,
+    Arabic,
+    German
 }
