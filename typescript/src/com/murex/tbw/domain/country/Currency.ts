@@ -1,3 +1,8 @@
 export enum Currency {
-    Dollar
+    Dollar,
+    AustralianDollar,
+    Euro,
+    PoundSterling,
+    Yen,
+    Renminbi
 }
