@@ -28,10 +28,11 @@ set(CMAKE_CXX_STANDARD 17)
 	1. Used: 3.18.4
 
 ### IDEs 
-1. [Microsoft Visual Studio](https://visualstudio.microsoft.com/): On Windows, the script will generate a solution file 
+We have tested this kata on the below 3 IDEs: 
+1. [Microsoft Visual Studio](https://visualstudio.microsoft.com/): On Windows, our setup script will generate a solution file 
    (SLN) for Microsoft Visual Studio
-1. [Xcode](https://developer.apple.com/xcode/): On Mac, the script will generate  for Xcode.
-1. [Visual Studio Code](https://code.visualstudio.com/): 
+1. [Xcode](https://developer.apple.com/xcode/): On Mac, our setup script will generate an xcodeproj file for Xcode.
+1. [Visual Studio Code](https://code.visualstudio.com/): Our script doesn't generate the VSCode Workspace files. However, loading and running the project into VSCode is straight forward. You can check the tutorial '[Getting started with CMake Tools on Linux](https://code.visualstudio.com/docs/cpp/cmake-linux#:~:text=ready%20to%20build.-,Open%20the%20Command%20Palette%20(Ctrl%2BShift%2BP)%20and,CMake%20Tools%20builds%20all%20targets.)' for reference. 
 
 ## Process 
 
