@@ -18,7 +18,7 @@ Linux)
     cmake="cmake"
     ctest="ctest"
     # TODO tuning for Linux OS may be needed here
-    cmake_generator_options="-DCMAKE_TOOLCHAIN_FILE=../vcpkg/scripts/buildsystems/vcpkg.cmake"
+    cmake_generator_options="-G \"Unix Makefiles\" -DCMAKE_TOOLCHAIN_FILE=../vcpkg/scripts/buildsystems/vcpkg.cmake"
     ;;
 MINGW64_NT-*)
     os="win64"
