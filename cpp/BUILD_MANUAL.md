@@ -35,7 +35,7 @@ We have successfully tested loading, compiling and running this kata on the belo
 1. [Xcode](https://developer.apple.com/xcode/)
 1. [Visual Studio Code](https://code.visualstudio.com/)
 
-**Note:** 
+***Note:*** 
 
 1. When executed on Windows and Mac, our script will, by default, generate the solution files ***Mikado-TestBuilders-Workshop.sln*** for **'Visual Studio 2017'** & ***Mikado-TestBuilders-Workshop.xxcodeproj*** for **'Xcode'** respectively. 
 1. The script doesn't generate the VSCode Workspace files. However, loading and running the project into VSCode is straight forward. You can check the tutorial '[Getting started with CMake Tools on Linux](https://code.visualstudio.com/docs/cpp/cmake-linux#:~:text=ready%20to%20build.-,Open%20the%20Command%20Palette%20(Ctrl%2BShift%2BP)%20and,CMake%20Tools%20builds%20all%20targets.)' for reference. 
