@@ -1,5 +1,7 @@
 # CPP Build Manual
 
+The purpose of  this manual is to provide you with some information on how to compile, build, and run the C++ version of the Kata. 
+
 ## Prerequisites 
 
 ### Build Tools 
@@ -28,11 +30,15 @@ set(CMAKE_CXX_STANDARD 17)
 	1. Used: 3.18.4
 
 ### IDEs 
-We have tested this kata on the below 3 IDEs: 
-1. [Microsoft Visual Studio](https://visualstudio.microsoft.com/): On Windows, our setup script generates a solution file 
-   (SLN) for Microsoft Visual Studio.
-1. [Xcode](https://developer.apple.com/xcode/): On Mac, our setup script generates an "xcodeproj" file for Xcode.
-1. [Visual Studio Code](https://code.visualstudio.com/): Our script doesn't generate the VSCode Workspace files. However, loading and running the project into VSCode is straight forward. You can check the tutorial '[Getting started with CMake Tools on Linux](https://code.visualstudio.com/docs/cpp/cmake-linux#:~:text=ready%20to%20build.-,Open%20the%20Command%20Palette%20(Ctrl%2BShift%2BP)%20and,CMake%20Tools%20builds%20all%20targets.)' for reference. 
+We have successfully tested loading, compiling and running this kata on the below 3 IDEs: 
+1. [Microsoft Visual Studio](https://visualstudio.microsoft.com/)
+1. [Xcode](https://developer.apple.com/xcode/)
+1. [Visual Studio Code](https://code.visualstudio.com/)
+
+**Note:** 
+
+1. When executed on Windows and Mac, our script will, by default, generate the solution files ***Mikado-TestBuilders-Workshop.sln*** for **'Visual Studio 2017'** & ***Mikado-TestBuilders-Workshop.xxcodeproj*** for **'Xcode'** respectively. 
+1. The script doesn't generate the VSCode Workspace files. However, loading and running the project into VSCode is straight forward. You can check the tutorial '[Getting started with CMake Tools on Linux](https://code.visualstudio.com/docs/cpp/cmake-linux#:~:text=ready%20to%20build.-,Open%20the%20Command%20Palette%20(Ctrl%2BShift%2BP)%20and,CMake%20Tools%20builds%20all%20targets.)' for reference. 
 
 ## Process 
 
@@ -42,6 +48,8 @@ We have tested this kata on the below 3 IDEs:
 
 As mentioned earlier, we prepared a setup script to assist you in compiling and building the project. 
 
+You can run the script using the below commands: 
+
 ```shell
 # Windows
 ./cpp_setup_win.bat
@@ -50,7 +58,7 @@ As mentioned earlier, we prepared a setup script to assist you in compiling and 
 ./cpp_setup.sh
 ```
 
-If executed successfully, the last 3 lines of the output should be: 
+If executed successfully, the last 3 lines of the output should be the following: 
 
 ```shell
 Start 1: ctest-Mikado-TestBuilders-Workshop
@@ -64,21 +72,20 @@ In addition to the above, the following folders and files should be generated:
 1. A [vcpkg](./vcpkg) folder that includes the files cloned from the vcpkg repository. 
 1. For *Windows*: The **'Visual Studio 2017'** solution file [Mikado-TestBuilders-Workshop.sln](./build/Mikado-TestBuilders-Workshop.sln)
 1. For *Mac*: The **'Xcode'** project file [Mikado-TestBuilders-Workshop.xcodeproj](./build/Mikado-TestBuilders-Workshop.xcodeproj)
-1. For *Linux*: Two executable files [Mikado-TestBuilders-Workshop-app](./build/Mikado-TestBuilders-Workshop-app) and [Mikado-TestBuilders-Workshop-test](./build/Mikado-TestBuilders-Workshop-test)
 
 #### Script Detailed Steps 
 
 <details>
 	<summary markdown='span'>
-	Actions performed by the script
+	The 6 actions performed by the script
 	</summary>
 
 	1. Create a new directory "build"
-	1. Initialize and update the vcpkg git submodule
-	1. Bootstrap vcpkg
-	1. Install "gtest" using vcpkg
-	1. Download CMake as a sub-folder
-	1. Run CMake to build the project.
+	2. Initialize and update the vcpkg git submodule
+	3. Bootstrap vcpkg
+	4. Install "gtest" using vcpkg
+	5. Download CMake as a sub-folder
+	6. Run CMake to build the project
 </details>
 
 ### Run Command
