@@ -1,7 +1,7 @@
 
 setlocal
 
-set BUILD_DIR=build-dir
+set BUILD_DIR=build
 set BUILD_SYSTEM_DIR=%BUILD_DIR%\cmake-dl
 
 if not exist %BUILD_DIR% (

@@ -17,7 +17,6 @@ Linux)
     cmake_bin_dir="bin"
     cmake="cmake"
     ctest="ctest"
-    # TODO tuning for Linux OS may be needed here
     cmake_generator_options="-G \"Unix Makefiles\" -DCMAKE_TOOLCHAIN_FILE=../vcpkg/scripts/buildsystems/vcpkg.cmake"
     ;;
 MINGW64_NT-*)
@@ -59,7 +58,7 @@ cmake_expected_archive_file="${cmake_expected_dir}.${archive_extension}"
 cmake_archive_url="http://github.com/Kitware/CMake/releases/download/v${cmake_version}/${cmake_expected_archive_file}"
 cmake_home="cmake-${os}-${arch}"
 
-build_dir="build-dir"
+build_dir="build"
 mkdir -p "${build_dir}"
 cd "${build_dir}" || exit
 
