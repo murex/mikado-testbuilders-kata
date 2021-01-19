@@ -12,6 +12,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Application.Domain.Country;
+using Application.Finance;
 
 namespace Application.Purchase
 {
@@ -50,6 +51,8 @@ namespace Application.Purchase
         {
             var totalAmount = 0.0;
             totalAmount = PurchasedBooks.Sum(book => book.TotalPrice);
+            // Bugfix for Invoice:
+            // totalAmount = PurchasedBooks.Sum(book => book.TotalPrice * TaxRule.GetApplicableRate(Country, book.Book));
             return totalAmount;
         }
 
