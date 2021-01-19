@@ -11,6 +11,7 @@
 package com.murex.tbw.report;
 
 import com.murex.tbw.MainRepository;
+import com.murex.tbw.finance.CurrencyConverter;
 import com.murex.tbw.purchase.Invoice;
 import com.murex.tbw.purchase.PurchasedBook;
 import com.murex.tbw.storage.Repository;
@@ -27,6 +28,8 @@ public class ReportGenerator {
         double totalAmount = 0.0;
         for (Invoice invoice : invoiceMap.values()) {
             totalAmount += invoice.computeTotalAmount();
+//            Bugfix for ReportGenerator:
+//            totalAmount += CurrencyConverter.toUSD(invoice.computeTotalAmount(), invoice.getCountry().getCurrency());
         }
         return totalAmount;
     }
