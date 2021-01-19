@@ -281,12 +281,12 @@ Let's do a more thorough retrospective this time.
 2- Has this workshop fulfilled your expectations?
 > Go back to the notes you wrote at the beginning of the workshop   
 
-3- Read them to your pair, and discuss
+3- Share them with your mobsters, and discuss
 
 4- If you want, volunteer to share it with everyone
 
 5- You can also check what people usually say in
-[Animation Guide.md](./Animation_Guide.md)
+[Retrospectives Guide](./Retrospectives_Guide.md)
 
 ----
 [Continue...](./5_Conclusion.md)

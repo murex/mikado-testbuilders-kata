@@ -25,7 +25,7 @@ As this should prove difficult, we'll present how to combine 2 techniques, test
 data builders and the mikado method, to add tests without stopping feature
 delivery.
 
-You'll be programming in pairs for most of the workshop.
+You'll be programming in mob or pairs for most of the workshop.
 
 You'll find links to 'Web Centers': web pages containing documentation and
 references to important concepts in this workshop. If you are in a room, there
@@ -37,7 +37,7 @@ Open the code in your favorite IDE:
 * To work on the java version, simply load the root [pom.xml](../java/pom.xml) in 
   your favourite IDE
 * We currently only have a Visual Studio environment around the C++ code (BTW,
-  contributions are welcome :-)). Open [testbuilders-workshop.sln](../testbuilders-workshop.sln).
+  contributions are welcome :-)). Open [testbuilders-workshop.sln](../cpp/testbuilders-workshop.sln).
 
 If you have problems compiling and running the code, check our [Troubleshooting guide](Troubleshooting.md)
 

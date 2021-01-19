@@ -37,8 +37,10 @@ workshop with many developers.
 
 ## Where to start
 
-* All kata instructions are in the docs folder. It starts with
+All kata instructions are in the docs folder. It starts with
 [Introduction.md](./docs/1_Introduction.md)
+
+If you are willing to facilitate the session yourself, you might also have a look at the [Facilitation Guide](./docs/Facilitation_Guide.md)
 
 ## License
 
@@ -50,6 +52,9 @@ distribution, and is available at the Open Source site [here](https://opensource
  
 1. [Ahmad Atwi](https://github.com/aatwi)
 1. [Philippe Bourgau](https://github.com/philou) 
+1. [Christophe Cadilhac](https://github.com/cadichris) 
+1. [Patrice Dalesme](https://github.com/pdalesme)
+1. [Damien Menanteau](https://github.com/mengdaming)
 
 
 ----
