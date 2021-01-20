@@ -46,7 +46,7 @@ The goal of the code retreat format is to let participants try different techniq
 
 ## Facilitation
 
-Here are 2 flavors facilitations depending whether you are all co-localized, or all remote:
+Here are 2 facilitation flavors depending whether you are all co-localized, or all remote:
 
 * [Co-localized facilitation](./facilitation/CoLocalized.md)
 * [Remote facilitation](./facilitation/Remote.md)
