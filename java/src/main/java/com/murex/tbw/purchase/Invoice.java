@@ -59,7 +59,7 @@ public final class Invoice {
         double sum = 0.0;
         for (PurchasedBook purchasedBook : purchasedBooks) {
             double totalPrice = purchasedBook.getTotalPrice();
-//            Bugfix for Invoice:
+//            TODO: Uncomment to fix the bug for Invoice
 //            double totalPrice = purchasedBook.getTotalPrice() * TaxRule.getApplicableRate(country, purchasedBook.getBook());
             sum += totalPrice;
         }

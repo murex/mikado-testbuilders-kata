@@ -28,7 +28,7 @@ public class ReportGenerator {
         double totalAmount = 0.0;
         for (Invoice invoice : invoiceMap.values()) {
             totalAmount += invoice.computeTotalAmount();
-//            Bugfix for ReportGenerator:
+//            TODO Uncomment to fix the bug in ReportGenerator
 //            totalAmount += CurrencyConverter.toUSD(invoice.computeTotalAmount(), invoice.getCountry().getCurrency());
         }
         return totalAmount;
