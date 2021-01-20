@@ -36,4 +36,6 @@ Then compare them to what people usually say in
 the [Retrospectives Guide](./Retrospectives_Guide.md)
 
 ----
-[Continue...](./5_Mikado_Method_plus_Test_Data_Builders.md)
+Continue:
+- [Try the Mikado Method to setup your test data incrementally](./4_Mikado_Method.md)
+- [If you already know the Mikado Method, try to combine it with Test Data Builders](./5_Mikado_Method_plus_Test_Data_Builders.md)
