@@ -31,7 +31,7 @@ How can you tackle those problems to avoid having them in the future?
 What issues did you face while writing your tests with Test Data Builders?  
 How can you compare this approach of writing tests to the previous section?   
 
-## 4 - Mikado Method to the Rescue
+## 5 - Mikado Method plus Test Data Builders
 
 Here is the typical feedback about combining the mikado method and test data
 builders.
