@@ -51,7 +51,7 @@ namespace Application.Purchase
         {
             var totalAmount = 0.0;
             totalAmount = PurchasedBooks.Sum(book => book.TotalPrice);
-            // Bugfix for Invoice:
+            // TODO: Uncomment to fix the bug for Invoice
             // totalAmount = PurchasedBooks.Sum(book => book.TotalPrice * TaxRule.GetApplicableRate(Country, book.Book));
             return totalAmount;
         }
