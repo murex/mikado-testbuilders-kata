@@ -264,4 +264,7 @@ Then compare them to what people usually say in
 the [Retrospectives Guide](./Retrospectives_Guide.md)
 
 ---
-[Continue...](./3_Building_Test_Data.md)
+Continue:
+- [Try Test Data Builders to improve test data setup](./3_Building_Test_Data.md)
+- [Try the Mikado Method to setup your test data incrementally](./4_Mikado_Method.md)
+- [If you know both techniques, try to combine them!](./5_Mikado_Method_plus_Test_Data_Builders.md)

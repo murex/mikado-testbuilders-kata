@@ -82,4 +82,6 @@ Then compare them to what people usually say in
 the [Retrospectives Guide](./Retrospectives_Guide.md)
 
 ----
-[Continue...](./5_Mikado_Method_plus_Test_Data_Builders.md)
+Continue:
+- [Try Test Data Builders to improve test data setup](./3_Building_Test_Data.md)
+- [If you already master Test Data Builders, try to combine them with the Mikado Method](./5_Mikado_Method_plus_Test_Data_Builders.md)
