@@ -30,6 +30,18 @@ How can you tackle those problems to avoid having them in the future?
 
 What issues did you face while writing your tests with Test Data Builders?  
 How can you compare this approach of writing tests to the previous section?   
+How could you apply this in your team?
+
+## 4 - Mikado Method
+
+| The good                            | The bad                                       |
+|-------------------------------------|-----------------------------------------------|
+| We don't have to stop for 3 weeks to add a test | Test for the bug is postponed     |
+| We can split testing in small tasks | Tests are the same as in the default approach |
+
+What issues did you face while writing your tests by following the Mikado Method?     
+How can you compare this approach of writing tests to the previous section?   
+How could you apply this in your team?
 
 ## 5 - Mikado Method plus Test Data Builders
 
