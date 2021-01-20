@@ -1,4 +1,4 @@
-# Mikado Method + Test Data Builders
+# Mikado Method
 
 Setting up test data for your first test takes a lot of time.
 That's not going to help us to test our bugs in legacy code!
@@ -28,17 +28,17 @@ You'll find resource about the Mikado Method
 To help you to get started, here is a demo of how to use the Mikado Method in
 our particular situation.
 
-<TODO link to a video demo of setting up tests with the mikado method>
+TODO link to a video demo of setting up tests with the mikado method
 
 ### Video Screen Shots 
 
 #### Mikado Graph
 
-<TODO screenshot of the graph from the video>
+TODO screenshot of the graph from the video
 
 #### Code Snippets 
 
-<TODO code snippets from the video>
+TODO code snippets from the video
 
 
 ## DIY
