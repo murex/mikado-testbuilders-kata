@@ -15,8 +15,8 @@ to meet and discuss the topic at the beginning
 
 ### Rapid Response during Lectures
 
-After presenting the Test Data Builders and the Mikado Method, we'll ask some
-questions to the attendees to check their understanding. It will also help them
+After presenting the Test Data Builders and the Mikado Method, we'll ask the attendees some
+questions to check their understanding. It will also help them
 to assess what they learned after programming.
 
 ### Wall and Web centers

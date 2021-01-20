@@ -15,7 +15,7 @@ Let's combine both to get the best of both worlds!
 
 Make sure you master the [Mikado Method](./references/The_Mikado_Method.md) and the [Test Data Builders](./references/Test_Data_Builders.md) techniques before you try this constraint of the workshop.
 
-If you don't start by going through the [Building Test Data](./3_Building_Test_Data.md) or the [Mikado Method](./4_Mikado_Method.md) constraints first.
+If you don't, start by going through the [Building Test Data](./3_Building_Test_Data.md) or the [Mikado Method](./4_Mikado_Method.md) constraints first.
 
 ### Rapid Response Question
 

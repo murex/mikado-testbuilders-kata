@@ -34,13 +34,12 @@ Mob programming is the simplest setup for a remote audience: use a unique driver
 
 ### Mini-Retros
 
-Mini retros start with a simple question like "What worked well and what did not". In a remote setup, having an online board like Miro or Trello will help a lot. Here is how goes:
+Mini retros start with a simple question like "What worked well and what did not". In a remote setup, having an online board like Miro or Trello will help a lot. Here is what happens within each mob:
 
-- in each mob
-- everyone takes a few minutes to answer the questions, and fill the good / bad columns
-- the mob discusses the tickets
-- they can also have a look at the typical answers and at other insightful questions from the [Retrospective Guide](Retrospectives_Guide.md)
-- more discussion...
+- Every mobster takes a few minutes to answer the questions, and fill the good / bad columns
+- They react and discuss the tickets
+- They can also have a look at the typical answers and at other insightful questions from the [Retrospective Guide](Retrospectives_Guide.md)
+- Discussion can continue until the time is over
 
 ### Takeaways as a Conclusion
 
