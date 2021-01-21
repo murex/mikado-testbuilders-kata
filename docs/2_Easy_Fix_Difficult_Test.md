@@ -222,7 +222,7 @@ in the code and provided us with quick fixes!
             var invoices = _repository.GetInvoiceMap().Values;
   -         var totalAmount = invoices.Sum(invoice => invoice.ComputeTotalAmount());
   +         var totalAmount = invoices.Sum(invoice => CurrencyConverter.ToUsd(invoice.ComputeTotalAmount(), invoice.Country.Currency));
-            return totalAmount;
+            return GetRoundedAmount(totalAmount);
         }
   ```
 

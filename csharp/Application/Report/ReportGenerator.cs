@@ -8,6 +8,7 @@
  *
  *******************************************************************************/
 
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Application.Finance;
@@ -26,8 +27,10 @@ namespace Application.Report
             var totalAmount = invoices.Sum(invoice => invoice.ComputeTotalAmount());
             // TODO: Uncomment to fix the bug for ReportGenerator
             // var totalAmount = invoices.Sum(invoice => CurrencyConverter.ToUsd(invoice.ComputeTotalAmount(), invoice.Country.Currency));
-            return totalAmount;
+            return GetRoundedAmount(totalAmount);
         }
+
+        private double GetRoundedAmount(double totalAmount) => Math.Round(totalAmount, 2);
 
         public int GetTotalSoldBooks()
         {
