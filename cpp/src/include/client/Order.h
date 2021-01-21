@@ -14,6 +14,8 @@
 #include "domain/book/Book.h"
 #include "purchase/Invoice.h"
 
+#include <memory>
+
 namespace client
 {
 	class Order

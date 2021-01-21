@@ -11,9 +11,10 @@
 #ifndef TESTBUILDERS_WORKSHOP_PURCHASE_INVOICE_H_INCLUDED
 #define TESTBUILDERS_WORKSHOP_PURCHASE_INVOICE_H_INCLUDED
 
+#include "domain/country/Country.h"
+#include <memory>
 #include <string>
 #include <vector>
-#include "../domain/country/Country.h"
 
 namespace purchase
 {

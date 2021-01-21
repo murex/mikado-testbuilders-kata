@@ -13,6 +13,8 @@
 
 #include "MainRepository.h"
 
+#include <memory>
+
 namespace storage {
 	class Repository;
 }
