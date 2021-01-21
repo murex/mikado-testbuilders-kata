@@ -20,8 +20,7 @@ import java.util.List;
 import java.util.Map;
 
 public class ReportGenerator {
-
-    private static final DecimalFormat df = new DecimalFormat("0.00");
+    
     private final Repository repository = MainRepository.configuredRepository();
 
     public double getTotalAmount() {
