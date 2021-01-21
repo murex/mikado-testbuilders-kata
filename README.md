@@ -37,8 +37,10 @@ workshop with many developers.
 
 ## Where to start
 
-* All kata instructions are in the docs folder. It starts with
+All kata instructions are in the docs folder. It starts with
 [Introduction.md](./docs/1_Introduction.md)
+
+If you are willing to facilitate the session yourself, you might also have a look at the [Facilitation Guide](./docs/Facilitation_Guide.md)
 
 ## License
 

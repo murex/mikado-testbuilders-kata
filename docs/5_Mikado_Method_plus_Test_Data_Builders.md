@@ -1,26 +1,25 @@
-# Mikado Method to the rescue
+# Mikado Method + Test Data Builders
 
-![Mikado game sticks](images/mikado-sticks.jpg)
+Test Data Builders make writing new tests faster once you have them. Unfortunately, they take even longer to write in the first place!
 
-*[Image Source](https://pixabay.com/photos/mikado-play-puzzle-skill-colorful-1743593/)*
+The Mikado Method does not make tests nicer, but they help you to write them incrementally.
 
-Test Data Builders make writing new tests faster once you have them.
-Unfortunately, they take even longer to write in the first place!
+Let's combine both to get the best of both worlds!
 
-That's not going to help us to test our bugs in legacy code! 
+![A heap of lego bricks](images/heap-of-legos.jpg)
 
-## Present the Mikado Method
+*[Image Source](https://pixabay.com/photos/lego-children-toys-colorful-play-674881/)*
 
-The [Mikado Method](./references/The_Mikado_Method.md) is a technique to
-incrementally do large refactorings, alongside feature delivery.
 
-You'll find resource about the Mikado Method 
-[here](./references/The_Mikado_Method.md) or on your room walls.
+## Prerequisite
+
+Make sure you master the [Mikado Method](./references/The_Mikado_Method.md) and the [Test Data Builders](./references/Test_Data_Builders.md) techniques before you try this constraint of the workshop.
+
+If you don't, start by going through the [Building Test Data](./3_Building_Test_Data.md) or the [Mikado Method](./4_Mikado_Method.md) constraints first.
 
 ### Rapid Response Question
 
-> As a group, what are the top 5 most important things about the the Mikado
-> Method?
+> As a group, what could you expect of combining The Mikado Method and the Test Data Builder pattern?
 
 ## Live code the beginning of the Mikado Graph here
 
@@ -281,12 +280,12 @@ Let's do a more thorough retrospective this time.
 2- Has this workshop fulfilled your expectations?
 > Go back to the notes you wrote at the beginning of the workshop   
 
-3- Read them to your pair, and discuss
+3- Share them with your mobsters, and discuss
 
 4- If you want, volunteer to share it with everyone
 
 5- You can also check what people usually say in
-[Animation Guide.md](./Animation_Guide.md)
+[Retrospectives Guide](./Retrospectives_Guide.md)
 
 ----
-[Continue...](./5_Conclusion.md)
+[Continue...](./6_Conclusion.md)

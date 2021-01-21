@@ -10,6 +10,7 @@
 
 using System.Collections.Generic;
 using System.Linq;
+using Application.Finance;
 using Application.Purchase;
 using Application.Storage;
 
@@ -23,6 +24,8 @@ namespace Application.Report
         {
             var invoices = _repository.GetInvoiceMap().Values;
             var totalAmount = invoices.Sum(invoice => invoice.ComputeTotalAmount());
+            // TODO: Uncomment to fix the bug for ReportGenerator
+            // var totalAmount = invoices.Sum(invoice => CurrencyConverter.ToUsd(invoice.ComputeTotalAmount(), invoice.Country.Currency));
             return totalAmount;
         }
 

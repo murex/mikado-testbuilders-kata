@@ -25,7 +25,7 @@ As this should prove difficult, we'll present how to combine 2 techniques, test
 data builders and the mikado method, to add tests without stopping feature
 delivery.
 
-You'll be programming in pairs for most of the workshop.
+You'll be programming in mob or pairs for most of the workshop.
 
 You'll find links to 'Web Centers': web pages containing documentation and
 references to important concepts in this workshop. If you are in a room, there

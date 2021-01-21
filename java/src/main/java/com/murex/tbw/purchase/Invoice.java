@@ -12,6 +12,7 @@ package com.murex.tbw.purchase;
 
 import com.murex.tbw.IdGenerator;
 import com.murex.tbw.domain.country.Country;
+import com.murex.tbw.finance.TaxRule;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -58,6 +59,8 @@ public final class Invoice {
         double sum = 0.0;
         for (PurchasedBook purchasedBook : purchasedBooks) {
             double totalPrice = purchasedBook.getTotalPrice();
+//            TODO: Uncomment to fix the bug for Invoice
+//            double totalPrice = purchasedBook.getTotalPrice() * TaxRule.getApplicableRate(country, purchasedBook.getBook());
             sum += totalPrice;
         }
         return sum;

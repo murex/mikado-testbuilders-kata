@@ -33,7 +33,9 @@ Time for a mini-retro again.
 Take a few minutes to discuss the good and the bad of this approach.
 
 Then compare them to what people usually say in
-[Animation Guide.md](./Animation_Guide.md)
+the [Retrospectives Guide](./Retrospectives_Guide.md)
 
 ----
-[Continue...](./4_Mikado_Method_to_the_Rescue.md)
+Continue:
+- [Try the Mikado Method to setup your test data incrementally](./4_Mikado_Method.md)
+- [If you already know the Mikado Method, try to combine it with Test Data Builders](./5_Mikado_Method_plus_Test_Data_Builders.md)
