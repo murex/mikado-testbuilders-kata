@@ -20,7 +20,7 @@ import java.util.List;
 import java.util.Map;
 
 public class ReportGenerator {
-    
+
     private final Repository repository = MainRepository.configuredRepository();
 
     public double getTotalAmount() {

@@ -153,7 +153,7 @@ in the code and provided us with quick fixes!
   -            totalAmount += invoice.computeTotalAmount();
   +            totalAmount += CurrencyConverter.toUSD(invoice.computeTotalAmount(), invoice.getCountry().getCurrency());
           }
-          return totalAmount;
+          return getRoundedAmount(totalAmount);
       }
   ```
 
