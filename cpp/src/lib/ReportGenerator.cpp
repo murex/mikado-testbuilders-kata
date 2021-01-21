@@ -12,8 +12,13 @@
 #include "storage/Repository.h"
 #include "purchase/Invoice.h"
 #include "purchase/PurchasedBook.h"
+#include "finance/CurrencyConverter.h"
 
 using namespace purchase;
+
+static double getRoundedValueOf(double value) {
+	return (double)((int)(value * 100 + 0.5)) / 100;
+}
 
 namespace report
 {
@@ -29,8 +34,12 @@ namespace report
 		for (const auto id2Invoice : invoiceMap)
 		{
 			totalAmount += id2Invoice.second->computeTotalAmount();
+//			TODO Uncomment to fix the bug in ReportGenerator
+//			const auto& invoice = *id2Invoice.second;
+//			totalAmount += finance::toUSD(invoice.computeTotalAmount(), invoice.getCountry().getCurrency());
 		}
-		return totalAmount;
+		
+		return std::round(totalAmount);
 	}
 
 	int ReportGenerator::getTotalSoldBooks() const

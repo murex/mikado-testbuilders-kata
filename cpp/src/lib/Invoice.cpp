@@ -41,6 +41,7 @@ double purchase::Invoice::computeTotalAmount() const
 	for (const auto purchasedBook : purchasedBooks_)
 	{
 		double totalPrice = purchasedBook->getTotalPrice();
+		//double totalPrice = purchasedBook->getTotalPrice() * finance::getApplicableRate(country_, *purchasedBook->getBook());
 		sum += totalPrice;
 	}
 	return sum;
