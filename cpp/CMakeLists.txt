@@ -107,13 +107,18 @@ set(DOCS_SOURCES
         ${CMAKE_CURRENT_SOURCE_DIR}/../docs/1_Introduction.md
         ${CMAKE_CURRENT_SOURCE_DIR}/../docs/2_Easy_Fix_Difficult_Test.md
         ${CMAKE_CURRENT_SOURCE_DIR}/../docs/3_Building_Test_Data.md
-        ${CMAKE_CURRENT_SOURCE_DIR}/../docs/4_Mikado_Method_to_the_Rescue.md
-        ${CMAKE_CURRENT_SOURCE_DIR}/../docs/5_Conclusion.md
-        ${CMAKE_CURRENT_SOURCE_DIR}/../docs/Animation_Guide.md
-        ${CMAKE_CURRENT_SOURCE_DIR}/../docs/Troubleshooting.md
+        ${CMAKE_CURRENT_SOURCE_DIR}/../docs/4_Mikado_Method.md
+        ${CMAKE_CURRENT_SOURCE_DIR}/../docs/5_Mikado_Method_plus_Test_Data_Builders.md
+        ${CMAKE_CURRENT_SOURCE_DIR}/../docs/6_Conclusion.md
+        ${CMAKE_CURRENT_SOURCE_DIR}/../docs/Facilitation_Guide.md
+        ${CMAKE_CURRENT_SOURCE_DIR}/../docs/Retrospectives_Guide.md
         ${CMAKE_CURRENT_SOURCE_DIR}/../docs/references/References.md
         ${CMAKE_CURRENT_SOURCE_DIR}/../docs/references/Test_Data_Builders.md
         ${CMAKE_CURRENT_SOURCE_DIR}/../docs/references/The_Mikado_Method.md	
+        ${CMAKE_CURRENT_SOURCE_DIR}/../docs/facilitation/2h.md
+        ${CMAKE_CURRENT_SOURCE_DIR}/../docs/facilitation/2h30.md	
+        ${CMAKE_CURRENT_SOURCE_DIR}/../docs/facilitation/CoLocalized.md	
+        ${CMAKE_CURRENT_SOURCE_DIR}/../docs/facilitation/Remote.md	
         ${CMAKE_CURRENT_SOURCE_DIR}/../README.md
 )
 
