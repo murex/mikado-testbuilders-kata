@@ -11,9 +11,11 @@
 #ifndef TESTBUILDERS_WORKSHOP_CLIENT_BOOKS_ORDER_H_INCLUDED
 #define TESTBUILDERS_WORKSHOP_CLIENT_BOOKS_ORDER_H_INCLUDED
 
-#include "client/Order.h"
-#include <map>
 #include "Client.h"
+#include "client/Order.h"
+
+#include <map>
+#include <memory>
 
 namespace client
 {

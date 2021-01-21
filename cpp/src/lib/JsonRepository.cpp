@@ -31,7 +31,7 @@ namespace storage
 {
 
 JsonRepository::JsonRepository()
-	: sourceFile_("../resources/repository.json")
+	: sourceFile_(DEFAULT_JSON_PATH)
 {
 	loadJsonData();
 }
