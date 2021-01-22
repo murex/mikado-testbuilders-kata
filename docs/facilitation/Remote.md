@@ -49,16 +49,54 @@ A good way to conclude the workshop is to bring everyone together again, and ask
 - Bring everyone together in the main session
 - Round rob through the mobs
 
-## General Facilitation tips
+## Tool
 
-### Use an online board
+Obviously, remote facilitation depends heavily on good tools. Here are the typical features that your tooling system should provide for a smooth workshop:
+
+- [PRESENTATION] Video conference, where you can present to the whole audience
+- [BREAKOUT] Video conference in breakout rooms, one for each mobs
+- [SCREEN] Screen sharing, while you or the drivers present
+- [JUMP] Quickly jump from one breakout room to the other
+- [GRAPH] Mobs will need a shared tool to draw a mikado graph, like a mind map for example
+- [RETRO] Run Retrospectives
+- [HELP] Mobs will need to ask for help if they are blocked
+- [NOTIFICATIONS] A chat system to share notifications and messages
+- [COME-BACK] Send a 'blocking' message that attendees must see (Ex: when they should get back from mob to all-in work)
+- [TIMER] Shared timers in order to cadence the mobs' work
+- [MAP] It is nice to have a visual map of the path in the workshop
+
+Here are best-practices for the different tools
+
+### Miro tips [MAP] [GRAPH] [RETRO] [COME-BACK] [TIMER] [BREAKOUT]
+
+Miro can deal with almost all the above points except Video conferencing. It's simpler to use a single board for all the audience, and to duplicate working zones for each mob. It's dead easy to setup retrospectives, energizers, and mind-maps in Miro.
+
+#### Use an online board [MAP]
 
 Nick Tune provides great advices about how to run effective workshops with Miro in [this post](https://medium.com/nick-tune-tech-strategy-blog/organising-large-miro-boards-for-remote-workshops-abcf01bc2d8e).
 
-It's simpler to use a single board for all the audience, and to duplicate working zones for each mob.
+![An exmpla Miro map for the workshop](../images/miro-path-template.png)
 
-The nice thing about Miro is that it's versatile enough to handle both the mikado graphs and the retrospectives!
+#### Use online timers [TIMER]
 
-### Use online timers
+Miro has a built-in shared timer agenda. Here is how you can use it:
 
-In order to make sure to stick to the agenda, use shared online timers. Miro has a built-in timer feature that is very effective at managing a large remote audience.
+- You don't need to set a timer when you are facilitating or presenting, just make sure to stick within the timebox. Ex: General introduction
+- Add a timer for short activities. Ex: self-organizing into groups
+- Add a long timer encompassing coding activities that follow each other like. Ex: understand your constraint + coding
+
+#### Get everyone's attention [COME-BACK]
+
+One rather intrusive way, but effective, way to get everyone's attention, and for example, to bring everyone back in the general session for the final retrospective, is to use Miro's 'Bring Every One to me'
+
+#### Draw the breakout rooms on the board [BREAKOUT]
+
+Miro can be very effective to build a self-organized breakout activity. You can also provide a link to the breakout room in your video conferencing system so that mobsters can easily jump in.
+
+### [hopin.to](https://hopin.to) tips [PRESENTATION] [BREAKOUT] [SCREEN] [JUMP] [HELP] [NOTIFICATIONS]
+
+Hopin.to is an remote openspace system. It features video conferencing, screensharing, breakout rooms and a chat system. It fits almost all our needs out of the box.
+
+#### The main session chat [NOTIFICATIONS] [HELP]
+
+Before mobs spread in their own sessions, tell them to keep their chat open on the main session. This will allow them to post requests for help on this chat, but it will also allow you to send general notifications to all the audience.
