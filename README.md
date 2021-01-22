@@ -1,6 +1,6 @@
 # Mikado Method and Test Data Builders Kata
 
-_A kata or a workshop to teach how to combine Test Data Builders and the Mikado
+_A Code Retreat workshop to teach how to combine Test Data Builders and the Mikado
 Method to add tests on a bug in a legacy codebase without freezing features_
 
 Developers working on legacy code are always told to write tests before fixing 
@@ -11,7 +11,7 @@ In legacy codebase, just setting up the objects for the test is most often an
 unjustifiable nightmarish 2 weeks work. Mocks are a common workaround, but 
 mocking legacy codebase usually makes them more difficult to change, not less!
 
-In this hands-on pair programming dojo, you will learn how to combine the 
+In this hands-on pair or mob programming code retreat, you will learn how to combine the 
 mikado method with test-data-builders to build a baby-step plan to add your
 first test to a legacy codebase. You will also learn how to draw a graph of
 nested test-data-builders so that you can instantiate test data, without mocks.
@@ -37,7 +37,7 @@ workshop with many developers.
 
 ## Where to start
 
-All kata instructions are in the docs folder. It starts with
+All instructions are in the docs folder. It starts with
 [Introduction.md](./docs/1_Introduction.md)
 
 If you are willing to facilitate the session yourself, you might also have a look at the [Facilitation Guide](./docs/Facilitation_Guide.md)
