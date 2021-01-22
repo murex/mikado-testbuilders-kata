@@ -17,7 +17,7 @@
 using namespace purchase;
 
 double getRoundedValueOf(double value) {
-	return (double)((int)(value * 100 + 0.5)) / 100;
+	return (static_cast<int>(value * 100 + 0.5)) / 100.0;
 }
 
 namespace report
@@ -33,10 +33,10 @@ namespace report
 		double totalAmount = 0.0;
 		for (const auto id2Invoice : invoiceMap)
 		{
-//			totalAmount += id2Invoice.second->computeTotalAmount();
+			totalAmount += id2Invoice.second->computeTotalAmount();
 //			TODO Uncomment to fix the bug in ReportGenerator
-			const auto& invoice = *id2Invoice.second;
-			totalAmount += finance::toUSD(invoice.computeTotalAmount(), invoice.getCountry().getCurrency());
+//			const auto& invoice = *id2Invoice.second;
+//			totalAmount += finance::toUSD(invoice.computeTotalAmount(), invoice.getCountry().getCurrency());
 		}
 		
 		return getRoundedValueOf(totalAmount);
