@@ -7,7 +7,7 @@ The purpose of  this manual is to provide you with some information on how to co
 ### Build Tools 
 
 [CMake](https://cmake.org/) is our main build tool for the C++ version of this Kata. 
-In addition to CMake, we are using [vcpkg](https://github.com/microsoft/vcpkg) to avoid compiling our third-party libraries.  
+In addition to CMake, we are using [CPM](https://github.com/TheLartians/CPM.cmake) CMake dependency Management.  
 
 Don't worry if you don't have those tools installed! We provided you with a setup script that handles compiling and building the project. 
  
@@ -26,8 +26,9 @@ set(CMAKE_CXX_STANDARD 17)
 ```
 
 #### CMake
-	1. Minimum required: 3.10.0
-	1. Used: 3.18.4
+The minimum required version of CMake is "***3.10.0***". 
+
+However, in our setup script, we are using the version "***3.19.3***"
 
 ### IDEs 
 We have successfully tested loading, compiling and running this kata on the below 3 IDEs: 
@@ -43,6 +44,21 @@ We have successfully tested loading, compiling and running this kata on the belo
 ## Process 
 
 > ***Reminder***:  You need to run the commands below from the [cpp](.) folder!
+
+### Manual Build  
+
+If you already have CMake installed on your machine, you can simply run one of the below commands to build the project. 
+
+```shell
+# For Visual Studio 2017 
+> cmake -G "Visual Studio 15 2017 Win64" -S . -B build
+
+# For XCode  
+> cmake -G "XCode" -S . -B build
+
+# For Linux (Visual Studio Code)
+> cmake -G "Unix Makefiles" -S . -B build
+```
 
 ### Setup Script 
 
@@ -67,12 +83,6 @@ Start 1: ctest-Mikado-TestBuilders-Workshop
 100% tests passed, 0 tests failed out of 1
 ```
 
-In addition to the above, the following folders and files should be generated:
-1. A [build](./build) folder that includes the files outputted from running CMake.
-1. A [vcpkg](./vcpkg) folder that includes the files cloned from the vcpkg repository. 
-1. For *Windows*: The **'Visual Studio 2017'** solution file [Mikado-TestBuilders-Workshop.sln](./build/Mikado-TestBuilders-Workshop.sln)
-1. For *Mac*: The **'Xcode'** project file [Mikado-TestBuilders-Workshop.xcodeproj](./build/Mikado-TestBuilders-Workshop.xcodeproj)
-
 #### Script Detailed Steps 
 
 <details>
@@ -87,6 +97,13 @@ In addition to the above, the following folders and files should be generated:
 	5. Download CMake as a sub-folder
 	6. Run CMake to build the project
 </details>
+
+### Expected Folder Structure
+
+After running any of the above steps, the following folders and files should be generated:
+1. A [build](./build) folder that includes the files outputted from running CMake.
+1. For *Windows*: The **'Visual Studio 2017'** solution file [Mikado-TestBuilders-Workshop.sln](./build/Mikado-TestBuilders-Workshop.sln)
+1. For *Mac*: The **'Xcode'** project file [Mikado-TestBuilders-Workshop.xcodeproj](./build/Mikado-TestBuilders-Workshop.xcodeproj)
 
 ### Run Command
 

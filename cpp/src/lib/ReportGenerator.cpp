@@ -8,15 +8,15 @@
  *
  *******************************************************************************/
 
-#include "report/ReportGenerator.h"
-#include "storage/Repository.h"
-#include "purchase/Invoice.h"
-#include "purchase/PurchasedBook.h"
-#include "finance/CurrencyConverter.h"
+#include <report/ReportGenerator.h>
+#include <storage/Repository.h>
+#include <purchase/Invoice.h>
+#include <purchase/PurchasedBook.h>
+#include <finance/CurrencyConverter.h>
 
 using namespace purchase;
 
-static double getRoundedValueOf(double value) {
+double getRoundedValueOf(double value) {
 	return (double)((int)(value * 100 + 0.5)) / 100;
 }
 
@@ -33,10 +33,10 @@ namespace report
 		double totalAmount = 0.0;
 		for (const auto id2Invoice : invoiceMap)
 		{
-			totalAmount += id2Invoice.second->computeTotalAmount();
+//			totalAmount += id2Invoice.second->computeTotalAmount();
 //			TODO Uncomment to fix the bug in ReportGenerator
-//			const auto& invoice = *id2Invoice.second;
-//			totalAmount += finance::toUSD(invoice.computeTotalAmount(), invoice.getCountry().getCurrency());
+			const auto& invoice = *id2Invoice.second;
+			totalAmount += finance::toUSD(invoice.computeTotalAmount(), invoice.getCountry().getCurrency());
 		}
 		
 		return getRoundedValueOf(totalAmount);

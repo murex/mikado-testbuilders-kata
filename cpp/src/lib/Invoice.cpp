@@ -8,10 +8,10 @@
  *
  *******************************************************************************/
 
-#include "purchase/Invoice.h"
-#include "purchase/PurchasedBook.h"
-#include "IdGenerator.h"
-#include "finance/TaxRule.h"
+#include <purchase/Invoice.h>
+#include <purchase/PurchasedBook.h>
+#include <IdGenerator.h>
+#include <finance/TaxRule.h>
 
 purchase::Invoice::Invoice(const std::string& clientName, const domain::country::Country& country)
 : Invoice(id_generator::nextId(), clientName, country)
@@ -40,8 +40,9 @@ double purchase::Invoice::computeTotalAmount() const
 	double sum = 0.0;
 	for (const auto purchasedBook : purchasedBooks_)
 	{
-		double totalPrice = purchasedBook->getTotalPrice();
-		//double totalPrice = purchasedBook->getTotalPrice() * finance::getApplicableRate(country_, *purchasedBook->getBook());
+		//double totalPrice = purchasedBook->getTotalPrice();
+		//TODO Uncomment to fix the bug in ReportGenerator
+		double totalPrice = purchasedBook->getTotalPrice() * finance::getApplicableRate(country_, *purchasedBook->getBook());
 		sum += totalPrice;
 	}
 	return sum;

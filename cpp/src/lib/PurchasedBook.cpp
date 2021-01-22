@@ -8,8 +8,8 @@
  *
  *******************************************************************************/
 
-#include "purchase/PurchasedBook.h"
-#include "domain/book/Book.h"
+#include <purchase/PurchasedBook.h>
+#include <domain/book/Book.h>
 
 purchase::PurchasedBook::PurchasedBook(const std::shared_ptr<const domain::book::Book>& book, int quantity)
 	: book_(book), quantity_(quantity)
