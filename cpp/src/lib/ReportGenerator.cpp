@@ -39,7 +39,7 @@ namespace report
 //			totalAmount += finance::toUSD(invoice.computeTotalAmount(), invoice.getCountry().getCurrency());
 		}
 		
-		return std::round(totalAmount);
+		return getRoundedValueOf(totalAmount);
 	}
 
 	int ReportGenerator::getTotalSoldBooks() const
