@@ -1,6 +1,7 @@
 {
     "recommendations": [
         "orta.vscode-jest",
-        "firsttris.vscode-jest-runner"
+        "firsttris.vscode-jest-runner",
+        "rvest.vs-code-prettier-eslint"
     ]
 }
