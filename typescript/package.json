@@ -39,5 +39,8 @@
     "*.{js,ts,tsx}": [
       "eslint --fix"
     ]
+  },
+  "dependencies": {
+    "immutable": "^4.0.0-rc.12"
   }
 }
