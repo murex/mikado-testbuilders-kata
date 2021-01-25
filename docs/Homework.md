@@ -4,12 +4,17 @@
 
 *[Image Source](https://pixabay.com/illustrations/board-school-homework-slate-928381/)*
 
-To ensure a smooth start of the workshop, we highly recommend that you have the 
-dev environment configured on your machine before the training day.
+To ensure a smooth start of the workshop, we highly recommend that you go over 
+the below two preparation steps before the training day.
 
-This preparation process should only take few minutes from your time!
+This should only take few minutes of your time, but would save a lot of the 
+workshop's time!  
 
-Follow the below steps to prepare your environment: 
+## Configure Dev Environment 
+
+Firstly, let's configure the dev environment on your machine.
+
+Configuration Steps: 
 1. Pick the programming language of your preference ([C++](../cpp), [Java](../java), or [C#](../csharp))
 1. Follow the steps defined in the BUILD_MANUAL corresponding to your preferred
    language. These manuals contain information on the required tools, versions, 
@@ -20,6 +25,8 @@ Follow the below steps to prepare your environment:
     1. Open, compile, and run tests from your IDE
     1. Run the application from the command-line (i.e., "Run Command" section of the BUILD_MANUAL)
 1. If you face any issue, you can refer to the [Troubleshooting](./Troubleshooting.md) page. 
+
+## Pick your Constraint 
 
 ----
 [Continue...](./2_Easy_Fix_Difficult_Test.md)
