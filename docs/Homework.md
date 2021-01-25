@@ -13,7 +13,7 @@ Follow the below steps to prepare your environment:
 1. Pick the programming language of your preference ([C++](../cpp), [Java](../java), or [C#](../csharp))
 1. Follow the steps defined in the BUILD_MANUAL corresponding to your preferred
    language. These manuals contain information on the required tools, versions, 
-   and processes to configure and run the project for the corresponding language.
+   and processes to configure and run the project:
     1. [C++ Build Manual](../cpp/BUILD_MANUAL.md)
     1. [Java Build Manual](../java/BUILD_MANUAL.md)
 1. Your environment will be ready when you can: 
