@@ -10,7 +10,7 @@ the below two preparation steps before the training day.
 This should only take few minutes of your time, but would save a lot of the 
 workshop's time!  
 
-## Configure Dev Environment 
+## Configure your Dev Environment 
 
 Firstly, let's configure the dev environment on your machine.
 
