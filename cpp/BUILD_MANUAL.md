@@ -6,10 +6,10 @@ The purpose of  this manual is to provide you with some information on how to co
 
 ### Build Tools 
 
-[CMake](https://cmake.org/) is our main build tool for the C++ version of this Kata. 
-In addition to CMake, we are using [CPM](https://github.com/TheLartians/CPM.cmake) CMake dependency Management.  
+[CMake](https://cmake.org/) is our main build tool for the C++ version of this Kata.
 
-Don't worry if you don't have those tools installed! We provided you with a setup script that handles compiling and building the project. 
+Don't worry if you don't have CMake installed! 
+We provided you with a setup script that handles compiling and building the project. 
  
 ### Required Versions 
 
@@ -29,6 +29,13 @@ set(CMAKE_CXX_STANDARD 17)
 The minimum required version of CMake is "***3.10.0***". 
 
 However, in our setup script, we are using the version "***3.19.3***"
+
+#### Compilers 
+
+When running on Windows, the code is compiled with [MSVC](https://docs.microsoft.com/en-us/cpp/build/reference/compiling-a-c-cpp-program?view=msvc-160). 
+
+On other platforms, the script will be using the default C++ compiler set on the machine. 
+For that, we have tested the with GCC and Clang
 
 ### IDEs 
 We have successfully tested loading, compiling and running this kata on the below 3 IDEs: 
@@ -82,21 +89,6 @@ Start 1: ctest-Mikado-TestBuilders-Workshop
 
 100% tests passed, 0 tests failed out of 1
 ```
-
-#### Script Detailed Steps 
-
-<details>
-	<summary markdown='span'>
-	The 6 actions performed by the script
-	</summary>
-
-	1. Create a new directory "build"
-	2. Initialize and update the vcpkg git submodule
-	3. Bootstrap vcpkg
-	4. Install "gtest" using vcpkg
-	5. Download CMake as a sub-folder
-	6. Run CMake to build the project
-</details>
 
 ### Expected Folder Structure
 
