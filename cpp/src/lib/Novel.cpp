@@ -8,7 +8,7 @@
  *
  *******************************************************************************/
 
-#include "domain/book/Novel.h"
+#include <domain/book/Novel.h>
 
 domain::book::Novel::Novel(const std::string& name, double price, const Author& author, country::Language language,
                            const std::vector<Genre>& genres): name_(name)

@@ -4,53 +4,19 @@ set(PROJECT_NAME Mikado-TestBuilders-Workshop)
 
 set(CMAKE_CXX_STANDARD 17)
 
-set(CMAKE_TOOLCHAIN_FILE ${CMAKE_CURRENT_SOURCE_DIR}/vcpkg/scripts/buildsystems/vcpkg.cmake
-  CACHE STRING "Vcpkg toolchain file")
-
 project(${PROJECT_NAME} CXX)
 
 enable_testing()
 
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
-# GTest retrieval
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib CACHE PATH "Where to place compiled static libraries.")
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib CACHE PATH "Where to place compiled shared libraries.")
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin CACHE PATH "Where to place compiled executables.")
 
-if (NOT TARGET gtest)
-	# Download and unpack googletest at configure time
-	configure_file(thirdparty.gtest.in.txt googletest-download/CMakeLists.txt)
-	execute_process(COMMAND ${CMAKE_COMMAND} -G "${CMAKE_GENERATOR}" .
-	  RESULT_VARIABLE result
-	  WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/googletest-download )
-	if(result)
-	  message(FATAL_ERROR "CMake step for googletest failed: ${result}")
-	endif()
-	execute_process(COMMAND ${CMAKE_COMMAND} --build .
-	  RESULT_VARIABLE result
-	  WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/googletest-download )
-	if(result)
-	  message(FATAL_ERROR "Build step for googletest failed: ${result}")
-	endif()
 
-	# Prevent overriding the parent project's compiler/linker
-	# settings on Windows
-	set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
-
-	# Add googletest directly to our build. This defines
-	# the gtest and gtest_main targets.
-	add_subdirectory(${CMAKE_CURRENT_BINARY_DIR}/googletest-src
-					 ${CMAKE_CURRENT_BINARY_DIR}/googletest-build
-					 EXCLUDE_FROM_ALL)
-
-	# The gtest/gtest_main targets carry header search path
-	# dependencies automatically when using CMake 2.8.11 or
-	# later. Otherwise we have to add them here ourselves.
-	if (CMAKE_VERSION VERSION_LESS 2.8.11)
-	  include_directories("${gtest_SOURCE_DIR}/include")
-	endif()
-
-   set_property(TARGET gtest PROPERTY FOLDER "Thirdparties")
-   set_property(TARGET gtest_main PROPERTY FOLDER "Thirdparties")
-endif()
+include(cmake/CPM.cmake)
+include(cmake/FindGoogleTest.cmake)
 
 # Library
 
@@ -197,8 +163,12 @@ target_link_libraries(${PROJECT_NAME}-test
 add_test(NAME ctest-${PROJECT_NAME} COMMAND ${PROJECT_NAME}-test)
 
 set_property(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT ${PROJECT_NAME}-test)
+set_property(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY XCODE_STARTUP_PROJECT ${PROJECT_NAME}-test)
+
 set_property(TARGET ${PROJECT_NAME} PROPERTY FOLDER "Workshop")
 set_property(TARGET ${PROJECT_NAME}-test PROPERTY FOLDER "Workshop")
 set_property(TARGET ${PROJECT_NAME}-app PROPERTY FOLDER "Workshop")
+
+set_property(TARGET gtest gtest_main gmock gmock_main PROPERTY FOLDER "Third-Party/GoogleTest")
 
 set_property(GLOBAL PROPERTY PREDEFINED_TARGETS_FOLDER "CMake Generated")

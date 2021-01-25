@@ -190,7 +190,7 @@ in the code and provided us with quick fixes!
   +               const auto& invoice = *id2Invoice.second;
   +               totalAmount += finance::toUSD(invoice.computeTotalAmount(), invoice.getCountry().getCurrency());
           }
-          return totalAmount;
+          return getRoundedValueOf(totalAmount);
   ```
 
 </details>

@@ -8,10 +8,10 @@
  *
  *******************************************************************************/
 
-#include "finance/TaxRule.h"
+#include <finance/TaxRule.h>
 #include <map>
 #include <string>
-#include "domain/book/Novel.h"
+#include <domain/book/Novel.h>
 #include <typeinfo>
 
 namespace

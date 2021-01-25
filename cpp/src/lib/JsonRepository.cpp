@@ -8,17 +8,17 @@
  *
  *******************************************************************************/
 
-#include "storage/JsonRepository.h"
-#include "purchase/Invoice.h"
-#include "thirdparty/json.hpp"
+#include <storage/JsonRepository.h>
+#include <purchase/Invoice.h>
+#include <thirdparty/json.hpp>
 #include <fstream>
-#include "domain/book/Author.h"
-#include "domain/book/Category.h"
-#include "domain/book/Book.h"
-#include "domain/book/EducationalBook.h"
-#include "domain/book/Genre.h"
-#include "domain/book/Novel.h"
-#include "purchase/PurchasedBook.h"
+#include <domain/book/Author.h>
+#include <domain/book/Category.h>
+#include <domain/book/Book.h>
+#include <domain/book/EducationalBook.h>
+#include <domain/book/Genre.h>
+#include <domain/book/Novel.h>
+#include <purchase/PurchasedBook.h>
 
 
 using namespace purchase;
