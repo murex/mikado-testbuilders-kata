@@ -55,7 +55,7 @@ distribution, and is available at the Open Source site [here](https://opensource
 1. [Christophe Cadilhac](https://github.com/cadichris) 
 1. [Patrice Dalesme](https://github.com/pdalesme)
 1. [Damien Menanteau](https://github.com/mengdaming)
-
+1. [Antoine Nadif](https://github.com/AntoineMx)
 
 ----
 [Start...](./docs/1_Introduction.md)
