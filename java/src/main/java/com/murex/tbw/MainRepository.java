@@ -31,12 +31,12 @@ public final class MainRepository {
      * https://www.goodreads.com/book/show/44919.Working_Effectively_with_Legacy_Code
      */
     // TESTING ONLY
-    public void override(Repository newRepository) {
+    public static void override(Repository newRepository) {
         runningRepository = newRepository;
     }
 
     // TESTING ONLY
-    public void reset() {
+    public static void reset() {
         runningRepository = new JsonRepository();
     }
 }
