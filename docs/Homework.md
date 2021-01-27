@@ -1,6 +1,6 @@
 # Homework
 
-![Pictures of sparrows](images/homework.jpg)
+![Homework writton on a chalk board](https://github.com/murex/mikado-testbuilders-kata/raw/master/docs/images/homework.jpg)
 
 *[Image Source](https://pixabay.com/illustrations/board-school-homework-slate-928381/)*
 
@@ -14,31 +14,35 @@ workshop's time!
 
 Firstly, let's configure the dev environment on your machine.
 
-Configuration Steps: 
-1. Pick the programming language of your preference ([C++](../cpp), [Java](../java), or [C#](../csharp))
-1. Follow the steps defined in the BUILD_MANUAL corresponding to your preferred
+Configuration Steps:
+1. First, you'll need to clone the [repo from github](https://github.com/murex/mikado-testbuilders-kata) to your machine
+2. Pick the programming language of your preference ([C++](https://github.com/murex/mikado-testbuilders-kata/cpp), [Java](https://github.com/murex/mikado-testbuilders-kata/java), or [C#](https://github.com/murex/mikado-testbuilders-kata/csharp))
+3. Follow the steps defined in the BUILD_MANUAL corresponding to your preferred
    language. These manuals contain information on the required tools, versions, 
    and processes to configure and run the project:
-    1. [C++ Build Manual](../cpp/BUILD_MANUAL.md)
-    1. [Java Build Manual](../java/BUILD_MANUAL.md)
-1. Your environment will be ready when you can: 
+    1. [C++ Build Manual](https://github.com/murex/mikado-testbuilders-kata/cpp/BUILD_MANUAL.md)
+    2. [Java Build Manual](https://github.com/murex/mikado-testbuilders-kata/java/BUILD_MANUAL.md)
+4. Your environment will be ready when you can: 
     1. Open, compile, and run tests from your IDE
-    1. Run the application from the command-line (i.e., "Run Command" section of the BUILD_MANUAL)
-1. If you face any issue, you can refer to the [Troubleshooting](./Troubleshooting.md) page. 
+    2. Run the application from the command-line (i.e., "Run Command" section of the BUILD_MANUAL)
+5. If you face any issue, you can refer to the [Troubleshooting](https://github.com/murex/mikado-testbuilders-kata/tree/master/docs/Troubleshooting.md) page. 
 
-## Pick your Constraint 
+## Think of your Constraint 
 
-For the second iteration of the code retreat, you will have to pick a special 
-constraint to try to fix the problem again. 
+During a Code Retreat, you often try to go through the same problem multiple times using different 'constraints'. For the second iteration of this code retreat, you will have the opportunity to choose your preferred constraint. 
 
 We propose 3 constraints:
 
-1. The Test Data Builders pattern: this technique let you factorize test data setup and make your tests more readable
-1. The Mikado Method: this technique lets you split large code changes in small independent steps that you can code, commit, integrate, and deploy independently, without blocking the feature delivery
-1. Test Data Builders + Mikado Method: mixing both techniques lets you write your tests incrementally, without blocking feature delivery and by increasing your overall code's testability at every step
+1. The [Test Data Builders](https://github.com/murex/mikado-testbuilders-kata/tree/master/docs/references/Test_Data_Builders.md) pattern: this technique let you factorize test data setup and make your tests more readable
+2. The [Mikado Method](https://github.com/murex/mikado-testbuilders-kata/tree/master/docs/references/The_Mikado_Method.md): this technique lets you split large code changes in small independent steps that you can code, commit, integrate, and deploy independently, without blocking the feature delivery
+3. [Test Data Builders](https://github.com/murex/mikado-testbuilders-kata/tree/master/docs/references/Test_Data_Builders.md) + [Mikado Method](https://github.com/murex/mikado-testbuilders-kata/tree/master/docs/references/The_Mikado_Method.md): mixing both techniques lets you write your tests incrementally, without blocking feature delivery and by increasing your overall code's testability at every step
 
-Here are heuristics to pick the right constraint:
+Don't hesistate to have a look at this material before joining. Here are heuristics to pick the right constraint:
 
 1. Pick a technique you don't yet know
-1. If you know neither of the techniques, pick whichever you want, or just follow your group
-1. Don't try the combination of the 2 techniques if you do not already know the 2 techniques
+2. If you know neither of the techniques, pick whichever you want, or just follow your group
+3. Don't try the combination of the 2 techniques if you do not already know the 2 techniques
+
+## Make sure you have everything ready
+
+TODO Insert any additional requirments you would like your participants to check before the workshop: access an online tool, register to a meeting...

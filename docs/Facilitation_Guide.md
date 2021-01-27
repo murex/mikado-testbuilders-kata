@@ -8,7 +8,7 @@ Here is information to run this workshop.
 
 ## Homework
 
-TODO
+To optimize time usage during the workshop, it's a good idea to send preparation homework to do before the event. It consists mainly of preparing the dev environment and maybe starting to think of which constraints to work on. [Here](./Homework.md) is a typical communication.
 
 ## Timetable
 
