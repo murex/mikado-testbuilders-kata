@@ -27,7 +27,7 @@ delivery.
 
 You'll be programming in mob or pairs for most of the workshop.
 
-You'll find links to 'Web Centers': web pages containing documentation and
+You'll find links to "***Web Centers***": web pages containing documentation and
 references to important concepts in this workshop. If you are in a room, there
 might also be 'Wall Centers' on the wall were you'll find similar information
 and physical books.
