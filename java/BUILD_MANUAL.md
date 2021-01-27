@@ -64,8 +64,12 @@ The total amount of all invoices in USD is: 1016.04
 # Option 1: Gradle is already installed on your machine 
 > gradle clean build 
 
-# Option 2: Gradle is NOT installed on your machine 
-> gradlew clean build
+# Option 2: Gradle is NOT installed on your machine
+# Windows  
+> .\gradlew.bat clean build
+
+# Mac & Linux
+> ./gradlew.sh clean build
 ```
 
 If executed successfully, the above command should generate the following:
