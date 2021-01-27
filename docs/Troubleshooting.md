@@ -1,24 +1,28 @@
 # Troubleshooting
 
-## I am getting C++ compilation errors
+## I am getting compilation errors (C++ or Java)
 
+You are getting compilation errors, although, you didn't change any code!  
 Here are 2 steps you might need to go follow to solve your problem: 
 
 #### Step 1 - Github Actions
 
 Under the Github repository, there are [workflow actions](https://github.com/murex/mikado-testbuilders-kata/actions) 
-for the C++ project to ensure that the code is compilable.  
+for the C++ and Java projects to ensure that the code is compilable.  
 
-Proceed to the second step if the state of the C++ actions is Green. Otherwise, 
-contact the project maintainers as this indicates a bug in the code.
+Check the action corresponding to your preferred programming language. Proceed 
+to the second step if that state is Green. Otherwise, contact the project 
+maintainers as this indicates a bug in the code.
 
 #### Step 2 - C++ Compilers 
 
-Most probably, the error you are getting is due to a difference between your and 
-our C++ compilers (version, vendor, etc.)
+The error might be linked to a missing build-tool or a difference in compiler   
+versions.
 
-Check the [CPP Build Manual](../cpp/BUILD_MANUAL.md) to learn more about the
-tools and compiler versions we used in this project
+Check the "***Build Manuals***" associated with your preferred language to learn
+more about the build-tools and compiler versions we are using.
+1. [CPP Build Manual](../cpp/BUILD_MANUAL.md)
+1. [JAVA Build Manual](../java/BUILD_MANUAL.md)
 
 ## I cannot get the googltest dependency in Visual Studio
 
