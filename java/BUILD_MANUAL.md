@@ -69,7 +69,7 @@ The total amount of all invoices in USD is: 1016.04
 > .\gradlew.bat clean build
 
 # Mac & Linux
-> ./gradlew.sh clean build
+> ./gradlew clean build
 ```
 
 If executed successfully, the above command should generate the following:
