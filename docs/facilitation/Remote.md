@@ -6,6 +6,40 @@
 
 These facilitation advices will work for a large audience of remote attendees.
 
+## Introduction message
+
+In a remote configuration, the introduction message is really important as it is the only time you have with everyone before they go one to work, for most of the workshop, in their mob sessions. Here are the main topics to mention:
+
+- Welcome
+- Story of adding a bug in legacy
+- Start the story behind the workshop: "You are programmers working in an international online book store. You have a piece of software that is responsible for building reports about invoices and taxes. You just discovered that the report was wrong. After some investigation, you found 2 bugs: taxes were not applied to invoices, and amounts were not converted to USD in the report. You just fixed the bugs (2 lines of code). You are about to start to add a test around these bugs."
+- Your mission during the workshop: add the tests
+- How the workshop will be run:
+  - Code retreat: fixing same problem multiple times with different techniques (arbitrary constraints)
+  - Strict timeboxing for 2h, learning > finishing!
+  - 2 iterations of code retreat, 35m instead of 45m
+  - 1st iteration will be using no technique
+  - 2nd iteration will be able to chose your constraint
+  - Retrospect at the end of each
+  - You'll be working in mobs
+  - You will have to self-organize as you want, but stick to a unique driver
+  - We strongly advise you to have a timekeeper in the mob
+  - The workshop is as self-guided as we could make it, don't wait for us
+  - Remember, learning > finishing, stop the 1st iteration when we say so to be able to tackle the 2nd and learn new techniques
+  - We'll gather at the end to share takeaways
+- Technically:
+  - Cameras on
+  - You can use the main session chat to ask for help
+  - We will be posting notification through the main session channel, so keep an eye on it, you'll get notifications about timings, troubleshooting, additional instructions...
+  - We'll use online timers
+  - [Miro]
+    - We'll be using the 'bring everyone to me' to get you back all together at the end
+    - We tried our best to make the board self-explanatory, but the markdown files in the repo go in more details if you are stuck
+- We'll be jumping from mobs to mobs
+- Present the goals of the 2 techniques quickly
+- Mention that combining both is a case of 1+1>2
+- Start the Mob self-organization activity
+
 ## Training from the Back of the Room activities
 
 Here is how you can adapt these activities for remote facilitation
