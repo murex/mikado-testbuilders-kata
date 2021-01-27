@@ -2,7 +2,7 @@
 
 ## I am getting compilation errors (C++ or Java)
 
-You are getting compilation errors, although, you didn't change any code!  
+You are getting compilation errors, although you didn't change any code!  
 Here are 2 steps you might need to go follow to solve your problem: 
 
 #### Step 1 - Github Actions
