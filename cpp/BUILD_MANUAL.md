@@ -75,10 +75,10 @@ You can run the script using the below commands:
 
 ```shell
 # Windows
-./cpp_setup_win.bat
+> ./cpp_setup_win.bat
 
 # Mac & Linux 
-./cpp_setup.sh
+> ./cpp_setup.sh
 ```
 
 If executed successfully, the last 3 lines of the output should be the following: 
@@ -103,13 +103,13 @@ To try out the application, run the command:
 
 ```shell
 # Windows
-build\Debug\Mikado-TestBuilders-Workshop-app.exe
+> build\Debug\Mikado-TestBuilders-Workshop-app.exe
 
 # Mac
-./build/Debug/Mikado-TestBuilders-Workshop-app
+> ./build/Debug/Mikado-TestBuilders-Workshop-app
 
 # Linux 
-./build/Mikado-TestBuilders-Workshop-app
+> ./build/Mikado-TestBuilders-Workshop-app
 ```
 
 The following output should be generated:
