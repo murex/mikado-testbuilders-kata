@@ -28,5 +28,17 @@ Configuration Steps:
 
 ## Pick your Constraint 
 
-----
-[Continue...](./2_Easy_Fix_Difficult_Test.md)
+For the second iteration of the code retreat, you will have to pick a special 
+constraint to try to fix the problem again. 
+
+We propose 3 constraints:
+
+1. The Test Data Builders pattern: this technique let you factorize test data setup and make your tests more readable
+1. The Mikado Method: this technique lets you split large code changes in small independent steps that you can code, commit, integrate, and deploy independently, without blocking the feature delivery
+1. Test Data Builders + Mikado Method: mixing both techniques lets you write your tests incrementally, without blocking feature delivery and by increasing your overall code's testability at every step
+
+Here are heuristics to pick the right constraint:
+
+1. Pick a technique you don't yet know
+1. If you know neither of the techniques, pick whichever you want, or just follow your group
+1. Don't try the combination of the 2 techniques if you do not already know the 2 techniques
