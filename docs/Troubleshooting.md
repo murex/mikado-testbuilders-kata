@@ -3,21 +3,20 @@
 ## I am getting compilation errors (C++ or Java)
 
 You are getting compilation errors, although you didn't change any code!  
-Here are 2 steps you might need to go follow to solve your problem: 
+Here are 2 steps you might need to follow to solve your problem: 
 
 #### Step 1 - Github Actions
 
 Under the Github repository, there are [workflow actions](https://github.com/murex/mikado-testbuilders-kata/actions) 
 for the C++ and Java projects to ensure that the code is compilable.  
 
-Check the action corresponding to your preferred programming language. Proceed 
-to the second step if that state is Green. Otherwise, contact the project 
+Check the status of the action corresponding to your preferred programming language. 
+Proceed to the second step if that state is Green. Otherwise, contact the project 
 maintainers as this indicates a bug in the code.
 
 #### Step 2 - C++ Compilers 
 
-The error might be linked to a missing build-tool or a difference in compiler   
-versions.
+The error might be linked to a missing build-tool or a difference in compiler versions.
 
 Check the "***Build Manuals***" associated with your preferred language to learn
 more about the build-tools and compiler versions we are using.
