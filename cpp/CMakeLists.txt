@@ -142,12 +142,6 @@ set(TEST_SOURCES
 		${CMAKE_CURRENT_SOURCE_DIR}/tests/storage/InMemoryRepository.h
 )
 
-target_sources(${PROJECT_NAME}-test
-	PRIVATE
-		${TEST_SOURCES}
-        ${CMAKE_CURRENT_SOURCE_DIR}/thirdparty.gtest.in.txt
-)
-
 target_include_directories(${PROJECT_NAME}-test
     PRIVATE
         ${CMAKE_CURRENT_SOURCE_DIR}/tests
