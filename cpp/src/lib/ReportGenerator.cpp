@@ -34,11 +34,11 @@ namespace report
 		for (const auto id2Invoice : invoiceMap)
 		{
 //		    BUG: There was a bug with the below line of code 
-//			totalAmount += id2Invoice.second->computeTotalAmount();
+			totalAmount += id2Invoice.second->computeTotalAmount();
 
 //		    FIX: The above bug was fixed by the below 2 lines of code  
 			const auto& invoice = *id2Invoice.second;
-			totalAmount += finance::toUSD(invoice.computeTotalAmount(), invoice.getCountry().getCurrency());
+//			totalAmount += finance::toUSD(invoice.computeTotalAmount(), invoice.getCountry().getCurrency());
 		}
 		
 		return getRoundedValueOf(totalAmount);
