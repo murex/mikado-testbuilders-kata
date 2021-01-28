@@ -1,12 +1,12 @@
 #include <gtest/gtest.h>
 #include <report/ReportGenerator.h>
 
-#include <domain/country/Country.h>
-#include <domain/country/Currency.h>
 #include <domain/book/Author.h>
 #include <domain/book/Novel.h>
-#include <purchase/PurchasedBook.h>
+#include <domain/country/Country.h>
+#include <domain/country/Currency.h>
 #include <purchase/Invoice.h>
+#include <purchase/PurchasedBook.h>
 
 #include <memory>
 
@@ -77,7 +77,7 @@ public:
 
    domain::country::Country build()
    {
-      return domain::country::Country("Test Country", m_currency, domain::country::Language::JAPANESE);
+      return domain::country::Country("USA", m_currency, domain::country::Language::JAPANESE);
    }
 
 private:
