@@ -93,10 +93,37 @@ One rather intrusive way, but effective, way to get everyone's attention, and fo
 
 Miro can be very effective to build a self-organized breakout activity. You can also provide a link to the breakout room in your video conferencing system so that mobsters can easily jump in.
 
-### [hopin.to](https://hopin.to) tips [PRESENTATION] [BREAKOUT] [SCREEN] [JUMP] [HELP] [NOTIFICATIONS]
-
-Hopin.to is an remote openspace system. It features video conferencing, screensharing, breakout rooms and a chat system. It fits almost all our needs out of the box.
+### General chat system tips
 
 #### The main session chat [NOTIFICATIONS] [HELP]
 
 Before mobs spread in their own sessions, tell them to keep their chat open on the main session. This will allow them to post requests for help on this chat, but it will also allow you to send general notifications to all the audience.
+
+### [hopin.to](https://hopin.to) tips [PRESENTATION] [BREAKOUT] [SCREEN] [JUMP] [HELP] [NOTIFICATIONS]
+
+Hopin.to is an remote openspace system. It features video conferencing, screensharing, breakout rooms and a chat system. It fits almost all our needs out of the box.
+
+### Microsoft Teams tips [PRESENTATION] [BREAKOUT] [SCREEN] [JUMP] [HELP] [NOTIFICATIONS]
+
+Teams is a team chat system. It features video conferencing, screensharing, breakout rooms, multiple channels and a chat system. It fits almost all our needsl but needs a bit of customization.
+
+#### Create a new Teams for your event [BREAKOUT]
+
+Teams features breakout rooms, unfortunately, only the organizer is allowed to jump from one room to another, and you can only have a single organizer per meeting!
+
+If you are the only organizer, then everything is fine, just use a meeting and create breakout rooms as people have self-organized
+
+If you are many organizers, the situation becomes a lot more involved. Here is what you can do:
+- Create a new team in MS Teams for the event
+- Make your attendees members of this team
+- Schedule a video conf event on the general channel for your event
+- Use the link to this event to let people join (invite, learning system, Miro board...)
+- Create as many new 'mob' channels as you envision, you can simply name them mob-1, mob-2...
+- Schedule other video conf events on these sub-channels at the same time
+- Again, copy the links to these event to let mobsters join them
+
+#### Extra channels [NOTIFICATIONS] [HELP]
+
+If you created a dedicated team for your event, you have the possibility to create new channels for help, notifications, organizers...
+
+You can also use @your-ms-team to send notifications to everyone.
