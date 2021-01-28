@@ -12,32 +12,34 @@ In a remote configuration, the introduction message is really important as it is
 
 - Welcome
 - Story of adding a bug in legacy
-- Start the story behind the workshop: "You are programmers working in an international online book store. You have a piece of software that is responsible for building reports about invoices and taxes. You just discovered that the report was wrong. After some investigation, you found 2 bugs: taxes were not applied to invoices, and amounts were not converted to USD in the report. You just fixed the bugs (2 lines of code). You are about to start to add a test around these bugs."
+- Start the story behind the workshop: "You are programmers working in an international online book store. You have a piece of software that is responsible for building reports about invoices and taxes. You just discovered that the report was wrong. After some investigation, you found 2 bugs: taxes were not applied to invoices, and amounts were not converted to USD in the report. You just fixed the bugs (2 lines of code). You are about to add a test around these bugs."
 - Your mission during the workshop: add the tests
+- When you have a test running, remember to test your test by commenting the fix to make sure the test fails!
 - How the workshop will be run:
-  - Code retreat: fixing same problem multiple times with different techniques (arbitrary constraints)
-  - Strict timeboxing for 2h, learning > finishing!
+  - Code retreat: fixing same problem multiple times with different techniques (called constraints in the code retreat jargon)
+  - Strict timeboxing for 2h, learning is more important than finishing!
   - 2 iterations of code retreat, 35m instead of 45m
-  - 1st iteration will be using no technique
-  - 2nd iteration will be able to chose your constraint
-  - Retrospect at the end of each
+  - 1st iteration will be using no technique, don't use Builders or Mikado
+  - 2nd iteration you will be able to chose your constraint (technique)
+  - Retrospect at the end of each iteration
   - You'll be working in mobs
-  - You will have to self-organize as you want, but stick to a unique driver
+  - Mobs will have to self-organize as they want, but stick to a unique driver
   - We strongly advise you to have a timekeeper in the mob
   - The workshop is as self-guided as we could make it, don't wait for us
-  - Remember, learning > finishing, stop the 1st iteration when we say so to be able to tackle the 2nd and learn new techniques
-  - We'll gather at the end to share takeaways
+  - Trust the directions we provide (comments in code, hints in the instructions, visual guidance)
+  - Remember, learning is more important than finishing, stop the 1st iteration when we say so to be able to tackle the 2nd iteration and learn new techniques
+  - We'll gather at the end to share our takeaways
 - Technically:
-  - Cameras on
+  - We highly recommend you to turn your cameras on
   - You can use the main session chat to ask for help
-  - We will be posting notification through the main session channel, so keep an eye on it, you'll get notifications about timings, troubleshooting, additional instructions...
-  - We'll use online timers
+  - We will be posting notifications through the main session channel, so keep an eye on it, you'll get notifications about timings, troubleshooting, additional instructions...
   - [Miro]
+    - We'll use Miro embedded timers
     - We'll be using the 'bring everyone to me' to get you back all together at the end
     - We tried our best to make the board self-explanatory, but the markdown files in the repo go in more details if you are stuck
-- We'll be jumping from mobs to mobs
+- We'll be jumping between mobs
 - Present the goals of the 2 techniques quickly
-- Mention that combining both is a case of 1+1>2
+- Mention that combining both is a case where 1+1>2
 - Start the Mob self-organization activity
 
 ## Training from the Back of the Room activities
