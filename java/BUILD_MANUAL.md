@@ -26,7 +26,7 @@ To build and run the project, follow one of the options below:
 ### Maven
 #### Build Command 
 ```shell
-mvn clean install 
+> mvn clean install 
 ```
 
 If executed successfully, the above command should generate the following: 
@@ -38,10 +38,10 @@ If executed successfully, the above command should generate the following:
 To try out the application, run the command: 
 ```shell
 # Windows
-  java -jar target\MikadoTestBuilderKata.jar
+  > java -jar target\MikadoTestBuilderKata.jar
 
 # Mac & Linux
-  java -jar target/MikadoTestBuilderKata.jar
+  > java -jar target/MikadoTestBuilderKata.jar
 ```
 
 The following output should be generated: 
@@ -61,7 +61,15 @@ The total amount of all invoices in USD is: 1016.04
 ### Gradle
 #### Build Command
 ```shell
-gradle clean build 
+# Option 1: Gradle is already installed on your machine 
+> gradle clean build 
+
+# Option 2: Gradle is NOT installed on your machine
+# Windows  
+> .\gradlew.bat clean build
+
+# Mac & Linux
+> ./gradlew clean build
 ```
 
 If executed successfully, the above command should generate the following:
@@ -74,10 +82,10 @@ To try out the application, run the command:
 
 ```shell
 # Windows 
-  java -jar build\libs\MikadoTestBuilderKata.jar
+  > java -jar build\libs\MikadoTestBuilderKata.jar
 
 # Mac & Linux 
-  java -jar build/libs/MikadoTestBuilderKata.jar
+  > java -jar build/libs/MikadoTestBuilderKata.jar
 ```
 
 The following output should be generated:
