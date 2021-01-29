@@ -3,7 +3,7 @@ name: Gradle
 on: 
   push:
     branches-ignore:
-      - mikado-method-from-video
+      - *-from-video
 
 jobs:
   build:
