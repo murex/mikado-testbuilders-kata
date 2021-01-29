@@ -24,9 +24,14 @@ namespace Application.Report
         public double GetTotalAmount()
         {
             var invoices = _repository.GetInvoiceMap().Values;
-            var totalAmount = invoices.Sum(invoice => invoice.ComputeTotalAmount());
-            // TODO: Uncomment to fix the bug for ReportGenerator
-            // var totalAmount = invoices.Sum(invoice => CurrencyConverter.ToUsd(invoice.ComputeTotalAmount(), invoice.Country.Currency));
+
+            // BUG: There was a bug with the following line of code
+            // var totalAmount = invoices.Sum(invoice => invoice.ComputeTotalAmount());
+
+            // FIX: The above bug was fixed by the following line of code
+            var totalAmount = invoices.Sum(invoice =>
+                CurrencyConverter.ToUsd(invoice.ComputeTotalAmount(), invoice.Country.Currency));
+
             return GetRoundedAmount(totalAmount);
         }
 
