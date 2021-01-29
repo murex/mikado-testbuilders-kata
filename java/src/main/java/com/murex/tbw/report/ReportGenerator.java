@@ -11,11 +11,11 @@
 package com.murex.tbw.report;
 
 import com.murex.tbw.MainRepository;
+import com.murex.tbw.finance.CurrencyConverter;
 import com.murex.tbw.purchase.Invoice;
 import com.murex.tbw.purchase.PurchasedBook;
 import com.murex.tbw.storage.Repository;
 
-import java.text.DecimalFormat;
 import java.util.List;
 import java.util.Map;
 
@@ -27,9 +27,11 @@ public class ReportGenerator {
         Map<Integer, Invoice> invoiceMap = repository.getInvoiceMap();
         double totalAmount = 0.0;
         for (Invoice invoice : invoiceMap.values()) {
-            totalAmount += invoice.computeTotalAmount();
-//            TODO Uncomment to fix the bug in ReportGenerator
-//            totalAmount += CurrencyConverter.toUSD(invoice.computeTotalAmount(), invoice.getCountry().getCurrency());
+//          BUG: There was a bug with the below line of code
+//          totalAmount += invoice.computeTotalAmount();
+
+//          FIX: The above bug was fixed by the below 2 lines of code
+            totalAmount += CurrencyConverter.toUSD(invoice.computeTotalAmount(), invoice.getCountry().getCurrency());
         }
         return getRoundedAmount(totalAmount);
     }

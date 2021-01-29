@@ -27,17 +27,15 @@ delivery.
 
 You'll be programming in mob or pairs for most of the workshop.
 
-You'll find links to 'Web Centers': web pages containing documentation and
+You'll find links to "***Web Centers***": web pages containing documentation and
 references to important concepts in this workshop. If you are in a room, there
 might also be 'Wall Centers' on the wall were you'll find similar information
 and physical books.
 
-Open the code in your favorite IDE:
-
-* To work on the java version, simply load the root [pom.xml](../java/pom.xml) in 
-  your favourite IDE
-* We currently only have a Visual Studio environment around the C++ code (BTW,
-  contributions are welcome :-)). Open [testbuilders-workshop.sln](../cpp/testbuilders-workshop.sln).
+You'll find a "***Build Manual***" for each of the supported languages. Those manuals
+will help you compile, run and load the project in your favorite IDE:
+* [Java Build Manual](../java/BUILD_MANUAL.md)
+* [CPP Build Manual](../cpp/BUILD_MANUAL.md)
 
 If you have problems compiling and running the code, check our [Troubleshooting guide](Troubleshooting.md)
 

@@ -33,10 +33,12 @@ namespace report
 		double totalAmount = 0.0;
 		for (const auto id2Invoice : invoiceMap)
 		{
-			totalAmount += id2Invoice.second->computeTotalAmount();
-//			TODO Uncomment to fix the bug in ReportGenerator
-//			const auto& invoice = *id2Invoice.second;
-//			totalAmount += finance::toUSD(invoice.computeTotalAmount(), invoice.getCountry().getCurrency());
+//		    BUG: There was a bug with the below line of code 
+//			totalAmount += id2Invoice.second->computeTotalAmount();
+
+//		    FIX: The above bug was fixed by the below 2 lines of code  
+			const auto& invoice = *id2Invoice.second;
+			totalAmount += finance::toUSD(invoice.computeTotalAmount(), invoice.getCountry().getCurrency());
 		}
 		
 		return getRoundedValueOf(totalAmount);

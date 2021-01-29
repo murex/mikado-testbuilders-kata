@@ -58,9 +58,11 @@ public final class Invoice {
     public double computeTotalAmount() {
         double sum = 0.0;
         for (PurchasedBook purchasedBook : purchasedBooks) {
-            double totalPrice = purchasedBook.getTotalPrice();
-//            TODO: Uncomment to fix the bug for Invoice
-//            double totalPrice = purchasedBook.getTotalPrice() * TaxRule.getApplicableRate(country, purchasedBook.getBook());
+//           BUG: There was a bug with the below line of code
+//           double totalPrice = purchasedBook.getTotalPrice();
+
+//          FIX: The above bug was fixed by the below line
+            double totalPrice = purchasedBook.getTotalPrice() * TaxRule.getApplicableRate(country, purchasedBook.getBook());
             sum += totalPrice;
         }
         return sum;

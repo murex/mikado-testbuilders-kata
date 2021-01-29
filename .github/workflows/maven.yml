@@ -1,6 +1,9 @@
 name: Maven
 
-on: [push]
+on: 
+  push:
+    branches-ignore:
+      - '*-from-video'
 
 jobs:
   build:
