@@ -3,7 +3,7 @@ name: CMake
 on: 
   push:
     branches-ignore:
-      - mikado-method-from-video
+      - '*-from-video'
 
 env:
   # Customize the CMake build type here (Release, Debug, RelWithDebInfo, etc.)
