@@ -50,9 +50,13 @@ namespace Application.Purchase
         public double ComputeTotalAmount()
         {
             var totalAmount = 0.0;
-            totalAmount = PurchasedBooks.Sum(book => book.TotalPrice);
-            // TODO: Uncomment to fix the bug for Invoice
-            // totalAmount = PurchasedBooks.Sum(book => book.TotalPrice * TaxRule.GetApplicableRate(Country, book.Book));
+
+            // BUG: There was a bug with the following line of code
+            // totalAmount = PurchasedBooks.Sum(book => book.TotalPrice);
+
+            // FIX: The above bug was fixed by the following line of code
+            totalAmount = PurchasedBooks.Sum(book => book.TotalPrice * TaxRule.GetApplicableRate(Country, book.Book));
+
             return totalAmount;
         }
 
