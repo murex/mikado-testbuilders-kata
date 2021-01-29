@@ -2,11 +2,8 @@ name: Gradle
 
 on: 
   push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
+    branches-ignore:
+      - mikado-method-from-video
 
 jobs:
   build:
