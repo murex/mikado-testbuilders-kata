@@ -26,6 +26,7 @@ class InvoiceTest {
     @Test
     void Mikado_Method_Constraint_Applies_tax_rules_when_computing_total_amount() {
         Country usa = new Country("USA", Currency.US_DOLLAR, Language.ENGLISH);
+        Invoice invoice = new Invoice("Joe", usa);
     }
 
     @Test
