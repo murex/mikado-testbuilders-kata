@@ -99,7 +99,9 @@ After running any of the above steps, the following folders and files should be 
 
 ### Run Command
 
-To try out the application, run the command:
+To try out the application, you can either use the IDE or the command line:
+
+#### Command Line
 
 ```shell
 # Windows
@@ -112,7 +114,17 @@ To try out the application, run the command:
 > ./build/Mikado-TestBuilders-Workshop-app
 ```
 
-The following output should be generated:
+#### IDE 
+
+The CMake file we provided generates the target 'Mikado-TestBuilders-Workshop-app' 
+which in turn runs the main class [Application.cpp](./app/Application.cpp). 
+
+After loading the project into your IDE, set the 'Mikado-TestBuilders-Workshop-app' 
+as the StartUp Project then run the project. 
+
+#### Output 
+
+The following output should be generated in both cases:
 
 ```shell
 ****************************************************
