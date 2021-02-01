@@ -15,13 +15,36 @@ has been set to 1.8. Remember to change that configuration to your preferred ver
 
 ### IDEs
 We are using [IntelliJ](https://www.jetbrains.com/idea/), but you can choose any IDE that
-supports loading Maven or Gradle projects!  
+supports loading Maven or Gradle projects!
  
 ## Process 
 
 > ***Reminder***:  You need to run the commands below from the [java](.) folder!
 
-To build and run the project, follow one of the options below:
+To build and run the project, you can either use the build features in IntelliJ
+or the Maven & Gradle build command lines (as shown below):
+
+### IntelliJ 
+
+After loading the project into IntelliJ, you should be able to build the project
+using either the Maven or Gradle built-in build tools. 
+
+To run the application from IntelliJ, simply run the main method in the 
+[Application](src/main/java/com/murex/Application.java) class.
+
+The 'Run' tool window should display the following output:
+```shell
+****************************************************
+*****************Application Report*****************
+****************************************************
+
+The total number of books sold is: 16
+The total number of issued invoices is: 6
+The total amount of all invoices in USD is: 424.04
+
+****************************************************
+****************************************************
+```
 
 ### Maven
 #### Build Command 
@@ -52,7 +75,7 @@ The following output should be generated:
 
 The total number of books sold is: 16
 The total number of issued invoices is: 6
-The total amount of all invoices in USD is: 1016.04
+The total amount of all invoices in USD is: 424.04
 
 ****************************************************
 ****************************************************
@@ -96,7 +119,7 @@ The following output should be generated:
 
 The total number of books sold is: 16
 The total number of issued invoices is: 6
-The total amount of all invoices in USD is: 1016.04
+The total amount of all invoices in USD is: 424.04
 
 ****************************************************
 ****************************************************
