@@ -40,7 +40,7 @@ The 'Run' tool window should display the following output:
 
 The total number of books sold is: 16
 The total number of issued invoices is: 6
-The total amount of all invoices in USD is: 424.04
+The total amount of all invoices in USD is: 424.57
 
 ****************************************************
 ****************************************************
@@ -75,7 +75,7 @@ The following output should be generated:
 
 The total number of books sold is: 16
 The total number of issued invoices is: 6
-The total amount of all invoices in USD is: 424.04
+The total amount of all invoices in USD is: 424.57
 
 ****************************************************
 ****************************************************
@@ -119,7 +119,7 @@ The following output should be generated:
 
 The total number of books sold is: 16
 The total number of issued invoices is: 6
-The total amount of all invoices in USD is: 424.04
+The total amount of all invoices in USD is: 424.57
 
 ****************************************************
 ****************************************************
