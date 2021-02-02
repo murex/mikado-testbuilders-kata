@@ -22,6 +22,7 @@ Configuration Steps:
    and processes to configure and run the project:
     1. [C++ Build Manual](https://github.com/murex/mikado-testbuilders-kata/blob/master/cpp/BUILD_MANUAL.md)
     2. [Java Build Manual](https://github.com/murex/mikado-testbuilders-kata/blob/master/java/BUILD_MANUAL.md)
+    2. [C# Build Manual](https://github.com/murex/mikado-testbuilders-kata/blob/master/csharp/BUILD_MANUAL.md)
 4. Your environment will be ready when you can: 
     1. Open, compile, and run tests from your IDE
     2. Run the application from the command-line (i.e., "Run Command" section of the BUILD_MANUAL)
