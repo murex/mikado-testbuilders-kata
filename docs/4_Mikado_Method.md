@@ -76,12 +76,12 @@ In real life, you would
 
 So let's Ignore or Comment-Out the previous tests!
 
-To solve this section, use the test entitled 'Mikado_Method_Constraint_Applies_tax_rules_when_computing_total_amount'! 
-
 ### Use Mikado Method to setup data for a test on Invoice
 
 We'll first focus on testing the [Invoice](../java/src/main/java/com/murex/tbw/purchase/Invoice.java) class. 
 It's simpler and achievable given the time we have.
+
+To solve this section, use the test entitled *Mikado_Method_Constraint_Applies_tax_rules_when_computing_total_amount*!
 
 Write your test as if you could instantiate your objects, and start to draw your mikado graph.
 
