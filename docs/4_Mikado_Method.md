@@ -28,7 +28,7 @@ You'll find resource about the Mikado Method
 To help you to get started, here is a demo of how to use the Mikado Method in
 our particular situation.
 
-[![Video of the beginning of the solution](./images/Testing%20legacy%20code%20with%20Mikado%20Method%20and%20Test%20Data%20Builders%20-%20YouTube.jpg)](https://www.youtube.com/watch?v=losyrW6g0JY&feature=youtu.be)
+[![Video of the beginning of the solution](./images/Mikado_Method_YouTube_Video.png)](https://www.youtube.com/watch?v=losyrW6g0JY&feature=youtu.be)
 
 ### Video Screen Shots 
 
