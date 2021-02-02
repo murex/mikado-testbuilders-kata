@@ -36,6 +36,7 @@ You'll find a "***Build Manual***" for each of the supported languages. Those ma
 will help you compile, run and load the project in your favorite IDE:
 * [Java Build Manual](../java/BUILD_MANUAL.md)
 * [CPP Build Manual](../cpp/BUILD_MANUAL.md)
+* [C# Build Manual](../csharp/BUILD_MANUAL.md)
 
 If you have problems compiling and running the code, check our [Troubleshooting guide](Troubleshooting.md)
 
