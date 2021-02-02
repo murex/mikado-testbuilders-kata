@@ -238,13 +238,14 @@ In real life, you would
 1. Fix the bugs
 2. Start the mikado method to add a test with data builders
 
-So let's delete the tests!
+So let's Ignore or Comment-Out the previous tests!
 
 ### Use Mikado Method to create Test Data Builders to add a test on Invoice
 
-We'll first focus on the test on
-[Invoice](../java/src/main/java/com/murex/tbw/purchase/Invoice.java). It's simpler
-and achievable given the time we have.
+We'll first focus on the testing [Invoice](../java/src/main/java/com/murex/tbw/purchase/Invoice.java) class. 
+It's simpler and achievable given the time we have.
+
+To solve this section, use the test entitled *Mikado_Method_And_Test_Data_Builders_Constraint_Applies_tax_rules_when_computing_total_amount*!
 
 Write your test as if you had the builders, and start to draw your mikado
 graph.
