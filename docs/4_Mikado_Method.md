@@ -28,18 +28,29 @@ You'll find resource about the Mikado Method
 To help you to get started, here is a demo of how to use the Mikado Method in
 our particular situation.
 
-TODO link to a video demo of setting up tests with the mikado method
+[![Video of the beginning of the solution](./images/Testing%20legacy%20code%20with%20Mikado%20Method%20and%20Test%20Data%20Builders%20-%20YouTube.jpg)](https://www.youtube.com/watch?v=losyrW6g0JY&feature=youtu.be)
 
 ### Video Screen Shots 
 
 #### Mikado Graph
 
-TODO screenshot of the graph from the video
+<details>
+  <summary  markdown='span'>
+  Screen-shot of the Mikado Graph from the video
+  </summary>
+  <img src="./images/MikadoMethodScreenshot.png.PNG" alt="Mikado Graph" />
+</details>
 
 #### Code Snippets 
 
-TODO code snippets from the video
-
+  ```java
+    @Test
+    void Mikado_Method_Constraint_Applies_tax_rules_when_computing_total_amount() {
+        Country usa = new Country("USA", Currency.US_DOLLAR, Language.ENGLISH);
+        Invoice invoice = new Invoice("Joe", usa);
+    }
+    
+  ```
 
 ## DIY
 
