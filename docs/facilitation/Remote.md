@@ -32,11 +32,15 @@ In a remote configuration, the introduction message is really important as it is
 - Technically:
   - We highly recommend you to turn your cameras on
   - You can use the main session chat to ask for help
-  - We will be posting notifications through the main session channel, so keep an eye on it, you'll get notifications about timings, troubleshooting, additional instructions...
+  - We will be posting notifications through the main session channel, *so keep an eye on it*, you'll get notifications about timings, troubleshooting, additional instructions...
   - [Miro]
     - We'll use Miro embedded timers
     - We'll be using the 'bring everyone to me' to get you back all together at the end
     - We tried our best to make the board self-explanatory, but the markdown files in the repo go in more details if you are stuck
+  - [Teams]
+    - Created a team in MSTeam for the event
+    - With custom channels for every mob
+    - Has everyone access?
 - We'll be jumping between mobs
 - Present the goals of the 2 techniques quickly
 - Mention that combining both is a case where 1+1>2
