@@ -215,7 +215,7 @@ If you run the App now, you should see that `The total amount of all invoices in
 ## Now we need Unit Tests
 
 ### 1. On the Invoice
-Your mission is to add a test to 
+Your mission is to add a test for 
 [Invoice](../java/src/main/java/com/murex/tbw/purchase/Invoice.java) that will cover the fix we added.  
 Instructions are provided in [InvoiceTest](../java/src/test/java/com/murex/tbw/purchase/InvoiceTest.java).  
 Make sure your test is correct: it must fail when you reintroduce the bug in `Invoice`.
