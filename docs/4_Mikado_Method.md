@@ -38,10 +38,15 @@ our particular situation.
   <summary  markdown='span'>
   Screen-shot of the Mikado Graph from the video
   </summary>
-  <img src="./images/MikadoMethodScreenshot.png.PNG" alt="Mikado Graph" />
+  <img src="./images/MikadoMethodScreenshot.png" alt="Mikado Graph" />
 </details>
 
 #### Code Snippets 
+
+<details>
+  <summary markdown='span'>
+  Code of InvoiceTest from the video
+  </summary>
 
   ```java
     @Test
@@ -51,6 +56,7 @@ our particular situation.
     }
     
   ```
+</details>
 
 ## DIY
 
