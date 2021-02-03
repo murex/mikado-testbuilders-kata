@@ -41,7 +41,7 @@ In a remote configuration, the introduction message is really important as it is
     - We'll use Miro embedded timers to remind you to jump to the next step
     - We'll be using the 'bring everyone to me' to get you back all together at the end
     - We tried our best to make the board self-explanatory, just follow the boxes and the flow
-    - In case you are lost and need more details, the markdown files in the repo go in more details if you are stuck
+    - In case you need more details, the markdown files in the repo go in more depth
     - Legend stickies
       - Red: for TODOs
       - Yellow: for informations
