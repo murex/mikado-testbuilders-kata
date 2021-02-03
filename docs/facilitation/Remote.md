@@ -24,6 +24,7 @@ In a remote configuration, the introduction message is really important as it is
   - Retrospect at the end of each iteration
   - Retros are when you are actually going to *learn*! Don't skip them. It's better to stop coding where you are, even if you did not finish, and have a proper retro. Finishing the iteration does not necessarily yield more learning.
   - You'll be working in mobs
+  - We'll be jumping between mobs
   - Skiping the mob team-building activity will make you slower, not faster!
   - We defined 'roles' for mobsters to make sure that the important things are done: typing, timekeeping, keeping track of notifications, and staying focused on your goal
   - The workshop is as self-guided as we could make it, don't wait for us
@@ -46,7 +47,6 @@ In a remote configuration, the introduction message is really important as it is
     - Created a team in MSTeam for the event
     - With custom channels for every mob
     - Has everyone access?
-- We'll be jumping between mobs
 - Present the goals of the 2 techniques quickly
 - Mention that combining both is a case where 1+1>2
 - Start the Mob self-forming activity
