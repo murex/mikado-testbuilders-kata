@@ -26,7 +26,7 @@ Configuration Steps:
 
 ## Think of your Constraint 
 
-During a Code Retreat, you often try to go through the same problem multiple times using different 'constraints'. Forhe second iteration of this code retreat, you will have the opportunity to choose your preferred constraint. 
+During a Code Retreat, you often try to go through the same problem multiple times using different 'constraints'. For the second iteration of this code retreat, you will have the opportunity to choose your preferred constraint. 
 
 We propose 3 constraints:
 
