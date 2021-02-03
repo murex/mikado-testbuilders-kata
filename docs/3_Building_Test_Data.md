@@ -34,10 +34,10 @@ our particular situation.
 
 <details>
   <summary markdown='span'>
-  Code of NovelTestDataBuilder & InvoiceTest from the video
+  Code Snippets of NovelTestDataBuilder from the video
   </summary>
 
-##### NovelTestDataBuilder.java
+##### NovelTestDataBuilder.java 
 
   ```java
   package com.murex.tbw.domain.book;
@@ -62,6 +62,12 @@ our particular situation.
       }
   }
   ```
+</details>
+
+<details>
+  <summary markdown='span'>
+  Code Snippets of InvoiceTest from the video
+  </summary>
 
 ##### InvoiceTest.java
 
