@@ -12,6 +12,9 @@ import java.util.List;
 import static com.murex.tbw.domain.country.Currency.POUND_STERLING;
 import static com.murex.tbw.domain.country.Currency.US_DOLLAR;
 import static com.murex.tbw.domain.country.Language.ENGLISH;
+import static com.murex.tbw.purchase.CountryTestDataBuilder.*;
+import static com.murex.tbw.purchase.NovelTestDataBuilder.*;
+import static com.murex.tbw.purchase.PurchasedBookTestDataBuilder.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class InvoiceTest {
@@ -32,17 +35,19 @@ class InvoiceTest {
 
     @Test
     void Test_Data_Builders_Constraint_Applies_tax_rules_when_computing_total_amount() {
-        Novel novel1984 = NovelTestDataBuilder
-                .aNovel()
-                .withName("1984")
-                .priced(50)
-                .build();
-
         Invoice invoice = InvoiceTestDataBuilder
                 .anInvoice()
                 .forClient("Client A")
-                .in(new Country("USA", US_DOLLAR, ENGLISH))
-                .withPurchasedBook(new PurchasedBook(novel1984, 1))
+                .in(aCountry()
+                        .named("USA")
+                        .build())
+                .withPurchasedBook(aPurchasedBook()
+                        .withBook(aNovel()
+                                .withName("1984")
+                                .priced(50)
+                                .build())
+                        .build()
+                )
                 .build();
 
         assertEquals(56.35, invoice.computeTotalAmount());
