@@ -15,6 +15,8 @@ In a remote configuration, the introduction message is really important as it is
 - Start the story behind the workshop: "You are programmers working in an international online book store. You have a piece of software that is responsible for building reports about invoices and taxes. You just discovered that the report was wrong. After some investigation, you found 2 bugs: taxes were not applied to invoices, and amounts were not converted to USD in the report. You just fixed the bugs (2 lines of code). You are about to add a test around these bugs."
 - Your mission during the workshop: add the tests
 - When you have a test running, remember to test your test by commenting the fix to make sure the test fails!
+- Present the goals of the 2 techniques quickly
+- Mention that combining both is a case where 1+1>2
 - How the workshop will be run:
   - Code retreat: fixing same problem multiple times with different techniques (called constraints in the code retreat jargon)
   - Strict timeboxing for 2h, learning is more important than finishing!
@@ -25,7 +27,7 @@ In a remote configuration, the introduction message is really important as it is
   - Retros are when you are actually going to *learn*! Don't skip them. It's better to stop coding where you are, even if you did not finish, and have a proper retro. Finishing the iteration does not necessarily yield more learning.
   - You'll be working in mobs
   - We'll be jumping between mobs
-  - Skiping the mob team-building activity will make you slower, not faster!
+  - Skipping the mob team-building activity will make you slower, not faster!
   - We defined 'roles' for mobsters to make sure that the important things are done: typing, timekeeping, keeping track of notifications, and staying focused on your goal
   - The workshop is as self-guided as we could make it, don't wait for us
   - Trust the directions we provide (comments in code, hints in the instructions, visual guidance)
@@ -47,8 +49,6 @@ In a remote configuration, the introduction message is really important as it is
     - Created a team in MSTeam for the event
     - With custom channels for every mob
     - Has everyone access?
-- Present the goals of the 2 techniques quickly
-- Mention that combining both is a case where 1+1>2
 - Start the Mob self-forming activity
 
 ## Training from the Back of the Room activities
