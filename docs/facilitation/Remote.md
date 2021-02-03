@@ -22,9 +22,10 @@ In a remote configuration, the introduction message is really important as it is
   - 1st iteration will be using no technique, don't use Builders or Mikado
   - 2nd iteration you will be able to chose your constraint (technique)
   - Retrospect at the end of each iteration
+  - Retros are when you are actually going to *learn*! Don't skip them. It's better to stop coding where you are, even if you did not finish, and have a proper retro. Finishing the iteration does not necessarily yield more learning.
   - You'll be working in mobs
-  - Mobs will have to self-organize as they want, but stick to a unique driver
-  - We strongly advise you to have a timekeeper in the mob
+  - Skiping the mob team-building activity will make you slower, not faster!
+  - We defined 'roles' for mobsters to make sure that the important things are done: typing, timekeeping, keeping track of notifications, and staying focused on your goal
   - The workshop is as self-guided as we could make it, don't wait for us
   - Trust the directions we provide (comments in code, hints in the instructions, visual guidance)
   - Remember, learning is more important than finishing, stop the 1st iteration when we say so to be able to tackle the 2nd iteration and learn new techniques
@@ -34,9 +35,10 @@ In a remote configuration, the introduction message is really important as it is
   - You can use the main session chat to ask for help
   - We will be posting notifications through the main session channel, *so keep an eye on it*, you'll get notifications about timings, troubleshooting, additional instructions...
   - [Miro]
-    - We'll use Miro embedded timers
+    - We'll use Miro embedded timers to remind you to jump to the next step
     - We'll be using the 'bring everyone to me' to get you back all together at the end
-    - We tried our best to make the board self-explanatory, but the markdown files in the repo go in more details if you are stuck
+    - We tried our best to make the board self-explanatory, just follow the boxes and the flow
+    - In case you are lost and need more details, the markdown files in the repo go in more details if you are stuck
   - [Teams]
     - Created a team in MSTeam for the event
     - With custom channels for every mob
@@ -44,7 +46,7 @@ In a remote configuration, the introduction message is really important as it is
 - We'll be jumping between mobs
 - Present the goals of the 2 techniques quickly
 - Mention that combining both is a case where 1+1>2
-- Start the Mob self-organization activity
+- Start the Mob self-forming activity
 
 ## Training from the Back of the Room activities
 
