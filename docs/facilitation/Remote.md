@@ -39,6 +39,9 @@ In a remote configuration, the introduction message is really important as it is
     - We'll be using the 'bring everyone to me' to get you back all together at the end
     - We tried our best to make the board self-explanatory, just follow the boxes and the flow
     - In case you are lost and need more details, the markdown files in the repo go in more details if you are stuck
+    - Legend stickies
+      - Red: for TODOs
+      - Yellow: for informations
   - [Teams]
     - Created a team in MSTeam for the event
     - With custom channels for every mob
