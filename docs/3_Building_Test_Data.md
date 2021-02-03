@@ -112,7 +112,7 @@ In real life, you would
 
 So let's Ignore or Comment-Out the previous tests!
 
-### Use Mikado Method to setup data for a test on Invoice
+### Use Test-Data-Builders to setup the data for a test on Invoice
 
 We'll first focus on testing the [Invoice](../java/src/main/java/com/murex/tbw/purchase/Invoice.java) class.
 It's simpler and achievable given the time we have.
@@ -121,9 +121,7 @@ To solve this section, use the test entitled *Test_Data_Builders_Constraint_Appl
 
 Use the test data-builder to instantiate your objects in the test.
 
-Make sure your project keeps building all the time. Notice every time you have something useful.
-
-### Use Mikado Method to setup data for a test on Report Generator (advanced)
+### Use Test-Data-Builders to setup the data for a test on Report Generator (advanced)
 
 If you have the time, repeat the same exercise with the test on [ReportGenerator](../java/src/main/java/com/murex/tbw/report/ReportGenerator.java)
 
