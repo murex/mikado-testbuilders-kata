@@ -78,4 +78,4 @@ cmake_bin_path="${cmake_build_dir}/${cmake_home}/${cmake_bin_dir}"
 
 eval ${cmake_bin_path}/${cmake} "${cmake_generator_options}" -S .. -B .
 ${cmake_bin_path}/${cmake} --build . --config Debug
-${cmake_bin_path}/${ctest} -C Debug
+${cmake_bin_path}/${ctest} --output-on-failure -C Debug
