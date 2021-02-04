@@ -43,7 +43,7 @@ In a remote configuration, the introduction message is really important as it is
     - We tried our best to make the board self-explanatory, just follow the boxes and the flow
     - In case you need more details, the markdown files in the repo go in more depth
     - Legend stickies
-      - Red: for TODOs
+      - Pink: for TODOs
       - Yellow: for informations
   - [Teams]
     - Created a team in MSTeam for the event
