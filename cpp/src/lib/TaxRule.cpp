@@ -41,14 +41,13 @@ double finance::getApplicableRate(const domain::country::Country& invoiceCountry
 			return 1.05;
 		}
 	}
-	//FIXME does this typeid(thing) work?
 	if (invoiceCountry.getName() == "USA") {
-		if (typeid(book).name() == std::string("class domain::book::Novel")) {
+		if (dynamic_cast<const domain::book::Novel*>(&book)) {
 			return getTaxRate(invoiceCountry.getName()) * 0.98;
 		}
 	}
 	if (invoiceCountry.getName() == "UK") {
-		if (typeid(book).name() == std::string("class domain::book::Novel")) {
+		if (dynamic_cast<const domain::book::Novel*>(&book)) {
 			return getTaxRate(invoiceCountry.getName()) * 0.93;
 		}
 	}
