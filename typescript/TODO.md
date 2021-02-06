@@ -26,6 +26,14 @@ X Find the best practices around case best practice for file names
   - Nothing clear
   - I found a typescript naming convention here https://makecode.com/extensions/naming-conventions
   - Which says that everything should be namespaced!!! cf point above
+X Learn more about constructors overload
+  - not allowed
+  - can use static factory methods
+  - or default parameters
+X Learn about optional parameters
+  - add ? to mark a param as optional
+  - can provide a default value with = ...
+  - if ? or =... is not the last arg, then you need to provide an explicit undefined for the arg
 . I started from https://github.com/Pablorg99/typescript-kata-template that uses .nvmrc, should we update 
   this version? is nvmrc the way to go?
 . Equality for objects
@@ -35,3 +43,7 @@ X Find the best practices around case best practice for file names
   - this collection library uses a custom toString function to compare objects https://github.com/basarat/typescript-collections/blob/release/src/test/setTest.ts
   - With immutable.js, an object should implement ValueObject to provide equals() and hashCode() https://immutable-js.github.io/immutable-js/docs/#/is
   . implement when needed
+. Look for other useful VS Code plugins for ts
+. Try JetBrains's Typescript IDE
+. Add TaxRule to be able to pass the invoice test
+. Remove the test from Invoice.spec.ts
