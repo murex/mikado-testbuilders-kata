@@ -4,6 +4,10 @@ import { Book } from "./Book";
 import { Genre } from "./Genre";
 import * as Immutable from "immutable";
 
+export function isNovel(book: Book): boolean {
+  return (book as Novel).genres !== undefined;
+}
+
 export class Novel implements Book {
   readonly name: string;
   readonly price: number;
