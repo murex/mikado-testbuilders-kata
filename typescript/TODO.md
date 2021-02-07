@@ -39,17 +39,21 @@ X Add TaxRule to be able to pass the invoice test
   - It's better to use free functions than static methods in Typescript
   - To check 'instanceof', you check for the presence of a member. Best way to do this is to write something like "function isX(y):boolean { return (y as X).xMember !== undefined; }"
 X Remove the test from Invoice.spec.ts
-. I started from https://github.com/Pablorg99/typescript-kata-template that uses .nvmrc, should we update 
-  this version? is nvmrc the way to go?
-. Equality for objects
+X Look for other useful VS Code plugins for ts
+  - https://scotch.io/bar-talk/11-awesome-javascript-extensions-for-visual-studio-code
+  - Wallaby for continuous testing
+  - Quoka for inline editor
+  - All this makes VS Code slow as hell!
+- Equality for objects
   - I did not find a built-in way to compare identical instances. Same problems as in Java
     People seem to suggest a hack with JSON.Stringify https://dmitripavlutin.com/how-to-compare-objects-in-javascript/
   - The question is: why it's needed in this kata? Do we put these objects in maps or sets?
   - this collection library uses a custom toString function to compare objects https://github.com/basarat/typescript-collections/blob/release/src/test/setTest.ts
   - With immutable.js, an object should implement ValueObject to provide equals() and hashCode() https://immutable-js.github.io/immutable-js/docs/#/is
-  . implement when needed
-. Look for other useful VS Code plugins for ts
+. I started from https://github.com/Pablorg99/typescript-kata-template that uses .nvmrc, should we update 
+  this version? is nvmrc the way to go?
 . Try JetBrains's Typescript IDE
+. Setup github actions
 . Reproduce and test bug in ReportGenerator
       const USA = new Country("USA", Currency.Dollar, Language.English);
       const steinbeck = new Author("John Steinbeck", USA);
