@@ -34,6 +34,11 @@ X Learn about optional parameters
   - add ? to mark a param as optional
   - can provide a default value with = ...
   - if ? or =... is not the last arg, then you need to provide an explicit undefined for the arg
+- You can block select in VSCode with Shift+Option
+X Add TaxRule to be able to pass the invoice test
+  - It's better to use free functions than static methods in Typescript
+  - To check 'instanceof', you check for the presence of a member. Best way to do this is to write something like "function isX(y):boolean { return (y as X).xMember !== undefined; }"
+X Remove the test from Invoice.spec.ts
 . I started from https://github.com/Pablorg99/typescript-kata-template that uses .nvmrc, should we update 
   this version? is nvmrc the way to go?
 . Equality for objects
@@ -45,5 +50,19 @@ X Learn about optional parameters
   . implement when needed
 . Look for other useful VS Code plugins for ts
 . Try JetBrains's Typescript IDE
-. Add TaxRule to be able to pass the invoice test
-. Remove the test from Invoice.spec.ts
+. Reproduce and test bug in ReportGenerator
+      const USA = new Country("USA", Currency.Dollar, Language.English);
+      const steinbeck = new Author("John Steinbeck", USA);
+      const grapesOfWrath = new Novel(
+        "GrapesOfWrath",
+        9.99,
+        steinbeck,
+        Language.English,
+        Immutable.Set()
+      );
+      const invoice = new Invoice("John Doe", USA);
+      invoice.addPurchasedBook(new PurchasedBook(grapesOfWrath, 1));
+
+      expect(invoice.computeTotalAmount()).toBe(
+        grapesOfWrath.price * 1.15 * 0.98
+      );

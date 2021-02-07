@@ -1,4 +1,5 @@
 import { Country } from "../domain/country/Country";
+import { getApplicableRate } from "../finance/TaxRule";
 import { PurchasedBook } from "./PurchasedBook";
 
 export class Invoice {
@@ -27,10 +28,12 @@ export class Invoice {
     let sum = 0.0;
     this.purchasedBooks.forEach((purchasedBook) => {
       // BUG: There was a bug with the below line of code
-      const totalPrice = purchasedBook.totalPrice();
+      // const totalPrice = purchasedBook.totalPrice();
 
       // FIX: The above bug was fixed by the below line
-      // let totalPrice = purchasedBook.totalPrice * TaxRule.getApplicableRate(country, purchasedBook.getBook());
+      const totalPrice =
+        purchasedBook.totalPrice() *
+        getApplicableRate(this.country, purchasedBook.book);
       sum = sum + totalPrice;
     });
     return sum;
