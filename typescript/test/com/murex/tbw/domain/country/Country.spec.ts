@@ -2,7 +2,7 @@ import { Country } from "../../../../../../src/com/murex/tbw/domain/country/Coun
 import { Currency } from "../../../../../../src/com/murex/tbw/domain/country/Currency";
 import { Language } from "../../../../../../src/com/murex/tbw/domain/country/Language";
 
-describe("Country", () => {
+describe(Country, () => {
   it("should have a name, currency, and language", () => {
     const usa: Country = new Country("USA", Currency.Dollar, Language.English);
 
