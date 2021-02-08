@@ -50,9 +50,13 @@ X Look for other useful VS Code plugins for ts
   - The question is: why it's needed in this kata? Do we put these objects in maps or sets?
   - this collection library uses a custom toString function to compare objects https://github.com/basarat/typescript-collections/blob/release/src/test/setTest.ts
   - With immutable.js, an object should implement ValueObject to provide equals() and hashCode() https://immutable-js.github.io/immutable-js/docs/#/is
+. See how to configure a docker dev env with VSCode
+. Try JetBrains's Webstorm
+  . How to sync Webstorm and prettier styles?
+  . How to reformat on save?
+  . How to continuously run the tests ?
 . I started from https://github.com/Pablorg99/typescript-kata-template that uses .nvmrc, should we update 
   this version? is nvmrc the way to go?
-. Try JetBrains's Typescript IDE
 . Setup github actions
 . Reproduce and test bug in ReportGenerator
       const USA = new Country("USA", Currency.Dollar, Language.English);

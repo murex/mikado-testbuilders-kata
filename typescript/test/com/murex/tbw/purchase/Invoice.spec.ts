@@ -7,7 +7,7 @@ import * as Immutable from "immutable";
 import { Invoice } from "../../../../../src/com/murex/tbw/purchase/Invoice";
 import { PurchasedBook } from "../../../../../src/com/murex/tbw/purchase/PurchasedBook";
 
-describe("Invoice", () => {
+describe(Invoice, () => {
   describe("No Constraint", () => {
     it("Applies tax rules when computing total amount", () => {
       // Instantiate an Invoice sent to USA
