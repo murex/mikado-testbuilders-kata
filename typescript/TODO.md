@@ -83,4 +83,13 @@ X Look for other useful VS Code plugins for ts
     X install yarn on top of node/npm
   X Downgrade cucumber to 6.0.5 `yarn upgrade cucumber@6.0.5` https://stackoverflow.com/questions/66100880/how-to-fix-typeerror-this-parametertypes-is-not-a-function-in-cucumber-js
   . Setup Cucumber with typescript
+    X Pipe tsc into cucumber
+      - https://sylvain.pontoreau.com/2018/04/30/typescript-cucumber-getting-started/
+      - only for cucumber.js setting file https://www.elliotdenolf.com/posts/cucumberjs-with-typescript/
+    X FAILED try to use jest in cucumber `import { describe, expect, it } from "@jest/globals";` Cannot import jest outside of test dir.
+    . Fix the fact that tsc is compiling recursively all the ts files everywhere!
+    . Try to import chai for assertions
+    . Or try to increase jest test dir
+    . *** Or dump cucumber-js and use jest-cucumber instead!
+      - Inato is using jest
   . Implement the real test

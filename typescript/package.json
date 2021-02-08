@@ -6,10 +6,12 @@
   "author": "Pablo Rodríguez Guillén <pablorodriguezguillen@gmail.com>",
   "license": "MIT",
   "devDependencies": {
+    "@types/cucumber": "^6.0.1",
     "@types/jest": "^26.0.4",
     "@typescript-eslint/eslint-plugin": "^4.13.0",
     "@typescript-eslint/parser": "^4.13.0",
     "cucumber": "6.0.5",
+    "cucumber-pretty": "^6.0.0",
     "eslint": "^7.18.0",
     "eslint-config-prettier": "^7.1.0",
     "eslint-config-standard": "^16.0.2",
@@ -32,7 +34,7 @@
   "scripts": {
     "test": "jest --watch",
     "lint": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
-    "cucumber": "./node_modules/.bin/cucumber-js"
+    "cucumber": "tsc features/**/*.ts && ./node_modules/.bin/cucumber-js"
   },
   "husky": {
     "hooks": {
