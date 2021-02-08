@@ -74,3 +74,13 @@ X Look for other useful VS Code plugins for ts
       expect(invoice.computeTotalAmount()).toBe(
         grapesOfWrath.price * 1.15 * 0.98
       );
+. Run the tests through Cucumber
+  X Downgrade to node 12 https://github.com/cucumber/cucumber-js/issues/1569
+    X uninstall yarn from brew
+    X uninstall node from brew
+    X install nvm from command line (recommended method)
+    X reinstall node version from .nvmrc
+    X install yarn on top of node/npm
+  X Downgrade cucumber to 6.0.5 `yarn upgrade cucumber@6.0.5` https://stackoverflow.com/questions/66100880/how-to-fix-typeerror-this-parametertypes-is-not-a-function-in-cucumber-js
+  . Setup Cucumber with typescript
+  . Implement the real test
