@@ -10,6 +10,7 @@
     "@types/jest": "^26.0.4",
     "@typescript-eslint/eslint-plugin": "^4.13.0",
     "@typescript-eslint/parser": "^4.13.0",
+    "chai": "^4.3.0",
     "cucumber": "6.0.5",
     "cucumber-pretty": "^6.0.0",
     "eslint": "^7.18.0",

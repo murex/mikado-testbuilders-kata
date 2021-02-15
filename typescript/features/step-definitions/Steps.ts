@@ -7,6 +7,7 @@ import { Language } from "../../src/com/murex/tbw/domain/country/Language";
 import { Invoice } from "../../src/com/murex/tbw/purchase/Invoice";
 import * as Immutable from "immutable";
 import { PurchasedBook } from "../../src/com/murex/tbw/purchase/PurchasedBook";
+import { expect } from "chai";
 
 const USA = new Country("USA", Currency.Dollar, Language.English);
 
@@ -28,5 +29,5 @@ When("John purchases a novel costing 50", function () {
 });
 
 Then("the invoice total amount should be 56,35", function () {
-  expect(1).toBe(0);
+  expect(this.invoice.computeTotalAmount()).to.equal(56.35);
 });
