@@ -89,7 +89,6 @@ X Look for other useful VS Code plugins for ts
     X FAILED try to use jest in cucumber `import { describe, expect, it } from "@jest/globals";` Cannot import jest outside of test dir.
     X import chai and have a real error
     X Implement the real test
-    . upgrade to cucumber 7.0
-    . revert back to js
+    X upgrade to cucumber 7.0
     . try the cucumber flow for typescript
     . Try jest-cucumber instead!

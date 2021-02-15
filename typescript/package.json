@@ -6,7 +6,7 @@
   "author": "Pablo Rodríguez Guillén <pablorodriguezguillen@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "@types/cucumber": "^6.0.1",
+    "@types/cucumber": "^7.0.0",
     "@types/jest": "^26.0.4",
     "@typescript-eslint/eslint-plugin": "^4.13.0",
     "@typescript-eslint/parser": "^4.13.0",
