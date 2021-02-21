@@ -88,7 +88,13 @@ X Look for other useful VS Code plugins for ts
       - only for cucumber.js setting file https://www.elliotdenolf.com/posts/cucumberjs-with-typescript/
     X FAILED try to use jest in cucumber `import { describe, expect, it } from "@jest/globals";` Cannot import jest outside of test dir.
     X import chai and have a real error
+      - works great except that I get .js compilation output files all over the place
     X Implement the real test
     X upgrade to cucumber 7.0
     . try the cucumber flow for typescript
+      X create a default tsconfig.json with `yarn tsc --init`
+      X add the required ts config options for cucumber-js-tsflow
+      - looks like tsconfig.json is ignored
+      - it works if I run tsc on all files manually!
+      . Find a way to take tsconfig.json into account
     . Try jest-cucumber instead!
