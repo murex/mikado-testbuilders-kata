@@ -38,7 +38,7 @@
   "scripts": {
     "test": "jest --watch",
     "lint": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
-    "cucumber": "./node_modules/.bin/ts-node ./node_modules/.bin/cucumber-js -p default"
+    "cucumber": "./node_modules/.bin/cucumber-js -p default"
   },
   "husky": {
     "hooks": {
