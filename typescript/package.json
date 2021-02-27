@@ -41,6 +41,7 @@
     ]
   },
   "dependencies": {
-    "immutable": "^4.0.0-rc.12"
+    "immutable": "^4.0.0-rc.12",
+    "yarn": "^1.22.10"
   }
 }

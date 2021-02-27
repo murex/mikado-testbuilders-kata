@@ -50,19 +50,11 @@ X Look for other useful VS Code plugins for ts
   - The question is: why it's needed in this kata? Do we put these objects in maps or sets?
   - this collection library uses a custom toString function to compare objects https://github.com/basarat/typescript-collections/blob/release/src/test/setTest.ts
   - With immutable.js, an object should implement ValueObject to provide equals() and hashCode() https://immutable-js.github.io/immutable-js/docs/#/is
-. Get config changes that I did on cucumber-js branch
-  . upgrade .nvmrc version
-  . revert .vscode/extensions.json (remove wallaby)
-  . reinstall yarn (and npm) to have it part of the package
-  . copy tsconfig.json file
-. See how to configure a docker dev env with VSCode
-. Try JetBrains's Webstorm
-  . How to sync Webstorm and prettier styles?
-  . How to reformat on save?
-  . How to continuously run the tests ?
-. I started from https://github.com/Pablorg99/typescript-kata-template that uses .nvmrc, should we update 
-  this version? is nvmrc the way to go?
-. Setup github actions
+X Get config changes that I did on cucumber-js branch
+  X revert .vscode/extensions.json (remove wallaby)
+  X copy tsconfig.json file
+  X upgrade .nvmrc version
+  X reinstall yarn (and npm) to have it part of the package
 . Reproduce and test bug in ReportGenerator
       const USA = new Country("USA", Currency.Dollar, Language.English);
       const steinbeck = new Author("John Steinbeck", USA);
@@ -79,3 +71,14 @@ X Look for other useful VS Code plugins for ts
       expect(invoice.computeTotalAmount()).toBe(
         grapesOfWrath.price * 1.15 * 0.98
       );
+. See how to configure a docker dev env with VSCode
+. Try JetBrains's Webstorm
+  . How to sync Webstorm and prettier styles? could https://editorconfig.org help?
+  . How to reformat on save?
+  . How to continuously run the tests ?
+    . Try TCR?
+. I started from https://github.com/Pablorg99/typescript-kata-template that uses .nvmrc, should we update 
+  this version? is nvmrc the way to go?
+  - Yes, nvm is the way to go
+  . I could upgrade to the latest node
+. Setup github actions
