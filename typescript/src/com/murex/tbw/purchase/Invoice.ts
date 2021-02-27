@@ -3,7 +3,7 @@ import { getApplicableRate } from "../finance/TaxRule";
 import { PurchasedBook } from "./PurchasedBook";
 
 export class Invoice {
-  readonly id: number;
+  readonly id?: number;
   readonly clientName: string;
   readonly country: Country;
   readonly purchasedBooks: PurchasedBook[];
