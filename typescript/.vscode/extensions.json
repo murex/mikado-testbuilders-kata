@@ -1,8 +1,6 @@
 {
     "recommendations": [
-        "wallabyjs.quokka-vscode",
-        //"orta.vscode-jest",
-        "wallabyjs.wallaby-vscode",
+        "orta.vscode-jest",
         "firsttris.vscode-jest-runner",
         "rvest.vs-code-prettier-eslint",
     ]
