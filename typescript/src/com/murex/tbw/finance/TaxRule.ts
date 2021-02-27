@@ -16,7 +16,11 @@ const taxRates = Immutable.Map({
 });
 
 function getTaxRate(countryName: string): number {
-  return taxRates.get(countryName);
+  const newLocal = taxRates.get(countryName);
+  if (newLocal === undefined) {
+    throw new Error("Unhandled country name: " + countryName);
+  }
+  return newLocal;
 }
 
 export function getApplicableRate(invoiceCountry: Country, book: Book): number {
