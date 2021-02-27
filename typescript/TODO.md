@@ -50,6 +50,11 @@ X Look for other useful VS Code plugins for ts
   - The question is: why it's needed in this kata? Do we put these objects in maps or sets?
   - this collection library uses a custom toString function to compare objects https://github.com/basarat/typescript-collections/blob/release/src/test/setTest.ts
   - With immutable.js, an object should implement ValueObject to provide equals() and hashCode() https://immutable-js.github.io/immutable-js/docs/#/is
+. Get config changes that I did on cucumber-js branch
+  . upgrade .nvmrc version
+  . revert .vscode/extensions.json (remove wallaby)
+  . reinstall yarn (and npm) to have it part of the package
+  . copy tsconfig.json file
 . See how to configure a docker dev env with VSCode
 . Try JetBrains's Webstorm
   . How to sync Webstorm and prettier styles?
