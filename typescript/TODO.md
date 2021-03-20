@@ -55,6 +55,12 @@ X Get config changes that I did on cucumber-js branch
   X copy tsconfig.json file
   X upgrade .nvmrc version
   X reinstall yarn (and npm) to have it part of the package
+. Experiment refactorings in JetBrains's Webstorm
+  X How to sync Webstorm and prettier styles? could https://editorconfig.org help?
+  X How to reformat on save?
+    - There are Simple Webstorm settings for this https://www.jetbrains.com/help/webstorm/prettier.html#ws_prettier_apply_code_style
+  . How to continuously run the tests?
+    . Try TCR?
 . Reproduce and test bug in ReportGenerator
       const USA = new Country("USA", Currency.Dollar, Language.English);
       const steinbeck = new Author("John Steinbeck", USA);
@@ -72,11 +78,6 @@ X Get config changes that I did on cucumber-js branch
         grapesOfWrath.price * 1.15 * 0.98
       );
 . See how to configure a docker dev env with VSCode
-. Try JetBrains's Webstorm
-  . How to sync Webstorm and prettier styles? could https://editorconfig.org help?
-  . How to reformat on save?
-  . How to continuously run the tests ?
-    . Try TCR?
 . I started from https://github.com/Pablorg99/typescript-kata-template that uses .nvmrc, should we update 
   this version? is nvmrc the way to go?
   - Yes, nvm is the way to go

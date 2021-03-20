@@ -1,11 +1,4 @@
-import { Author } from "../../../../../src/com/murex/tbw/domain/book/Author";
-import { Novel } from "../../../../../src/com/murex/tbw/domain/book/Novel";
-import { Country } from "../../../../../src/com/murex/tbw/domain/country/Country";
-import { Currency } from "../../../../../src/com/murex/tbw/domain/country/Currency";
-import { Language } from "../../../../../src/com/murex/tbw/domain/country/Language";
-import * as Immutable from "immutable";
 import { Invoice } from "../../../../../src/com/murex/tbw/purchase/Invoice";
-import { PurchasedBook } from "../../../../../src/com/murex/tbw/purchase/PurchasedBook";
 
 describe(Invoice, () => {
   describe("No Constraint", () => {
