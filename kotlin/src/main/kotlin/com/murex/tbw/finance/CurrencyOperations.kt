@@ -4,7 +4,7 @@ import com.murex.tbw.domain.country.Currency
 import com.murex.tbw.domain.country.Currency.*
 import kotlin.math.floor
 
-class CurrencyConverter {
+class CurrencyOperations {
 
     companion object Converter {
         private val EXCHANGE_RATE = mapOf(
