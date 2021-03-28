@@ -17,7 +17,7 @@ class Novel(
     override val price: Double,
     override val author: Author,
     override val language: Language,
-    val genres: MutableList<Genre> = mutableListOf()
+    val genres: List<Genre> = mutableListOf()
 
 ) : Book {
 }
