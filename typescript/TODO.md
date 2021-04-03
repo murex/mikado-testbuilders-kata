@@ -39,6 +39,21 @@ X Add TaxRule to be able to pass the invoice test
   - It's better to use free functions than static methods in Typescript
   - To check 'instanceof', you check for the presence of a member. Best way to do this is to write something like "function isX(y):boolean { return (y as X).xMember !== undefined; }"
 X Remove the test from Invoice.spec.ts
+    const USA = new Country("USA", Currency.Dollar, Language.English);
+    const steinbeck = new Author("John Steinbeck", USA);
+    const grapesOfWrath = new Novel(
+    "GrapesOfWrath",
+    9.99,
+    steinbeck,
+    Language.English,
+    Immutable.Set()
+    );
+    const invoice = new Invoice("John Doe", USA);
+    invoice.addPurchasedBook(new PurchasedBook(grapesOfWrath, 1));
+
+    expect(invoice.computeTotalAmount()).toBe(
+    grapesOfWrath.price * 1.15 * 0.98
+    );
 X Look for other useful VS Code plugins for ts
   - https://scotch.io/bar-talk/11-awesome-javascript-extensions-for-visual-studio-code
   - Wallaby for continuous testing
@@ -55,28 +70,42 @@ X Get config changes that I did on cucumber-js branch
   X copy tsconfig.json file
   X upgrade .nvmrc version
   X reinstall yarn (and npm) to have it part of the package
-. Experiment refactorings in JetBrains's Webstorm
+X Experiment refactorings in JetBrains's Webstorm
   X How to sync Webstorm and prettier styles? could https://editorconfig.org help?
   X How to reformat on save?
     - There are Simple Webstorm settings for this https://www.jetbrains.com/help/webstorm/prettier.html#ws_prettier_apply_code_style
-  . How to continuously run the tests?
-    . Try TCR?
-. Reproduce and test bug in ReportGenerator
+X Reproduce and test bug in ReportGenerator
+      const s = Currency.Euro.toString();
+
+      const repository = new InMemoryRepository();
+      MainRepository.override(repository);
+
       const USA = new Country("USA", Currency.Dollar, Language.English);
       const steinbeck = new Author("John Steinbeck", USA);
       const grapesOfWrath = new Novel(
-        "GrapesOfWrath",
-        9.99,
-        steinbeck,
-        Language.English,
-        Immutable.Set()
+      "GrapesOfWrath",
+      9.99,
+      steinbeck,
+      Language.English,
+      Immutable.Set()
       );
-      const invoice = new Invoice("John Doe", USA);
+      const France = new Country("France", Currency.Euro, Language.French);
+      const invoice = new Invoice("John Doe", France);
       invoice.addPurchasedBook(new PurchasedBook(grapesOfWrath, 1));
 
-      expect(invoice.computeTotalAmount()).toBe(
-        grapesOfWrath.price * 1.15 * 0.98
-      );
+      repository.addInvoice(invoice);
+
+      const reportGenerator = new ReportGenerator();
+
+      expect(reportGenerator.getTotalAmount()).toBe(10.95);
+. Implement the main app
+. How to continuously run the tests?
+. Try TCR?
+. understand the difference between properties, getters, functions and fields in ts
+. understand how to create a mutable map
+  - there are asMutableMap and asImmutableMap functions in the immutable map objects
+. understand how to initialize an immutable (or mutable) map with complex key type inline 
+. understand how to a value from a field when not defined (get or throw for ex)
 . See how to configure a docker dev env with VSCode
 . I started from https://github.com/Pablorg99/typescript-kata-template that uses .nvmrc, should we update 
   this version? is nvmrc the way to go?
