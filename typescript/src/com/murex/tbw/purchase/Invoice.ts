@@ -1,15 +1,16 @@
 import { Country } from "../domain/country/Country";
 import { getApplicableRate } from "../finance/TaxRule";
 import { PurchasedBook } from "./PurchasedBook";
+import { IdGenerator } from "../IdGenerator";
 
 export class Invoice {
-  readonly id?: number;
+  readonly id: number;
   readonly clientName: string;
   readonly country: Country;
   readonly purchasedBooks: PurchasedBook[];
 
   public constructor(clientName: string, country: Country, id?: number) {
-    this.id = id;
+    this.id = id || IdGenerator.nextId();
     this.clientName = clientName;
     this.country = country;
     this.purchasedBooks = [];
