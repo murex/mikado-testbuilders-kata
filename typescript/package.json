@@ -28,7 +28,8 @@
   },
   "scripts": {
     "test": "jest --watch",
-    "lint": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix"
+    "lint": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
+    "application": "ts-node src/com/murex/Application.ts"
   },
   "husky": {
     "hooks": {
@@ -42,6 +43,7 @@
   },
   "dependencies": {
     "immutable": "^4.0.0-rc.12",
+    "ts-node": "^9.1.1",
     "yarn": "^1.22.10"
   }
 }
