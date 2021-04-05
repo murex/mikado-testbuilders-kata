@@ -26,20 +26,20 @@ export class ReportGenerator {
     return Math.round(totalAmount * 100.0) / 100.0;
   }
 
-  // public int getTotalSoldBooks() {
-  //   Map<Integer, Invoice> invoiceMap = repository.getInvoiceMap();
-  //   int totalSoldBooks = 0;
-  //   for (Invoice invoice : invoiceMap.values()) {
-  //     List<PurchasedBook> purchasedBooks = invoice.getPurchasedBooks();
-  //     for (PurchasedBook purchasedBook : purchasedBooks) {
-  //       totalSoldBooks += purchasedBook.getQuantity();
-  //     }
-  //   }
-  //   return totalSoldBooks;
-  // }
-  //
-  // public long getNumberOfIssuedInvoices() {
-  //   Map<Integer, Invoice> invoiceMap = repository.getInvoiceMap();
-  //   return invoiceMap.values().size();
-  // }
+  getTotalSoldBooks() {
+    const invoiceMap = this.repository.getInvoiceMap();
+    let totalSoldBooks = 0;
+
+    invoiceMap.valueSeq().forEach((invoice) => {
+      invoice.purchasedBooks.forEach((purchasedBook) => {
+        totalSoldBooks = totalSoldBooks + purchasedBook.quantity;
+      });
+    });
+    return totalSoldBooks;
+  }
+
+  getNumberOfIssuedInvoices() {
+    const invoiceMap = this.repository.getInvoiceMap();
+    return invoiceMap.size;
+  }
 }

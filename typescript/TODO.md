@@ -99,6 +99,12 @@ X Reproduce and test bug in ReportGenerator
 
       expect(reportGenerator.getTotalAmount()).toBe(10.95);
 . Implement the main app
+  - No main in Typescript, just run a script file
+  - I installed ts-node to run the Application.ts file through yarn
+  X Find out how to run this through Webstorm https://www.jetbrains.com/help/webstorm/running-and-debugging-typescript.html#ws_ts_run_debug_server_side
+  . Implement the JsonRepository  
+. understand typescript's way for errors (exceptions vs Either)
+. Is there a way to create polymorphic enums (à la Java)?
 . How to continuously run the tests?
 . Try TCR?
 . understand the difference between properties, getters, functions and fields in ts
