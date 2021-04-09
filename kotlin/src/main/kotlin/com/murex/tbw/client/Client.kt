@@ -10,15 +10,7 @@
 
 package com.murex.tbw.client
 
-import com.murex.tbw.domain.book.Book
-import com.murex.tbw.purchase.Invoice
+import com.murex.tbw.domain.country.Country
 
-interface Order {
-
-    fun addBook(book: Book, quantity: Int)
-
-    fun checkOut(): Invoice
-
-    fun getQuantityOf(book: Book): Int?
-
+class Client(val name: String, val country: Country) {
 }
