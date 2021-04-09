@@ -19,6 +19,6 @@ interface Order {
 
     fun checkOut(): Invoice
 
-    fun getQuantityOf(book: Book): Int?
+    fun getQuantityOf(book: Book): Int
 
 }
