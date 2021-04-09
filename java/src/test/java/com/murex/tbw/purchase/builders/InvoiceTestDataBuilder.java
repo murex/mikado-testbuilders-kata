@@ -1,6 +1,8 @@
-package com.murex.tbw.purchase;
+package com.murex.tbw.purchase.builders;
 
 import com.murex.tbw.domain.country.Country;
+import com.murex.tbw.purchase.Invoice;
+import com.murex.tbw.purchase.PurchasedBook;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.murex.tbw.purchase;
+package com.murex.tbw.domain.builders;
 
 import com.murex.tbw.domain.book.Author;
 import com.murex.tbw.domain.book.Genre;
@@ -13,9 +13,8 @@ public class NovelTestDataBuilder {
     private String name = "NO_NAME";
     private double price = 0.0;
     private Author author = null;
-    private Language language = Language.ENGLISH;
-    private List<Genre> genreList = new ArrayList();
-
+    private final Language language = Language.ENGLISH;
+    private final List<Genre> genreList = new ArrayList();
 
     public static NovelTestDataBuilder aNovel() {
         return new NovelTestDataBuilder();
@@ -31,7 +30,12 @@ public class NovelTestDataBuilder {
         return this;
     }
 
+    public NovelTestDataBuilder writtenBy(Author author) {
+        this.author = author;
+        return this;
+    }
+
     public Novel build() {
-        return  new Novel(name, price, author, language, genreList);
+        return new Novel(name, price, author, language, genreList);
     }
 }

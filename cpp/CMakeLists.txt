@@ -140,6 +140,11 @@ set(TEST_SOURCES
         ${CMAKE_CURRENT_SOURCE_DIR}/tests/InMemoryRepository.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/tests/Tests.cpp		
 		${CMAKE_CURRENT_SOURCE_DIR}/tests/storage/InMemoryRepository.h
+		${CMAKE_CURRENT_SOURCE_DIR}/tests/builders/CountryBuilder.h
+		${CMAKE_CURRENT_SOURCE_DIR}/tests/builders/AuthorBuilder.h
+		${CMAKE_CURRENT_SOURCE_DIR}/tests/builders/InvoiceBuilder.h
+		${CMAKE_CURRENT_SOURCE_DIR}/tests/builders/NovelBuilder.h
+		${CMAKE_CURRENT_SOURCE_DIR}/tests/builders/PurchasedBookBuilder.h
 )
 
 target_sources(${PROJECT_NAME}-test
