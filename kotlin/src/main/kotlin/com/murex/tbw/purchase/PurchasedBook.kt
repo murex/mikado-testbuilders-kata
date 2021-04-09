@@ -13,7 +13,7 @@ package com.murex.tbw.purchase
 import com.murex.tbw.domain.book.Book
 
 class PurchasedBook(
-    private val book: Book,
+    val book: Book,
     private val quantity: Int
 ) {
 

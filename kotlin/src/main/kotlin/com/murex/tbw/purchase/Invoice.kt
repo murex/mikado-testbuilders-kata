@@ -10,5 +10,35 @@
 
 package com.murex.tbw.purchase
 
-class Invoice {
+import com.murex.tbw.domain.country.Country
+import com.murex.tbw.finance.TaxRulesOperations
+
+class Invoice(
+    val clientName: String,
+    val country: Country
+) {
+    private val purchasedBooks: ArrayList<PurchasedBook> = ArrayList()
+
+    fun addBook(book: PurchasedBook){
+        purchasedBooks.add(book)
+    }
+
+    fun getPurchasedBooks() : List<PurchasedBook> {
+        return purchasedBooks
+    }
+
+    fun computeTotalAmount(): Double {
+        var sum = 0.0
+
+        for (purchasedBook in purchasedBooks) {
+//          BUG: There was a bug with the below line of code
+//          val totalPrice: Double = purchasedBook.getTotalPrice()
+
+//          FIX: The above bug was fixed by the below line
+            val totalPrice: Double =
+                purchasedBook.getTotalPrice() * TaxRulesOperations.getApplicableRate(country, purchasedBook.book)
+            sum += totalPrice
+        }
+        return sum
+    }
 }
