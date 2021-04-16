@@ -19,11 +19,11 @@ class Invoice(
 ) {
     private val purchasedBooks: ArrayList<PurchasedBook> = ArrayList()
 
-    fun addBook(book: PurchasedBook){
+    fun addBook(book: PurchasedBook) {
         purchasedBooks.add(book)
     }
 
-    fun getPurchasedBooks() : List<PurchasedBook> {
+    fun getPurchasedBooks(): List<PurchasedBook> {
         return purchasedBooks
     }
 
@@ -41,4 +41,30 @@ class Invoice(
         }
         return sum
     }
+
+    override fun equals(other: Any?): Boolean {
+        if (this === other) return true
+        if (javaClass != other?.javaClass) return false
+
+        other as Invoice
+
+        if (clientName != other.clientName) return false
+        if (country != other.country) return false
+        if (purchasedBooks != other.purchasedBooks) return false
+
+        return true
+    }
+
+    override fun hashCode(): Int {
+        var result = clientName.hashCode()
+        result = 31 * result + country.hashCode()
+        result = 31 * result + purchasedBooks.hashCode()
+        return result
+    }
+
+    override fun toString(): String {
+        return "Invoice(clientName='$clientName', country=$country, purchasedBooks=$purchasedBooks)"
+    }
+
+
 }

@@ -18,6 +18,7 @@ import com.murex.tbw.domain.country.Currency.EURO
 import com.murex.tbw.domain.country.Language
 import com.murex.tbw.domain.country.Language.GERMAN
 import com.murex.tbw.purchase.Invoice
+import com.murex.tbw.purchase.PurchasedBook
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
@@ -53,5 +54,25 @@ internal class BooksOrderTest {
         order.addBook(theTinDrum, 3)
 
         assertEquals(5, order.getQuantityOf(theTinDrum))
+    }
+
+    @Test
+    fun whenNoBooksArePurchasedAnEmptyInvoiceShouldBeCreatedOnCheckout() {
+        val clientOrder = BooksOrder(Client("Client A", usa))
+
+        val invoice = Invoice("Client A", usa)
+        assertEquals(invoice, clientOrder.checkOut())
+    }
+
+    @Test
+    fun whenBooksArePurchasedAnInvoiceOfTheAddedBooksShouldBeCreatedOnCheckout() {
+        val clientOrder = BooksOrder(Client("Client A", usa))
+        clientOrder.addBook(theTinDrum, 2)
+
+        val invoice = Invoice("Client A", usa)
+        val purchasedNovel = PurchasedBook(theTinDrum, 2)
+        invoice.addBook(purchasedNovel)
+
+        assertEquals(invoice, clientOrder.checkOut())
     }
 }
