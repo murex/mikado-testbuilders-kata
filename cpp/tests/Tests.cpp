@@ -89,12 +89,12 @@ TEST(Invoice, Test_Data_Builders_Constraint_Applies_tax_rules_when_computing_tot
 								.withLanguage(Language::ENGLISH)
 								.withCurrency(Currency::US_DOLLAR)
 								.build();
-	
+
 	Country uk = CountryBuilder().withName("UK")
 								.withLanguage(Language::ENGLISH)
 								.withCurrency(Currency::POUND_STERLING)
 								.build();
-	
+
 	Author georgeOrwell = AuthorBuilder().withName("George Orwell")
 								.from(uk)
 								.build();
@@ -105,7 +105,7 @@ TEST(Invoice, Test_Data_Builders_Constraint_Applies_tax_rules_when_computing_tot
 								.withGenres({ Genre::ADVENTURE_FICTION })
 								.withPrice(50.0)
 								.build();
-	
+
 	PurchasedBook purchased1984 = PurchasedBookBuilder().withBook(novel1984)
 														.withQuantityOf(1)
 														.build();
