@@ -6,4 +6,7 @@ export interface Book {
   readonly price: number;
   readonly author: Author;
   readonly language: Language;
+
+  equals(other: any): boolean;
+  hashCode(): number;
 }
