@@ -102,7 +102,28 @@ X Reproduce and test bug in ReportGenerator
   - No main in Typescript, just run a script file
   - I installed ts-node to run the Application.ts file through yarn
   X Find out how to run this through Webstorm https://www.jetbrains.com/help/webstorm/running-and-debugging-typescript.html#ws_ts_run_debug_server_side
-  . Implement the JsonRepository  
+  . Implement the JsonRepository
+X Implement Client package
+  X Client class
+  X Order interface
+  X BooksOrder class
+  X Add equals hashCode to book interface
+  X Implement Equals and HashCode for Novel and EducationalBook
+    X need to do it recursively on Author, Country (?and enums?)
+      - no with fast deep equal lib :-)
+    X Are there helpers for that?
+      X [fast deep equal lib](https://www.npmjs.com/package/fast-deep-equal)
+        X test it to see how it works
+        - You can create inline objects like js objects
+        - works well!
+      X [hash-it lib](https://www.npmjs.com/package/hash-it)
+      - not sure we'll need these since fast deep equal seems to be doing fine
+        - [typecheck lib](https://github.com/gkz/type-check#type-check)
+        - [generic code](https://www.codegrepper.com/code-examples/javascript/check+if+type+of+two+object+is+equal+in+typescript)
+    X Can Webstorm generate equals and hashcode?
+        - does not look so  
+    X Is there a way to provide generic implementation in the Book interface?
+        - workaround is Mixins.  
 . understand typescript's way for errors (exceptions vs Either)
 . Is there a way to create polymorphic enums (à la Java)?
 . How to continuously run the tests?
@@ -110,6 +131,9 @@ X Reproduce and test bug in ReportGenerator
 . understand the difference between properties, getters, functions and fields in ts
 . understand how to create a mutable map
   - there are asMutableMap and asImmutableMap functions in the immutable map objects
+  - EcmaScript6 has Map, Set, and TypedArrays (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map)
+  . Check what version of ES I am running?
+    - https://stackoverflow.com/questions/47374678/how-to-detect-ecmascript-version
 . understand how to initialize an immutable (or mutable) map with complex key type inline 
 . understand how to a value from a field when not defined (get or throw for ex)
 . See how to configure a docker dev env with VSCode
@@ -118,3 +142,4 @@ X Reproduce and test bug in ReportGenerator
   - Yes, nvm is the way to go
   . I could upgrade to the latest node
 . Setup github actions
+. Look into [Typescript mixins](https://www.typescriptlang.org/docs/handbook/mixins.html)
