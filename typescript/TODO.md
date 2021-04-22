@@ -98,11 +98,6 @@ X Reproduce and test bug in ReportGenerator
       const reportGenerator = new ReportGenerator();
 
       expect(reportGenerator.getTotalAmount()).toBe(10.95);
-. Implement the main app
-  - No main in Typescript, just run a script file
-  - I installed ts-node to run the Application.ts file through yarn
-  X Find out how to run this through Webstorm https://www.jetbrains.com/help/webstorm/running-and-debugging-typescript.html#ws_ts_run_debug_server_side
-  . Implement the JsonRepository
 X Implement Client package
   X Client class
   X Order interface
@@ -124,11 +119,22 @@ X Implement Client package
         - does not look so  
     X Is there a way to provide generic implementation in the Book interface?
         - workaround is Mixins.  
+- You can destructure 'unknown' types with declarations like
+  private toCountry({currency, language, name}: {currency: string; language: string; name: string}) {
+X Implement the main app
+  - No main in Typescript, just run a script file
+  - I installed ts-node to run the Application.ts file through yarn
+    X Find out how to run this through Webstorm https://www.jetbrains.com/help/webstorm/running-and-debugging-typescript.html#ws_ts_run_debug_server_side
+  X Implement the JsonRepository
+    - You can load (and compile) json files to setup some data. Types are built automatically by the compiler
+  X Reproduce the bug
+X Has Typescript some part of homoiconic language features like Lisps? -> NO
 . understand typescript's way for errors (exceptions vs Either)
 . Is there a way to create polymorphic enums (à la Java)?
 . How to continuously run the tests?
 . Try TCR?
 . understand the difference between properties, getters, functions and fields in ts
+. Learn more about typescript type system      
 . understand how to create a mutable map
   - there are asMutableMap and asImmutableMap functions in the immutable map objects
   - EcmaScript6 has Map, Set, and TypedArrays (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map)
