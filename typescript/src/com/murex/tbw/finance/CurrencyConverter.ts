@@ -27,7 +27,7 @@ export class CurrencyConverter {
   public static toUSD(input: number, currency: Currency): number {
     const exchangeRate = this.getExchangeRateOrThrow(currency);
 
-    return input / exchangeRate;
+    return input * exchangeRate;
   }
 
   private static getExchangeRateOrThrow(currency: Currency) {
