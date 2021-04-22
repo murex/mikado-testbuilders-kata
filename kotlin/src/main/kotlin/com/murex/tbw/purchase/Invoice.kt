@@ -10,12 +10,14 @@
 
 package com.murex.tbw.purchase
 
+import com.murex.tbw.IdGenerator
 import com.murex.tbw.domain.country.Country
-import com.murex.tbw.finance.TaxRulesOperations
+import com.murex.tbw.finance.TaxRulesOperations.Converter.getApplicableRate
 
 class Invoice(
     val clientName: String,
-    val country: Country
+    val country: Country,
+    val id: Int = IdGenerator.nextId()
 ) {
     private val purchasedBooks: ArrayList<PurchasedBook> = ArrayList()
 
@@ -35,8 +37,7 @@ class Invoice(
 //          val totalPrice: Double = purchasedBook.getTotalPrice()
 
 //          FIX: The above bug was fixed by the below line
-            val totalPrice: Double =
-                purchasedBook.getTotalPrice() * TaxRulesOperations.getApplicableRate(country, purchasedBook.book)
+            val totalPrice: Double = purchasedBook.getTotalPrice() * getApplicableRate(country, purchasedBook.book)
             sum += totalPrice
         }
         return sum
@@ -50,6 +51,7 @@ class Invoice(
 
         if (clientName != other.clientName) return false
         if (country != other.country) return false
+        if (id != other.id) return false
         if (purchasedBooks != other.purchasedBooks) return false
 
         return true
@@ -58,12 +60,13 @@ class Invoice(
     override fun hashCode(): Int {
         var result = clientName.hashCode()
         result = 31 * result + country.hashCode()
+        result = 31 * result + id
         result = 31 * result + purchasedBooks.hashCode()
         return result
     }
 
     override fun toString(): String {
-        return "Invoice(clientName='$clientName', country=$country, purchasedBooks=$purchasedBooks)"
+        return "Invoice(clientName='$clientName', country=$country, id=$id, purchasedBooks=$purchasedBooks)"
     }
 
 

@@ -10,11 +10,12 @@
 
 package com.murex.tbw.client
 
+import com.murex.tbw.MainRepository
 import com.murex.tbw.domain.book.Book
 import com.murex.tbw.purchase.Invoice
 import com.murex.tbw.purchase.PurchasedBook
 
-class BooksOrder(val client: Client) : Order {
+class BooksOrder(private val client: Client) : Order {
     private val booksInBasket: HashMap<Book, Int> = HashMap()
 
     override fun addBook(book: Book, quantity: Int) {
@@ -22,8 +23,9 @@ class BooksOrder(val client: Client) : Order {
     }
 
     override fun checkOut(): Invoice {
-        var invoice = Invoice(client.name, client.country)
+        val invoice = Invoice(client.name, client.country)
         booksInBasket.forEach { (book, quantity) -> invoice.addBook(PurchasedBook(book, quantity)) }
+        MainRepository.configuredRepository().addInvoice(invoice)
         return invoice
     }
 
