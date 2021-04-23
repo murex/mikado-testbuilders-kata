@@ -1,0 +1,261 @@
+[
+  {
+    "id": 123,
+    "client": "John Doe",
+    "country": {
+      "name": "USA",
+      "language": "ENGLISH",
+      "currency": "US_DOLLAR"
+    },
+    "booksInBasket": [
+      {
+        "name": "English for Beginners",
+        "price": 35.5,
+        "quantity": 1,
+        "language": "ENGLISH",
+        "category": "LANGUAGE",
+        "author": {
+          "name": "Julie Lachance",
+          "nationality": {
+            "name": "USA",
+            "language": "ENGLISH",
+            "currency": "US_DOLLAR"
+          }
+        }
+      },
+      {
+        "name": "The Trial",
+        "price": 15.0,
+        "quantity": 2,
+        "language": "ENGLISH",
+        "author": {
+          "name": "Franz Kafka",
+          "nationality": {
+            "name": "Germany",
+            "language": "GERMAN",
+            "currency": "EURO"
+          }
+        },
+        "genre": [
+          "MYSTERY",
+          "ADVENTURE_FICTION"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 124,
+    "client": "Zhang Wei",
+    "country": {
+      "name": "China",
+      "language": "MANDARIN",
+      "currency": "RENMINBI"
+    },
+    "booksInBasket": [
+      {
+        "name": "English for Beginners",
+        "price": 236.7,
+        "quantity": 1,
+        "language": "ENGLISH",
+        "category": "LANGUAGE",
+        "author": {
+          "name": "Julie Lachance",
+          "nationality": {
+            "name": "USA",
+            "language": "ENGLISH",
+            "currency": "US_DOLLAR"
+          }
+        }
+      },
+      {
+        "name": "Dreyer's English: An Utterly Guid to Clarity and Style",
+        "price": 86.7,
+        "quantity": 1,
+        "language": "ENGLISH",
+        "category": "LANGUAGE",
+        "author": {
+          "name": "Benjamin Dreyer",
+          "nationality": {
+            "name": "USA",
+            "language": "ENGLISH",
+            "currency": "US_DOLLAR"
+          }
+        }
+      },
+      {
+        "name": "Dark Illusion",
+        "price": 126,
+        "quantity": 1,
+        "language": "ENGLISH",
+        "author": {
+          "name": "Christine Feehan",
+          "nationality": {
+            "name": "USA",
+            "language": "ENGLISH",
+            "currency": "US_DOLLAR"
+          }
+        },
+        "genre": [
+          "DARK_FANTASY",
+          "ROMANCE"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 125,
+    "client": "Ana Maria Nahia",
+    "country": {
+      "name": "Spain",
+      "language": "SPANISH",
+      "currency": "EURO"
+    },
+    "booksInBasket": [
+      {
+        "name": "English for Beginners",
+        "price": 31.14,
+        "quantity": 2,
+        "language": "ENGLISH",
+        "category": "LANGUAGE",
+        "author": {
+          "name": "Julie Lachance",
+          "nationality": {
+            "name": "USA",
+            "language": "ENGLISH",
+            "currency": "US_DOLLAR"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": 126,
+    "client": "Jonas Schumacher",
+    "country": {
+      "name": "Germany",
+      "language": "GERMAN",
+      "currency": "EURO"
+    },
+    "booksInBasket": [
+      {
+        "name": "Refactoring: Improving the Design of Existing Code",
+        "price": 36.46,
+        "quantity": 2,
+        "language": "ENGLISH",
+        "category": "COMPUTER",
+        "author": {
+          "name": "Martin Fowler",
+          "nationality": {
+            "name": "UK",
+            "language": "ENGLISH",
+            "currency": "POUND_STERLING"
+          }
+        }
+      },
+      {
+        "name": "The Trial",
+        "price": 13.16,
+        "quantity": 1,
+        "language": "ENGLISH",
+        "author": {
+          "name": "Franz Kafka",
+          "nationality": {
+            "name": "Germany",
+            "language": "GERMAN",
+            "currency": "EURO"
+          }
+        },
+        "genre": [
+          "MYSTERY",
+          "ADVENTURE_FICTION"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 127,
+    "client": "James Smith",
+    "country": {
+      "name": "UK",
+      "language": "ENGLISH",
+      "currency": "POUND_STERLING"
+    },
+    "booksInBasket": [
+      {
+        "name": "Domain-Driven Design: Tackling Complexity in the Heart of Software",
+        "price": 25.19,
+        "quantity": 1,
+        "language": "ENGLISH",
+        "category": "COMPUTER",
+        "author": {
+          "name": "Eric Evans",
+          "nationality": {
+            "name": "USA",
+            "language": "ENGLISH",
+            "currency": "US_DOLLAR"
+          }
+        }
+      },
+      {
+        "name": "Treasure Island",
+        "price": 5.39,
+        "quantity": 1,
+        "language": "ENGLISH",
+        "author": {
+          "name": "Robert Louis Stevenson",
+          "nationality": {
+            "name": "UK",
+            "language": "ENGLISH",
+            "currency": "POUND_STERLING"
+          }
+        },
+        "genre": [
+          "MYSTERY",
+          "ADVENTURE_FICTION"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 128,
+    "client": "Wang Fang",
+    "country": {
+      "name": "China",
+      "language": "MANDARIN",
+      "currency": "RENMINBI"
+    },
+    "booksInBasket": [
+      {
+        "name": "The Lean Startup",
+        "price": 100.8,
+        "quantity": 1,
+        "language": "ENGLISH",
+        "category": "BUSINESS",
+        "author": {
+          "name": "Eric Ries",
+          "nationality": {
+            "name": "USA",
+            "language": "ENGLISH",
+            "currency": "US_DOLLAR"
+          }
+        }
+      },
+      {
+        "name": "The Startup Way",
+        "price": 110.7,
+        "quantity": 2,
+        "language": "ENGLISH",
+        "category": "BUSINESS",
+        "author": {
+          "name": "Eric Ries",
+          "nationality": {
+            "name": "USA",
+            "language": "ENGLISH",
+            "currency": "US_DOLLAR"
+          }
+        }
+      }
+    ]
+  }
+]
+

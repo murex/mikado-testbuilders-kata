@@ -23,7 +23,10 @@ object IdGenerator {
         return idGenerator!!.currentId.incrementAndGet()
     }
 
-    fun getCurrentId(): Int = if (idGenerator == null) {
-        0
-    } else idGenerator!!.currentId.get()
+    fun getCurrentId(): Int =
+        if (idGenerator == null) {
+            0
+        } else {
+            idGenerator!!.currentId.get()
+        }
 }

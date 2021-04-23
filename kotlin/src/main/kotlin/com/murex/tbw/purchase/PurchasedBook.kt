@@ -14,7 +14,7 @@ import com.murex.tbw.domain.book.Book
 
 class PurchasedBook(
     val book: Book,
-    private val quantity: Int
+    val quantity: Int
 ) {
 
     fun getTotalPrice(): Double {

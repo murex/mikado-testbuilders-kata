@@ -114,20 +114,19 @@ class JsonRepository : Repository {
                                     bookCategory = Category.valueOf(jsonReader.nextString())
                                 } else if (bookKeyName == "author") {
                                     jsonReader.beginObject()
+                                    var authorName = ""
+                                    lateinit var authorNationality: Country
                                     while (jsonReader.hasNext()) {
                                         val authorKeyName = jsonReader.nextName()
-                                        var authorName: String? = ""
-                                        var authorNationality: Country? = null
                                         if (authorKeyName == "name") {
                                             authorName = jsonReader.nextString()
                                         } else if (authorKeyName == "nationality") {
                                             jsonReader.beginObject()
-                                            var countryName: String? = ""
-                                            var countryLanguage: Language? = null
-                                            var countryCurrency: Currency? = null
+                                            var countryName = ""
+                                            lateinit var countryLanguage: Language
+                                            lateinit var countryCurrency: Currency
                                             while (jsonReader.hasNext()) {
-                                                val authorNatKeyName = jsonReader.nextName()
-                                                when (authorNatKeyName) {
+                                                when (jsonReader.nextName()) {
                                                     "name" -> {
                                                         countryName = jsonReader.nextString()
                                                     }
@@ -140,13 +139,12 @@ class JsonRepository : Repository {
                                                 }
                                             }
                                             authorNationality = Country(
-                                                countryName!!,
-                                                countryCurrency!!, countryLanguage!!
+                                                countryName, countryCurrency, countryLanguage
                                             )
                                             jsonReader.endObject()
                                         }
-                                        author = Author(authorName!!, authorNationality!!)
                                     }
+                                    author = Author(authorName, authorNationality)
                                     jsonReader.endObject()
                                 } else if (bookKeyName == "genre") {
                                     jsonReader.beginArray()

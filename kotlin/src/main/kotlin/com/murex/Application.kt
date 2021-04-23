@@ -10,15 +10,18 @@
 
 package com.murex
 
+import com.murex.tbw.report.ReportGenerator
+
 fun main() {
+    val reportGenerator = ReportGenerator()
+
     println("****************************************************")
     println("*****************Application Report*****************")
     println("****************************************************")
     println()
-    // TODO: Change the code below
-    println("The total number of books sold is: ") //+ reportGenerator.getTotalSoldBooks())
-    println("The total number of issued invoices is: ")//+ reportGenerator.getNumberOfIssuedInvoices())
-    println("The total amount of all invoices in USD is: ")// + reportGenerator.getTotalAmount())
+    println("The total number of books sold is: " + reportGenerator.getTotalSoldBooks())
+    println("The total number of issued invoices is: " + reportGenerator.getNumberOfIssuedInvoices())
+    println("The total amount of all invoices in USD is: " + reportGenerator.getTotalAmount())
     println()
     println("****************************************************")
     println("****************************************************")

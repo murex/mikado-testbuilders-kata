@@ -23,4 +23,17 @@ object MainRepository {
         }
         return runningRepository!!
     }
+
+    /* Working effectively with Legacy Code
+     * https://www.goodreads.com/book/show/44919.Working_Effectively_with_Legacy_Code
+     */
+    // TESTING ONLY
+    fun override(newRepository: Repository?) {
+        runningRepository = newRepository
+    }
+
+    // TESTING ONLY
+    fun reset() {
+        runningRepository = JsonRepository()
+    }
 }
