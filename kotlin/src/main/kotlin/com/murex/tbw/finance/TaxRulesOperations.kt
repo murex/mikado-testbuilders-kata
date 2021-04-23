@@ -50,12 +50,14 @@ class TaxRulesOperations {
                 }
             }
             if (invoiceCountryName == USA) {
-                if (book is Novel)
+                if (book is Novel) {
                     return taxRate.times(0.98)
+                }
             }
             if (invoiceCountryName == UK) {
-                if (book is Novel)
+                if (book is Novel) {
                     return taxRate.times(0.93)
+                }
             }
             if (invoiceCountryName == CHINA) {
                 if (book.language != MANDARIN) {
