@@ -1,40 +1,33 @@
 import * as Immutable from "immutable";
 import { Currency } from "../domain/country/Currency";
 
-export class CurrencyConverter {
-  private static buildExchangeRateMap(): Immutable.Map<Currency, number> {
-    let result = Immutable.Map<Currency, number>();
-    result = result.set(Currency.Euro, 1.14);
-    result = result.set(Currency.Dollar, 1.0);
-    result = result.set(Currency.PoundSterling, 1.27);
-    result = result.set(Currency.Renminbi, 0.15);
-    result = result.set(Currency.Yen, 0.0093);
-    result = result.set(Currency.AustralianDollar, 0.7);
-    return result;
-  }
+const EXCHANGE_RATES = Immutable.Map<Currency, number>(
+  new Map<Currency, number>([
+    [Currency.Euro, 1.14],
+    [Currency.Dollar, 1.0],
+    [Currency.PoundSterling, 1.27],
+    [Currency.Renminbi, 0.15],
+    [Currency.Yen, 0.0093],
+    [Currency.AustralianDollar, 0.7],
+  ])
+);
 
-  private static EXCHANGE_RATES: Immutable.Map<
-    Currency,
-    number
-  > = CurrencyConverter.buildExchangeRateMap();
+export function fromUSD(input: number, currency: Currency): number {
+  const exchangeRate = getExchangeRateOrThrow(currency);
 
-  public static fromUSD(input: number, currency: Currency): number {
-    const exchangeRate = this.getExchangeRateOrThrow(currency);
+  return input / exchangeRate;
+}
 
-    return input / exchangeRate;
-  }
+export function toUSD(input: number, currency: Currency): number {
+  const exchangeRate = getExchangeRateOrThrow(currency);
 
-  public static toUSD(input: number, currency: Currency): number {
-    const exchangeRate = this.getExchangeRateOrThrow(currency);
+  return input * exchangeRate;
+}
 
-    return input * exchangeRate;
-  }
+function getExchangeRateOrThrow(currency: Currency) {
+  const exchangeRate = EXCHANGE_RATES.get(currency);
+  if (!exchangeRate)
+    throw new Error("Unexpected currency " + currency.toString());
 
-  private static getExchangeRateOrThrow(currency: Currency) {
-    const exchangeRate = this.EXCHANGE_RATES.get(currency);
-    if (!exchangeRate)
-      throw new Error("Unexpected currency " + currency.toString());
-
-    return exchangeRate || 0;
-  }
+  return exchangeRate || 0;
 }

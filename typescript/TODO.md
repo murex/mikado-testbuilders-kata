@@ -129,23 +129,28 @@ X Implement the main app
     - You can load (and compile) json files to setup some data. Types are built automatically by the compiler
   X Reproduce the bug
 X Has Typescript some part of homoiconic language features like Lisps? -> NO
-. understand typescript's way for errors (exceptions vs Either)
-. Is there a way to create polymorphic enums (à la Java)?
-. How to continuously run the tests?
-. Try TCR?
-. understand the difference between properties, getters, functions and fields in ts
-. Learn more about typescript type system      
-. understand how to create a mutable map
-  - there are asMutableMap and asImmutableMap functions in the immutable map objects
-  - EcmaScript6 has Map, Set, and TypedArrays (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map)
-  . Check what version of ES I am running?
-    - https://stackoverflow.com/questions/47374678/how-to-detect-ecmascript-version
-. understand how to initialize an immutable (or mutable) map with complex key type inline 
-. understand how to a value from a field when not defined (get or throw for ex)
-. See how to configure a docker dev env with VSCode
-. I started from https://github.com/Pablorg99/typescript-kata-template that uses .nvmrc, should we update 
-  this version? is nvmrc the way to go?
-  - Yes, nvm is the way to go
-  . I could upgrade to the latest node
 . Setup github actions
-. Look into [Typescript mixins](https://www.typescriptlang.org/docs/handbook/mixins.html)
+- Improvements
+  X understand how to create a mutable map
+    - there are asMutableMap and asImmutableMap functions in the immutable map objects
+    - EcmaScript6 has Map, Set, and TypedArrays (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map)
+    X Check what version of ES I am running?
+      - https://stackoverflow.com/questions/47374678/how-to-detect-ecmascript-version
+      - node v12.18.0 supports ECMAScript 6!
+    - Typescript 2.1 now features Record<K,V> https://stackoverflow.com/questions/30019542/es6-map-in-typescript but it's only for fully compile time known properties and simple key types
+    - Best way: use ES6 new Map<K,V>(...)
+  X understand how to initialize an immutable (or mutable) map with complex key type inline
+    - Record seems to be the best alternative for immutable maps, unfortunately, it does not work so well with enums (needs numbers)
+    - Best way: instantiate an immutable-js map from an ES6 typed inline map; 
+  . I started from https://github.com/Pablorg99/typescript-kata-template that uses .nvmrc, should we update this version? is nvmrc the way to go?
+    - Yes, nvm is the way to go
+    . I could upgrade to the latest node
+  . See how to configure a docker dev env with VSCode
+- Understanding Typescript better
+  . understand typescript's way for errors (exceptions vs Either)
+  . Is there a way to create polymorphic enums (à la Java)?
+  . How to continuously run the tests?
+  . Try TCR?
+  . understand the difference between properties, getters, functions and fields in ts
+  . Learn more about typescript type system      
+  . Look into [Typescript mixins](https://www.typescriptlang.org/docs/handbook/mixins.html)

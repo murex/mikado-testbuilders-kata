@@ -8,15 +8,15 @@ import { MainRepository } from "../MainRepository";
 
 export class BooksOrder implements Order {
   private readonly client: Client;
-  private booksInBasket = Immutable.Map<Book, number>();
+  private readonly booksInBasket = new Map<Book, number>();
 
   constructor(client: Client) {
     this.client = client;
   }
 
   addBook(book: Book, quantity: number): void {
-    const alreadySold = this.booksInBasket.get(book, 0);
-    this.booksInBasket = this.booksInBasket.set(book, alreadySold + quantity);
+    const alreadySold = this.booksInBasket.get(book) || 0;
+    this.booksInBasket.set(book, alreadySold + quantity);
   }
 
   checkOut(): Invoice {
@@ -30,6 +30,6 @@ export class BooksOrder implements Order {
   }
 
   getQuantityOf(book: Book): number {
-    return this.booksInBasket.get(book, 0);
+    return this.booksInBasket.get(book) || 0;
   }
 }

@@ -1,6 +1,6 @@
 import { Repository } from "../storage/Repository";
 import { MainRepository } from "../MainRepository";
-import { CurrencyConverter } from "../finance/CurrencyConverter";
+import { toUSD } from "../finance/CurrencyConverter";
 
 export class ReportGenerator {
   private readonly repository: Repository = MainRepository.configuredRepository();
@@ -14,7 +14,7 @@ export class ReportGenerator {
       // totalAmount += invoice.computeTotalAmount();
 
       // FIX: The above bug was fixed by the below 2 lines of code
-      totalAmount += CurrencyConverter.toUSD(
+      totalAmount += toUSD(
         invoice.computeTotalAmount(),
         invoice.country.currency
       );
