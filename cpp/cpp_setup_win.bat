@@ -39,7 +39,7 @@ set CMAKE_BIN_PATH=%CMAKE_BUILD_DIR%\%CMAKE_HOME%\%CMAKE_BIN_DIR%
 
 %CMAKE_BIN_PATH%\%CMAKE% %CMAKE_GENERATOR_OPTIONS% -S .. -B .
 %CMAKE_BIN_PATH%\%CMAKE% --build . --config Debug
-%CMAKE_BIN_PATH%\%CTEST% -C Debug
+%CMAKE_BIN_PATH%\%CTEST% --output-on-failure -C Debug
 
 popd
 

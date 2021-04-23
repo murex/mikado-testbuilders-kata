@@ -15,6 +15,8 @@ In a remote configuration, the introduction message is really important as it is
 - Start the story behind the workshop: "You are programmers working in an international online book store. You have a piece of software that is responsible for building reports about invoices and taxes. You just discovered that the report was wrong. After some investigation, you found 2 bugs: taxes were not applied to invoices, and amounts were not converted to USD in the report. You just fixed the bugs (2 lines of code). You are about to add a test around these bugs."
 - Your mission during the workshop: add the tests
 - When you have a test running, remember to test your test by commenting the fix to make sure the test fails!
+- Present the goals of the 2 techniques quickly
+- Mention that combining both is a case where 1+1>2
 - How the workshop will be run:
   - Code retreat: fixing same problem multiple times with different techniques (called constraints in the code retreat jargon)
   - Strict timeboxing for 2h, learning is more important than finishing!
@@ -22,9 +24,11 @@ In a remote configuration, the introduction message is really important as it is
   - 1st iteration will be using no technique, don't use Builders or Mikado
   - 2nd iteration you will be able to chose your constraint (technique)
   - Retrospect at the end of each iteration
+  - Retros are when you are actually going to *learn*! Don't skip them. It's better to stop coding where you are, even if you did not finish, and have a proper retro. Finishing the iteration does not necessarily yield more learning.
   - You'll be working in mobs
-  - Mobs will have to self-organize as they want, but stick to a unique driver
-  - We strongly advise you to have a timekeeper in the mob
+  - We'll be jumping between mobs
+  - Skipping the mob team-building activity will make you slower, not faster!
+  - We defined 'roles' for mobsters to make sure that the important things are done: typing, timekeeping, keeping track of notifications, and staying focused on your goal
   - The workshop is as self-guided as we could make it, don't wait for us
   - Trust the directions we provide (comments in code, hints in the instructions, visual guidance)
   - Remember, learning is more important than finishing, stop the 1st iteration when we say so to be able to tackle the 2nd iteration and learn new techniques
@@ -34,17 +38,18 @@ In a remote configuration, the introduction message is really important as it is
   - You can use the main session chat to ask for help
   - We will be posting notifications through the main session channel, *so keep an eye on it*, you'll get notifications about timings, troubleshooting, additional instructions...
   - [Miro]
-    - We'll use Miro embedded timers
+    - We'll use Miro embedded timers to remind you to jump to the next step
     - We'll be using the 'bring everyone to me' to get you back all together at the end
-    - We tried our best to make the board self-explanatory, but the markdown files in the repo go in more details if you are stuck
+    - We tried our best to make the board self-explanatory, just follow the boxes and the flow
+    - In case you need more details, the markdown files in the repo go in more depth
+    - Legend stickies
+      - Pink: for TODOs
+      - Yellow: for informations
   - [Teams]
     - Created a team in MSTeam for the event
     - With custom channels for every mob
     - Has everyone access?
-- We'll be jumping between mobs
-- Present the goals of the 2 techniques quickly
-- Mention that combining both is a case where 1+1>2
-- Start the Mob self-organization activity
+- Start the Mob self-forming activity
 
 ## Training from the Back of the Room activities
 
