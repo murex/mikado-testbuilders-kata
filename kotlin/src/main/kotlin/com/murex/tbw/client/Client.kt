@@ -12,5 +12,4 @@ package com.murex.tbw.client
 
 import com.murex.tbw.domain.country.Country
 
-class Client(val name: String, val country: Country) {
-}
+data class Client(val name: String, val country: Country)

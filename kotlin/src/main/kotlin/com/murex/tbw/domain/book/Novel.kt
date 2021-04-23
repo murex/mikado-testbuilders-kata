@@ -12,12 +12,11 @@ package com.murex.tbw.domain.book
 
 import com.murex.tbw.domain.country.Language
 
-class Novel(
+data class Novel(
     override val name: String,
     override val price: Double,
     override val author: Author,
     override val language: Language,
     val genres: List<Genre> = mutableListOf()
 
-) : Book {
-}
+) : Book

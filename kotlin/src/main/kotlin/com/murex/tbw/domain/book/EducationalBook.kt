@@ -12,11 +12,10 @@ package com.murex.tbw.domain.book
 
 import com.murex.tbw.domain.country.Language
 
-class EducationalBook(
+data class EducationalBook(
     override val name: String,
     override val price: Double,
     override val author: Author,
     override val language: Language,
     val category: Category
-) : Book {
-}
+) : Book

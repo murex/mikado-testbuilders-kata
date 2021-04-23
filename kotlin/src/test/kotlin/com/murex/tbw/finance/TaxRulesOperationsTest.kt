@@ -10,89 +10,91 @@
 
 package com.murex.tbw.finance
 
-import com.murex.tbw.domain.book.Author
-import com.murex.tbw.domain.book.Novel
+import com.murex.tbw.domain.book.*
 import com.murex.tbw.domain.country.Country
 import com.murex.tbw.domain.country.Currency.*
+import com.murex.tbw.domain.country.Language
 import com.murex.tbw.domain.country.Language.*
+import com.murex.tbw.finance.TaxRulesOperations.Converter.getApplicableRate
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertThrows
 import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.Arguments
 import org.junit.jupiter.params.provider.MethodSource
-import java.lang.IllegalArgumentException
 import java.util.stream.Stream
+
+private val AUSTRALIA = Country("Australia", AUSTRALIAN_DOLLAR, ENGLISH)
+private val CHINA = Country("China", RENMINBI, MANDARIN)
+private val FRANCE = Country("France", EURO, FRENCH)
+private val GERMANY = Country("Germany", EURO, GERMAN)
+private val JAPAN = Country("Japan", YEN, JAPANESE)
+private val SPAIN = Country("Spain", EURO, SPANISH)
+private val UK = Country("UK", POUND_STERLING, ENGLISH)
+private val USA = Country("USA", US_DOLLAR, ENGLISH)
+private val FRENCH_WRITER = Author("French Author", FRANCE)
 
 internal class TaxRulesOperationsTest {
 
     @ParameterizedTest(name = "By default the tax rate for \"{0}\" should be \"{1}\"")
     @MethodSource("defaultTaxRates")
-    fun `itShouldConvertFromACurrencyToUSD`(country: Country, taxRate: Double) {
-        assertEquals(taxRate, TaxRulesOperations.getApplicableRate(country))
+    fun whenRestrictionsApplyItShouldReturnTheDefaultTaxRates(country: Country, taxRate: Double, language: Language) {
+        val book = EducationalBook("Learn New Language", 20.0, FRENCH_WRITER, language, Category.LANGUAGE)
+        assertEquals(taxRate, getApplicableRate(country, book))
     }
 
     private companion object {
         @JvmStatic
-        fun defaultTaxRates() = Stream.of(
-            Arguments.of(Country("USA", US_DOLLAR, ENGLISH), 1.15),
-            Arguments.of(Country("France", EURO, FRENCH), 1.25),
-            Arguments.of(Country("UK", POUND_STERLING, ENGLISH), 1.20),
-            Arguments.of(Country("Spain", EURO, SPANISH), 1.10),
-            Arguments.of(Country("China", RENMINBI, MANDARIN), 1.35),
-            Arguments.of(Country("Japan", YEN, JAPANESE), 1.30),
-            Arguments.of(Country("Australia", AUSTRALIAN_DOLLAR, ENGLISH), 1.13),
-            Arguments.of(Country("Germany", EURO, GERMAN), 1.22)
-        )
-    }
-
-    @Test
-    fun taxShouldBeAppendedWhenBothTheAuthorAndInvoiceCountryAreFromGermany() {
-        val germany = Country("Germany", EURO, GERMAN)
-        val grass = Author("Gunter Grass", germany)
-        val theTinDrum = Novel("The Tin Drum", 20.0, grass, GERMAN, emptyList())
-        assertEquals(1.05, TaxRulesOperations.getApplicableRate(germany, theTinDrum))
-    }
-
-    @Test
-    fun taxShouldBeAppendedWhenTheBookIsNovelAndTheInvoiceCountryIsUSA() {
-        val usa = Country("USA", US_DOLLAR, ENGLISH)
-        val germany = Country("Germany", EURO, GERMAN)
-        val grass = Author("Gunter Grass", germany)
-        val theTinDrum = Novel("The Tin Drum", 20.0, grass, GERMAN, emptyList())
-        assertEquals(1.127, TaxRulesOperations.getApplicableRate(usa, theTinDrum))
-    }
-
-    @Test
-    fun taxShouldBeAppendedWhenTheBookIsNovelAndTheInvoiceCountryIsUK() {
-        val uk = Country("UK", POUND_STERLING, ENGLISH)
-        val germany = Country("Germany", EURO, GERMAN)
-        val grass = Author("Gunter Grass", germany)
-        val theTinDrum = Novel("The Tin Drum", 20.0, grass, GERMAN, emptyList())
-        assertEquals(1.116, TaxRulesOperations.getApplicableRate(uk, theTinDrum))
-    }
-
-    @Test
-    fun noTaxShouldBeAppliedWhenTheLanguageIsForeignAndTheInvoiceCountryIsChina() {
-        val china = Country("China", RENMINBI, MANDARIN)
-        val germany = Country("Germany", EURO, GERMAN)
-        val grass = Author("Gunter Grass", germany)
-        val theTinDrum = Novel("The Tin Drum", 20.0, grass, GERMAN, emptyList())
-        assertEquals(1.0, TaxRulesOperations.getApplicableRate(china, theTinDrum))
-    }
-
-    @Test
-    fun noTaxShouldBeAppliedWhenTheLanguageIsForeignAndTheInvoiceCountryIsSpain() {
-        val spain = Country("Spain", EURO, SPANISH)
-        val germany = Country("Germany", EURO, GERMAN)
-        val grass = Author("Gunter Grass", germany)
-        val theTinDrum = Novel("The Tin Drum", 20.0, grass, GERMAN, emptyList())
-        assertEquals(1.0, TaxRulesOperations.getApplicableRate(spain, theTinDrum))
+        fun defaultTaxRates(): Stream<Arguments>? {
+            return Stream.of(
+                Arguments.of(USA, 1.15, FRENCH),
+                Arguments.of(FRANCE, 1.25, FRENCH),
+                Arguments.of(UK, 1.20, FRENCH),
+                Arguments.of(SPAIN, 1.10, SPANISH),
+                Arguments.of(CHINA, 1.35, MANDARIN),
+                Arguments.of(JAPAN, 1.30, MANDARIN),
+                Arguments.of(AUSTRALIA, 1.13, FRENCH),
+                Arguments.of(GERMANY, 1.22, FRENCH)
+            )
+        }
     }
 
     @Test
     fun itShouldThrowAnExceptionIfTheInvoiceCountryIsNotValid() {
-        val country = Country("country", POUND_STERLING, ENGLISH)
-        assertThrows<IllegalArgumentException> { TaxRulesOperations.getApplicableRate(country) }
+        val author = Author("Gunter Grass", GERMANY)
+        val novel = Novel("The Tin Drum", 20.0, author, GERMAN, emptyList())
+        val invalidCountry = Country("country", POUND_STERLING, ENGLISH)
+        assertThrows<IllegalArgumentException> { getApplicableRate(invalidCountry, novel) }
+    }
+
+    @Test
+    fun taxShouldBeAppendedWhenBothTheAuthorAndInvoiceCountryAreFromGermany() {
+        assertRateApplied(1.05, GERMANY)
+    }
+
+    @Test
+    fun taxShouldBeAppendedWhenTheBookIsNovelAndTheInvoiceCountryIsUSA() {
+        assertRateApplied(1.127, USA)
+    }
+
+    @Test
+    fun taxShouldBeAppendedWhenTheBookIsNovelAndTheInvoiceCountryIsUK() {
+        assertRateApplied(1.116, UK)
+    }
+
+    @Test
+    fun noTaxShouldBeAppliedWhenTheLanguageIsForeignAndTheInvoiceCountryIsChina() {
+        assertRateApplied(1.0, CHINA)
+    }
+
+    @Test
+    fun noTaxShouldBeAppliedWhenTheLanguageIsForeignAndTheInvoiceCountryIsSpain() {
+        assertRateApplied(1.0, SPAIN)
+    }
+
+    private fun assertRateApplied(expected: Double, country: Country) {
+        val author = Author("Gunter Grass", GERMANY)
+        val novel = Novel("The Tin Drum", 20.0, author, GERMAN, emptyList())
+        assertEquals(expected, getApplicableRate(country, novel))
     }
 }

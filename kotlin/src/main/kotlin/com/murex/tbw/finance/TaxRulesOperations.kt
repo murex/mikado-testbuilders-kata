@@ -39,33 +39,32 @@ class TaxRulesOperations {
         )
 
         @JvmStatic
-        fun getApplicableRate(invoiceCountry: Country, book: Book? = null): Double {
+        fun getApplicableRate(invoiceCountry: Country, book: Book): Double {
             val invoiceCountryName = invoiceCountry.name
             val taxRate = TAX_RATES[invoiceCountryName]
-                ?: throw  IllegalArgumentException("Country $invoiceCountryName is not valid!")
-            if (book != null) {
-                if (invoiceCountryName == GERMANY) {
-                    if (book.author.nationality.name == GERMANY) {
-                        return 1.05;
-                    }
+                ?: throw IllegalArgumentException("Country $invoiceCountryName is not valid!")
+
+            if (invoiceCountryName == GERMANY) {
+                if (book.author.nationality.name == GERMANY) {
+                    return 1.05
                 }
-                if (invoiceCountryName == USA) {
-                    if (book is Novel)
-                        return taxRate.times(0.98)
+            }
+            if (invoiceCountryName == USA) {
+                if (book is Novel)
+                    return taxRate.times(0.98)
+            }
+            if (invoiceCountryName == UK) {
+                if (book is Novel)
+                    return taxRate.times(0.93)
+            }
+            if (invoiceCountryName == CHINA) {
+                if (book.language != MANDARIN) {
+                    return 1.0
                 }
-                if (invoiceCountryName == UK) {
-                    if (book is Novel)
-                        return taxRate.times(0.93)
-                }
-                if(invoiceCountryName == CHINA) {
-                    if(book.language != MANDARIN) {
-                        return 1.0
-                    }
-                }
-                if(invoiceCountryName == SPAIN) {
-                    if(book.language != SPANISH) {
-                        return 1.0
-                    }
+            }
+            if (invoiceCountryName == SPAIN) {
+                if (book.language != SPANISH) {
+                    return 1.0
                 }
             }
             return taxRate
