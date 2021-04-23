@@ -1,21 +1,7 @@
 import { ReportGenerator } from "../../../../../src/com/murex/tbw/report/ReportGenerator";
-import { Country } from "../../../../../src/com/murex/tbw/domain/country/Country";
-import { Currency } from "../../../../../src/com/murex/tbw/domain/country/Currency";
-import { Language } from "../../../../../src/com/murex/tbw/domain/country/Language";
-import { Author } from "../../../../../src/com/murex/tbw/domain/book/Author";
-import { Novel } from "../../../../../src/com/murex/tbw/domain/book/Novel";
-import * as Immutable from "immutable";
-import { PurchasedBook } from "../../../../../src/com/murex/tbw/purchase/PurchasedBook";
-import { InMemoryRepository } from "../storage/InMemoryRepository";
-import { Invoice } from "../../../../../src/com/murex/tbw/purchase/Invoice";
-import { MainRepository } from "../../../../../src/com/murex/tbw/MainRepository";
 
 describe(ReportGenerator, () => {
   describe("No Constraint", () => {
-    afterEach(() => {
-      MainRepository.reset();
-    });
-
     it("Converts to USD when computing total amount", () => {
       // Instantiate a ReportGenerator
       // It needs to use a data source that contains one invoice in a non-USD currency
