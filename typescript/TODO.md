@@ -142,9 +142,9 @@ X Has Typescript some part of homoiconic language features like Lisps? -> NO
   X understand how to initialize an immutable (or mutable) map with complex key type inline
     - Record seems to be the best alternative for immutable maps, unfortunately, it does not work so well with enums (needs numbers)
     - Best way: instantiate an immutable-js map from an ES6 typed inline map; 
-  . I started from https://github.com/Pablorg99/typescript-kata-template that uses .nvmrc, should we update this version? is nvmrc the way to go?
+  X I started from https://github.com/Pablorg99/typescript-kata-template that uses .nvmrc, should we update this version? is nvmrc the way to go?
     - Yes, nvm is the way to go
-    . I could upgrade to the latest node
+    X I could upgrade to the latest node
   . See how to configure a docker dev env with VSCode
 - Understanding Typescript better
   . understand typescript's way for errors (exceptions vs Either)
