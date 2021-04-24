@@ -129,12 +129,14 @@ X Implement the main app
     - You can load (and compile) json files to setup some data. Types are built automatically by the compiler
   X Reproduce the bug
 X Has Typescript some part of homoiconic language features like Lisps? -> NO
-. Setup github actions
+X Setup github actions
   - references
     - https://docs.github.com/en/actions/guides/building-and-testing-nodejs
     - https://joelhooks.com/jest-and-github-actions
-  . get it to run  
-  . We could add better error reporting for github actions here https://github.com/cschleiden/jest-github-actions-reporter or https://joelhooks.com/jest-and-github-actions
+  X get it to run  
+  ~~. We could add better error reporting for github actions here https://github.com/cschleiden/jest-github-actions-reporter or https://joelhooks.com/jest-and-github-actions~~
+X Clean up useless tests
+. Move this file somewhere else
 - Improvements
   X understand how to create a mutable map
     - there are asMutableMap and asImmutableMap functions in the immutable map objects
@@ -150,12 +152,13 @@ X Has Typescript some part of homoiconic language features like Lisps? -> NO
   X I started from https://github.com/Pablorg99/typescript-kata-template that uses .nvmrc, should we update this version? is nvmrc the way to go?
     - Yes, nvm is the way to go
     X I could upgrade to the latest node
+- Experiments      
   . See how to configure a docker dev env with VSCode
+  . How to continuously run the tests?
+  . Try TCR
 - Understanding Typescript better
   . understand typescript's way for errors (exceptions vs Either)
   . Is there a way to create polymorphic enums (à la Java)?
-  . How to continuously run the tests?
-  . Try TCR?
   . understand the difference between properties, getters, functions and fields in ts
-  . Learn more about typescript type system      
+  . Learn more about typescript type system (esp. type modifiers)
   . Look into [Typescript mixins](https://www.typescriptlang.org/docs/handbook/mixins.html)
