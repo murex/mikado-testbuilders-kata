@@ -29,7 +29,8 @@
   "scripts": {
     "test": "jest --watch",
     "lint": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
-    "application": "ts-node src/com/murex/Application.ts"
+    "application": "ts-node src/com/murex/Application.ts",
+    "test:ci": "jest --ci"
   },
   "husky": {
     "hooks": {
