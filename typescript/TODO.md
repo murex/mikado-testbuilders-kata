@@ -130,6 +130,11 @@ X Implement the main app
   X Reproduce the bug
 X Has Typescript some part of homoiconic language features like Lisps? -> NO
 . Setup github actions
+  - references
+    - https://docs.github.com/en/actions/guides/building-and-testing-nodejs
+    - https://joelhooks.com/jest-and-github-actions
+  . get it to run  
+  . We could add better error reporting for github actions here https://github.com/cschleiden/jest-github-actions-reporter or https://joelhooks.com/jest-and-github-actions
 - Improvements
   X understand how to create a mutable map
     - there are asMutableMap and asImmutableMap functions in the immutable map objects
