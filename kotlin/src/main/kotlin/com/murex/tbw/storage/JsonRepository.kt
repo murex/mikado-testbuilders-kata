@@ -43,11 +43,7 @@ class JsonRepository : Repository {
             val resourceAsStream = this.javaClass.getResourceAsStream("/$REPOSITORY_FILE")
             return JsonReader(BufferedReader(InputStreamReader(resourceAsStream)))
         } catch (exp: Exception) {
-            println("*********************WARNING*********************")
-            System.out.printf("Error reading the file '%s'%s", REPOSITORY_FILE, ".\n")
-            println(exp)
-            println("*************************************************")
-            println("\n\n")
+            printFileNotFoundException(exp)
         }
         exitProcess(0)
     }
@@ -56,125 +52,150 @@ class JsonRepository : Repository {
         try {
             jsonReader.beginArray()
             while (jsonReader.hasNext()) {
-                lateinit var invoice: Invoice
-                var clientName = ""
-                var id: Int = 0
-                var invoiceCountry: Country
-
-                jsonReader.beginObject()
-                while (jsonReader.hasNext()) {
-                    val clientKeyName = jsonReader.nextName()
-                    if (clientKeyName == "id") {
-                        id = jsonReader.nextInt()
-                    } else if (clientKeyName == "client") {
-                        clientName = jsonReader.nextString()
-                    } else if (clientKeyName == "country") {
-                        jsonReader.beginObject()
-                        var countryName = ""
-                        var language: Language? = null
-                        var currency: Currency? = null
-                        while (jsonReader.hasNext()) {
-                            val countryKeyName = jsonReader.nextName()
-                            if (countryKeyName == "name") {
-                                countryName = jsonReader.nextString()
-                            } else if (countryKeyName == "language") {
-                                language = Language.valueOf(jsonReader.nextString())
-                            } else if (countryKeyName == "currency") {
-                                currency = Currency.valueOf(jsonReader.nextString())
-                            }
-                        }
-                        jsonReader.endObject()
-                        invoiceCountry = Country(countryName, currency!!, language!!)
-                        invoice = Invoice(clientName, invoiceCountry, id)
-                    } else if (clientKeyName == "booksInBasket") {
-                        jsonReader.beginArray()
-                        while (jsonReader.hasNext()) {
-                            var book: Book
-                            var bookName = ""
-                            var price = 0.0
-                            var bookLanguage: Language? = null
-                            var bookCategory: Category? = null
-                            var author: Author? = null
-                            var quantity = 0
-                            val genres: ArrayList<Genre> = ArrayList()
-
-                            jsonReader.beginObject()
-
-                            while (jsonReader.hasNext()) {
-                                val bookKeyName = jsonReader.nextName()
-                                if (bookKeyName == "name") {
-                                    bookName = jsonReader.nextString()
-                                } else if (bookKeyName == "price") {
-                                    price = jsonReader.nextDouble()
-                                } else if (bookKeyName == "language") {
-                                    bookLanguage = Language.valueOf(jsonReader.nextString())
-                                } else if (bookKeyName == "quantity") {
-                                    quantity = jsonReader.nextInt()
-                                } else if (bookKeyName == "category") {
-                                    bookCategory = Category.valueOf(jsonReader.nextString())
-                                } else if (bookKeyName == "author") {
-                                    jsonReader.beginObject()
-                                    var authorName = ""
-                                    lateinit var authorNationality: Country
-                                    while (jsonReader.hasNext()) {
-                                        val authorKeyName = jsonReader.nextName()
-                                        if (authorKeyName == "name") {
-                                            authorName = jsonReader.nextString()
-                                        } else if (authorKeyName == "nationality") {
-                                            jsonReader.beginObject()
-                                            var countryName = ""
-                                            lateinit var countryLanguage: Language
-                                            lateinit var countryCurrency: Currency
-                                            while (jsonReader.hasNext()) {
-                                                when (jsonReader.nextName()) {
-                                                    "name" -> {
-                                                        countryName = jsonReader.nextString()
-                                                    }
-                                                    "language" -> {
-                                                        countryLanguage = Language.valueOf(jsonReader.nextString())
-                                                    }
-                                                    "currency" -> {
-                                                        countryCurrency = Currency.valueOf(jsonReader.nextString())
-                                                    }
-                                                }
-                                            }
-                                            authorNationality = Country(
-                                                countryName, countryCurrency, countryLanguage
-                                            )
-                                            jsonReader.endObject()
-                                        }
-                                    }
-                                    author = Author(authorName, authorNationality)
-                                    jsonReader.endObject()
-                                } else if (bookKeyName == "genre") {
-                                    jsonReader.beginArray()
-                                    while (jsonReader.hasNext()) {
-                                        genres.add(Genre.valueOf(jsonReader.nextString()))
-                                    }
-                                    jsonReader.endArray()
-                                }
-                            }
-
-                            jsonReader.endObject()
-
-                            book = if (bookCategory != null) {
-                                EducationalBook(bookName, price, author!!, bookLanguage!!, bookCategory)
-                            } else {
-                                Novel(bookName, price, author!!, bookLanguage!!, genres)
-                            }
-
-                            invoice.addBook(PurchasedBook(book, quantity))
-                        }
-                        jsonReader.endArray()
-                    }
-                }
-                addInvoice(invoice)
-                jsonReader.endObject()
+                addInvoice(parseInvoiceDetails(jsonReader))
             }
             jsonReader.endArray()
         } catch (exp: IOException) {
             println(exp)
         }
+    }
+
+    private fun parseInvoiceDetails(jsonReader: JsonReader): Invoice {
+        jsonReader.beginObject()
+
+        var id = 0
+        lateinit var clientName: String
+        lateinit var invoice: Invoice
+        while (jsonReader.hasNext()) {
+            when (jsonReader.nextName()) {
+                "id" -> {
+                    id = jsonReader.nextInt()
+                }
+                "client" -> {
+                    clientName = jsonReader.nextString()
+                }
+                "country" -> {
+                    invoice = Invoice(clientName, parseCountryDetails(jsonReader), id)
+                }
+                "booksInBasket" -> {
+                    jsonReader.beginArray()
+                    while (jsonReader.hasNext()) {
+                        invoice.addBook(parsePurchasedBookDetails(jsonReader))
+                    }
+                    jsonReader.endArray()
+                }
+            }
+        }
+        jsonReader.endObject()
+
+        return invoice
+    }
+
+    private fun parsePurchasedBookDetails(jsonReader: JsonReader): PurchasedBook {
+        jsonReader.beginObject()
+
+        var price = 0.0
+        var quantity = 0
+        var bookCategory: Category? = null
+        val genres: ArrayList<Genre> = ArrayList()
+
+        lateinit var bookName: String
+        lateinit var author: Author
+        lateinit var bookLanguage: Language
+
+        while (jsonReader.hasNext()) {
+            when (jsonReader.nextName()) {
+                "name" -> {
+                    bookName = jsonReader.nextString()
+                }
+                "price" -> {
+                    price = jsonReader.nextDouble()
+                }
+                "language" -> {
+                    bookLanguage = Language.valueOf(jsonReader.nextString())
+                }
+                "quantity" -> {
+                    quantity = jsonReader.nextInt()
+                }
+                "category" -> {
+                    bookCategory = Category.valueOf(jsonReader.nextString())
+                }
+                "author" -> {
+                    author = parseAuthorDetails(jsonReader)
+                }
+                "genre" -> {
+                    jsonReader.beginArray()
+                    while (jsonReader.hasNext()) {
+                        genres.add(Genre.valueOf(jsonReader.nextString()))
+                    }
+                    jsonReader.endArray()
+                }
+            }
+        }
+
+        val book: Book = if (bookCategory != null) {
+            EducationalBook(bookName, price, author, bookLanguage, bookCategory)
+        } else {
+            Novel(bookName, price, author, bookLanguage, genres)
+        }
+
+        jsonReader.endObject()
+
+        return PurchasedBook(book, quantity)
+    }
+
+    private fun parseAuthorDetails(jsonReader: JsonReader): Author {
+        jsonReader.beginObject()
+
+        lateinit var authorName: String
+        lateinit var authorNationality: Country
+
+        while (jsonReader.hasNext()) {
+            when (jsonReader.nextName()) {
+                "name" -> {
+                    authorName = jsonReader.nextString()
+                }
+                "nationality" -> {
+                    authorNationality = parseCountryDetails(jsonReader)
+                }
+            }
+        }
+        jsonReader.endObject()
+
+        return Author(authorName, authorNationality)
+    }
+
+    private fun parseCountryDetails(jsonReader: JsonReader): Country {
+        jsonReader.beginObject()
+
+        lateinit var countryName: String
+        lateinit var language: Language
+        lateinit var currency: Currency
+
+        while (jsonReader.hasNext()) {
+            when (jsonReader.nextName()) {
+                "name" -> {
+                    countryName = jsonReader.nextString()
+                }
+                "language" -> {
+                    language = Language.valueOf(jsonReader.nextString())
+                }
+                "currency" -> {
+                    currency = Currency.valueOf(jsonReader.nextString())
+                }
+            }
+        }
+        jsonReader.endObject()
+
+        return Country(countryName, currency, language)
+    }
+
+    private fun printFileNotFoundException(exp: Exception) {
+        println("*********************WARNING*********************")
+        System.out.printf("Error reading the file '%s'%s", REPOSITORY_FILE, ".\n")
+        println(exp)
+        println("*************************************************")
+        println("\n\n")
     }
 
     companion object {
