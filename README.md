@@ -48,7 +48,7 @@ The `mikado-testbuilders-kata` and the accompanying materials are made available
 under the terms of the MIT License ([here](LICENSE.md)) which accompanies this
 distribution, and is available at the Open Source site [here](https://opensource.org/licenses/MIT)
 
-## Contributors 
+## Contributors
  
 1. [Ahmad Atwi](https://github.com/aatwi)
 1. [Philippe Bourgau](https://github.com/philou) 
