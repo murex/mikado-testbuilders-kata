@@ -20,7 +20,7 @@ mikado method with test-data-builders to build a baby-step plan to add your
 first test to a legacy codebase. You will also learn how to draw a graph of
 nested test-data-builders so that you can instantiate test data, without mocks.
 
-## What this is
+## What is this?
 
 This repository contains some code and instructions to guide you through fixing
 and testing a bug in a legacy code base using test data builders and the mikado
@@ -39,7 +39,7 @@ practice this kata, alone or even better, with your team.
 If you are a technical coach, you might host a session of this kata as a 
 workshop with many developers.
 
-## Where to start
+## Where to start?
 
 All instructions are in the docs folder. It starts with
 [Introduction.md](./docs/1_Introduction.md)
