@@ -49,6 +49,53 @@ under the terms of the MIT License ([here](LICENSE.md)) which accompanies this
 distribution, and is available at the Open Source site [here](https://opensource.org/licenses/MIT)
 
 ## Contributors
+
+<table>
+<tr>
+    <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
+        <a href=https://github.com/philou>
+            <img src=https://avatars.githubusercontent.com/u/23983?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt=Philippe Bourgau/>
+            <br />
+            <sub style="font-size:14px"><b>Philippe Bourgau</b></sub>
+        </a>
+    </td>
+    <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
+        <a href=https://github.com/aatwi>
+            <img src=https://avatars.githubusercontent.com/u/11088496?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt=Ahmad Atwi/>
+            <br />
+            <sub style="font-size:14px"><b>Ahmad Atwi</b></sub>
+        </a>
+    </td>
+    <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
+        <a href=https://github.com/cadichris>
+            <img src=https://avatars.githubusercontent.com/u/24898521?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt=Christophe Cadilhac/>
+            <br />
+            <sub style="font-size:14px"><b>Christophe Cadilhac</b></sub>
+        </a>
+    </td>
+    <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
+        <a href=https://github.com/mengdaming>
+            <img src=https://avatars.githubusercontent.com/u/1313765?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt=Damien Menanteau/>
+            <br />
+            <sub style="font-size:14px"><b>Damien Menanteau</b></sub>
+        </a>
+    </td>
+    <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
+        <a href=https://github.com/AntoineMx>
+            <img src=https://avatars.githubusercontent.com/u/77109701?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt=AntoineMx/>
+            <br />
+            <sub style="font-size:14px"><b>AntoineMx</b></sub>
+        </a>
+    </td>
+    <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
+        <a href=https://github.com/rmadisonhaynie>
+            <img src=https://avatars.githubusercontent.com/u/15270726?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt=R. Madison Haynie/>
+            <br />
+            <sub style="font-size:14px"><b>R. Madison Haynie</b></sub>
+        </a>
+    </td>
+</tr>
+</table>
  
 1. [Ahmad Atwi](https://github.com/aatwi)
 1. [Philippe Bourgau](https://github.com/philou) 
