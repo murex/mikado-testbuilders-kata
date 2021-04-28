@@ -1,7 +1,5 @@
 [![C++](https://github.com/murex/mikado-testbuilders-kata/actions/workflows/cmake.yml/badge.svg)](https://github.com/murex/mikado-testbuilders-kata/actions/workflows/cmake.yml)
-
 [![Java - Gradle](https://github.com/murex/mikado-testbuilders-kata/actions/workflows/gradle.yml/badge.svg)](https://github.com/murex/mikado-testbuilders-kata/actions/workflows/gradle.yml)
-
 [![Java - Maven](https://github.com/murex/mikado-testbuilders-kata/actions/workflows/maven.yml/badge.svg)](https://github.com/murex/mikado-testbuilders-kata/actions/workflows/maven.yml)
 
 # Mikado Method and Test Data Builders Kata
