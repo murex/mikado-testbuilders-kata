@@ -1,4 +1,4 @@
-name: Add contributors
+name: Contributors
 on:
   push:
     branches: [ master ]
