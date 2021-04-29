@@ -2,7 +2,7 @@ plugins {
     kotlin("jvm") version "1.4.31"
 }
 
-group = "me.ahmadatwi"
+group = "murex.com"
 version = "1.0-SNAPSHOT"
 
 repositories {
@@ -25,5 +25,3 @@ tasks {
         kotlinOptions.jvmTarget = "11"
     }
 }
-
-
