@@ -105,6 +105,7 @@ After some analysis, one of our developers was able to quickly identify the bugs
 
 If you run the App now, you should see that `The total amount of all invoices in USD` is looking good: it's `424.57`.
 
+#### Java 
 <details>
   <summary markdown='span'>
   Sneak Peek at Bug Fix in Invoice.java
@@ -143,6 +144,7 @@ If you run the App now, you should see that `The total amount of all invoices in
 
 </details>
 
+#### C++
 <details>
   <summary markdown='span'>
   Sneak Peek at Bug Fix in Invoice.cpp
@@ -179,6 +181,8 @@ If you run the App now, you should see that `The total amount of all invoices in
 
 </details>
 
+#### C# 
+
 <details>
   <summary markdown='span'>
   Sneak Peek at Bug Fix in Invoice.cs
@@ -211,6 +215,8 @@ If you run the App now, you should see that `The total amount of all invoices in
   ```
 
 </details>
+
+#### Kotlin
 
 <details>
   <summary markdown='span'>
@@ -253,19 +259,20 @@ If you run the App now, you should see that `The total amount of all invoices in
 ## Now we need Unit Tests
 
 ### 1. On the Invoice
-Your mission is to add a test for
-[Invoice](../java/src/main/java/com/murex/tbw/purchase/Invoice.java) that will cover the fix we added.  
-Instructions are provided in [InvoiceTest](../java/src/test/java/com/murex/tbw/purchase/InvoiceTest.java).  
+Your mission is to add a test for the Invoice class 
+([java](../java/src/main/java/com/murex/tbw/purchase/Invoice.java) | [c++](../cpp/src/include/purchase/Invoice.h) | [c#](../csharp/Application/Purchase/Invoice.cs) | [kotlin](../kotlin/src/main/kotlin/com/murex/tbw/purchase/Invoice.kt)) to cover the fix we added.  
+Instructions are provided in InvoiceTest ([java](../java/src/test/java/com/murex/tbw/purchase/InvoiceTest.java) | [c++](../cpp/tests/Tests.cpp) | [c#](../csharp/Application.Tests/Purchase/InvoiceTest.cs) | [kotlin](../kotlin/src/test/kotlin/com/murex/tbw/purchase/InvoiceTest.kt) ).
+
 Make sure your test is correct: it must fail when you reintroduce the bug in `Invoice`.
 
 Mocking a legacy code base is not a great idea. The only fake we are allowed is
-the [InMemoryRepository](../java/src/test/java/com/murex/tbw/storage/InMemoryRepository.java)
+the InMemoryRepository class ([java](../java/src/test/java/com/murex/tbw/storage/InMemoryRepository.java) | [c++](../cpp/tests/storage/InMemoryRepository.h) | [c#](../csharp/Application.Tests/Storage/InMemoryRepository.cs) | [kotlin](../kotlin/src/test/kotlin/com/murex/tbw/storage/InMemoryRepository.kt))
 
 ### 2. [BONUS] On the ReportGenerator
 
 If you have the time, do the same for
-[ReportGenerator](../java/src/main/java/com/murex/tbw/report/ReportGenerator.java).  
-You'll find instructions in [ReportGeneratorTest](../java/src/test/java/com/murex/tbw/report/ReportGeneratorTest.java).
+ReportGenerator ([java](../java/src/main/java/com/murex/tbw/report/ReportGenerator.java) | [c++](../cpp/src/include/report/ReportGenerator.h) | [c#](../csharp/Application/Report/ReportGenerator.cs) | [kotlin](../kotlin/src/main/kotlin/com/murex/tbw/report/ReportGenerator.kt)).  
+You'll find instructions in ReportGeneratorTest ([java](../java/src/test/java/com/murex/tbw/report/ReportGeneratorTest.java) | [c++](../cpp/tests/Tests.cpp)| [c#](../csharp/Application.Tests/Report/ReportGeneratorTest.cs) | [kotlin](../kotlin/src/test/kotlin/com/murex/tbw/report/ReportGeneratorTest.kt)).
 
 ## Mini Retro
 
