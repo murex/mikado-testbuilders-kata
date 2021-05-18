@@ -12,13 +12,13 @@ with an activity that will get you to know each other.
 > Introduce yourself to a person seated next to you. Tell this person why you
 > are here and what you want to learn from this workshop.
 
-## Before we start! 
+## Before we start!
 
 On a piece of paper, note down your 1 or 2 expectation(s) out of this workshop.
 
 ## Organization of this workshop
 
-During this workshop, you'll be working on a codebase where 2 bugs just got fixed without adding a test first. You've been tasked to write the unit tests covering the fixes. 
+During this workshop, you'll be working on a codebase where 2 bugs just got fixed without adding a test first. You've been tasked to write the unit tests covering the fixes.
 
 As this should prove difficult, we'll present how to combine 2 techniques, test
 data builders and the mikado method, to add tests without stopping feature
@@ -36,6 +36,7 @@ will help you compile, run and load the project in your favorite IDE:
 * [Java Build Manual](../java/BUILD_MANUAL.md)
 * [CPP Build Manual](../cpp/BUILD_MANUAL.md)
 * [C# Build Manual](../csharp/BUILD_MANUAL.md)
+* [Kotlin Build Manual](../kotlin/BUILD_MANUAL.md)
 
 If you have problems compiling and running the code, check our [Troubleshooting guide](Troubleshooting.md)
 

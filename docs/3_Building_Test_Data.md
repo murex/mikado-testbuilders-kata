@@ -114,7 +114,7 @@ So let's Ignore or Comment-Out the previous tests!
 
 ### Use Test-Data-Builders to setup the data for a test on Invoice
 
-We'll first focus on testing the [Invoice](../java/src/main/java/com/murex/tbw/purchase/Invoice.java) class.
+We'll first focus on testing the Invoice ([java](../java/src/main/java/com/murex/tbw/purchase/Invoice.java) | [c++](../cpp/src/include/purchase/Invoice.h) | [c#](../csharp/Application/Purchase/Invoice.cs) | [kotlin](../kotlin/src/main/kotlin/com/murex/tbw/purchase/Invoice.kt)) class.
 It's simpler and achievable given the time we have.
 
 To solve this section, use the test entitled *Test_Data_Builders_Constraint_Applies_tax_rules_when_computing_total_amount*!
@@ -123,7 +123,7 @@ Use the test data-builder to instantiate your objects in the test.
 
 ### Use Test-Data-Builders to setup the data for a test on Report Generator (advanced)
 
-If you have the time, repeat the same exercise with the test on [ReportGenerator](../java/src/main/java/com/murex/tbw/report/ReportGenerator.java)
+If you have the time, repeat the same exercise with the test on ReportGenerator ([java](../java/src/main/java/com/murex/tbw/report/ReportGenerator.java) | [c++](../cpp/src/include/report/ReportGenerator.h) | [c#](../csharp/Application/Report/ReportGenerator.cs) | [kotlin](../kotlin/src/main/kotlin/com/murex/tbw/report/ReportGenerator.kt)) class.
 
 ## Mini-retro
 

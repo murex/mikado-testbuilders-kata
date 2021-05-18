@@ -17,8 +17,9 @@ Configuration Steps:
 2. Pick the programming language of your preference ([C++](https://github.com/murex/mikado-testbuilders-kata/tree/master/cpp), [Java](https://github.com/murex/mikado-testbuilders-kata/tree/master/java), or [C#](https://github.com/murex/mikado-testbuilders-kata/tree/master/csharp))
 3. Follow the steps defined in the BUILD_MANUAL corresponding to your preferred language. These manuals contain information on the required tools, versions, and processes to configure and run the project:
     1. [C++ Build Manual](https://github.com/murex/mikado-testbuilders-kata/blob/master/cpp/BUILD_MANUAL.md)
-    2. [Java Build Manual](https://github.com/murex/mikado-testbuilders-kata/blob/master/java/BUILD_MANUAL.md)
-    2. [C# Build Manual](https://github.com/murex/mikado-testbuilders-kata/blob/master/csharp/BUILD_MANUAL.md)
+    1. [Java Build Manual](https://github.com/murex/mikado-testbuilders-kata/blob/master/java/BUILD_MANUAL.md)
+    1. [C# Build Manual](https://github.com/murex/mikado-testbuilders-kata/blob/master/csharp/BUILD_MANUAL.md)
+    1. [Kotlin Build Manual](https://github.com/murex/mikado-testbuilders-kata/blob/master/kotlin/BUILD_MANUAL.md)
 4. Your environment will be ready when you can: 
     1. Open, compile, and run tests from your IDE
     2. Run the application from the command-line (i.e., "Run Command" section of the BUILD_MANUAL)
