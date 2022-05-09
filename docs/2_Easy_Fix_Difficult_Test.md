@@ -256,23 +256,64 @@ If you run the App now, you should see that `The total amount of all invoices in
 
 </details>
 
+#### Scala
+
+<details>
+  <summary markdown='span'>
+  Sneak Peek at Bug Fix in Invoice.scala
+  </summary>
+
+  ```diff
+    def computeTotalAmount: Double = {
+      var sum = 0.0
+  
+      for (purchasedBook <- purchasedBooks) {
+  -     val totalPrice: Double = purchasedBook.getTotalPrice()
+  +     val totalPrice: Double = purchasedBook.getTotalPrice * getApplicableRate(country, purchasedBook.book)
+        sum += totalPrice
+      }
+      sum
+    }
+  ```
+
+</details>
+
+<details>
+  <summary markdown='span'>
+  Sneak Peek at Bug Fix in ReportGenerator.scala
+  </summary>
+
+  ```diff
+  def getTotalAmount: Double = {
+    val invoiceMap = repository.getInvoiceMap
+    var totalAmount = 0.0
+    for (invoice <- invoiceMap.values) {
+  -     totalAmount += invoice.computeTotalAmount();
+  +     totalAmount += toUSD(invoice.computeTotalAmount, invoice.country.currency)
+    }
+    getRoundedAmount(totalAmount)
+  }
+  ```
+
+</details>
+
 ## Now we need Unit Tests
 
 ### 1. On the Invoice
 Your mission is to add a test for the Invoice class 
-([java](../java/src/main/java/com/murex/tbw/purchase/Invoice.java) | [c++](../cpp/src/include/purchase/Invoice.h) | [c#](../csharp/Application/Purchase/Invoice.cs) | [kotlin](../kotlin/src/main/kotlin/com/murex/tbw/purchase/Invoice.kt)) to cover the fix we added.  
-Instructions are provided in InvoiceTest ([java](../java/src/test/java/com/murex/tbw/purchase/InvoiceTest.java) | [c++](../cpp/tests/Tests.cpp) | [c#](../csharp/Application.Tests/Purchase/InvoiceTest.cs) | [kotlin](../kotlin/src/test/kotlin/com/murex/tbw/purchase/InvoiceTest.kt) ).
+([java](../java/src/main/java/com/murex/tbw/purchase/Invoice.java) | [c++](../cpp/src/include/purchase/Invoice.h) | [c#](../csharp/Application/Purchase/Invoice.cs) | [kotlin](../kotlin/src/main/kotlin/com/murex/tbw/purchase/Invoice.kt) | [scala](../scala/src/main/scala/com/murex/tbw/purchase/Invoice.scala)) to cover the fix we added.  
+Instructions are provided in InvoiceTest ([java](../java/src/test/java/com/murex/tbw/purchase/InvoiceTest.java) | [c++](../cpp/tests/Tests.cpp) | [c#](../csharp/Application.Tests/Purchase/InvoiceTest.cs) | [kotlin](../kotlin/src/test/kotlin/com/murex/tbw/purchase/InvoiceTest.kt) | [scala](../scala/src/test/scala/com/murex/tbw/purchase/InvoiceTest.scala)).
 
 Make sure your test is correct: it must fail when you reintroduce the bug in `Invoice`.
 
 Mocking a legacy code base is not a great idea. The only fake we are allowed is
-the InMemoryRepository class ([java](../java/src/test/java/com/murex/tbw/storage/InMemoryRepository.java) | [c++](../cpp/tests/storage/InMemoryRepository.h) | [c#](../csharp/Application.Tests/Storage/InMemoryRepository.cs) | [kotlin](../kotlin/src/test/kotlin/com/murex/tbw/storage/InMemoryRepository.kt))
+the `InMemoryRepository` class ([java](../java/src/test/java/com/murex/tbw/storage/InMemoryRepository.java) | [c++](../cpp/tests/storage/InMemoryRepository.h) | [c#](../csharp/Application.Tests/Storage/InMemoryRepository.cs) | [kotlin](../kotlin/src/test/kotlin/com/murex/tbw/storage/InMemoryRepository.kt) | [scala](../scala/src/test/scala/com/murex/tbw/storage/InMemoryRepository.scala))
 
 ### 2. [BONUS] On the ReportGenerator
 
 If you have the time, do the same for
-ReportGenerator ([java](../java/src/main/java/com/murex/tbw/report/ReportGenerator.java) | [c++](../cpp/src/include/report/ReportGenerator.h) | [c#](../csharp/Application/Report/ReportGenerator.cs) | [kotlin](../kotlin/src/main/kotlin/com/murex/tbw/report/ReportGenerator.kt)).  
-You'll find instructions in ReportGeneratorTest ([java](../java/src/test/java/com/murex/tbw/report/ReportGeneratorTest.java) | [c++](../cpp/tests/Tests.cpp)| [c#](../csharp/Application.Tests/Report/ReportGeneratorTest.cs) | [kotlin](../kotlin/src/test/kotlin/com/murex/tbw/report/ReportGeneratorTest.kt)).
+ReportGenerator ([java](../java/src/main/java/com/murex/tbw/report/ReportGenerator.java) | [c++](../cpp/src/include/report/ReportGenerator.h) | [c#](../csharp/Application/Report/ReportGenerator.cs) | [kotlin](../kotlin/src/main/kotlin/com/murex/tbw/report/ReportGenerator.kt) | [scala](../scala/src/main/scala/com/murex/tbw/report/ReportGenerator.scala)).  
+You'll find instructions in ReportGeneratorTest ([java](../java/src/test/java/com/murex/tbw/report/ReportGeneratorTest.java) | [c++](../cpp/tests/Tests.cpp)| [c#](../csharp/Application.Tests/Report/ReportGeneratorTest.cs) | [kotlin](../kotlin/src/test/kotlin/com/murex/tbw/report/ReportGeneratorTest.kt) | [scala](../scala/src/test/scala/com/murex/tbw/report/ReportGeneratorTest.scala)).
 
 ## Mini Retro
 

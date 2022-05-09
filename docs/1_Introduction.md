@@ -37,6 +37,7 @@ will help you compile, run and load the project in your favorite IDE:
 * [CPP Build Manual](../cpp/BUILD_MANUAL.md)
 * [C# Build Manual](../csharp/BUILD_MANUAL.md)
 * [Kotlin Build Manual](../kotlin/BUILD_MANUAL.md)
+* [Scala Build Manual](../scala/BUILD_MANUAL.md)
 
 If you have problems compiling and running the code, check our [Troubleshooting guide](Troubleshooting.md)
 
