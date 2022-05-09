@@ -17,11 +17,11 @@ class JsonRepository extends Repository {
   private val invoiceMap: scala.collection.mutable.Map[Int, Invoice] =
     scala.collection.mutable.Map[Int, Invoice]()
 
+  loadJsonData(getJsonReader)
+
   override def addInvoice(invoice: Invoice): Unit = invoiceMap(invoice.id) = invoice
 
   override def getInvoiceMap: Map[Int, Invoice] = invoiceMap.toMap
-
-  def apply(): Unit = loadJsonData(getJsonReader)
 
   private def getJsonReader: JsonReader = {
     try {

@@ -33,7 +33,7 @@ class Invoice(
   }
 
   override def equals(other: Any): Boolean = {
-    if (this == other) return true
+    if (this eq other.asInstanceOf[AnyRef]) return true
     if (this.getClass != other.getClass) return false
 
     val otherInvoice = other.asInstanceOf[Invoice]
