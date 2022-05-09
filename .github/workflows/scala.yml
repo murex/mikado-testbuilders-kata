@@ -1,4 +1,4 @@
-name: Kotlin Build
+name: Scala Build
 
 on: 
   push:
@@ -15,6 +15,6 @@ jobs:
       with:
         java-version: '8'
         distribution: 'temurin'
-    - name: Build and Test
+    - name: Build
       working-directory: ./scala
       run: sbt compile
