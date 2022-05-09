@@ -19,6 +19,7 @@ import com.murex.tbw.domain.country.Language
 import com.murex.tbw.domain.country.Language.GERMAN
 import com.murex.tbw.purchase.Invoice
 import com.murex.tbw.purchase.PurchasedBook
+import com.murex.tbw.report.ReportGenerator
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
@@ -84,5 +85,11 @@ internal class BooksOrderTest {
         expectedInvoice.addBook(purchasedNovel)
 
         assertEquals(expectedInvoice, actualInvoice)
+    }
+
+    @Test
+    fun generator() {
+        val reportGenerator = ReportGenerator()
+        assertEquals(1, reportGenerator.getTotalSoldBooks())
     }
 }

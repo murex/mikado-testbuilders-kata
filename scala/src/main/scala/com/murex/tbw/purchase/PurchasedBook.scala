@@ -6,7 +6,7 @@ class PurchasedBook(val book: Book, val quantity: Int) {
   def getTotalPrice: Double = book.price * quantity
 
   override def equals(other: Any): Boolean = {
-    if (this == other) return true
+    if (this eq other.asInstanceOf[AnyRef]) return true
     if (getClass != other.getClass) return false
 
     val otherBook = other.asInstanceOf[PurchasedBook]
