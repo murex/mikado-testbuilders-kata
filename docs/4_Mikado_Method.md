@@ -78,7 +78,7 @@ So let's Ignore or Comment-Out the previous tests!
 
 ### Use Mikado Method to setup data for a test on Invoice
 
-We'll first focus on testing the Invoice ([java](../java/src/main/java/com/murex/tbw/purchase/Invoice.java) | [c++](../cpp/src/include/purchase/Invoice.h) | [c#](../csharp/Application/Purchase/Invoice.cs) | [kotlin](../kotlin/src/main/kotlin/com/murex/tbw/purchase/Invoice.kt)) class. 
+We'll first focus on testing the Invoice ([java](../java/src/main/java/com/murex/tbw/purchase/Invoice.java) | [c++](../cpp/src/include/purchase/Invoice.h) | [c#](../csharp/Application/Purchase/Invoice.cs) | [kotlin](../kotlin/src/main/kotlin/com/murex/tbw/purchase/Invoice.kt) | [scala](../scala/src/main/scala/com/murex/tbw/purchase/Invoice.scala)) class. 
 It's simpler and achievable given the time we have.
 
 To solve this section, use the test entitled *Mikado_Method_Constraint_Applies_tax_rules_when_computing_total_amount*!
@@ -89,7 +89,7 @@ Make sure your project keeps building all the time. Notice every time you have s
 
 ### Use Mikado Method to setup data for a test on Report Generator (advanced)
 
-If you have the time, repeat the same exercise with the test on ReportGenerator ([java](../java/src/main/java/com/murex/tbw/report/ReportGenerator.java) | [c++](../cpp/src/include/report/ReportGenerator.h) | [c#](../csharp/Application/Report/ReportGenerator.cs) | [kotlin](../kotlin/src/main/kotlin/com/murex/tbw/report/ReportGenerator.kt)) class.
+If you have the time, repeat the same exercise with the test on ReportGenerator ([java](../java/src/main/java/com/murex/tbw/report/ReportGenerator.java) | [c++](../cpp/src/include/report/ReportGenerator.h) | [c#](../csharp/Application/Report/ReportGenerator.cs) | [kotlin](../kotlin/src/main/kotlin/com/murex/tbw/report/ReportGenerator.kt) | [scala](../scala/src/main/scala/com/murex/tbw/report/ReportGenerator.scala)) class.
 
 ## Mini-retro
 
