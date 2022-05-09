@@ -4,6 +4,7 @@
 [![Java - Gradle](https://github.com/murex/mikado-testbuilders-kata/actions/workflows/gradle.yml/badge.svg)](https://github.com/murex/mikado-testbuilders-kata/actions/workflows/gradle.yml)
 [![Java - Maven](https://github.com/murex/mikado-testbuilders-kata/actions/workflows/maven.yml/badge.svg)](https://github.com/murex/mikado-testbuilders-kata/actions/workflows/maven.yml)
 [![Kotlin](https://github.com/murex/mikado-testbuilders-kata/actions/workflows/kotlin.yml/badge.svg)](https://github.com/murex/mikado-testbuilders-kata/actions/workflows/kotlin.yml)
+[![Scala](https://github.com/murex/mikado-testbuilders-kata/actions/workflows/scala.yml/badge.svg)](https://github.com/murex/mikado-testbuilders-kata/actions/workflows/scala.yml)
 
 _A Code Retreat workshop to teach how to combine Test Data Builders and the Mikado
 Method to add tests on a bug in a legacy codebase without freezing features_
