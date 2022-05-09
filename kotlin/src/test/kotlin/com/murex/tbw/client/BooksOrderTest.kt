@@ -86,10 +86,4 @@ internal class BooksOrderTest {
 
         assertEquals(expectedInvoice, actualInvoice)
     }
-
-    @Test
-    fun generator() {
-        val reportGenerator = ReportGenerator()
-        assertEquals(1, reportGenerator.getTotalSoldBooks())
-    }
 }
