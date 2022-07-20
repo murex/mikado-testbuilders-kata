@@ -97,7 +97,7 @@ module Finance =
         | Germany -> 1.22
 
     let taxRateForForeignLanguage (country:Country) bookLanguage =
-        if not (country.Language = bookLanguage) then
+        if country.Language <> bookLanguage then
             1.0
         else
             taxRate country
