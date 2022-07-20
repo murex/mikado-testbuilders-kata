@@ -6,8 +6,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Include="Storage\repository.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Compile Include="Domain.fs" />
     <Compile Include="Program.fs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FSharp.Data" Version="4.2.9" />
   </ItemGroup>
 
 </Project>

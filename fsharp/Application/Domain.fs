@@ -175,7 +175,7 @@ module Report =
         invoices
         |> Seq.length
 
-    let totalAmountInUsd (totalAmount:TotalAmount) (toUsd:ToUsd) (invoices:seq<Invoice>) =
+    let totalAmountInUsd (invoices:seq<Invoice>) =
         invoices 
         |> Seq.map (fun invoice -> (totalAmount invoice) |> toUsd invoice.Country.Currency)
         |> Seq.sum
