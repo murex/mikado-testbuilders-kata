@@ -64,28 +64,12 @@ module Domain =
         Novel of Book * seq<Genre> 
         | EducationalBook of Book * Category
 
-module Purchase =
-
-    open Domain
-    
-    type PurchasedBook = { 
-        Book: Book
-        Quantity: int
-    }
-
-    type Invoice = {
-        Id: int
-        ClientName: string
-        Country: Country
-        PurchasedBooks: seq<PurchasedBook>
-    }
-
 module Finance =
 
     open Domain
 
-    type FromUsd = Price -> Currency -> Price
-    type ToUsd = Price -> Currency -> Price
+    type FromUsd = Currency -> Price -> Price
+    type ToUsd = Currency -> Price -> Price
 
     type ApplicableRate = Country -> BookType
 
@@ -98,8 +82,8 @@ module Finance =
         | Reminbi -> 0.15
         | Yen -> 0.0093
 
-    let fromUsd (price:Price) currency = price / (exchangeRate currency)
-    let toUsd price currency = price * exchangeRate currency
+    let fromUsd currency (price:Price) = price / (exchangeRate currency)
+    let toUsd currency (price:Price) = price * exchangeRate currency
 
     let taxRate (country:Country) =
         match country.Name with
@@ -153,4 +137,61 @@ module Finance =
             | EducationalBook (book, _) ->
                 taxRateForForeignLanguage country book.Language
         | _ -> taxRate country
-            
+
+module Purchase =
+
+    open Domain
+    
+    type PurchasedBook = { 
+        Book: BookType
+        Quantity: int
+    }
+
+    type Invoice = {
+        Id: int
+        ClientName: string
+        Country: Country
+        PurchasedBooks: seq<PurchasedBook>
+    }
+
+    type TotalAmount = Invoice -> Price
+
+    let totalAmount (invoice:Invoice) =
+        let bookPrice bookType =
+            match bookType with
+            | Novel (book, _) -> book.Price
+            | EducationalBook (book, _) -> book.Price
+
+        invoice.PurchasedBooks
+        // Bug
+        //|> Seq.map (fun purchasedBook -> bookPrice purchasedBook.Book * float purchasedBook.Quantity)
+        |> Seq.map (fun purchasedBook -> 
+            bookPrice purchasedBook.Book * float purchasedBook.Quantity * (Finance.applicableRate invoice.Country purchasedBook.Book))
+        |> Seq.sum
+
+module Report =
+    
+    open Purchase
+    open Domain
+    open Finance
+
+    type TotalSoldBooks = seq<Invoice> -> int
+    type NumberOfIssuedInvoices = seq<Invoice> -> int
+    type TotalAmountInUsd = seq<Invoice> -> Price
+
+    type PrintReport = TotalSoldBooks -> NumberOfIssuedInvoices -> TotalAmountInUsd -> unit
+    
+    let totalSoldBooks (invoices:seq<Invoice>) =
+        invoices 
+        |> Seq.collect (fun invoice -> invoice.PurchasedBooks) 
+        |> Seq.map (fun purchasedBook -> purchasedBook.Quantity)
+        |> Seq.sum
+
+    let numberOfIssuedInvoices (invoices:seq<Invoice>) =
+        invoices
+        |> Seq.length
+
+    let totalAmountInUsd (totalAmount:TotalAmount) (toUsd:ToUsd) (invoices:seq<Invoice>) =
+        invoices 
+        |> Seq.map (fun invoice -> (totalAmount invoice) |> toUsd invoice.Country.Currency)
+        |> Seq.sum
