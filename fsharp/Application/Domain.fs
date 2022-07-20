@@ -109,34 +109,16 @@ module Finance =
             taxRate country
 
     let applicableRate (country:Country) book =
-        match country.Name with
-        | USA -> 
-            match book with
-            | Novel _ -> taxRate country * 0.98
-            | _ -> taxRate country
-        | UK ->
-            match book with
-            | Novel _ -> taxRate country * 0.93
-            | _ -> taxRate country
-        | Germany -> 
-            match book with
-            | Novel (book,_) -> 
-                taxRateForForeignAuthor country book.Author.Nationality.Name
-            | EducationalBook (book,_) -> 
-                taxRateForForeignAuthor country book.Author.Nationality.Name
-        | China ->
-            match book with
-            | Novel (book,_) ->
-                taxRateForForeignLanguage country book.Language
-            | EducationalBook (book, _) ->
-                taxRateForForeignLanguage country book.Language
-        | Spain ->
-            match book with
-            | Novel (book,_) ->
-                taxRateForForeignLanguage country book.Language
-            | EducationalBook (book, _) ->
-                taxRateForForeignLanguage country book.Language
-        | _ -> taxRate country
+        match country.Name, book with
+        | USA, Novel _ -> taxRate country * 0.98
+        | UK, Novel _ -> taxRate country * 0.93
+        | Germany, Novel (book,_) 
+        | Germany, EducationalBook (book,_) -> taxRateForForeignAuthor country book.Author.Nationality.Name
+        | China, Novel (book, _) 
+        | China, EducationalBook (book, _)
+        | Spain, Novel (book,_) 
+        | Spain, EducationalBook (book, _) -> taxRateForForeignLanguage country book.Language
+        | _, _ -> taxRate country
 
 module Purchase =
 
@@ -163,8 +145,10 @@ module Purchase =
             | EducationalBook (book, _) -> book.Price
 
         invoice.PurchasedBooks
-        // Bug
+        // BUG
         //|> Seq.map (fun purchasedBook -> bookPrice purchasedBook.Book * float purchasedBook.Quantity)
+
+        // FIX
         |> Seq.map (fun purchasedBook -> 
             bookPrice purchasedBook.Book * float purchasedBook.Quantity * (Finance.applicableRate invoice.Country purchasedBook.Book))
         |> Seq.sum
