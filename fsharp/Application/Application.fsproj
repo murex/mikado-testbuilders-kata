@@ -9,7 +9,12 @@
     <Content Include="Storage\repository.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Compile Include="Domain.fs" />
+    <Compile Include="Domain\Country.fs" />
+    <Compile Include="Domain\Book.fs" />
+    <Compile Include="Finance.fs" />
+    <Compile Include="Purchase.fs" />
+    <Compile Include="Report.fs" />
+    <Compile Include="Dto.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
 
