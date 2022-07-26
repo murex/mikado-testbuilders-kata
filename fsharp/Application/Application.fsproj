@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="Storage\repository.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Compile Include="Domain\Country.fs" />
+    <Compile Include="Domain\Book.fs" />
+    <Compile Include="Finance.fs" />
+    <Compile Include="Purchase.fs" />
+    <Compile Include="Report.fs" />
+    <Compile Include="Dto.fs" />
+    <Compile Include="Program.fs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FSharp.Data" Version="4.2.9" />
+  </ItemGroup>
+
+</Project>
