@@ -1,11 +1,17 @@
 plugins {
     id 'java'
     id 'maven-publish'
+    id 'com.adarshr.test-logger' version '3.2.0'
 }
 
 group = 'murex.com'
 version = '1.0-SNAPSHOT'
-sourceCompatibility = '1.8'
+
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(17))
+    }
+}
 
 repositories {
     mavenCentral()
@@ -15,27 +21,43 @@ dependencies {
     implementation group: 'com.google.code.gson', name: 'gson', version: '2.8.5'
     implementation 'commons-io:commons-io:2.6'
     implementation 'com.google.guava:guava:28.0-jre'
-    testImplementation 'org.junit.jupiter:junit-jupiter-engine:5.0.0'
-    testImplementation 'org.junit.platform:junit-platform-surefire-provider:1.0.0'
+    testImplementation(platform('org.junit:junit-bom:5.9.2'))
+    testImplementation 'org.junit.jupiter:junit-jupiter'
 }
 
-task uberJar(type: Jar) {
+test {
+    useJUnitPlatform()
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
+}
+
+tasks.register('uberJar', Jar) {
+    archiveClassifier = 'uber'
+
     from sourceSets.main.output
 
-    manifest {
-        attributes(
-                'Main-Class': 'com.murex.Application',
-                'Class-Path': configurations.compile.files.collect { it.getName() }.join(' '),
-        )
-    }
     dependsOn configurations.runtimeClasspath
     from {
         configurations.runtimeClasspath.findAll { it.name.endsWith('jar') }.collect { zipTree(it) }
     }
-
-    setArchivesBaseName("MikadoTestBuilderKata")
-    project.version = ""
-    with jar
 }
 
-build.finalizedBy(uberJar)
+testlogger {
+    theme 'standard'
+    showExceptions true
+    showStackTraces true
+    showFullStackTraces false
+    showCauses true
+    slowThreshold 5000
+    showSummary true
+    showSimpleNames false
+    showPassed true
+    showSkipped true
+    showFailed true
+    showStandardStreams false
+    showPassedStandardStreams true
+    showSkippedStandardStreams true
+    showFailedStandardStreams true
+    logLevel 'lifecycle'
+}
