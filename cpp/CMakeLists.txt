@@ -168,6 +168,6 @@ set_property(TARGET ${PROJECT_NAME} PROPERTY FOLDER "Workshop")
 set_property(TARGET ${PROJECT_NAME}-test PROPERTY FOLDER "Workshop")
 set_property(TARGET ${PROJECT_NAME}-app PROPERTY FOLDER "Workshop")
 
-set_property(TARGET gtest gtest_main gmock gmock_main PROPERTY FOLDER "Third-Party/GoogleTest")
+set_property(TARGET gtest gtest_main PROPERTY FOLDER "Third-Party/GoogleTest")
 
 set_property(GLOBAL PROPERTY PREDEFINED_TARGETS_FOLDER "CMake Generated")
