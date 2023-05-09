@@ -1,12 +1,18 @@
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+import com.adarshr.gradle.testlogger.TestLoggerExtension
+import com.adarshr.gradle.testlogger.TestLoggerPlugin
+import com.adarshr.gradle.testlogger.theme.ThemeType
 
 plugins {
     application
-    kotlin("jvm") version "1.4.31"
+    kotlin("jvm") version "1.8.21"
+    id("com.adarshr.test-logger") version "3.2.0"
 }
 
-group = "murex.com"
-version = "1.0-SNAPSHOT"
+kotlin {
+    jvmToolchain {
+        languageVersion.set(JavaLanguageVersion.of(17))
+    }
+}
 
 repositories {
     mavenCentral()
@@ -17,31 +23,45 @@ application {
 }
 
 dependencies {
-    implementation("commons-io:commons-io:2.6")
-    implementation("com.google.code.gson:gson:2.8.6")
-    testImplementation("org.assertj:assertj-core:3.19.0")
-    testImplementation("org.junit.jupiter:junit-jupiter-api:5.7.1")
-    testImplementation("org.junit.jupiter:junit-jupiter-params:5.7.1")
-    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.7.1")
+    implementation("commons-io:commons-io:2.11.0")
+    implementation("com.google.code.gson:gson:2.10.1")
+    testImplementation(platform("org.junit:junit-bom:5.9.3"))
+    testImplementation("org.junit.jupiter:junit-jupiter")
 }
 
-tasks {
-    "test"(Test::class) {
-        useJUnitPlatform()
-    }
+tasks.test {
+    useJUnitPlatform()
+}
 
-    withType<KotlinCompile> {
-        kotlinOptions.jvmTarget = "11"
-    }
+tasks.withType<Jar> {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    manifest { attributes["Main-Class"] = application.mainClass }
+    dependsOn(configurations.runtimeClasspath)
 
-    withType<Jar> {
-        duplicatesStrategy = DuplicatesStrategy.EXCLUDE
-        manifest { attributes["Main-Class"] = application.mainClass }
-        dependsOn(configurations.runtimeClasspath)
+    from(configurations.runtimeClasspath.get()
+        .map { if (it.isDirectory) it else zipTree(it) })
 
-        from(configurations.runtimeClasspath.get()
-            .map { if (it.isDirectory) it else zipTree(it) })
+    archiveFileName.set("MikadoTestBuilderKata.jar")
+}
 
-        archiveFileName.set("MikadoTestBuilderKata.jar")
-    }
+group = "murex.com"
+version = "1.0-SNAPSHOT"
+
+testlogger {
+    theme = ThemeType.STANDARD
+    showExceptions = true
+    showStackTraces = true
+    showFullStackTraces = false
+    showCauses = true
+    slowThreshold = 2000
+    showSummary = true
+    showSimpleNames = false
+    showPassed = true
+    showSkipped = true
+    showFailed = true
+    showStandardStreams = false
+    showPassedStandardStreams = true
+    showSkippedStandardStreams = true
+    showFailedStandardStreams = true
+    logLevel = LogLevel.LIFECYCLE
 }
