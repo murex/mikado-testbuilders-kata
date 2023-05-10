@@ -1,6 +1,6 @@
 plugins {
     id 'java'
-    id 'maven-publish'
+    id 'application'
     id 'com.adarshr.test-logger' version '3.2.0'
 }
 
@@ -18,7 +18,7 @@ repositories {
 }
 
 dependencies {
-    implementation group: 'com.google.code.gson', name: 'gson', version: '2.10.1'
+    implementation 'com.google.code.gson:gson:2.10.1'
     implementation 'commons-io:commons-io:2.11.0'
     implementation 'com.google.guava:guava:31.1-jre'
     testImplementation(platform('org.junit:junit-bom:5.9.3'))
@@ -32,15 +32,15 @@ test {
     }
 }
 
-tasks.register('uberJar', Jar) {
-    archiveClassifier = 'uber'
+application {
+    mainClass = 'com.murex.Application'
+}
 
-    from sourceSets.main.output
-
-    dependsOn configurations.runtimeClasspath
-    from {
-        configurations.runtimeClasspath.findAll { it.name.endsWith('jar') }.collect { zipTree(it) }
-    }
+jar {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    manifest { attributes["Main-Class"] = application.mainClass }
+    from { configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) } }
+    archiveFileName.set("MikadoTestBuilderKata.jar")
 }
 
 testlogger {
