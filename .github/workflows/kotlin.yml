@@ -1,7 +1,9 @@
-name: Kotlin Build
+name: Kotlin - Gradle
 
 on: 
   push:
+    paths:
+      - 'kotlin/**'
     branches-ignore:
       - '*-from-video'
 
@@ -9,12 +11,14 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - name: Set up JDK 1.11
-      uses: actions/setup-java@v1
+    - uses: actions/checkout@v3
+    - name: Set up JDK 17
+      uses: actions/setup-java@v3
       with:
-        java-version: 1.11
-    - name: Build the Kotlin porject with Gradle
+        distribution: 'zulu'
+        java-version: 17
+        java-package: jdk
+    - name: Build with Gradle
       working-directory: kotlin
-      run: ./gradlew build
- 
+      run: ./gradlew clean build --no-daemon
+
