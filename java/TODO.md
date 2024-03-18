@@ -9,4 +9,4 @@ Indentation represents dependencies, and should be done first
     - [ ] Create a test data builder for the PurchaseBook class
       - [ ] Create a test data builder for the Novel class
         - [ ] Create test data builder for Author
-          - [ ] Create sample country data USA
+          - [x] Create sample country data USA
