@@ -5,7 +5,7 @@ import com.murex.tbw.domain.country.TestCountries;
 public class AuthorTestDataBuilder {
     private String name = "John Steinbeck";
 
-    public AuthorTestDataBuilder anAuthor() {
+    public static AuthorTestDataBuilder anAuthor() {
         return new AuthorTestDataBuilder();
     }
 

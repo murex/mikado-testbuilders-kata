@@ -2,7 +2,7 @@ package com.murex.tbw.purchase;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static com.murex.tbw.domain.book.NovelTestDataBuilder.aNovel;
 
 class InvoiceTest {
     @Test
@@ -37,6 +37,8 @@ class InvoiceTest {
 //                .withItem(aNovel()
 //                        .costing(50))
 //                .build();
+
+        aNovel().costing(50).build();
 
 
         // Add it a purchased novel costing 50
