@@ -3,6 +3,7 @@ package com.murex.tbw.purchase;
 import org.junit.jupiter.api.Test;
 
 import static com.murex.tbw.domain.book.NovelTestDataBuilder.aNovel;
+import static com.murex.tbw.purchase.PurchasedBookTestDataBuilder.aPurchase;
 
 class InvoiceTest {
     @Test
@@ -38,7 +39,7 @@ class InvoiceTest {
 //                        .costing(50))
 //                .build();
 
-        aNovel().costing(50).build();
+        aPurchase().of(aNovel().costing(50)).quantity(1).build();
 
 
         // Add it a purchased novel costing 50
